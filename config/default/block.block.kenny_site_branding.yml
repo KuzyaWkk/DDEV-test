@@ -1,0 +1,25 @@
+uuid: 5866eb76-0a93-400e-a07c-6d00ee7995eb
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - kenny
+_core:
+  default_config_hash: n_nlgjggHVfQt2H__zvLOKB2YtjPDbQ5tHijF9LE1aM
+id: kenny_site_branding
+theme: kenny
+region: header
+weight: -7
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  label_display: '0'
+  provider: system
+  use_site_logo: true
+  use_site_name: true
+  use_site_slogan: true
+visibility: {  }

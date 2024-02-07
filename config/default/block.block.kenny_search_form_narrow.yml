@@ -1,0 +1,23 @@
+uuid: 9ba6ba6b-877b-4bc8-8c45-7b89f0991f33
+langcode: en
+status: false
+dependencies:
+  module:
+    - search
+  theme:
+    - kenny
+_core:
+  default_config_hash: yEBET0cqDbk8dkWzaJw-8CKft0961VBflsISoSR6Lj8
+id: kenny_search_form_narrow
+theme: kenny
+region: header
+weight: 0
+provider: null
+plugin: search_form_block
+settings:
+  id: search_form_block
+  label: 'Search form (narrow)'
+  label_display: '0'
+  provider: search
+  page_id: ''
+visibility: {  }

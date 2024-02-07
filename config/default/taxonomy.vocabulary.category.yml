@@ -1,0 +1,8 @@
+uuid: 04c50790-3330-4ce0-8a59-c4001c5836ec
+langcode: en
+status: true
+dependencies: {  }
+name: Category
+vid: category
+description: 'List of category by news'
+weight: 0
