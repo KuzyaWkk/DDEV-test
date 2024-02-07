@@ -1,0 +1,12 @@
+<?php
+
+/**
+ * Implements hook_theme().
+ */
+function kenny_core_theme($existing, $type, $theme, $path) {
+  return [
+    'kenny_social_media_bar' => [
+      'variables' => []
+    ],
+  ];
+}

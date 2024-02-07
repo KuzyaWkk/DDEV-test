@@ -1,0 +1,14 @@
+.region-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  .menu {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    li {
+      @include resetLi;
+    }
+  }
+}

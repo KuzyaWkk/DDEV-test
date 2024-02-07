@@ -1,3 +1,70 @@
 .region-header {
-  font-size: 50px;
+  max-width: calc($container-max + 2rem);
+  background: $color-header-bg;
+  margin: 0 auto;
+  color: $color-text-desc;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+
+  .block-system-branding-block {
+    display: flex;
+    gap: 1rem;
+
+    .site-branding__inner {
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+
+      a {
+        display: flex;
+        font-size: 26px;
+        color: $color-white;
+      }
+
+      &-slogan {
+        font-size: 9px;
+        color: $color-text-desc;
+      }
+    }
+  }
+
+  .menu--main {
+
+
+    .menu {
+      display: flex;
+      flex-direction: row;
+      gap: 1rem;
+
+      li {
+        @include resetLi;
+        a {
+          color: $color-white;
+
+          &:hover {
+            color: $color-second;
+          }
+        }
+      }
+
+    }
+  }
+
+  .social-bar__menu {
+    display: flex;
+    gap: 1rem;
+    background: white;
+
+    li {
+      @include resetLi;
+      a {
+        color: $color-text-desc;
+      }
+    }
+  }
+
 }
+
+

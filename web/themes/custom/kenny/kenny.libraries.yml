@@ -13,3 +13,11 @@ global:
     theme:
       css/theme/print.css: { media: print }
 
+theme:
+  css:
+    theme:
+      css/theme.css: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/drupal.dialog.ajax
