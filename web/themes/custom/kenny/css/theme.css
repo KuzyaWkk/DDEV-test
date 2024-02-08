@@ -205,9 +205,8 @@ p {
 }
 
 .region-footer {
-  background: #000;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
 }
 .region-footer .menu {
@@ -232,6 +231,7 @@ p {
   color: #f5b000;
 }
 .region-footer .bottom-footer__container {
+  background: #000;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
