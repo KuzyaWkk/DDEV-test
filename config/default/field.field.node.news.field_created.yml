@@ -1,0 +1,24 @@
+uuid: f6ecba20-8928-4cc9-81b1-0a47a3a9f3c4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_created
+    - node.type.news
+  module:
+    - datetime
+id: node.news.field_created
+field_name: field_created
+entity_type: node
+bundle: news
+label: Created
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    default_date_type: now
+    default_date: now
+default_value_callback: ''
+settings: {  }
+field_type: datetime
