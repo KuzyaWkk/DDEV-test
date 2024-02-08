@@ -68,6 +68,11 @@ body {
   color: #f5b000;
 }
 
+a {
+  margin: 0;
+  padding: 0;
+}
+
 body {
   font-size: 1rem;
   font-weight: 400;
@@ -120,6 +125,7 @@ p {
 
 .region-about {
   display: grid;
+  border-top: 1px solid silver;
   max-width: calc(1170px + 2rem);
   margin: 0 auto;
   grid-template-columns: 1fr 2fr 1fr;
@@ -206,6 +212,7 @@ p {
 }
 .region-footer .menu {
   display: flex;
+  align-items: center;
   flex-direction: row;
   gap: 1rem;
 }
@@ -218,7 +225,11 @@ p {
   padding: 0;
 }
 .region-footer .menu li a {
+  font-size: 13px;
   color: #fff;
+}
+.region-footer .menu li a:hover {
+  color: #f5b000;
 }
 .region-footer .bottom-footer__container {
   display: flex;
@@ -228,10 +239,16 @@ p {
 }
 .region-footer .bottom-footer__copyright {
   display: flex;
+  align-items: center;
   color: #fff;
+  font-size: 13px;
 }
 .region-footer .bottom-footer__copyright a {
+  display: flex;
+  align-items: center;
   margin: 0 3px;
+  height: 100%;
+  font-size: 13px;
 }
 
 .region-header {

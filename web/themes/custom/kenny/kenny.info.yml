@@ -10,5 +10,6 @@ libraries:
 regions:
   header: 'Header'
   content: 'Content'
+  content_bottom: 'Content bottom'
   about: 'About us'
   footer: 'Footer'

@@ -1,4 +1,6 @@
 .region-footer {
+
+
   background: $color-header-bg;
   display: flex;
   flex-direction: row;
@@ -6,6 +8,7 @@
 
   .menu {
     display: flex;
+    align-items: center;
     flex-direction: row;
     gap: 1rem;
     &--footer {
@@ -16,7 +19,12 @@
 
       @include resetLi;
       a {
+        font-size: 13px;
         color: $color-white;
+
+        &:hover {
+          color: $color-second;
+        }
       }
     }
   }
@@ -30,10 +38,18 @@
 
   .bottom-footer__copyright {
     display: flex;
+    align-items: center;
     color: $color-white;
+    font-size: 13px;
+
+
 
     a {
+      display: flex;
+      align-items: center;
       margin: 0 3px;
+      height: 100%;
+      font-size: 13px
     }
   }
 

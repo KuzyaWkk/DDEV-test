@@ -1,0 +1,8 @@
+uuid: bbc92659-e47d-4262-9657-7da7ddf0be39
+langcode: en
+status: true
+dependencies: {  }
+id: footer_date_formant
+label: 'Footer date formant'
+locked: false
+pattern: m/d/Y
