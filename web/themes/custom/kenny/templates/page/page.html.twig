@@ -14,6 +14,10 @@
             </div>
         </main>
 
+        <div {{ attributes.addClass(classes ~ '__about-us') }}  >
+          {{ page.about }}
+        </div>
+
         <footer class="{{ classes }}__footer">
             {{ page.footer }}
         </footer>

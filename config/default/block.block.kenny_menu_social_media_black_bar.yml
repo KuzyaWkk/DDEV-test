@@ -1,0 +1,20 @@
+uuid: b58833c8-fb55-4ce3-9101-ad25c1dec1e4
+langcode: en
+status: true
+dependencies:
+  module:
+    - kenny_core
+  theme:
+    - kenny
+id: kenny_menu_social_media_black_bar
+theme: kenny
+region: about
+weight: 0
+provider: null
+plugin: menu_social_media_black_bar
+settings:
+  id: menu_social_media_black_bar
+  label: 'Follow us'
+  label_display: visible
+  provider: kenny_core
+visibility: {  }

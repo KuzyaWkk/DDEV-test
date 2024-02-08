@@ -8,5 +8,11 @@ function kenny_core_theme($existing, $type, $theme, $path) {
     'kenny_social_media_bar' => [
       'variables' => []
     ],
+    'kenny_social_media_black_bar' => [
+      'variables' => []
+    ],
+  'kenny_about_us' => [
+      'variables' => []
+    ],
   ];
 }
