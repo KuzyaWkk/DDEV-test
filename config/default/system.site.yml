@@ -1,0 +1,14 @@
+_core:
+  default_config_hash: VDJxTZtQR21qB4lvOq8zszJZLvLKrSPQpdn2E3T71Ww
+langcode: en
+uuid: 2e10b9e4-6a6d-4884-9cf3-362006b68c9d
+name: LifeNews
+mail: admin@example.com
+slogan: 'Fashion Trends and Culture'
+page:
+  403: ''
+  404: ''
+  front: /node
+admin_compact_mode: false
+weight_select_max: 100
+default_langcode: en

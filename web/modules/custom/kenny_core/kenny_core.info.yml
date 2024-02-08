@@ -1,0 +1,5 @@
+name: 'Kenny Core'
+type: module
+description: 'Main module'
+package: Kenny
+core_version_requirement: ^10

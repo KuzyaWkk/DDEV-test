@@ -1,0 +1,29 @@
+uuid: a54ee8bc-43aa-4a02-8ef8-0755adc3713a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_image_teaser
+    - media.type.image
+    - node.type.news
+id: node.news.field_image_teaser
+field_name: field_image_teaser
+entity_type: node
+bundle: news
+label: 'Image teaser'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

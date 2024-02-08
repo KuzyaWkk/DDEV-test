@@ -1,0 +1,26 @@
+@mixin resetLi{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+@mixin scaleImage{
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+@mixin mainContainer {
+  max-width: calc($container-max + 2rem);
+  border: 2px solid gray;
+  border-radius: 2rem;
+  padding: 2rem 1rem;
+  margin: 0 auto;
+
+  @include mobileDefault {
+    max-width: $container-max-mobile;
+    padding: 1rem 0.5rem;
+  }
+}
+

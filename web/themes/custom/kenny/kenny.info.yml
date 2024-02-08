@@ -1,0 +1,14 @@
+name: kenny
+type: theme
+base theme: stable9
+description: A custom theme for training project
+package: Kenny
+core_version_requirement: ^10
+libraries:
+  - kenny/theme
+  - core/normalize
+regions:
+  header: 'Header'
+  content: 'Content'
+  about: 'About us'
+  footer: 'Footer'

@@ -1,0 +1,22 @@
+uuid: d533b184-9098-4520-89fc-1032e2525e17
+langcode: en
+status: false
+dependencies:
+  module:
+    - system
+  theme:
+    - kenny
+_core:
+  default_config_hash: eYL19CLDyinGTWYQfBD1DswWzglEotE_kHnHx3AxTXM
+id: kenny_powered
+theme: kenny
+region: header
+weight: 5
+provider: null
+plugin: system_powered_by_block
+settings:
+  id: system_powered_by_block
+  label: 'Powered by Drupal'
+  label_display: '0'
+  provider: system
+visibility: {  }
