@@ -14,6 +14,10 @@
             </div>
         </main>
 
+      <div {{ attributes.addClass(classes ~ '__content-bottom') }}  >
+        {{ page.content_bottom }}
+      </div>
+
         <div {{ attributes.addClass(classes ~ '__about-us') }}  >
           {{ page.about }}
         </div>
