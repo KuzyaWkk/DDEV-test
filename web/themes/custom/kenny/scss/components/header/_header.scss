@@ -55,8 +55,7 @@
   .social-bar__menu {
     display: flex;
     gap: 1rem;
-    background: white;
-
+    background: inherit;
     li {
       @include resetLi;
       a {

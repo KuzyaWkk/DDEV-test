@@ -5,6 +5,8 @@ html {
 
 }
 
+
+
 body {
   font-family: $font-family;
   min-height: 100vh;
@@ -60,4 +62,8 @@ body {
 
 
   }
+}
+
+.orange {
+  color: $color-second;
 }
