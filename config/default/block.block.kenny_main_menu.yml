@@ -13,7 +13,7 @@ _core:
 id: kenny_main_menu
 theme: kenny
 region: header
-weight: -6
+weight: -15
 provider: null
 plugin: 'system_menu_block:main'
 settings:

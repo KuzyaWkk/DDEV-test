@@ -27,6 +27,9 @@ module:
   history: 0
   image: 0
   kenny_core: 0
+  kenny_hero_block: 0
+  layout_builder: 0
+  layout_discovery: 0
   link: 0
   media: 0
   media_library: 0

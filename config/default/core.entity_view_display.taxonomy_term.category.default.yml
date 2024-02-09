@@ -1,0 +1,35 @@
+uuid: e68f0b9e-4f6c-4437-a429-59add5a42f35
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.category.layout_builder__layout
+    - taxonomy.vocabulary.category
+  module:
+    - layout_builder
+    - text
+third_party_settings:
+  layout_builder:
+    enabled: true
+    allow_custom: true
+    sections:
+      -
+        layout_id: layout_builder_blank
+        layout_settings:
+          label: ''
+        components: {  }
+        third_party_settings: {  }
+id: taxonomy_term.category.default
+targetEntityType: taxonomy_term
+bundle: category
+mode: default
+content:
+  description:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  layout_builder__layout: true

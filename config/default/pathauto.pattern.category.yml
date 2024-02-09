@@ -1,0 +1,22 @@
+uuid: 0a9cd177-6db1-4c64-bf23-0530ed5e8c2c
+langcode: en
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: category
+label: Category
+type: 'canonical_entities:taxonomy_term'
+pattern: 'newspaper_life_news/category/[term:name]'
+selection_criteria:
+  0058daa0-4311-41d8-ae4b-b59f8adf1aca:
+    id: 'entity_bundle:taxonomy_term'
+    negate: false
+    uuid: 0058daa0-4311-41d8-ae4b-b59f8adf1aca
+    context_mapping:
+      taxonomy_term: taxonomy_term
+    bundles:
+      category: category
+selection_logic: and
+weight: -5
+relationships: {  }

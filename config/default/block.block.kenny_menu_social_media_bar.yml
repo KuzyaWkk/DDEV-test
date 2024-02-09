@@ -9,7 +9,7 @@ dependencies:
 id: kenny_menu_social_media_bar
 theme: kenny
 region: header
-weight: 0
+weight: -14
 provider: null
 plugin: menu_social_media_bar
 settings:

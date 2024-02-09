@@ -1,0 +1,4 @@
+services:
+  kenny_core.category_content:
+    class: Drupal\kenny_core\Service\CategoryContent
+    arguments: [ '@entity_type.manager' ]

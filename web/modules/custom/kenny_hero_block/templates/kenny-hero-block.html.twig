@@ -1,0 +1,35 @@
+{% set bem_block = 'kenny-hero-block' %}
+{% set classes = [
+  bem_block,
+  image ? bem_block ~ '--image',
+  not image ? bem_block ~ '--plain',
+  subtitle ? bem_block ~ '--subtitle' : bem_block ~ '--no-subtitle',
+] %}
+
+{% if image %}
+  <div {{ attributes.addClass(classes) }}>
+    <img src="{{ image }}" alt="{{ title }}" class="{{ bem_block }}__image">
+  </div>
+{% endif %}
+
+
+
+<div class="{{ bem_block }}__content">
+  {% if title %}
+    <h1 class="{{ bem_block }}__title">{{ title }}</h1>
+  {% endif %}
+
+  {% if subtitle %}
+    <div class="{{ bem_block }}__subtitle">{{ subtitle|raw }}</div>
+  {% endif %}
+
+  {% if category is not empty %}
+    <div class="{{ bem_block }}__categories">
+      <ul class="{{ bem_block }}__category-list">
+        {% for item in category %}
+          <a href="{{ item.url }}">{{ item.name }}</a>
+        {% endfor %}
+      </ul>
+    </div>
+  {% endif %}
+</div>
