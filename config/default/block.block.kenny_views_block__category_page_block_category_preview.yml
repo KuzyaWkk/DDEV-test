@@ -1,0 +1,25 @@
+uuid: 1249b490-d031-49dd-9dc9-dfff8cae1bf5
+langcode: en
+status: false
+dependencies:
+  config:
+    - views.view.category_page
+  module:
+    - views
+  theme:
+    - kenny
+id: kenny_views_block__category_page_block_category_preview
+theme: kenny
+region: content
+weight: -6
+provider: null
+plugin: 'views_block:category_page-block_category_preview'
+settings:
+  id: 'views_block:category_page-block_category_preview'
+  label: ''
+  label_display: visible
+  provider: views
+  context_mapping: {  }
+  views_label: ''
+  items_per_page: none
+visibility: {  }

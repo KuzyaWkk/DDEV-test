@@ -5,19 +5,84 @@ dependencies:
   config:
     - field.field.taxonomy_term.category.layout_builder__layout
     - taxonomy.vocabulary.category
+    - views.view.category_page
+    - views.view.you_might_also_like
   module:
     - layout_builder
+    - layout_discovery
     - text
+    - views
 third_party_settings:
   layout_builder:
     enabled: true
     allow_custom: true
     sections:
       -
-        layout_id: layout_builder_blank
+        layout_id: layout_twocol_section
         layout_settings:
-          label: ''
-        components: {  }
+          label: 'Content for each category'
+          context_mapping: {  }
+          column_widths: 67-33
+        components:
+          a92989b5-71d4-4c4d-8daa-447f09df54b7:
+            uuid: a92989b5-71d4-4c4d-8daa-447f09df54b7
+            region: first
+            configuration:
+              id: 'views_block:category_page-block_category_preview'
+              label: ''
+              label_display: visible
+              provider: views
+              context_mapping: {  }
+              views_label: ''
+              items_per_page: none
+            weight: 0
+            additional: {  }
+          edaab56b-36e1-40f8-baf5-1cf5c033592e:
+            uuid: edaab56b-36e1-40f8-baf5-1cf5c033592e
+            region: second
+            configuration:
+              id: 'views_block:category_page-block_latest_news_sidebar'
+              label: ''
+              label_display: visible
+              provider: views
+              context_mapping: {  }
+              views_label: ''
+              items_per_page: none
+            weight: 0
+            additional: {  }
+          55d3474d-9e4d-463b-a4c9-d4302d81e58e:
+            uuid: 55d3474d-9e4d-463b-a4c9-d4302d81e58e
+            region: second
+            configuration:
+              id: 'views_block:category_page-block_must_read_sidebar'
+              label: ''
+              label_display: visible
+              provider: views
+              context_mapping: {  }
+              views_label: ''
+              items_per_page: none
+            weight: 1
+            additional: {  }
+        third_party_settings: {  }
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: 'You might also like'
+          context_mapping: {  }
+        components:
+          340e80b4-4b34-4595-9f6d-4add3e7e5100:
+            uuid: 340e80b4-4b34-4595-9f6d-4add3e7e5100
+            region: content
+            configuration:
+              id: 'views_block:you_might_also_like-block_you_might_also_like'
+              label: ''
+              label_display: visible
+              provider: views
+              context_mapping: {  }
+              views_label: ''
+              items_per_page: none
+            weight: 0
+            additional: {  }
         third_party_settings: {  }
 id: taxonomy_term.category.default
 targetEntityType: taxonomy_term

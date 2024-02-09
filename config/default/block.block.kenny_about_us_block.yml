@@ -2,8 +2,6 @@ uuid: 735980ba-71bb-4b4d-b2cd-a1da26b33f75
 langcode: en
 status: false
 dependencies:
-  module:
-    - kenny_core
   theme:
     - kenny
 id: kenny_about_us_block
