@@ -11,7 +11,7 @@ dependencies:
 id: kenny_footer
 theme: kenny
 region: footer
-weight: 0
+weight: -11
 provider: null
 plugin: 'system_menu_block:footer'
 settings:

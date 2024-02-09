@@ -1,9 +1,7 @@
 .region-footer {
 
-
-  background: $color-header-bg;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
 
   .menu {
@@ -30,6 +28,7 @@
   }
 
   .bottom-footer__container {
+    background: $color-header-bg;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
