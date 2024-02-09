@@ -14,31 +14,31 @@ function kenny_core_theme($existing, $type, $theme, $path) {
     'kenny_social_media_black_bar' => [
       'variables' => []
     ],
-  'kenny_about_us' => [
-      'variables' => []
-    ],
+//  'kenny_about_us' => [
+//      'variables' => []
+//    ],
   ];
 }
 
-/**
- * Implements hook_views_pre_view().
- */
-function kenny_core_views_pre_view(ViewExecutable $view, $display_id, array &$args) {
-  if ($view->id() == "category_preview" && $display_id == 'block_category_preview') {
-
-    $current_url = Url::fromRoute('<current>');
-    $current_url_string = $current_url->toString();
-
-    $parts = explode("/", $current_url_string);
-
-    $last_word = end($parts);
-
-    $content_by_category = \Drupal::service('kenny_core.category_content');
-
-    $nid = $content_by_category->getContent($last_word);
-
-
-    $view->setArguments([$nid]);
-    $view->execute();
-  }
-}
+///**
+// * Implements hook_views_pre_view().
+// */
+//function kenny_core_views_pre_view(ViewExecutable $view, $display_id, array &$args) {
+//  if ($view->id() == "category_preview" && $display_id == 'block_category_preview') {
+//
+//    $current_url = Url::fromRoute('<current>');
+//    $current_url_string = $current_url->toString();
+//
+//    $parts = explode("/", $current_url_string);
+//
+//    $last_word = end($parts);
+//
+//    $content_by_category = \Drupal::service('kenny_core.category_content');
+//
+//    $nid = $content_by_category->getContent($last_word);
+//
+//
+//    $view->setArguments([$nid]);
+//    $view->execute();
+//  }
+//}
