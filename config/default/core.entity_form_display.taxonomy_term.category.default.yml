@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.taxonomy_term.category.layout_builder__layout
     - taxonomy.vocabulary.category
   module:
     - path
@@ -41,4 +42,5 @@ content:
     settings:
       display_label: true
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  layout_builder__layout: true

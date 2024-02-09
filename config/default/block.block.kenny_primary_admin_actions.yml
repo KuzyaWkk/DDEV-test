@@ -1,6 +1,6 @@
 uuid: 77379f5b-d032-40af-8f86-92f8d363f8e1
 langcode: en
-status: false
+status: true
 dependencies:
   theme:
     - kenny
@@ -8,8 +8,8 @@ _core:
   default_config_hash: Q9_2whdOj1YIomfvsIfopROW4FT_X5pY0DjdOiOaQ5U
 id: kenny_primary_admin_actions
 theme: kenny
-region: header
-weight: -4
+region: content
+weight: -15
 provider: null
 plugin: local_actions_block
 settings:

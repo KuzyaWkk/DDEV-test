@@ -1,0 +1,20 @@
+uuid: 5701f6e7-a1ea-460b-b55c-eca1352c44a7
+langcode: en
+status: true
+dependencies:
+  module:
+    - kenny_hero_block
+  theme:
+    - kenny
+id: kenny_kennyheroblock
+theme: kenny
+region: content
+weight: -12
+provider: null
+plugin: kenny_hero_block
+settings:
+  id: kenny_hero_block
+  label: 'Kenny Hero Block'
+  label_display: visible
+  provider: kenny_hero_block
+visibility: {  }

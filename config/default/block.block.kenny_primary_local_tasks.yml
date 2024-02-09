@@ -1,6 +1,6 @@
 uuid: 8b34a7d2-d81a-4bfb-91d9-7f6861342c1f
 langcode: en
-status: false
+status: true
 dependencies:
   theme:
     - kenny
@@ -8,8 +8,8 @@ _core:
   default_config_hash: nGE3EoPQQaQCuqTUtZgw0-KIzmrqdKDzdNQf2JyPUt4
 id: kenny_primary_local_tasks
 theme: kenny
-region: header
-weight: -1
+region: content
+weight: -14
 provider: null
 plugin: local_tasks_block
 settings:

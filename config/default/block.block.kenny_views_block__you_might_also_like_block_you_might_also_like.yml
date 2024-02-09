@@ -11,7 +11,7 @@ dependencies:
 id: kenny_views_block__you_might_also_like_block_you_might_also_like
 theme: kenny
 region: content
-weight: 0
+weight: -7
 provider: null
 plugin: 'views_block:you_might_also_like-block_you_might_also_like'
 settings:

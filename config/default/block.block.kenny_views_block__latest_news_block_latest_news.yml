@@ -11,7 +11,7 @@ dependencies:
 id: kenny_views_block__latest_news_block_latest_news
 theme: kenny
 region: content
-weight: 0
+weight: -9
 provider: null
 plugin: 'views_block:latest_news-block_latest_news'
 settings:
