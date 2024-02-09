@@ -1,0 +1,21 @@
+uuid: 3d7d44b9-7071-4bb6-9a3d-93f43b9c725d
+langcode: en
+status: true
+dependencies:
+  module:
+    - comment
+id: comment.field_comment_name
+field_name: field_comment_name
+entity_type: comment
+type: string
+settings:
+  max_length: 100
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
