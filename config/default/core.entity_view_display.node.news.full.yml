@@ -16,7 +16,6 @@ dependencies:
     - views.view.category_page
     - views.view.news_full_view_mode
     - views.view.pager
-    - views.view.you_might_also_like
   module:
     - datetime
     - entity_reference_revisions
@@ -46,7 +45,7 @@ third_party_settings:
               label_display: visible
               provider: kenny_core
               context_mapping: {  }
-            weight: 8
+            weight: 9
             additional: {  }
           1b5f61e3-7107-452c-a50c-737a1c952ec1:
             uuid: 1b5f61e3-7107-452c-a50c-737a1c952ec1
@@ -146,43 +145,18 @@ third_party_settings:
                 third_party_settings: {  }
             weight: 5
             additional: {  }
-          133625f0-550b-4e19-9851-9a22b0418bb4:
-            uuid: 133625f0-550b-4e19-9851-9a22b0418bb4
+          39d361b5-0aad-4de5-b4a4-c15ba416ee7c:
+            uuid: 39d361b5-0aad-4de5-b4a4-c15ba416ee7c
             region: content
             configuration:
-              id: 'field_block:node:news:uid'
-              label: 'Authored by'
-              label_display: '0'
-              provider: layout_builder
-              context_mapping:
-                entity: layout_builder.entity
-                view_mode: view_mode
-              formatter:
-                type: author
-                label: hidden
-                settings: {  }
-                third_party_settings: {  }
-            weight: 6
-            additional: {  }
-          07d83744-35fd-4194-ba9b-e4413e3221d4:
-            uuid: 07d83744-35fd-4194-ba9b-e4413e3221d4
-            region: content
-            configuration:
-              id: 'field_block:node:news:field_created'
-              label: Created
-              label_display: '0'
-              provider: layout_builder
-              context_mapping:
-                entity: layout_builder.entity
-                view_mode: view_mode
-              formatter:
-                type: datetime_default
-                label: hidden
-                settings:
-                  timezone_override: ''
-                  format_type: footer_date_formant
-                third_party_settings: {  }
-            weight: 7
+              id: 'views_block:news_full_view_mode-block_short_info_about_author'
+              label: ''
+              label_display: visible
+              provider: views
+              context_mapping: {  }
+              views_label: ''
+              items_per_page: none
+            weight: 8
             additional: {  }
         third_party_settings: {  }
       -
@@ -248,19 +222,6 @@ third_party_settings:
               context_mapping: {  }
             weight: 1
             additional: {  }
-          98607956-e07f-4e8a-85f5-820727575138:
-            uuid: 98607956-e07f-4e8a-85f5-820727575138
-            region: first
-            configuration:
-              id: 'views_block:news_full_view_mode-block_info_about_author'
-              label: ''
-              label_display: visible
-              provider: views
-              context_mapping: {  }
-              views_label: ''
-              items_per_page: none
-            weight: 4
-            additional: {  }
           d320f3b3-2660-48ad-997d-7e5157d1ffc5:
             uuid: d320f3b3-2660-48ad-997d-7e5157d1ffc5
             region: first
@@ -279,7 +240,7 @@ third_party_settings:
                   view_mode: default
                   pager_id: 0
                 third_party_settings: {  }
-            weight: 5
+            weight: 6
             additional: {  }
           e28ec4e0-5b93-428a-9eef-26dae5c66d61:
             uuid: e28ec4e0-5b93-428a-9eef-26dae5c66d61
@@ -294,6 +255,19 @@ third_party_settings:
               items_per_page: none
             weight: 3
             additional: {  }
+          ebdafd72-05e2-4251-bf1f-7502474a3346:
+            uuid: ebdafd72-05e2-4251-bf1f-7502474a3346
+            region: first
+            configuration:
+              id: 'views_block:news_full_view_mode-block_info_about_author'
+              label: ''
+              label_display: visible
+              provider: views
+              context_mapping: {  }
+              views_label: ''
+              items_per_page: none
+            weight: 5
+            additional: {  }
         third_party_settings: {  }
       -
         layout_id: layout_onecol
@@ -301,11 +275,11 @@ third_party_settings:
           label: ''
           context_mapping: {  }
         components:
-          2d2af2b5-e3b8-48f2-a40f-df70db0cebe4:
-            uuid: 2d2af2b5-e3b8-48f2-a40f-df70db0cebe4
+          4959e8c8-00e5-4811-812c-2af2243fadb5:
+            uuid: 4959e8c8-00e5-4811-812c-2af2243fadb5
             region: content
             configuration:
-              id: 'views_block:you_might_also_like-block_you_might_also_like'
+              id: 'views_block:news_full_view_mode-block_you_might_also_like_news'
               label: ''
               label_display: visible
               provider: views
