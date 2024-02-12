@@ -11,142 +11,17 @@ dependencies:
     - field.field.node.news.field_image
     - field.field.node.news.field_image_teaser
     - field.field.node.news.field_paragraphs
+    - image.style.media_library
     - node.type.news
   module:
     - datetime
     - layout_builder
+    - media
     - user
 third_party_settings:
   layout_builder:
-    enabled: true
+    enabled: false
     allow_custom: false
-    sections:
-      -
-        layout_id: layout_twocol_section
-        layout_settings:
-          label: ''
-          context_mapping: {  }
-          column_widths: 33-67
-        components:
-          477f3fe2-799b-40dd-90fc-e65741f432c4:
-            uuid: 477f3fe2-799b-40dd-90fc-e65741f432c4
-            region: first
-            configuration:
-              id: 'field_block:node:news:field_image_teaser'
-              label: 'Image teaser'
-              label_display: '0'
-              provider: layout_builder
-              context_mapping:
-                entity: layout_builder.entity
-                view_mode: view_mode
-              formatter:
-                type: media_thumbnail
-                label: hidden
-                settings:
-                  image_link: content
-                  image_style: media_library
-                  image_loading:
-                    attribute: lazy
-                third_party_settings: {  }
-            weight: 0
-            additional: {  }
-          201d7a30-5b85-4b8b-be6f-7e79e53c9eb6:
-            uuid: 201d7a30-5b85-4b8b-be6f-7e79e53c9eb6
-            region: second
-            configuration:
-              id: 'field_block:node:news:field_category'
-              label: Category
-              label_display: '0'
-              provider: layout_builder
-              context_mapping:
-                entity: layout_builder.entity
-                view_mode: view_mode
-              formatter:
-                type: entity_reference_label
-                label: hidden
-                settings:
-                  link: true
-                third_party_settings: {  }
-            weight: 0
-            additional: {  }
-          95f12ff8-7dc3-45a1-9b93-7673bfd0f1e5:
-            uuid: 95f12ff8-7dc3-45a1-9b93-7673bfd0f1e5
-            region: second
-            configuration:
-              id: 'field_block:node:news:title'
-              label: Title
-              label_display: '0'
-              provider: layout_builder
-              context_mapping:
-                entity: layout_builder.entity
-                view_mode: view_mode
-              formatter:
-                type: string
-                label: above
-                settings:
-                  link_to_entity: true
-                third_party_settings: {  }
-            weight: 1
-            additional: {  }
-          e07c6abc-1857-401e-ab5d-d39e43f6f858:
-            uuid: e07c6abc-1857-401e-ab5d-d39e43f6f858
-            region: second
-            configuration:
-              id: 'field_block:node:news:field_description'
-              label: Description
-              label_display: '0'
-              provider: layout_builder
-              context_mapping:
-                entity: layout_builder.entity
-                view_mode: view_mode
-              formatter:
-                type: string
-                label: hidden
-                settings:
-                  link_to_entity: false
-                third_party_settings: {  }
-            weight: 2
-            additional: {  }
-          a879afc1-9544-41e2-8926-058954fd1d61:
-            uuid: a879afc1-9544-41e2-8926-058954fd1d61
-            region: second
-            configuration:
-              id: 'field_block:node:news:uid'
-              label: 'Authored by'
-              label_display: '0'
-              provider: layout_builder
-              context_mapping:
-                entity: layout_builder.entity
-                view_mode: view_mode
-              formatter:
-                type: entity_reference_label
-                label: above
-                settings:
-                  link: true
-                third_party_settings: {  }
-            weight: 3
-            additional: {  }
-          7182a511-4552-413d-b541-639f0a475af7:
-            uuid: 7182a511-4552-413d-b541-639f0a475af7
-            region: second
-            configuration:
-              id: 'field_block:node:news:field_created'
-              label: Created
-              label_display: '0'
-              provider: layout_builder
-              context_mapping:
-                entity: layout_builder.entity
-                view_mode: view_mode
-              formatter:
-                type: datetime_default
-                label: hidden
-                settings:
-                  timezone_override: ''
-                  format_type: footer_date_formant
-                third_party_settings: {  }
-            weight: 4
-            additional: {  }
-        third_party_settings: {  }
 id: node.news.preview
 targetEntityType: node
 bundle: news
@@ -154,7 +29,7 @@ mode: preview
 content:
   field_category:
     type: entity_reference_label
-    label: above
+    label: hidden
     settings:
       link: true
     third_party_settings: {  }
@@ -162,27 +37,29 @@ content:
     region: content
   field_created:
     type: datetime_default
-    label: above
+    label: hidden
     settings:
       timezone_override: ''
-      format_type: medium
+      format_type: footer_date_formant
     third_party_settings: {  }
     weight: 3
     region: content
   field_description:
     type: string
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
     weight: 2
     region: content
   field_image_teaser:
-    type: entity_reference_entity_view
-    label: above
+    type: media_thumbnail
+    label: hidden
     settings:
-      view_mode: default
-      link: false
+      image_link: content
+      image_style: media_library
+      image_loading:
+        attribute: lazy
     third_party_settings: {  }
     weight: 0
     region: content
