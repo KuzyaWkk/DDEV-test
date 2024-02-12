@@ -1,0 +1,57 @@
+uuid: f21b8173-1959-4317-bf71-aaaac995fca5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.social_media.field_follow_button_text
+    - field.field.node.social_media.field_follow_text
+    - field.field.node.social_media.field_icon
+    - field.field.node.social_media.field_number_of_subscribers
+    - node.type.social_media
+  module:
+    - user
+id: node.social_media.default
+targetEntityType: node
+bundle: social_media
+mode: default
+content:
+  field_follow_button_text:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 105
+    region: content
+  field_follow_text:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 106
+    region: content
+  field_icon:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_number_of_subscribers:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden: {  }

@@ -1,0 +1,19 @@
+uuid: ec69bea7-c6b8-4671-8f07-097ba923ab3c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_follow_button_text
+    - node.type.social_media
+id: node.social_media.field_follow_button_text
+field_name: field_follow_button_text
+entity_type: node
+bundle: social_media
+label: 'Follow button text'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

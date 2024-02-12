@@ -1,0 +1,23 @@
+uuid: cbbe6403-a8e3-4bd1-975e-5ef5c2dbb732
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_number_of_subscribers
+    - node.type.social_media
+id: node.social_media.field_number_of_subscribers
+field_name: field_number_of_subscribers
+entity_type: node
+bundle: social_media
+label: 'Number of subscribers'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: 0
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer
