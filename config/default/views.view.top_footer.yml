@@ -7,7 +7,6 @@ dependencies:
     - node.type.news
   module:
     - node
-    - taxonomy
     - user
 id: top_footer
 label: 'Top Footer'
@@ -221,6 +220,7 @@ display:
     display_plugin: block
     position: 2
     display_options:
+      title: 'Must Read'
       sorts:
         created:
           id: created
@@ -239,6 +239,7 @@ display:
           exposed: false
           granularity: second
       defaults:
+        title: false
         sorts: false
       display_description: ''
       display_extenders: {  }

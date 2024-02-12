@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.image.field_description
     - field.field.paragraph.image.field_image
     - paragraphs.paragraphs_type.image
   module:
@@ -12,6 +13,14 @@ targetEntityType: paragraph
 bundle: image
 mode: default
 content:
+  field_description:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
   field_image:
     type: media_library_widget
     weight: 0

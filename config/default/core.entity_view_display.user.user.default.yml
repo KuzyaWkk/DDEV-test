@@ -3,10 +3,13 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.user.user.field_description
+    - field.field.user.user.field_social_media
     - field.field.user.user.user_picture
     - image.style.thumbnail
   module:
     - image
+    - social_media_links_field
     - user
 _core:
   default_config_hash: mZLyuWM9CQx2ZJVqFGSbzgFnHzudVbHBYmdU256A5Wk
@@ -15,15 +18,37 @@ targetEntityType: user
 bundle: user
 mode: default
 content:
+  field_description:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_social_media:
+    type: social_media_links_field_default
+    label: above
+    settings:
+      appearance:
+        orientation: h
+        show_name: '1'
+      link_attributes:
+        target: '<none>'
+        rel: '<none>'
+    third_party_settings: {  }
+    weight: 7
+    region: content
   member_for:
+    settings: {  }
+    third_party_settings: {  }
     weight: 5
     region: content
   user_picture:
     type: image
     label: hidden
     settings:
-      image_style: thumbnail
       image_link: content
+      image_style: thumbnail
       image_loading:
         attribute: lazy
     third_party_settings: {  }
