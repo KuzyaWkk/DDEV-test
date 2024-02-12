@@ -3,15 +3,20 @@ langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.footer
+    - core.entity_view_mode.node.teaser
+    - core.entity_view_mode.node.teaser_with_image
     - field.storage.node.field_category
     - field.storage.node.field_description
     - field.storage.node.field_image_teaser
     - image.style.media_library
     - node.type.news
+    - taxonomy.vocabulary.category
+  content:
+    - 'taxonomy_term:category:202ea89f-5498-49f0-8b3c-50ca9535626b'
   module:
     - media
     - node
+    - taxonomy
     - user
 id: front_page
 label: 'Front Page'
@@ -182,7 +187,7 @@ display:
         type: 'entity:node'
         options:
           relationship: none
-          view_mode: footer
+          view_mode: teaser_with_image
       query:
         type: views_query
         options:
@@ -192,7 +197,12 @@ display:
           replica: false
           query_tags: {  }
       relationships: {  }
-      header: {  }
+      header:
+        area:
+          id: area
+          table: views
+          field: area
+          plugin_id: text
       footer: {  }
       display_extenders: {  }
     cache_metadata:
@@ -474,6 +484,8 @@ display:
         style: false
         row: false
         fields: false
+        header: false
+      header: {  }
       display_extenders: {  }
       displays:
         block_main_content: block_main_content
@@ -489,13 +501,210 @@ display:
         - 'config:field.storage.node.field_category'
         - 'config:field.storage.node.field_description'
         - 'config:field.storage.node.field_image_teaser'
+  block_featured_frontpage:
+    id: block_featured_frontpage
+    display_title: 'Block Featured FrontPage'
+    display_plugin: block
+    position: 4
+    display_options:
+      title: Featured
+      pager:
+        type: mini
+        options:
+          offset: 0
+          items_per_page: 3
+          total_pages: null
+          id: 0
+          tags:
+            next: ››
+            previous: ‹‹
+          expose:
+            items_per_page: false
+            items_per_page_label: 'Items per page'
+            items_per_page_options: '5, 10, 25, 50'
+            items_per_page_options_all: false
+            items_per_page_options_all_label: '- All -'
+            offset: false
+            offset_label: Offset
+      arguments: {  }
+      filters:
+        status:
+          id: status
+          table: node_field_data
+          field: status
+          entity_type: node
+          entity_field: status
+          plugin_id: boolean
+          value: '1'
+          group: 1
+          expose:
+            operator: ''
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: node
+          entity_field: type
+          plugin_id: bundle
+          operator: in
+          value:
+            news: news
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+        field_category_target_id:
+          id: field_category_target_id
+          table: node__field_category
+          field: field_category_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: taxonomy_index_tid
+          operator: or
+          value:
+            - 6
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          vid: category
+          type: textfield
+          hierarchy: false
+          limit: true
+          error_message: true
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+      defaults:
+        title: false
+        pager: false
+        relationships: false
+        arguments: false
+        filters: false
+        filter_groups: false
+        header: false
+      relationships:
+        field_category:
+          id: field_category
+          table: node__field_category
+          field: field_category
+          relationship: none
+          group_type: group
+          admin_label: 'field_category: Taxonomy term'
+          plugin_id: standard
+          required: false
+      display_description: ''
+      header:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text
+          empty: false
+          content:
+            value: 'Most popular life news you must read today'
+            format: basic_html
+          tokenize: false
+      display_extenders: {  }
+      block_description: 'Featured - FrontPage'
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url.query_args
+        - 'user.node_grants:view'
+        - user.permissions
+      tags: {  }
   block_latest_news_frontpage:
     id: block_latest_news_frontpage
     display_title: 'Block Latest News FrontPage'
     display_plugin: block
     position: 1
     display_options:
+      pager:
+        type: some
+        options:
+          offset: 0
+          items_per_page: 10
+      style:
+        type: default
+        options:
+          grouping: {  }
+          row_class: ''
+          default_row_class: true
+          uses_fields: false
+      row:
+        type: 'entity:node'
+        options:
+          relationship: none
+          view_mode: teaser
+      defaults:
+        pager: false
+        style: false
+        row: false
+        header: false
       display_description: ''
+      header: {  }
       display_extenders: {  }
       block_description: 'Latest News - FrontPage'
     cache_metadata:
@@ -837,7 +1046,9 @@ display:
         style: false
         row: false
         fields: false
+        header: false
       display_description: ''
+      header: {  }
       display_extenders: {  }
       block_description: 'Main Content - FrontPage'
     cache_metadata:
