@@ -1,0 +1,63 @@
+uuid: 7bc97761-2781-4603-85f5-1bc3ccce85ed
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser_with_image
+    - field.field.node.news.field_category
+    - field.field.node.news.field_comments
+    - field.field.node.news.field_created
+    - field.field.node.news.field_description
+    - field.field.node.news.field_image
+    - field.field.node.news.field_image_teaser
+    - field.field.node.news.field_paragraphs
+    - image.style.media_library
+    - node.type.news
+  module:
+    - datetime
+    - layout_builder
+    - media
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: node.news.teaser_with_image
+targetEntityType: node
+bundle: news
+mode: teaser_with_image
+content:
+  field_category:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_created:
+    type: datetime_default
+    label: hidden
+    settings:
+      timezone_override: ''
+      format_type: footer_date_formant
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_image_teaser:
+    type: media_thumbnail
+    label: hidden
+    settings:
+      image_link: content
+      image_style: media_library
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_comments: true
+  field_description: true
+  field_image: true
+  field_paragraphs: true
+  links: true
