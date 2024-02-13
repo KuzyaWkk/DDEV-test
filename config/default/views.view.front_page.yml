@@ -287,7 +287,7 @@ display:
             use_operator: false
             operator: ''
             operator_limit_selection: false
-            operator_list: {  }
+            operator_list: { }
             identifier: ''
             required: false
             remember: false
@@ -305,8 +305,8 @@ display:
             multiple: false
             remember: false
             default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
+            default_group_multiple: { }
+            group_items: { }
         field_category_target_id:
           id: field_category_target_id
           table: node__field_category
@@ -327,7 +327,7 @@ display:
             use_operator: false
             operator: ''
             operator_limit_selection: false
-            operator_list: {  }
+            operator_list: { }
             identifier: ''
             required: false
             remember: false
@@ -345,8 +345,8 @@ display:
             multiple: false
             remember: false
             default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
+            default_group_multiple: { }
+            group_items: { }
           reduce_duplicates: false
           vid: category
           type: textfield
@@ -360,7 +360,7 @@ display:
       style:
         type: default
         options:
-          grouping: {  }
+          grouping: { }
           row_class: ''
           default_row_class: true
           uses_fields: false
@@ -378,8 +378,8 @@ display:
         filter_groups: false
         header: false
       display_description: ''
-      header: {  }
-      display_extenders: {  }
+      header: { }
+      display_extenders: { }
       displays:
         block_celebrities_frontpage: block_celebrities_frontpage
       attachment_position: after
@@ -390,7 +390,7 @@ display:
         - 'languages:language_interface'
         - 'user.node_grants:view'
         - user.permissions
-      tags: {  }
+      tags: { }
   attachment_main_content_frontpage:
     id: attachment_main_content_frontpage
     display_title: Attachment
@@ -1042,7 +1042,7 @@ display:
             use_operator: false
             operator: ''
             operator_limit_selection: false
-            operator_list: {  }
+            operator_list: { }
             identifier: ''
             required: false
             remember: false
@@ -1332,7 +1332,7 @@ display:
         - url.query_args
         - 'user.node_grants:view'
         - user.permissions
-      tags: {  }
+      tags: { }
   block_food_and_drink_frontpage:
     id: block_food_and_drink_frontpage
     display_title: 'Block Food and Drink Frontpage'
@@ -1379,7 +1379,7 @@ display:
             use_operator: false
             operator: ''
             operator_limit_selection: false
-            operator_list: {  }
+            operator_list: { }
             identifier: ''
             required: false
             remember: false
@@ -1397,8 +1397,8 @@ display:
             multiple: false
             remember: false
             default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
+            default_group_multiple: { }
+            group_items: { }
         field_category_target_id:
           id: field_category_target_id
           table: node__field_category
@@ -1419,7 +1419,7 @@ display:
             use_operator: false
             operator: ''
             operator_limit_selection: false
-            operator_list: {  }
+            operator_list: { }
             identifier: ''
             required: false
             remember: false
@@ -1437,8 +1437,8 @@ display:
             multiple: false
             remember: false
             default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
+            default_group_multiple: { }
+            group_items: { }
           reduce_duplicates: false
           vid: category
           type: textfield
@@ -1467,8 +1467,8 @@ display:
           plugin_id: standard
           required: false
       display_description: ''
-      header: {  }
-      display_extenders: {  }
+      header: { }
+      display_extenders: { }
       block_description: 'Food & Drink - Front Page'
     cache_metadata:
       max-age: -1
@@ -1477,7 +1477,7 @@ display:
         - 'languages:language_interface'
         - 'user.node_grants:view'
         - user.permissions
-      tags: {  }
+      tags: { }
   block_latest_news_frontpage:
     id: block_latest_news_frontpage
     display_title: 'Block Latest News FrontPage'
@@ -1492,7 +1492,7 @@ display:
       style:
         type: default
         options:
-          grouping: {  }
+          grouping: { }
           row_class: ''
           default_row_class: true
           uses_fields: false
@@ -1507,8 +1507,8 @@ display:
         row: false
         header: false
       display_description: ''
-      header: {  }
-      display_extenders: {  }
+      header: { }
+      display_extenders: { }
       block_description: 'Latest News - FrontPage'
     cache_metadata:
       max-age: -1
@@ -1517,7 +1517,7 @@ display:
         - 'languages:language_interface'
         - 'user.node_grants:view'
         - user.permissions
-      tags: {  }
+      tags: { }
   block_main_content:
     id: block_main_content
     display_title: 'Block Main Content FrontPage'
@@ -1583,7 +1583,7 @@ display:
             image_loading:
               attribute: lazy
           group_column: target_id
-          group_columns: {  }
+          group_columns: { }
           group_rows: true
           delta_limit: 0
           delta_offset: 0
@@ -1646,7 +1646,7 @@ display:
           settings:
             link: true
           group_column: target_id
-          group_columns: {  }
+          group_columns: { }
           group_rows: true
           delta_limit: 0
           delta_offset: 0
@@ -1693,7 +1693,7 @@ display:
           settings:
             link_to_entity: true
           group_column: value
-          group_columns: {  }
+          group_columns: { }
           group_rows: true
           delta_limit: 0
           delta_offset: 0
@@ -1756,7 +1756,7 @@ display:
           settings:
             link_to_entity: false
           group_column: value
-          group_columns: {  }
+          group_columns: { }
           group_rows: true
           delta_limit: 0
           delta_offset: 0
@@ -1821,7 +1821,7 @@ display:
           settings:
             link: true
           group_column: target_id
-          group_columns: {  }
+          group_columns: { }
           group_rows: true
           delta_limit: 0
           delta_offset: 0
@@ -1833,7 +1833,7 @@ display:
       style:
         type: default
         options:
-          grouping: {  }
+          grouping: { }
           row_class: ''
           default_row_class: true
           uses_fields: false
@@ -1849,8 +1849,8 @@ display:
         fields: false
         header: false
       display_description: ''
-      header: {  }
-      display_extenders: {  }
+      header: { }
+      display_extenders: { }
       block_description: 'Main Content - FrontPage'
     cache_metadata:
       max-age: -1
@@ -1909,7 +1909,7 @@ display:
             use_operator: false
             operator: ''
             operator_limit_selection: false
-            operator_list: {  }
+            operator_list: { }
             identifier: ''
             required: false
             remember: false
@@ -1927,8 +1927,8 @@ display:
             multiple: false
             remember: false
             default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
+            default_group_multiple: { }
+            group_items: { }
         field_category_target_id:
           id: field_category_target_id
           table: node__field_category
@@ -1950,7 +1950,7 @@ display:
             use_operator: false
             operator: ''
             operator_limit_selection: false
-            operator_list: {  }
+            operator_list: { }
             identifier: ''
             required: false
             remember: false
@@ -1968,8 +1968,8 @@ display:
             multiple: false
             remember: false
             default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
+            default_group_multiple: { }
+            group_items: { }
           reduce_duplicates: false
           vid: category
           type: textfield
@@ -1983,7 +1983,7 @@ display:
       style:
         type: default
         options:
-          grouping: {  }
+          grouping: { }
           row_class: ''
           default_row_class: true
           uses_fields: false
@@ -2015,7 +2015,7 @@ display:
             value: 'Find Your Perfect Music Festival'
             format: basic_html
           tokenize: false
-      display_extenders: {  }
+      display_extenders: { }
       block_description: 'Music Festivals - Front Page'
     cache_metadata:
       max-age: -1
@@ -2024,7 +2024,7 @@ display:
         - 'languages:language_interface'
         - 'user.node_grants:view'
         - user.permissions
-      tags: {  }
+      tags: { }
   block_technology_frontpage:
     id: block_technology_frontpage
     display_title: 'Block Technology FrontPage'
