@@ -1,0 +1,11 @@
+uuid: beb6cf70-73a7-4169-a318-a7622fca6f50
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.main_content
+label: 'Main Content'
+description: ''
+targetEntityType: node
+cache: true
