@@ -1,0 +1,11 @@
+uuid: 34b2c6dc-e7fe-4094-bbde-c3f4f3439c82
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.attachment
+label: Attachment
+description: ''
+targetEntityType: node
+cache: true
