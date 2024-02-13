@@ -1,0 +1,58 @@
+uuid: 10051654-cbf7-42aa-b32b-2f31fa831a2e
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.social_media.field_follow_button_text
+    - field.field.node.social_media.field_follow_text
+    - field.field.node.social_media.field_icon
+    - field.field.node.social_media.field_number_of_subscribers
+    - image.style.thumbnail
+    - node.type.social_media
+  module:
+    - media
+    - user
+id: node.social_media.teaser
+targetEntityType: node
+bundle: social_media
+mode: teaser
+content:
+  field_follow_button_text:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_follow_text:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_icon:
+    type: media_thumbnail
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: thumbnail
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_number_of_subscribers:
+    type: number_integer
+    label: hidden
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  links: true

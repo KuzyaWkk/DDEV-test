@@ -1,0 +1,20 @@
+uuid: 30f52659-ce53-42b0-a7a6-45933ba9ea4f
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_number_of_subscribers
+field_name: field_number_of_subscribers
+entity_type: node
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
