@@ -1,0 +1,22 @@
+uuid: 9adc30ee-3550-4a83-9a12-c456f4fcb300
+langcode: en
+status: true
+dependencies:
+  theme:
+    - kuzya_main
+_core:
+  default_config_hash: nGE3EoPQQaQCuqTUtZgw0-KIzmrqdKDzdNQf2JyPUt4
+id: kuzya_main_primary_local_tasks
+theme: kuzya_main
+region: content
+weight: -10
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: 'Primary tabs'
+  label_display: '0'
+  provider: core
+  primary: true
+  secondary: false
+visibility: {  }

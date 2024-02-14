@@ -1,0 +1,25 @@
+uuid: 894ea283-7b92-455a-b39c-497216024ca7
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.footer
+  module:
+    - system
+  theme:
+    - kuzyamain
+id: kuzyamain_footer
+theme: kuzyamain
+region: footer
+weight: -11
+provider: null
+plugin: 'system_menu_block:footer'
+settings:
+  id: 'system_menu_block:footer'
+  label: Footer
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

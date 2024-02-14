@@ -1,0 +1,25 @@
+uuid: 14e67b46-a11c-4fc7-8e25-ebd26cd0222b
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - kuzyamain
+_core:
+  default_config_hash: n_nlgjggHVfQt2H__zvLOKB2YtjPDbQ5tHijF9LE1aM
+id: kuzyamain_site_branding
+theme: kuzyamain
+region: header
+weight: -16
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  label_display: '0'
+  provider: system
+  use_site_logo: true
+  use_site_name: true
+  use_site_slogan: true
+visibility: {  }

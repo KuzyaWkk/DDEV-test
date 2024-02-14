@@ -1,0 +1,20 @@
+uuid: 6e84cc5d-0570-4b45-9313-ef332eda4203
+langcode: en
+status: true
+dependencies:
+  theme:
+    - kuzya_main
+_core:
+  default_config_hash: Q9_2whdOj1YIomfvsIfopROW4FT_X5pY0DjdOiOaQ5U
+id: kuzya_main_primary_admin_actions
+theme: kuzya_main
+region: content
+weight: -11
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  label_display: '0'
+  provider: core
+visibility: {  }
