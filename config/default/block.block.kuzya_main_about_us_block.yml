@@ -1,0 +1,18 @@
+uuid: 7567c6a8-6be2-4e4b-b3a1-572cbccc2157
+langcode: en
+status: false
+dependencies:
+  theme:
+    - kuzya_main
+id: kuzya_main_about_us_block
+theme: kuzya_main
+region: header
+weight: -1
+provider: null
+plugin: about_us
+settings:
+  id: about_us
+  label: 'About Us'
+  label_display: visible
+  provider: kenny_core
+visibility: {  }

@@ -1,0 +1,25 @@
+uuid: e8b3f648-fb98-42a9-a046-d9cbe11f0a3b
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:63dbcb3f-c4f9-4a88-9a5a-6c8ee4ffcac5'
+  module:
+    - block_content
+  theme:
+    - kuzyamain
+id: kuzyamain_about_us
+theme: kuzyamain
+region: header
+weight: 0
+provider: null
+plugin: 'block_content:63dbcb3f-c4f9-4a88-9a5a-6c8ee4ffcac5'
+settings:
+  id: 'block_content:63dbcb3f-c4f9-4a88-9a5a-6c8ee4ffcac5'
+  label: 'About Us'
+  label_display: visible
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

@@ -1,0 +1,20 @@
+uuid: 29b89c78-443a-4d75-a7c6-55834ef51bfa
+langcode: en
+status: true
+dependencies:
+  module:
+    - kenny_core
+  theme:
+    - kuzya_main
+id: kuzya_main_menu_social_media_black_bar
+theme: kuzya_main
+region: about_us
+weight: -8
+provider: null
+plugin: menu_social_media_black_bar
+settings:
+  id: menu_social_media_black_bar
+  label: 'Follow us'
+  label_display: visible
+  provider: kenny_core
+visibility: {  }

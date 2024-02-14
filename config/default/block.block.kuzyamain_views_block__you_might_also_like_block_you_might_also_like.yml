@@ -1,0 +1,24 @@
+uuid: 2f25601c-39c4-46fc-a2cd-0aff47ff6425
+langcode: en
+status: false
+dependencies:
+  config:
+    - views.view.you_might_also_like
+  module:
+    - views
+  theme:
+    - kuzyamain
+id: kuzyamain_views_block__you_might_also_like_block_you_might_also_like
+theme: kuzyamain
+region: content
+weight: -3
+provider: null
+plugin: 'views_block:you_might_also_like-block_you_might_also_like'
+settings:
+  id: 'views_block:you_might_also_like-block_you_might_also_like'
+  label: ''
+  label_display: visible
+  provider: views
+  views_label: ''
+  items_per_page: none
+visibility: {  }

@@ -1,0 +1,24 @@
+uuid: 181ae059-acda-4c49-9d44-557230c3d3c6
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.top_footer
+  module:
+    - views
+  theme:
+    - kuzyamain
+id: kuzyamain_views_block__top_footer_block_editor_picks_footer
+theme: kuzyamain
+region: header
+weight: -10
+provider: null
+plugin: 'views_block:top_footer-block_editor_picks_footer'
+settings:
+  id: 'views_block:top_footer-block_editor_picks_footer'
+  label: ''
+  label_display: visible
+  provider: views
+  views_label: ''
+  items_per_page: none
+visibility: {  }
