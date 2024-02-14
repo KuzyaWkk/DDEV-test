@@ -1,4 +1,4 @@
-uuid: 29b89c78-443a-4d75-a7c6-55834ef51bfa
+uuid: f5667693-01ac-4474-871f-e81f36b3af27
 langcode: en
 status: true
 dependencies:
@@ -8,8 +8,8 @@ dependencies:
     - kuzya_main
 id: kuzya_main_menu_social_media_black_bar
 theme: kuzya_main
-region: about_us
-weight: -8
+region: header
+weight: 0
 provider: null
 plugin: menu_social_media_black_bar
 settings:

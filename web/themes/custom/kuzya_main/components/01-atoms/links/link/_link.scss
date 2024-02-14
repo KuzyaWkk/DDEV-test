@@ -1,8 +1,8 @@
 @mixin link {
-  color: clr(accent);
+  color: clr(header-primary);
 
   &:hover {
-    color: clr(accent-high);
+    color: clr(secondary);
   }
 }
 

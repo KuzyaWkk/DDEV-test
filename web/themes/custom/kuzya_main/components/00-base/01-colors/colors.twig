@@ -6,6 +6,7 @@
     heading: colors_heading,
   } %}
 
+
   {% for palette in palettes %}
     {% set palette_machine = palette.palette_heading|lower %}
     {% include "@atoms/text/headings/_heading.twig" with {
