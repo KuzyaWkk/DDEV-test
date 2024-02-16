@@ -11,6 +11,8 @@
 // These should be used for generic code, like layouts and typography, only.
 
 $mobile: 770px;
+$desc1140: 1140px;
+$desc1120: 1120px;
 
 $xs: 320px;
 $small: 480px;
@@ -23,12 +25,29 @@ $max-width: $xl;
 
 /// Mixin - xs Breakpoint
 
-@mixin mobile {
+@mixin desc {
   @include breakpoint($mobile) {
     @content;
   }
 }
 
+@mixin headerMargin {
+  @media screen and (min-width: 1120px) and (max-width: 1140px) {
+    @content
+  }
+}
+
+@mixin desc1120 {
+  @include breakpoint($desc1120) {
+    @content;
+  }
+}
+
+@mixin desc1140 {
+  @include breakpoint($desc1140) {
+    @content;
+  }
+}
 
 /// Allows easier @include xs {} syntax
 @mixin xs {

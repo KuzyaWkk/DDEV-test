@@ -1,6 +1,17 @@
 .logo {
-  width: 100%;
-  max-width: auto;
+  display: flex;
+  width: auto;
+
+  &__link {
+    width: 28px;
+    height: 28px;
+
+    @include desc1120 {
+      width: 45px;
+      height: 45px;
+    }
+
+  }
 }
 
 .logo--header {

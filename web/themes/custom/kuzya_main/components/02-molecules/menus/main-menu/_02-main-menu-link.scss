@@ -1,3 +1,34 @@
+.main-menu__link-header {
+  @include resetA($padding: 12px 30px 12px 12px);
+  @include set-font-header($font-family: $font-apple, $line-height: 21px, $font-size: px, $font-weight: 800);
+
+
+  @include medium {
+    @include resetA();
+    @include set-font-header($font-size: 11px);
+
+    &:hover {
+      color: $secondary;
+    }
+
+    &:after {
+      @include dot-after();
+    }
+
+
+  }
+
+  @include desc1140 {
+    font-size: 15px;
+  }
+
+  @include headerMargin {
+    font-size: 15px;
+  }
+
+}
+
+
 /* A */
 .main-menu__link {
   display: block;
@@ -22,7 +53,7 @@
     }
   }
 
-  @include medium {
+  @include desc {
     position: relative;
     display: inline-block;
     padding: $space;

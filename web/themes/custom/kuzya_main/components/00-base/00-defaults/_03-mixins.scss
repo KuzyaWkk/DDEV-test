@@ -66,3 +66,24 @@ $outer-container-break: $small;
   margin: 0;
   padding: 0;
 }
+
+// Custom mixin for font
+@mixin set-font(
+  $color: $primary,
+  $letter-spacing: 1px,
+  $line-height: 60px,
+  $font-size: 15px,
+  $font-family: $font-main,
+  $font-weight: 300,
+  $opacity: 1,
+) {
+  color: $color;
+  letter-spacing: $letter-spacing;
+  line-height: $line-height;
+  font-size: $font-size;
+  font-family: $font-family;
+  font-weight: $font-weight;
+  opacity: $opacity;
+}
+
+
