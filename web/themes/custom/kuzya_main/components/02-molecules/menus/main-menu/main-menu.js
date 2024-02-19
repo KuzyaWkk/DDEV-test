@@ -2,8 +2,10 @@ Drupal.behaviors.mainMenu = {
   attach(context) {
     const toggleExpand = context.getElementById('toggle-expand');
     const menu = context.getElementById('main-nav');
-    const social = context.getElementById('social-bar-mobile');
+    // const social = context.getElementById('social-bar-mobile');
     const branding = context.getElementById('branding');
+    const social = context.getElementById('social-desc');
+    const search = context.getElementById('search-desc');
 
     if (menu) {
       const expandMenu = menu.getElementsByClassName('expand-sub');
@@ -14,6 +16,7 @@ Drupal.behaviors.mainMenu = {
         menu.classList.toggle('main-nav--open');
         social.classList.toggle('hide');
         branding.classList.toggle('hide');
+        search.classList.toggle('hide');
         e.preventDefault();
       });
 

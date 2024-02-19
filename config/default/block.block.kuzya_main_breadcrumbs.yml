@@ -1,0 +1,22 @@
+uuid: 5844d860-c48e-4e57-8b9a-167ca647fb7a
+langcode: en
+status: false
+dependencies:
+  module:
+    - system
+  theme:
+    - kuzya_main
+_core:
+  default_config_hash: VhBzWb7lMRtIOg9G7VSw_0uopi-7zXeHq4vXqqV1HFE
+id: kuzya_main_breadcrumbs
+theme: kuzya_main
+region: header
+weight: -3
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  label_display: '0'
+  provider: system
+visibility: {  }

@@ -1,4 +1,4 @@
-uuid: be15a533-bc42-4a6c-9709-5c7f7bf5117a
+uuid: 43c78d7d-5b37-48a1-853a-ac4c24ddc89b
 langcode: en
 status: true
 dependencies:
@@ -11,7 +11,7 @@ dependencies:
 id: kuzya_main_views_block__top_footer_block_editor_picks_footer
 theme: kuzya_main
 region: content_bottom
-weight: -10
+weight: -9
 provider: null
 plugin: 'views_block:top_footer-block_editor_picks_footer'
 settings:

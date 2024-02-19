@@ -19,25 +19,25 @@
 
 {#      </div>#}
 
-{#      <div {{ bem('branding', [], header__base_class) }} id="branding">#}
-{#        {% block header__branding %}#}
-{#          {% include "@organisms/site/site-header/_site-header-branding.twig" %}#}
+      <div {{ bem('branding', [], header__base_class) }} id="branding">
+        {% block header__branding %}
+          {% include "@organisms/site/site-header/_site-header-branding.twig" %}
 
-{#        {% endblock %}#}
+        {% endblock %}
 
-{#        {% block header__sitename %}#}
-{#          {% include "@molecules/sitename/sitename.twig" %}#}
-{#        {% endblock %}#}
+        {% block header__sitename %}
+          {% include "@molecules/sitename/sitename.twig" %}
+        {% endblock %}
 
 
-{#      </div>#}
+      </div>
 
-{#      <div {{ bem('menu', [], header__base_class) }}>#}
-{#        {% block header__menu %}#}
-{#          {% include "@molecules/menus/main-menu/main-menu.twig" %}#}
-{#        {% endblock %}#}
+      <div {{ bem('menu', [], header__base_class) }}>
+        {% block header__menu %}
+          {% include "@molecules/menus/main-menu/main-menu.twig" %}
+        {% endblock %}
 
-{#      </div>#}
+      </div>
 
 
 {#      <div {{ bem('social-menu', [], header__base_class) }}>#}

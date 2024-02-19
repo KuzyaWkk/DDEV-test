@@ -1,4 +1,4 @@
-uuid: dddc13ff-482c-4f4a-96f6-a341b152efd1
+uuid: 2d441055-81f2-4b45-a4a8-fec3830fd969
 langcode: en
 status: true
 dependencies:
@@ -11,7 +11,7 @@ dependencies:
 id: kuzya_main_views_block__hot_topics_block_hot_topics
 theme: kuzya_main
 region: content_bottom
-weight: -8
+weight: 0
 provider: null
 plugin: 'views_block:hot_topics-block_hot_topics'
 settings:

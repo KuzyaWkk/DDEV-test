@@ -1,4 +1,4 @@
-uuid: 00360a95-914e-41f7-bc79-e4bb8ee27d39
+uuid: 787dd2f2-399c-4339-b8f7-ad86adc3bc2e
 langcode: en
 status: true
 dependencies:
@@ -11,13 +11,13 @@ dependencies:
 id: kuzya_main_views_block__gallery_footer_block_gallery_footer
 theme: kuzya_main
 region: footer
-weight: -12
+weight: -10
 provider: null
 plugin: 'views_block:gallery_footer-block_gallery_footer'
 settings:
   id: 'views_block:gallery_footer-block_gallery_footer'
   label: ''
-  label_display: '0'
+  label_display: visible
   provider: views
   views_label: ''
   items_per_page: none

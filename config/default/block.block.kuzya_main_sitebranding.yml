@@ -1,4 +1,4 @@
-uuid: b28cb710-d62d-4191-9526-be05ea318705
+uuid: 4f530444-211b-4f12-932c-fcc1b9ed5fe6
 langcode: en
 status: true
 dependencies:
@@ -8,8 +8,8 @@ dependencies:
     - kuzya_main
 id: kuzya_main_sitebranding
 theme: kuzya_main
-region: header
-weight: -9
+region: about_us
+weight: -8
 provider: null
 plugin: system_branding_block
 settings:
