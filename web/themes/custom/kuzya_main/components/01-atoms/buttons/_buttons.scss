@@ -2,10 +2,10 @@
 // e.g. `default` and `default-dark`. Or `purple` and `purple-dark`.
 $button-colors: (
   primary: (
-    text: clr(text-inverse),
-    bg: clr(primary),
-    text-hover: clr(primary),
-    bg-hover: clr(highlight),
+    text: clr(primary),
+    bg: clr(header-primary),
+    text-hover: clr(header-primary),
+    bg-hover: clr(secondary),
   ),
   primary-dark: (
     text: clr(text),

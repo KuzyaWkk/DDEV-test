@@ -12,6 +12,7 @@
   class: bem(logo__base_class, logo__modifiers, logo__blockname),
 } %}
 
+
 <div {{ add_attributes(logo__attributes) }}>
   {% embed "@atoms/links/link/link.twig" with {
     link_base_class: 'logo__link',
@@ -20,7 +21,7 @@
     {% block link_content %}
       {% include "@atoms/images/image/responsive-image.twig" with {
         output_image_tag: true,
-        image_src: directory ? '/' ~ directory ~ 'assets/images/logo.svg' : 'logo.svg',
+        image_src: directory ? '/' ~ directory ~ '/assets/images/logo.svg' : 'logo.svg',
         image_alt: 'Logo',
         responsive_image_blockname: 'logo',
       } %}

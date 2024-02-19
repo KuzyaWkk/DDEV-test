@@ -5,7 +5,58 @@
     color: clr(accent-high);
   }
 }
+//
+//.link {
+//  @include link;
+//}
+
+@mixin set-font-header(
+  $color: $header-primary,
+  $letter-spacing: 1px,
+  $line-height: 60px,
+  $font-size: 15px,
+  $font-family: $font-main,
+  $font-weight: 400,
+  $opacity: 1,
+) {
+  color: $color;
+  letter-spacing: $letter-spacing;
+  line-height: $line-height;
+  font-size: $font-size;
+  font-family: $font-family;
+  font-weight: $font-weight;
+  opacity: $opacity;
+}
+
+@mixin resetA(
+  $padding: 0 8px,
+  $text-transform: uppercase,
+) {
+  display: flex;
+  padding: $padding;
+  text-transform: $text-transform;
+  text-decoration: unset;
+}
+
+@mixin dot-after {
+  content: ' .';
+  display: block;
+  position: relative;
+  margin-left: 3px;
+}
 
 .link {
-  @include link;
+
+  @include resetA($padding: 12px 30px 12px 12px);
+  @include set-font-header($font-family: $font-apple, $line-height: 21px, $font-size: 21px, $font-weight: 800);
+
+
+  @include desc {
+    @include resetA();
+    @include set-font-header();
+
+    &:hover {
+      color: $secondary;
+    }
+  }
 }

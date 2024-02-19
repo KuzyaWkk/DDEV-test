@@ -16,25 +16,26 @@
     background-color: clr(accent);
   }
 
-  @include medium {
+  @include desc {
     display: none;
   }
 }
 
 .toggle-expand__text {
-  display: block;
+  display: none;
+
   font-size: 0.9rem;
   font-weight: bold;
 
   .toggle-expand--open & {
-    color: clr(background);
+    color: $header-primary;
   }
 }
 
 /* SVG icon */
 .toggle-expand__icon {
-  height: 3rem;
-  width: 3rem;
+  height: 25px;
+  width: 25px;
   margin: 0 auto;
 }
 
@@ -44,11 +45,11 @@
   text-align: center;
 
   .toggle-expand--open & {
-    display: none;
+    //display: none;
   }
 
   svg {
-    fill: clr(text);
+    fill: $header-primary;
   }
 }
 
@@ -62,6 +63,6 @@
   }
 
   svg {
-    fill: clr(text-inverse);
+    fill: $header-primary;
   }
 }

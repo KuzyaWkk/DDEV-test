@@ -1,4 +1,4 @@
-uuid: 4434ada7-41e3-4e73-ab55-52a1c148e3f6
+uuid: e29e7412-3c2e-4b01-b0f4-649e9f2dc608
 langcode: en
 status: true
 dependencies:
@@ -11,7 +11,7 @@ _core:
 id: kuzya_main_search_form_narrow
 theme: kuzya_main
 region: header
-weight: -8
+weight: -13
 provider: null
 plugin: search_form_block
 settings:

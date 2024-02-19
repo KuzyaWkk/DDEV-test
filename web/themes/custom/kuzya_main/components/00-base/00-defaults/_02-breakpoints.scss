@@ -10,6 +10,10 @@
 // Avoid using in favor of atomic, content-specific, breakpoints.
 // These should be used for generic code, like layouts and typography, only.
 
+$mobile: 770px;
+$descLarge: 1140px;
+$descMedium: 1120px;
+
 $xs: 320px;
 $small: 480px;
 $medium: 720px;
@@ -20,12 +24,39 @@ $xl: 1224px;
 $max-width: $xl;
 
 /// Mixin - xs Breakpoint
+
+@mixin desc {
+  @include breakpoint($mobile) {
+    @content;
+  }
+}
+
+@mixin headerMargin {
+  @media screen and (min-width: 1120px) and (max-width: 1140px) {
+    @content
+  }
+}
+
+@mixin descLarge {
+  @include breakpoint($descLarge) {
+    @content;
+  }
+}
+
+@mixin descMedium {
+  @include breakpoint($descMedium) {
+    @content;
+  }
+}
+
 /// Allows easier @include xs {} syntax
 @mixin xs {
   @include breakpoint($xs) {
     @content;
   }
 }
+
+
 
 /// Mixin - small Breakpoint
 /// Allows easier @include small {} syntax
@@ -51,16 +82,16 @@ $max-width: $xl;
   }
 }
 
-/// Mixin - xl Breakpoint
-/// Allows easier @include xl {} syntax
+// Mixin - xl Breakpoint
+// Allows easier @include xl {} syntax
 @mixin xl {
   @include breakpoint($xl) {
     @content;
   }
 }
 
-/// Mixin - max-width Breakpoint
-/// Allows easier @include max-width {} syntax
+// Mixin - max-width Breakpoint
+// Allows easier @include max-width {} syntax
 @mixin max-width {
   @include breakpoint($max-width) {
     @content;

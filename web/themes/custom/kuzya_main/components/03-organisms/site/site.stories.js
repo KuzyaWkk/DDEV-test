@@ -5,6 +5,8 @@ import footerSocial from '../../02-molecules/menus/social-menu/social-menu.yml';
 import footerMenu from '../../02-molecules/menus/inline/inline-menu.yml';
 import breadcrumbData from '../../02-molecules/menus/breadcrumbs/breadcrumbs.yml';
 import mainMenuData from '../../02-molecules/menus/main-menu/main-menu.yml';
+import socialBlockData from '../../02-molecules/social-block/social-block.yml';
+import sitenameData from '../../02-molecules/sitename/sitename.yml';
 
 import '../../02-molecules/menus/main-menu/main-menu';
 
@@ -24,4 +26,6 @@ export const header = () =>
   siteHeader({
     ...breadcrumbData,
     ...mainMenuData,
+    ...socialBlockData,
+    ...sitenameData,
   });

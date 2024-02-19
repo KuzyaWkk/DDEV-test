@@ -1,0 +1,33 @@
+//.logo {
+//  display: flex;
+//  width: auto;
+//}
+//
+//.logo--header {
+//  max-width: 20rem;
+//}
+//
+//.logo--footer {
+//  max-width: 10rem;
+//}
+
+.social-block {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  &__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 35px;
+    height: 35px;
+    margin: -2.5px -5px -2.5px 0;
+    img {
+      width: 14px;
+      height: 14px;
+    }
+  }
+}
+

@@ -1,0 +1,33 @@
+{#
+ # Available variables:
+ # - logo__url
+ # - output_image_tag: Whether or not to output an <img> tag instead of a <picture> tag.
+ # - image_src: path to image file
+ # - image_alt: alt text on image
+#}
+
+{% set search__base_class = search__base_class|default('logo') %}
+
+{% set search__attributes = {
+  class: bem(search__base_class, search_modifiers, search__blockname),
+} %}
+
+
+<div {{ add_attributes(search__attributes) }}>
+  {% embed "@atoms/links/link/link.twig" with {
+    link_base_class: 'search__link',
+    link_url: logo__url|default('/'),
+    link_attributes: {
+      'role': 'button'
+    },
+  } %}
+    {% block link_content %}
+      {% include "@atoms/images/image/responsive-image.twig" with {
+        output_image_tag: true,
+        image_src: directory ? '/' ~ directory ~ '/assets/images/search.svg' : 'search.svg',
+        image_alt: 'Search',
+        responsive_image_blockname: 'search',
+      } %}
+    {% endblock %}
+  {% endembed %}
+</div>

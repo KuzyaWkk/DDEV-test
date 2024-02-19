@@ -1,0 +1,85 @@
+{#
+ # Available variables:
+ # - logo__url
+ # - output_image_tag: Whether or not to output an <img> tag instead of a <picture> tag.
+ # - image_src: path to image file
+ # - image_alt: alt text on image
+#}
+
+{% set social_block__base_class = social_block__base_class|default('social-block') %}
+
+{% set social_block__attributes = {
+  class: bem(social_block__base_class, social_block__modifiers, social_block__blockname),
+} %}
+
+
+<div {{ add_attributes(social_block__attributes) }}>
+  {% for item in social_content %}
+
+    {% embed "@atoms/links/link/link.twig" with {
+      link_base_class: 'social-block__link',
+      link_url: item.image__url,
+    } %}
+      {% block link_content %}
+        {% include "@atoms/images/image/responsive-image.twig" with {
+          output_image_tag: true,
+          image_src: directory ? '/' ~ directory ~ item.image__path : item.image__title|lower ~ '.svg',
+          image_alt: item.image__title,
+          responsive_image_blockname: item.image__title|lower,
+        } %}
+      {% endblock %}
+    {% endembed %}
+  {% endfor %}
+
+</div>
+
+{#<div {{ add_attributes(logo__attributes) }}> #}
+{#  {% embed "@atoms/links/link/link.twig" with {#}
+{#    link_base_class: 'social-block__link',#}
+{#    link_url: social_block__url|default('/'),#}
+{#  } %}#}
+{#    {% block link_content %}#}
+{#      {% include "@atoms/images/image/responsive-image.twig" with {#}
+{#        output_image_tag: true,#}
+{#        image_src: directory ? '/' ~ directory ~ '/assets/icons/facebook.svg' : 'facebook.svg',#}
+{#        image_alt: 'Facebook',#}
+{#        responsive_image_blockname: 'facebook',#}
+{#      } %}#}
+{#    {% endblock %}#}
+{#  {% endembed %}#}
+
+{#</div>#}
+
+{#<div {{ add_attributes(logo__attributes) }}>#}
+{#  {% embed "@atoms/links/link/link.twig" with {#}
+{#    link_base_class: 'social-block__link',#}
+{#    link_url: social_block__url|default('/'),#}
+{#  } %}#}
+{#    {% block link_content %}#}
+{#      {% include "@atoms/images/image/responsive-image.twig" with {#}
+{#        output_image_tag: true,#}
+{#        image_src: directory ? '/' ~ directory ~ '/assets/icons/instagram.svg' : 'instagram.svg',#}
+{#        image_alt: 'Instagram',#}
+{#        responsive_image_blockname: 'instagram',#}
+{#      } %}#}
+{#    {% endblock %}#}
+{#  {% endembed %}#}
+
+{#</div>#}
+
+{#<div {{ add_attributes(logo__attributes) }}>#}
+{#  {% embed "@atoms/links/link/link.twig" with {#}
+{#    link_base_class: 'social-block__link',#}
+{#    link_url: social_block__url|default('/'),#}
+{#  } %}#}
+{#    {% block link_content %}#}
+{#      {% include "@atoms/images/image/responsive-image.twig" with {#}
+{#        output_image_tag: true,#}
+{#        image_src: directory ? '/' ~ directory ~ '/assets/icons/X.svg' : 'X.svg',#}
+{#        image_alt: 'X',#}
+{#        responsive_image_blockname: 'x',#}
+{#      } %}#}
+{#    {% endblock %}#}
+{#  {% endembed %}#}
+
+{#</div>#}

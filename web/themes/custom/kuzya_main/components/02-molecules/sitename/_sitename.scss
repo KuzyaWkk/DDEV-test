@@ -1,0 +1,44 @@
+.sitename {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+
+
+
+  &--link {
+    @include resetA($text-transform: unset);
+    @include set-font-header($font-family: $font-paragraph, $font-size: 26px, $font-weight: 700, $letter-spacing: 0, $line-height: 1.1);
+    @include descMedium {
+      font-size: 30px;
+    }
+
+
+  }
+
+  &__slogan--link {
+    @include resetA($text-transform: unset);
+    @include set-font-header($color: $color-desc, $font-size: 9px, $letter-spacing: 1px, $line-height: 1);
+    font-family: 'Fira Sans';
+
+
+    @include descMedium {
+      @include set-font-header($color: $color-desc, $font-size: 10px, $letter-spacing: 1.8px, $line-height: 1);
+    }
+
+
+  }
+}
+
+
+//.logo {
+//  width: 100%;
+//  max-width: auto;
+//}
+//
+//.logo--header {
+//  max-width: 20rem;
+//}
+//
+//.logo--footer {
+//  max-width: 10rem;
+//}

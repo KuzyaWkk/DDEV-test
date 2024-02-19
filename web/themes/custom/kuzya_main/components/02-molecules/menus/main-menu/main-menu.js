@@ -2,6 +2,8 @@ Drupal.behaviors.mainMenu = {
   attach(context) {
     const toggleExpand = context.getElementById('toggle-expand');
     const menu = context.getElementById('main-nav');
+    const social = context.getElementById('social-menu-mobile');
+    const branding = context.getElementById('branding');
     if (menu) {
       const expandMenu = menu.getElementsByClassName('expand-sub');
 
@@ -9,6 +11,8 @@ Drupal.behaviors.mainMenu = {
       toggleExpand.addEventListener('click', (e) => {
         toggleExpand.classList.toggle('toggle-expand--open');
         menu.classList.toggle('main-nav--open');
+        social.classList.toggle('hide');
+        branding.classList.toggle('hide');
         e.preventDefault();
       });
 

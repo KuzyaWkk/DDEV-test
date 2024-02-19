@@ -6,22 +6,62 @@
 <header {{ bem(header__base_class) }}>
   <div {{ bem('inner', [], header__base_class) }}>
 
-    {{ content }}
+{#    {{ content }}#}
 
-{#    <div {{ bem('primary', [], header__base_class) }}>#}
-{#      <div {{ bem('branding', [], header__base_class) }}>#}
-{#        {% block header__branding %}#}
-{#          {% include "@organisms/site/site-header/_site-header-branding.twig" %}#}
+    <div {{ bem('primary', [], header__base_class) }}>
+
+      <div {{ bem('social-menu-mobile', [], header__base_class, ['hide']) }} class="hide" id="social-menu-mobile">
+        {% block header__social %}
+          {% include "@molecules/social-block/social-block.twig" %}
+        {% endblock %}
+
+      </div>
+
+      <div {{ bem('branding', [], header__base_class) }} id="branding">
+        {% block header__branding %}
+          {% include "@organisms/site/site-header/_site-header-branding.twig" %}
+
+        {% endblock %}
+
+        {% block header__sitename %}
+          {% include "@molecules/sitename/sitename.twig" %}
+        {% endblock %}
+
+{#        {% block header__sitename %}#}
+
 {#        {% endblock %}#}
-{#      </div>#}
 
-{#      <div {{ bem('menu', [], header__base_class) }}>#}
-{#        {% block kuzya__header__menu %}#}
-{#          {% include "@molecules/menus/main-menu/main-menu.twig" %}#}
+      </div>
+
+      <div {{ bem('menu', [], header__base_class) }}>
+        {% block header__menu %}
+          {% include "@molecules/menus/main-menu/main-menu.twig" %}
+        {% endblock %}
+
+      </div>
+
+
+      <div {{ bem('social-menu', [], header__base_class) }}>
+        {% block header__social %}
+          {% include "@molecules/social-block/social-block.twig" %}
+        {% endblock %}
+
+      </div>
+
+      <div {{ bem('search-menu', [], header__base_class) }}>
+        {% block header__search %}
+          {% include "@molecules/search/search.twig" %}
+        {% endblock %}
+
+      </div>
+
+{#      <div {{ bem('toggle', [], header__base_class) }}>#}
+{#        {% block header__search %}#}
+{#          {% include "@molecules/toggle/toggle.twig" %}#}
 {#        {% endblock %}#}
 
 {#      </div>#}
-{#    </div>#}
+    </div>
 {#    <div {{ bem('secondary', [], header__base_class) }}>#}
 {#      {% block header__breadcrumbs %}#}
 {#        {% include "@molecules/menus/breadcrumbs/breadcrumbs.twig" %}#}

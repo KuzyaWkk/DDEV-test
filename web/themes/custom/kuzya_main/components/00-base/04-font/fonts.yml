@@ -1,0 +1,20 @@
+fonts_heading: 'Font Family:'
+families:
+  - family_heading: '300'
+    fonts:
+      - name: 'Fira Sans 300'
+      - name: 'Roboto 300'
+      - name: 'Merriweather 300'
+      - name: 'Open Sans 300'
+  - family_heading: '600'
+    fonts:
+      - name: 'Fira Sans 600'
+      - name: 'Roboto 600'
+      - name: 'Merriweather 600'
+      - name: 'Open Sans 600'
+  - family_heading: '900'
+    fonts:
+      - name: 'Fira Sans 900'
+      - name: 'Roboto 900'
+      - name: 'Merriweather 900'
+      - name: 'Open Sans 900'

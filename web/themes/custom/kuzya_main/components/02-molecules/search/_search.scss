@@ -1,0 +1,17 @@
+.search__link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  @include descMedium {
+    width: 54px;
+    height: 54px;
+  }
+  width: 35px;
+  height: 35px;
+  margin: -2.5px -5px -2.5px 0;
+  img {
+    width: 14px;
+    height: 14px;
+  }
+}

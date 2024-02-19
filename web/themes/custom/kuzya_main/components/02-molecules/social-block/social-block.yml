@@ -1,0 +1,10 @@
+social_content:
+  - image__title: Facebook
+    image__url: #
+    image__path: /assets/icons/facebook.svg
+  - image__title: Instagram
+    image__url: #
+    image__path: /assets/icons/instagram.svg
+  - image__title: X
+    image__url: #
+    image__path: /assets/icons/X.svg

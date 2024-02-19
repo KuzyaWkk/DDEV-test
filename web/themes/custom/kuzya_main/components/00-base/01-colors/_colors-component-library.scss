@@ -24,16 +24,20 @@
   align-items: flex-end;
 }
 
+.cl-colors__title {
+  font-family: $font-paragraph;
+}
+
 // Dynamically set swatch text color based on the lightness of the background color
 @function set-color(
   $color,
-  $text-primary: accent-high,
-  $text-secondary: muted
+  $primary: primary,
+  $header-primary: header-primary
 ) {
   @if (lightness($color) > 50) {
-    @return clr($text-primary);
+    @return clr($primary);
   } @else {
-    @return clr($text-secondary);
+    @return clr($header-primary);
   }
 }
 
@@ -47,12 +51,3 @@
   }
 }
 
-// Style dark color swatches
-@each $name, $color in $darkColors {
-  .cl-colors__item--dark {
-    &-#{$name} {
-      background-color: clr($name);
-      color: set-color($color, muted, accent-high);
-    }
-  }
-}

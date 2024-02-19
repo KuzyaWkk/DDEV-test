@@ -1,5 +1,6 @@
 .header {
   margin-bottom: 4em;
+  background-color: $header-bg;
 
   &__inner {
     @include wrapper;
@@ -12,19 +13,109 @@
     @include medium {
       display: flex;
       flex-flow: row nowrap;
-      justify-content: space-between;
       padding: $space 0;
+
     }
   }
 
+  &__menu {
+    display: flex;
+    flex-grow: 1;
+
+    //.toggle-expand {
+    //  display: flex;
+    //  @include desc {
+    //    display: none;
+    //  }
+    //
+    //  &__icon {
+    //    height: 25px;
+    //    width: 25px;
+    //
+    //  }
+    //}
+    //
+    //.main-menu {
+    //  display: none;
+    //
+    //  @include desc {
+    //     display: flex;
+    //  }
+
+
+
+
+    //}
+  }
+
   &__branding {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+
+    @include descLarge {
+      margin-right: 30px;
+      font-size: 15px;
+    }
+
+    @include headerMargin {
+      margin-right: 15px;
+      font-size: 15px;
+    }
+
+    font-size: 11px;
+
     max-width: 190px;
     padding: 1rem 0;
 
     @include medium {
-      margin-right: $space;
       max-width: 300px;
       padding: 0;
     }
   }
+
+  &__social-menu {
+    align-items: center;
+    justify-content: center;
+    display: none;
+
+    @include desc {
+      display: flex;
+    }
+
+
+
+  }
+
+  &__social-menu-mobile {
+    display: flex;
+    height: 72px;
+
+    .social-block {
+
+      &__link {
+        width: 40px;
+        height: 40px;
+      }
+    }
+
+  }
+
+  &__search-menu {
+
+    display: none;
+
+    @include desc {
+      align-items: center;
+      justify-content: center;
+      float: right;
+      display: flex;
+    }
+  }
+}
+
+.hide {
+  display: none;
 }
