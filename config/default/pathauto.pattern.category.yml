@@ -7,12 +7,12 @@ dependencies:
 id: category
 label: Category
 type: 'canonical_entities:taxonomy_term'
-pattern: 'newspaper_life_news/category/[term:name]'
+pattern: 'newspaper_life_news/category/entertainment/[term:name]'
 selection_criteria:
-  0058daa0-4311-41d8-ae4b-b59f8adf1aca:
+  c2ed7b7f-c3b8-4a19-82d2-6daa0437f3dd:
     id: 'entity_bundle:taxonomy_term'
     negate: false
-    uuid: 0058daa0-4311-41d8-ae4b-b59f8adf1aca
+    uuid: c2ed7b7f-c3b8-4a19-82d2-6daa0437f3dd
     context_mapping:
       taxonomy_term: taxonomy_term
     bundles:
