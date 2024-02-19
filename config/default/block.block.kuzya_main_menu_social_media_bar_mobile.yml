@@ -1,0 +1,20 @@
+uuid: e68a5932-cc18-4bbb-a257-c51eebb8289c
+langcode: en
+status: true
+dependencies:
+  module:
+    - kenny_core
+  theme:
+    - kuzya_main
+id: kuzya_main_menu_social_media_bar_mobile
+theme: kuzya_main
+region: header
+weight: -10
+provider: null
+plugin: menu_social_media_bar_mobile
+settings:
+  id: menu_social_media_bar_mobile
+  label: 'Menu Social Media Bar Mobile'
+  label_display: visible
+  provider: kenny_core
+visibility: {  }

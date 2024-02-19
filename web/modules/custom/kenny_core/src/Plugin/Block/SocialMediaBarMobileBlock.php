@@ -15,7 +15,7 @@ use Drupal\Core\Block\BlockBase;
  *   category="KennyCore"
  * )
  */
-class SocialMediaBarBlock extends BlockBase {
+class SocialMediaBarMobileBlock extends BlockBase {
 
   public function build() {
     return [
