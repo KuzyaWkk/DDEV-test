@@ -1,0 +1,36 @@
+{#{% extends "block.html.twig" %}#}
+{#
+/**
+ * @file
+ * Theme override for a branding block.
+ *
+ * Each branding element variable (logo, name, slogan) is only available if
+ * enabled in the block configuration.
+ *
+ * Available variables:
+ * - site_logo: Logo for site as defined in Appearance or theme settings.
+ * - site_name: Name for site as defined in Site information settings.
+ * - site_slogan: Slogan for site as defined in Site information settings.
+ */
+#}
+<div id="branding" {{ bem('header__branding',) }} >
+  {% block content %}
+
+      {% if site_logo %}
+          {% include "@molecules/logo/logo.twig" with {
+            logo_url: path('<front>'),
+            image_alt: 'Home'
+          } %}
+      {% endif %}
+
+      {% if site_name %}
+          {% include "@molecules/sitename/sitename.twig" with {
+            sitename_content: site_name,
+            sitename_url: path('<front>'),
+            sitename_slogan: site_slogan,
+          } %}
+      {% endif %}
+
+  {% endblock %}
+</div>
+

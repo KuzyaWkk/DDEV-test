@@ -1,7 +1,9 @@
 /* Toggle */
 .toggle-expand {
   @include link;
-
+  @include medium {
+    display: none;
+  }
   position: absolute;
   top: 1rem;
   display: inline-block;
@@ -16,9 +18,7 @@
     background-color: clr(accent);
   }
 
-  @include desc {
-    display: none;
-  }
+
 }
 
 .toggle-expand__text {
@@ -36,7 +36,7 @@
 .toggle-expand__icon {
   height: 25px;
   width: 25px;
-  margin: 0 auto;
+  margin: 0 15px 0 auto;
 }
 
 .toggle-expand__open {
@@ -45,7 +45,7 @@
   text-align: center;
 
   .toggle-expand--open & {
-    //display: none;
+
   }
 
   svg {

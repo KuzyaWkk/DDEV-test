@@ -11,7 +11,7 @@
 //  max-width: 10rem;
 //}
 
-.social-block {
+.social-block, {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -31,3 +31,30 @@
   }
 }
 
+.block__social-media {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.social-bar__menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  li a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 35px;
+    height: 35px;
+    margin: -2.5px -5px -2.5px 0;
+
+    img {
+      width: 14px;
+      height: 14px;
+    }
+  }
+}

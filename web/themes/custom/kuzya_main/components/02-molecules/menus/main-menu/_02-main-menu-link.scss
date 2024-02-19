@@ -4,7 +4,7 @@
 
 
   @include medium {
-    @include resetA();
+    @include resetA($padding: 0 3px);
     @include set-font-header($font-size: 11px);
 
     &:hover {
@@ -18,8 +18,9 @@
 
   }
 
-  @include desc1140 {
+  @include descLarge {
     font-size: 15px;
+    padding: 0 10px;
   }
 
   @include headerMargin {
@@ -84,7 +85,7 @@
   color: clr(accent);
   font-weight: normal;
 
-  @include medium {
+  @include desc {
     display: block;
     padding: $space-one-third $space;
     color: clr(highlight);

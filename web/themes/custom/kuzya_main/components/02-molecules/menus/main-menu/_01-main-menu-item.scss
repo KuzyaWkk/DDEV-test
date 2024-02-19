@@ -4,7 +4,6 @@
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  border-top: 1px solid;
 
   @include medium {
     display: inline-block;
@@ -48,17 +47,18 @@
   /* Down triangle */
   &::after {
     position: absolute;
-    right: 50%;
+    right: 15%;
     top: 50%;
     content: '';
     display: block;
     margin-right: -12px;
     margin-top: -6px;
     width: 0;
-    border: 15px solid;
-    border-bottom-color: transparent;
-    border-left: 12px solid transparent;
+    border: 15px solid $header-primary;
+    border-right-color: transparent;
     border-right: 12px solid transparent;
+    border-top: 12px solid transparent;
+    border-bottom: 12px solid transparent;
   }
 
   /* See main-menu.js */
@@ -67,9 +67,10 @@
     color: clr(muted);
 
     &::after {
-      margin-top: -20px;
-      border-top-color: transparent;
-      border-bottom: 15px solid;
+      margin-top: -1px;
+      margin-right: -5px;
+      border-left-color: transparent;
+      border-top: 15px solid $header-primary;
     }
   }
 }

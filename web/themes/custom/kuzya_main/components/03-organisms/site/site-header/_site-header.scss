@@ -1,12 +1,18 @@
 .header {
   margin-bottom: 4em;
   background-color: $header-bg;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   &__inner {
-    @include wrapper;
+    //@include wrapper;
 
     display: flex;
     flex-flow: column nowrap;
+    width: 1440px;
+    padding-left: 24px;
+    padding-right: 24px;
   }
 
   &__primary {
@@ -20,32 +26,9 @@
 
   &__menu {
     display: flex;
+    align-items: center;
     flex-grow: 1;
 
-    //.toggle-expand {
-    //  display: flex;
-    //  @include desc {
-    //    display: none;
-    //  }
-    //
-    //  &__icon {
-    //    height: 25px;
-    //    width: 25px;
-    //
-    //  }
-    //}
-    //
-    //.main-menu {
-    //  display: none;
-    //
-    //  @include desc {
-    //     display: flex;
-    //  }
-
-
-
-
-    //}
   }
 
   &__branding {
@@ -55,7 +38,7 @@
     align-items: center;
 
 
-    @include desc1140 {
+    @include descLarge {
       margin-right: 30px;
       font-size: 15px;
     }
@@ -70,10 +53,7 @@
     max-width: 190px;
     padding: 1rem 0;
 
-    @include medium {
-      max-width: 300px;
-      padding: 0;
-    }
+
   }
 
   &__social-menu {
@@ -81,7 +61,20 @@
     justify-content: center;
     display: none;
 
-    @include desc {
+    @include medium {
+      display: flex;
+    }
+
+
+
+  }
+
+  &__social-bar {
+    align-items: center;
+    justify-content: center;
+    display: none;
+
+    @include medium {
       display: flex;
     }
 
@@ -103,11 +96,25 @@
 
   }
 
+  &__social-bar-mobile {
+    display: flex;
+    height: 72px;
+
+    .social-block {
+
+      &__link {
+        width: 40px;
+        height: 40px;
+      }
+    }
+
+  }
+
   &__search-menu {
 
     display: none;
 
-    @include desc {
+    @include medium {
       align-items: center;
       justify-content: center;
       float: right;
