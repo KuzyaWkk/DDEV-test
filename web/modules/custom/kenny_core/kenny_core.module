@@ -14,12 +14,16 @@ function kenny_core_theme($existing, $type, $theme, $path) {
     'kenny_social_media_black_bar' => [
       'variables' => []
     ],
+    'kenny_social_media_bar_mobile' => [
+      'variables' => []
+    ],
 //  'kenny_about_us' => [
 //      'variables' => []
 //    ],
   ];
 }
 
+// @todo Custom code for category hero block. Delete or use later
 ///**
 // * Implements hook_views_pre_view().
 // */
