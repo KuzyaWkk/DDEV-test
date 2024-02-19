@@ -52,7 +52,7 @@
     content: '';
     display: block;
     margin-right: -12px;
-    margin-top: -6px;
+    margin-top: -13px;
     width: 0;
     border: 15px solid $header-primary;
     border-right-color: transparent;
@@ -67,7 +67,7 @@
     color: clr(muted);
 
     &::after {
-      margin-top: -1px;
+      margin-top: -7px;
       margin-right: -5px;
       border-left-color: transparent;
       border-top: 15px solid $header-primary;

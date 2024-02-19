@@ -80,15 +80,23 @@
  */
 
 /* A (Nested) */
-.main-menu__link--sub {
+.main-menu__link-header--sub-1 {
   padding-left: $space-triple;
-  color: clr(accent);
+
   font-weight: normal;
 
   @include desc {
     display: block;
     padding: $space-one-third $space;
-    color: clr(highlight);
+    color: $primary;
+
+    &:hover {
+      color: $secondary;
+    }
+
+    &:after {
+      content: unset;
+    }
   }
 }
 

@@ -10,7 +10,7 @@ $main-menu-medium: $medium;
   }
 
   &--open {
-    position: absolute;
+    position: fixed;
     left: 0;
     right: 0;
     top: 70px;
@@ -54,6 +54,7 @@ $main-menu-medium: $medium;
 
     ul:first-of-type{
       padding: 20px 20px 0;
+
     }
   }
 }
@@ -64,11 +65,7 @@ $main-menu-medium: $medium;
 
   position: relative;
   z-index: 10;
-  border-bottom: 1px solid;
 
-  @include medium {
-    border-bottom: none;
-  }
 }
 
 /*
@@ -81,7 +78,6 @@ $main-menu-medium: $medium;
   overflow: hidden;
   width: 100%;
   border-bottom: none;
-  background-color: clr(muted);
   padding: 0!important;
 
   @include medium {
@@ -94,7 +90,7 @@ $main-menu-medium: $medium;
     overflow: visible;
     padding: $space 0;
     width: 315px;
-    background-color: clr(accent-high);
+    background-color: #fff;
     font-size: 0.9rem;
   }
 
