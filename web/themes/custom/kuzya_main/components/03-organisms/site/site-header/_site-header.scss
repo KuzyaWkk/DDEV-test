@@ -55,7 +55,7 @@
     align-items: center;
 
 
-    @include desc1140 {
+    @include descLarge {
       margin-right: 30px;
       font-size: 15px;
     }

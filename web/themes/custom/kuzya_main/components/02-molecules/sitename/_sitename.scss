@@ -8,7 +8,7 @@
   &--link {
     @include resetA($text-transform: unset);
     @include set-font-header($font-family: $font-paragraph, $font-size: 26px, $font-weight: 700, $letter-spacing: 0, $line-height: 1.1);
-    @include desc1120 {
+    @include descMedium {
       font-size: 30px;
     }
 
@@ -21,7 +21,7 @@
     font-family: 'Fira Sans';
 
 
-    @include desc1120 {
+    @include descMedium {
       @include set-font-header($color: $color-desc, $font-size: 10px, $letter-spacing: 1.8px, $line-height: 1);
     }
 

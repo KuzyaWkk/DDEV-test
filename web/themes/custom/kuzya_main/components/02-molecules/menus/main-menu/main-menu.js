@@ -7,7 +7,6 @@ Drupal.behaviors.mainMenu = {
     if (menu) {
       const expandMenu = menu.getElementsByClassName('expand-sub');
 
-      console.log(toggleExpand, social);
       // Mobile Menu Show/Hide.
       toggleExpand.addEventListener('click', (e) => {
         toggleExpand.classList.toggle('toggle-expand--open');
