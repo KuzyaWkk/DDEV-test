@@ -55,3 +55,41 @@
   width: 27px!important;
   height: 27px!important;
 }
+
+.social-bar-mobile {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  z-index: 51;
+  margin-top: 15px;
+
+  &__menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    list-style-type: none;
+    gap: 0.5rem;
+    li a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      width: 35px;
+      height: 35px;
+      margin: -2.5px -5px -2.5px 0;
+
+      img {
+        width: 14px;
+        height: 14px;
+
+        &::marker {
+          content: unset;
+        }
+      }
+    }
+  }
+
+
+
+}
