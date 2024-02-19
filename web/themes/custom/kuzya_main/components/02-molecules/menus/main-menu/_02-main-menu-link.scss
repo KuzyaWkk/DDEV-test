@@ -4,8 +4,9 @@
 
 
   @include medium {
-    @include resetA($padding: 0 3px);
+    @include resetA($padding: 0 2px);
     @include set-font-header($font-size: 11px);
+    text-transform: uppercase;
 
     &:hover {
       color: $secondary;
@@ -17,7 +18,7 @@
 
 
   }
-
+  text-transform: none;
   @include descLarge {
     font-size: 15px;
     padding: 0 10px;
@@ -84,6 +85,7 @@
   padding-left: $space-triple;
 
   font-weight: normal;
+  text-transform: none!important;
 
   @include desc {
     display: block;

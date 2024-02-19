@@ -27,6 +27,8 @@ $main-menu-medium: $medium;
     background-size: var(--td_mobile_background_size, cover);
     background-position: var(--td_mobile_background_size, center top);
 
+
+
     &:before {
       content: '';
       width: 100%;
@@ -51,6 +53,10 @@ $main-menu-medium: $medium;
       padding: 20px 20px 0;
 
     }
+
+    .is-active {
+      color: $header-bg!important;
+    }
   }
 }
 
@@ -61,6 +67,9 @@ $main-menu-medium: $medium;
   position: relative;
   z-index: 10;
 
+  .is-active {
+    color: $secondary;
+  }
 }
 
 /*
@@ -103,6 +112,8 @@ $main-menu-medium: $medium;
       font-weight: 400;
       text-transform: unset;
     }
+
+
   }
 }
 
