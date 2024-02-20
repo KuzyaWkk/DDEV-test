@@ -1,0 +1,15 @@
+uuid: 163b5865-5db1-4e76-b2c2-6562d57eb172
+langcode: en
+status: true
+dependencies: {  }
+name: gallery_footer
+label: 'Gallery Footer'
+effects:
+  bd9a1895-07ea-4aae-9946-6c3dfc65d2db:
+    uuid: bd9a1895-07ea-4aae-9946-6c3dfc65d2db
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 317
+      height: 317
+      anchor: center-center
