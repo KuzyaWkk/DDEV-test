@@ -14,7 +14,7 @@ provider: null
 plugin: menu_social_media_black_bar
 settings:
   id: menu_social_media_black_bar
-  label: 'Menu Social Media Black Bar'
+  label: 'Follow us'
   label_display: visible
   provider: kenny_core
 visibility: {  }

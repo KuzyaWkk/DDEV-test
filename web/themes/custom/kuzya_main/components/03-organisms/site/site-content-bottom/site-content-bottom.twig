@@ -6,17 +6,9 @@
 <div {{ bem(content_bottom__base_class) }}>
   <div {{ bem('inner', [], content_bottom__base_class) }}>
     <div {{ bem('primary', [], content_bottom__base_class) }}>
-{#      <div {{ bem('branding', [], header__base_class) }}>#}
-{#        {% block header__branding %}#}
-{#          {% include "@organisms/site/site-header/_site-content-bottom.twig" %}#}
-      {{ content }}
-{#        {% endblock %}#}
-{#      </div>#}
+      {% block content_bottom %}
+
+      {% endblock %}
     </div>
-{#    <div {{ bem('secondary', [], header__base_class) }}>#}
-{#      {% block header__breadcrumbs %}#}
-{#        {% include "@molecules/menus/breadcrumbs/breadcrumbs.twig" %}#}
-{#      {% endblock %}#}
-{#    </div>#}
   </div>
 </div>
