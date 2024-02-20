@@ -4,18 +4,20 @@
 {% set header__logo_src = directory ? '/' ~ directory ~ 'assets/images/logo.svg' : 'logo.svg' %}
 
 <header {{ bem(header__base_class) }}>
+
   <div {{ bem('inner', [], header__base_class) }}>
 
 {#    {{ content }}#}
 
     <div {{ bem('primary', [], header__base_class) }}>
+      {% block region__header %}
+{#      {{ content }}#}
+{#      <div {{ bem('social-menu-mobile', [], header__base_class, ['hide']) }} class="hide" id="social-menu-mobile">#}
+{#        {% block header__social %}#}
+{#          {% include "@molecules/social-block/social-block.twig" %}#}
+{#        {% endblock %}#}
 
-      <div {{ bem('social-menu-mobile', [], header__base_class, ['hide']) }} class="hide" id="social-menu-mobile">
-        {% block header__social %}
-          {% include "@molecules/social-block/social-block.twig" %}
-        {% endblock %}
-
-      </div>
+{#      </div>#}
 
       <div {{ bem('branding', [], header__base_class) }} id="branding">
         {% block header__branding %}
@@ -27,9 +29,6 @@
           {% include "@molecules/sitename/sitename.twig" %}
         {% endblock %}
 
-{#        {% block header__sitename %}#}
-
-{#        {% endblock %}#}
 
       </div>
 
@@ -41,12 +40,12 @@
       </div>
 
 
-      <div {{ bem('social-menu', [], header__base_class) }}>
-        {% block header__social %}
-          {% include "@molecules/social-block/social-block.twig" %}
-        {% endblock %}
+{#      <div {{ bem('social-menu', [], header__base_class) }}>#}
+{#        {% block header__social %}#}
+{#          {% include "@molecules/social-block/social-block.twig" %}#}
+{#        {% endblock %}#}
 
-      </div>
+{#      </div>#}
 
       <div {{ bem('search-menu', [], header__base_class) }}>
         {% block header__search %}
@@ -59,7 +58,7 @@
 {#        {% block header__search %}#}
 {#          {% include "@molecules/toggle/toggle.twig" %}#}
 {#        {% endblock %}#}
-
+      {% endblock %}
 {#      </div>#}
     </div>
 {#    <div {{ bem('secondary', [], header__base_class) }}>#}
@@ -67,5 +66,7 @@
 {#        {% include "@molecules/menus/breadcrumbs/breadcrumbs.twig" %}#}
 {#      {% endblock %}#}
 {#    </div>#}
+
   </div>
+
 </header>

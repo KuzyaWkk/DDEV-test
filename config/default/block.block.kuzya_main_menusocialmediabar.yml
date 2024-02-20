@@ -1,4 +1,4 @@
-uuid: b88ab299-278b-4b1f-9374-5f8200cf5978
+uuid: 38c034fc-2395-4a26-87f2-b35a3b642459
 langcode: en
 status: true
 dependencies:
@@ -6,10 +6,10 @@ dependencies:
     - kenny_core
   theme:
     - kuzya_main
-id: kuzya_main_menu_social_media_bar
+id: kuzya_main_menusocialmediabar
 theme: kuzya_main
 region: header
-weight: -14
+weight: -7
 provider: null
 plugin: menu_social_media_bar
 settings:

@@ -2,8 +2,20 @@ Drupal.behaviors.mainMenu = {
   attach(context) {
     const toggleExpand = context.getElementById('toggle-expand');
     const menu = context.getElementById('main-nav');
-    const social = context.getElementById('social-menu-mobile');
+    // const social = context.getElementById('social-bar-mobile');
     const branding = context.getElementById('branding');
+    const social = context.getElementById('social-desc');
+    const socialMobile = context.getElementById('social-mobile');
+    const search = context.getElementById('search-desc');
+    const main = document.querySelector('.main');
+    const contentBottom = document.querySelector('.content-bottom');
+    const aboutUs = document.querySelector('.about-us');
+    const footer = document.querySelector('.footer');
+    const header = document.querySelector('.header');
+
+    const open = toggleExpand.querySelector('.toggle-expand__open');
+    const close = toggleExpand.querySelector('.toggle-expand__close');
+
     if (menu) {
       const expandMenu = menu.getElementsByClassName('expand-sub');
 
@@ -12,7 +24,16 @@ Drupal.behaviors.mainMenu = {
         toggleExpand.classList.toggle('toggle-expand--open');
         menu.classList.toggle('main-nav--open');
         social.classList.toggle('hide');
+        socialMobile.classList.toggle('hide');
         branding.classList.toggle('hide');
+        search.classList.toggle('hide');
+        main.classList.toggle('hide');
+        contentBottom.classList.toggle('hide');
+        aboutUs.classList.toggle('hide');
+        footer.classList.toggle('hide');
+        open.classList.toggle('hide');
+        close.classList.toggle('show');
+        header.classList.toggle('header__mobile');
         e.preventDefault();
       });
 

@@ -13,19 +13,49 @@ $main-menu-medium: $medium;
     position: absolute;
     left: 0;
     right: 0;
-    top: 70px;
+    top: 0;
+    padding-top: 55px;
+    height: 100vh;
+    z-index: 50;
     display: block;
     overflow-y: scroll;
-    width: 100%;
-    background-color: clr(background);
+    width: 100vw;
+    //background-color: orange;
+    background-image: url(https://demo.tagdiv.com/newspaper_life_news/wp-content/uploads/2019/02/46-300x196.jpg);
 
-    @include medium {
+    background-repeat: var(--td_mobile_background_repeat, no-repeat);
+    background-size: var(--td_mobile_background_size, cover);
+    background-position: var(--td_mobile_background_size, center top);
+
+
+
+    &:before {
+      content: '';
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: .98;
+      background: linear-gradient(to bottom,rgba(245,176,0,0.85) 0%,rgba(0,33,53,0.93) 100%);
+    }
+
+  @include medium {
       position: relative;
       left: auto;
       right: auto;
       top: auto;
       width: auto;
       overflow-y: visible;
+    }
+
+    ul:first-of-type{
+      padding: 20px 20px 0;
+
+    }
+
+    .is-active {
+      color: $header-bg!important;
     }
   }
 }
@@ -36,10 +66,9 @@ $main-menu-medium: $medium;
 
   position: relative;
   z-index: 10;
-  border-bottom: 1px solid;
 
-  @include medium {
-    border-bottom: none;
+  .is-active {
+    color: $secondary;
   }
 }
 
@@ -53,7 +82,7 @@ $main-menu-medium: $medium;
   overflow: hidden;
   width: 100%;
   border-bottom: none;
-  background-color: clr(muted);
+  padding: 0!important;
 
   @include medium {
     position: absolute;
@@ -65,7 +94,7 @@ $main-menu-medium: $medium;
     overflow: visible;
     padding: $space 0;
     width: 315px;
-    background-color: clr(accent-high);
+    background-color: #fff;
     font-size: 0.9rem;
   }
 
@@ -74,7 +103,6 @@ $main-menu-medium: $medium;
   &-open {
     display: flex;
     flex-direction: column;
-    margin-left: 2rem;
     height: auto;
 
     a {
@@ -84,6 +112,8 @@ $main-menu-medium: $medium;
       font-weight: 400;
       text-transform: unset;
     }
+
+
   }
 }
 

@@ -1,6 +1,6 @@
-uuid: 3c70e47a-0a6c-498e-b9c6-9e260706baca
+uuid: 76f29ca8-097c-4262-ba7e-be8fcba902bf
 langcode: en
-status: false
+status: true
 dependencies:
   module:
     - system
@@ -11,7 +11,7 @@ _core:
 id: kuzya_main_content
 theme: kuzya_main
 region: content
-weight: -7
+weight: -6
 provider: null
 plugin: system_main_block
 settings:

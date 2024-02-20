@@ -1,6 +1,6 @@
-uuid: 7990a6d5-3777-4135-8a26-119db3d0bbe2
+uuid: 49761849-09f1-42a3-9221-f0bc6891710d
 langcode: en
-status: false
+status: true
 dependencies:
   module:
     - system
@@ -10,8 +10,8 @@ _core:
   default_config_hash: BZ5tpW7H8X4PVGRm3MImTIHd2tN0eF7zOtp4SpRYUA0
 id: kuzya_main_messages
 theme: kuzya_main
-region: header
-weight: -10
+region: content
+weight: -7
 provider: null
 plugin: system_messages_block
 settings:

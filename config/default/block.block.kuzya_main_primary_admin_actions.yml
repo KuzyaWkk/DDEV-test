@@ -1,4 +1,4 @@
-uuid: 223c833f-8fe2-4a70-a63f-e940d164bddd
+uuid: 2da73bbd-ea82-433f-85f7-6615fe39ce6c
 langcode: en
 status: true
 dependencies:
@@ -9,7 +9,7 @@ _core:
 id: kuzya_main_primary_admin_actions
 theme: kuzya_main
 region: content
-weight: -11
+weight: -8
 provider: null
 plugin: local_actions_block
 settings:

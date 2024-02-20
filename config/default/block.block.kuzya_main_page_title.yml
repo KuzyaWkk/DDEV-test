@@ -1,0 +1,20 @@
+uuid: 08f1bd63-d0b9-406b-bb62-5d778e2563fd
+langcode: en
+status: false
+dependencies:
+  theme:
+    - kuzya_main
+_core:
+  default_config_hash: 6aOgWsNTXjqrDm98TXSAjP6qd2nCijD1xw45MrnbK-Y
+id: kuzya_main_page_title
+theme: kuzya_main
+region: header
+weight: -5
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  label_display: '0'
+  provider: core
+visibility: {  }

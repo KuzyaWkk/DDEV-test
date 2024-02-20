@@ -1,4 +1,4 @@
-uuid: f5667693-01ac-4474-871f-e81f36b3af27
+uuid: cc723cb9-77c8-40c2-a199-54138f9f2d21
 langcode: en
 status: true
 dependencies:
@@ -6,15 +6,15 @@ dependencies:
     - kenny_core
   theme:
     - kuzya_main
-id: kuzya_main_menu_social_media_black_bar
+id: kuzya_main_menusocialmediablackbar
 theme: kuzya_main
-region: header
-weight: 0
+region: about_us
+weight: -6
 provider: null
 plugin: menu_social_media_black_bar
 settings:
   id: menu_social_media_black_bar
-  label: 'Follow us'
+  label: 'Menu Social Media Black Bar'
   label_display: visible
   provider: kenny_core
 visibility: {  }

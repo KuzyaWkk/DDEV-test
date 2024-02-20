@@ -1,4 +1,4 @@
-uuid: 7806a675-cb9a-4a8f-98db-68832647475b
+uuid: 6fcf9c9b-8387-4a30-8993-1f7840abd31f
 langcode: en
 status: true
 dependencies:
@@ -8,10 +8,10 @@ dependencies:
     - block_content
   theme:
     - kuzya_main
-id: kuzya_main_about_us
+id: kuzya_main_aboutus
 theme: kuzya_main
-region: header
-weight: 0
+region: about_us
+weight: -7
 provider: null
 plugin: 'block_content:63dbcb3f-c4f9-4a88-9a5a-6c8ee4ffcac5'
 settings:

@@ -2,16 +2,22 @@
   display: flex;
   flex-direction: column;
   gap: 0.1rem;
+  margin-left: 0.8rem;
 
 
 
   &--link {
     @include resetA($text-transform: unset);
     @include set-font-header($font-family: $font-paragraph, $font-size: 26px, $font-weight: 700, $letter-spacing: 0, $line-height: 1.1);
+
+    padding: 0;
+    @include medium {
+      font-size: 26px;
+      line-height: 1.1;
+    }
     @include descMedium {
       font-size: 30px;
     }
-
 
   }
 
@@ -19,13 +25,19 @@
     @include resetA($text-transform: unset);
     @include set-font-header($color: $color-desc, $font-size: 9px, $letter-spacing: 1px, $line-height: 1);
     font-family: 'Fira Sans';
+    display: inline-flex;
+    white-space: nowrap;
+    padding: 0;
 
+
+
+    @include medium {
+      font-size: 7px;
+    }
 
     @include descMedium {
       @include set-font-header($color: $color-desc, $font-size: 10px, $letter-spacing: 1.8px, $line-height: 1);
     }
-
-
   }
 }
 

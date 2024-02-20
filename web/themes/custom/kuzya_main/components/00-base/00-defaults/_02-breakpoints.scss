@@ -10,9 +10,9 @@
 // Avoid using in favor of atomic, content-specific, breakpoints.
 // These should be used for generic code, like layouts and typography, only.
 
-$mobile: 770px;
+$mobile: 790px;
 $descLarge: 1140px;
-$descMedium: 1120px;
+$descMedium: 1020px;
 
 $xs: 320px;
 $small: 480px;
@@ -32,19 +32,19 @@ $max-width: $xl;
 }
 
 @mixin headerMargin {
-  @media screen and (min-width: 1120px) and (max-width: 1140px) {
+  @media screen and (min-width: 1020px) and (max-width: 1140px) {
     @content
-  }
-}
-
-@mixin descLarge {
-  @include breakpoint($descLarge) {
-    @content;
   }
 }
 
 @mixin descMedium {
   @include breakpoint($descMedium) {
+    @content;
+  }
+}
+
+@mixin descLarge {
+  @include breakpoint($descLarge) {
     @content;
   }
 }

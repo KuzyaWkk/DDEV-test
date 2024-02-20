@@ -1,4 +1,4 @@
-uuid: 0a2fd549-1a23-476c-a3ba-71ce2075a8d8
+uuid: 0930d18c-7e3a-4c0b-adfb-26ffa1119401
 langcode: en
 status: true
 dependencies:
@@ -11,7 +11,7 @@ dependencies:
 id: kuzya_main_footer
 theme: kuzya_main
 region: footer
-weight: -11
+weight: -9
 provider: null
 plugin: 'system_menu_block:footer'
 settings:
