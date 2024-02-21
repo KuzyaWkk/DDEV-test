@@ -86,4 +86,9 @@ $outer-container-break: $small;
   opacity: $opacity;
 }
 
-
+@mixin imageSquareSize(
+  $count: 35px,
+) {
+  height: $count;
+  width: $count;
+}

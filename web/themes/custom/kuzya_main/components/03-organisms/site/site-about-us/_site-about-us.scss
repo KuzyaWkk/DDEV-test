@@ -1,30 +1,344 @@
-.content-bottom {
-  margin-bottom: 4em;
+.about-us {
+
 
   &__inner {
-    @include wrapper;
 
     display: flex;
     flex-flow: column nowrap;
-  }
 
-  &__primary {
-    @include medium {
-      display: flex;
-      flex-flow: row nowrap;
-      justify-content: space-between;
-      padding: $space 0;
+    @include desc {
+      margin: 0 auto;
+      width: 740px;
+    }
+
+    @include headerMargin {
+      width: 980px;
+    }
+
+    @include descLarge {
+      width: 1068px;
     }
   }
 
-  &__branding {
+  &__primary {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 0 20px;
+
+    @include desc {
+      display: grid;
+      grid-template-columns: 1fr 1.5fr 1fr;
+      gap: 1rem;
+    }
+
+    @include headerMargin {
+      display: grid;
+      grid-template-columns: 1fr 2fr 1fr;
+      gap: 1rem;
+      padding: 0;
+    }
+
+    @include descLarge {
+      display: grid;
+      grid-template-columns: 1fr 2fr 1fr;
+      gap: 1rem;
+      padding: 0;
+    }
+
+  }
+
+  .header__branding {
     max-width: 190px;
     padding: 1rem 0;
+    display: flex;
+    justify-content: center;
 
-    @include medium {
-      margin-right: $space;
+    @include desc {
       max-width: 300px;
+    }
+
+    @include headerMargin {
+      margin-right: 0;
       padding: 0;
+    }
+
+    .logo {
+      display: flex;
+
+      &__link {
+        @include imageSquareSize($count: 45px);
+
+        @include desc {
+          @include imageSquareSize($count: 35px);
+        }
+
+        @include headerMargin {
+          @include imageSquareSize($count: 45px);
+        }
+      }
+
+      &__image {
+        @include imageSquareSize($count: 45px);
+
+        @include desc {
+          @include imageSquareSize($count: 35px);
+        }
+
+        @include headerMargin {
+          @include imageSquareSize($count: 45px);
+        }
+      }
+    }
+
+
+    .sitename {
+
+      @include desc {
+        margin-left: 0.4rem;
+      }
+
+      &--link {
+        font-size: 30px;
+        color: $primary;
+
+        @include desc {
+          font-size: 26px;
+        }
+
+        @include headerMargin {
+          font-size: 28px;
+        }
+
+        @include descLarge {
+          font-size: 30px;
+        }
+      }
+
+      &__slogan--link {
+        font-size: 10px;
+        letter-spacing: 1.8px;
+        color: $color-secondary-desc;
+
+        @include desc {
+          font-size: 9px;
+        }
+
+        @include headerMargin {
+          font-size: 10px;
+        }
+
+        @include descLarge {
+          font-size: 10px;
+        }
+      }
+    }
+  }
+
+  .block--about-us {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+
+
+    .heading {
+      font-size: 28px;
+      color: $primary;
+      font-family: $font-main;
+      font-weight: 800;
+      letter-spacing: 1px;
+      margin-bottom: 1.2rem;
+      margin-top: 0.6rem;
+
+      @include desc {
+        display: flex;
+        width: 100%;
+        font-size: 20px;
+        margin-top: 0;
+        line-height: 26px;
+        justify-content: start;
+      }
+
+      @include headerMargin {
+        font-size: 23px;
+      }
+
+      @include descLarge {
+         font-size: 28px;
+      }
+    }
+
+    .text-long {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+
+      p {
+        margin: 0;
+        font-family: $font-paragraph;
+        line-height: 1.5;
+        font-weight: 300;
+        color: $color-secondary-desc;
+        font-size: 14px;
+
+        @include desc {
+          font-size: 11px;
+          line-height: 1.4;
+
+        }
+
+        @include headerMargin {
+          font-size: 12px;
+        }
+
+        @include descLarge {
+          font-size: 14px;
+          line-height: 1.5;
+
+        }
+
+        a {
+          font-size: 14px;
+          color: $secondary;
+          text-decoration: none;
+          margin-left: 0.2rem;
+
+          @include desc {
+            font-size: 11px;
+            line-height: 1.4;
+          }
+
+          @include headerMargin {
+            font-size: 12px;
+          }
+
+          @include descLarge {
+            font-size: 14px;
+            line-height: 1.5;
+
+          }
+        }
+      }
+    }
+  }
+
+  .block--social-bar-black {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include desc {
+      height: 100%;
+      justify-content: start;
+      align-items: start;
+      margin-top: 0;
+    }
+
+
+    .heading {
+      font-size: 28px;
+      color: $primary;
+      font-family: $font-main;
+      font-weight: 800;
+      letter-spacing: 1px;
+      margin-bottom: 0.8rem;
+      margin-top: 0.6rem;
+
+      @include desc {
+        display: flex;
+        width: 100%;
+        font-size: 20px;
+        margin-top: 0;
+        line-height: 26px;
+        justify-content: start;
+        margin-bottom: 20px;
+      }
+
+      @include headerMargin {
+        font-size: 23px;
+      }
+
+      @include descLarge {
+        font-size: 28px;
+      }
+    }
+
+    .social-bar-black__menu {
+
+      display: flex;
+      flex-direction: row;
+
+      &-item {
+        @include list-reset;
+
+        a {
+          display: inline-flex;
+          justify-content: center;
+          width: 45px;
+          height: 45px;
+          margin: -2.5px -5px -2.5px 0;
+
+          @include desc {
+            justify-content: start;
+            @include imageSquareSize($count: 35px);
+            align-items: center;
+          }
+
+          @include headerMargin {
+            justify-content: start;
+            @include imageSquareSize($count: 45px);
+            align-items: center;
+            padding-left: 0.5rem;
+          }
+
+          @include descLarge {
+            justify-content: start;
+            @include imageSquareSize($count: 45px);
+            align-items: center;
+            padding-left: 0.5rem;
+          }
+
+          img {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 16px;
+            height: 16px;
+
+            @include desc {
+              @include imageSquareSize($count: 11px)
+            }
+
+            @include headerMargin {
+              @include imageSquareSize($count: 14px)
+            }
+
+            @include descLarge {
+              @include imageSquareSize($count: 16px)
+            }
+          }
+
+          .icon-black__instagram {
+            @include imageSquareSize($count: 23px);
+
+            @include desc {
+              @include imageSquareSize($count: 18px)
+            }
+
+            @include headerMargin {
+              @include imageSquareSize($count: 21px)
+            }
+
+            @include descLarge {
+              @include imageSquareSize($count: 23px)
+            }
+          }
+        }
+      }
     }
   }
 }
