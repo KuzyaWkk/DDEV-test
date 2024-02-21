@@ -1,22 +1,24 @@
 .inline-menu {
   @include list-reset;
-}
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
 
-.inline-menu__item {
-  margin: 0 1em 0.5em 0;
 
+  &__link-header {
+    font-size: 11px;
+    color: $header-primary;
+    font-family: $font-main;
+    line-height: 40px;
+    font-weight: 300;
+    padding: 0 9px;
+    display: inline-block;
+    text-decoration: none;
 
-  &:last-child {
-    margin-right: 0;
+    @include descMedium {
+      font-size: 13px;
+    }
   }
-}
-
-.inline-menu__link {
-  @include link;
-
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 1.5px;
-  text-decoration: none;
-  text-transform: uppercase;
 }
