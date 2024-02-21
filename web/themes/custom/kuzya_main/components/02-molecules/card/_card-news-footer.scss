@@ -1,0 +1,94 @@
+.card {
+
+  &__news--footer {
+    display: flex;
+    flex-direction: row;
+    gap: 14px;
+    margin-bottom: 1.5rem;
+
+    @include desc {
+      margin-bottom: 1rem;
+    }
+
+    &:hover {
+       .card__heading-link span {
+         border-bottom: 1px solid $secondary;
+         cursor: pointer;
+       }
+    }
+  }
+
+  &__link {
+    img {
+      max-width: 218px;
+      max-height: 174px;
+
+
+      @include desc {
+        max-width: 96px;
+        max-height: 67px;
+      }
+
+      @include headerMargin {
+        max-width: 102px;
+        max-height: 71px;
+      }
+
+      @include descLarge {
+        max-width: 112px;
+        max-height: 77px;
+      }
+    }
+
+
+  }
+
+  &__content {
+
+    .heading {
+      display: inline-flex;
+      margin: 0;
+
+      a {
+        font-family: $font-main;
+        font-size: 16px;
+        line-height: 1.1;
+        font-weight: 600;
+        margin: 0 0 6px;
+        color: $primary;
+        text-decoration: none;
+
+        @include desc {
+          font-size: 12px;
+        }
+
+        @include headerMargin {
+          font-size: 14px;
+        }
+
+        @include descLarge {
+          font-size: 16px;
+        }
+      }
+    }
+
+    .card__body {
+      margin: 0;
+      font-family: $font-main;
+      font-size: 12px;
+      line-height: 1;
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: $color-news-date;
+
+      @include desc {
+        font-size: 11px;
+      }
+
+      @include descLarge {
+        font-size: 12px;
+      }
+    }
+  }
+}
