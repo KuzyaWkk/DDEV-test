@@ -1,0 +1,15 @@
+uuid: 7f11f4cd-b9bd-4e0d-ae2a-4e462cd343ed
+langcode: en
+status: true
+dependencies: {  }
+name: news_footer
+label: 'News Footer'
+effects:
+  275148a4-cea6-4a78-9f2c-6a1686ed6dc6:
+    uuid: 275148a4-cea6-4a78-9f2c-6a1686ed6dc6
+    id: image_scale
+    weight: 1
+    data:
+      width: 195
+      height: 156
+      upscale: false

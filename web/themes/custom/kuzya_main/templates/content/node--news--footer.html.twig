@@ -73,12 +73,14 @@
 
 {% set image = node.field_image_teaser.entity.field_media_image.entity.uri.value %}
 {% set image_src = file_url(image) %}
+{% set date_value = node.field_created.value %}
+{% set date = date_value|date('m/d/Y') %}
 
 {% embed "@molecules/card/card.twig" with {
   card__extra_classes: ["card__news--footer"],
   card__heading: label,
   heading_level: 3,
-  card__body: node.field_created.value,
+  card__body: date,
   card__link__url: url,
 } %}
 
@@ -98,7 +100,6 @@
         } %}
       {% endblock %}
     {% endembed %}
-
 
   {% endblock %}
 

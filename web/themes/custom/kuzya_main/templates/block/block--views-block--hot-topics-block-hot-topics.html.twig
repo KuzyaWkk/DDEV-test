@@ -28,7 +28,7 @@
 <div {{ bem('block', ['hot-topics']) }}>
   {% if label %}
     {% include "@atoms/text/headings/_heading.twig" with {
-      heading__base_class: heading__base_class|default('heading'),
+      heading__base_class: heading__base_class|default('block--hot-topics__heading'),
       heading: label,
       heading_level: 4,
     } %}
