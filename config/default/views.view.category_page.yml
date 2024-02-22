@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.preview
     - core.entity_view_mode.node.teaser
+    - core.entity_view_mode.node.teaser_with_image
     - field.storage.node.field_category
     - field.storage.node.field_created
     - field.storage.node.field_description
@@ -1464,7 +1465,21 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
+      style:
+        type: default
+        options:
+          grouping: {  }
+          row_class: ''
+          default_row_class: true
+          uses_fields: false
+      row:
+        type: 'entity:node'
+        options:
+          relationship: none
+          view_mode: teaser_with_image
       defaults:
+        style: false
+        row: false
         fields: false
       display_description: ''
       display_extenders: {  }
