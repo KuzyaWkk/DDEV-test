@@ -1,0 +1,15 @@
+uuid: 25952e34-c86f-4896-946a-f9266259a0c4
+langcode: en
+status: true
+dependencies: {  }
+name: news_teaser_with_image_desktop
+label: 'News Teaser With Image | Desktop (300 x 150)'
+effects:
+  48a78d98-b42d-43fd-9193-be3fbf514afa:
+    uuid: 48a78d98-b42d-43fd-9193-be3fbf514afa
+    id: image_scale_and_crop
+    weight: 2
+    data:
+      width: 300
+      height: 150
+      anchor: center-top
