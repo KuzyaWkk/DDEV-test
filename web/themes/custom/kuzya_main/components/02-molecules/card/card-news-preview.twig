@@ -1,0 +1,69 @@
+{% set card__base_class = 'card__news--preview' %}
+
+<div {{ bem(card__base_class, card__modifiers, card__blockname, card__extra_classes) }}>
+
+  <div {{ bem('image', card__content__modifiers, card__base_class) }}>
+     {% if card__image %}
+       {{ card__image }}
+    {% endif %}
+  </div>
+
+  {# Content #}
+  <div {{ bem('content', card__content__modifiers, card__base_class) }}>
+
+    {# Category #}
+    {% if card__category %}
+      {% include "@atoms/text/text/01-paragraph.twig" with {
+        paragraph_base_class: card__category__base_class|default('category'),
+        paragraph_modifiers: card__category__modifiers,
+        paragraph_blockname: card__category__base_class,
+        paragraph_content: card__category,
+      } %}
+    {% endif %}
+
+    {# Title #}
+    {% if card__heading %}
+      {% include "@atoms/text/headings/_heading.twig" with {
+        heading_base_class: card__heading__base_class|default('heading'),
+        heading_modifiers: card__heading__modifiers,
+        heading_blockname: card__base_class,
+        heading_level: 3,
+        heading: card__heading,
+        heading_url: card__heading__link|default(card__link__url),
+        heading_link_base_class: card__heading__link_base_class|default('heading-link'),
+        heading_link_blockname: card__base_class,
+      } %}
+    {% endif %}
+
+    {# Body #}
+    {% if card__body %}
+
+      {% include "@atoms/text/text/01-paragraph.twig" with {
+        paragraph_base_class: card__body__base_class|default('body'),
+        paragraph_modifiers: card__body__modifiers,
+        paragraph_blockname: card__base_class,
+        paragraph_content: card__body,
+      } %}
+    {% endif %}
+
+    <div {{ bem('content--info', card__content__modifiers, card__base_class) }}>
+      {% block card__author %}
+        {% if card__author %}
+          {{ card__author }}
+        {% endif %}
+      {% endblock %}
+
+
+      {% if card__created %}
+        {{ card__created }}
+      {% endif %}
+    </div>
+
+
+    <div {{ bem('content--body', card__content__modifiers, card__base_class) }}>
+      {# Heading #}
+
+    </div>
+  </div>
+
+</div>
