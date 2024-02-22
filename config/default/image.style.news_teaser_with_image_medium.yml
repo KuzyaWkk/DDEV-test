@@ -1,0 +1,15 @@
+uuid: 7692f0c5-3d70-47aa-9759-7a482b3ce7d6
+langcode: en
+status: true
+dependencies: {  }
+name: news_teaser_with_image_medium
+label: 'News Teaser With Image | Medium (200 x 100)'
+effects:
+  d43e6ebb-aec8-403c-8b6f-31af8eed5a3f:
+    uuid: d43e6ebb-aec8-403c-8b6f-31af8eed5a3f
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 200
+      height: 100
+      anchor: center-center

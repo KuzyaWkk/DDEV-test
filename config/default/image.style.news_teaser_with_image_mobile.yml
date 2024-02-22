@@ -1,0 +1,15 @@
+uuid: ff2adff2-8f09-43fb-92e3-3ee338438aa4
+langcode: en
+status: true
+dependencies: {  }
+name: news_teaser_with_image_mobile
+label: 'News Teaser With Image | Mobile'
+effects:
+  b0b4e936-758f-43f2-a7a4-7fbf98f18f7f:
+    uuid: b0b4e936-758f-43f2-a7a4-7fbf98f18f7f
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 800
+      height: 400
+      anchor: center-center

@@ -5,6 +5,13 @@
 
   {# Content #}
   <div {{ bem('content', card__content__modifiers, card__base_class) }}>
+
+    <div {{ bem('content--image', card__content__modifiers, card__base_class) }}>
+      {% if card__image %}
+        {{ card__image }}
+      {% endif %}
+    </div>
+
     <div {{ bem('content--heading', card__content__modifiers, card__base_class) }}>
     {# Heading #}
       {% if card__category %}
