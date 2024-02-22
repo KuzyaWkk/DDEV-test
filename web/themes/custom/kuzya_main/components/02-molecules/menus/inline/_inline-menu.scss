@@ -17,8 +17,15 @@
     display: inline-block;
     text-decoration: none;
 
+    &:hover {
+      cursor: pointer;
+      color: $secondary;
+    }
+
     @include descMedium {
       font-size: 13px;
+
+
     }
   }
 }

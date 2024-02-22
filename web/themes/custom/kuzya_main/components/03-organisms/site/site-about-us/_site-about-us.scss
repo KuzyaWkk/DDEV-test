@@ -1,5 +1,8 @@
 .about-us {
 
+  @include desc {
+    margin: 4rem 0;
+  }
 
   &__inner {
 

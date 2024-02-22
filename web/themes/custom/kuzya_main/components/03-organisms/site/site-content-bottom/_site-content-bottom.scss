@@ -1,5 +1,15 @@
 .content-bottom {
 
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: center;
+
+
+  @include desc {
+    margin: 4rem 0;
+  }
+
   &__inner {
     display: flex;
     flex-flow: column nowrap;
