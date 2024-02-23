@@ -6,6 +6,7 @@ $sidebar-width: 33%;
 $gutter: $space;
 $main-width: calc(100% - (#{$sidebar-width} + #{$gutter}));
 
+//@todo "Old styles that i want to reuse in future for new components. Will be deleted after use"
 /*
  * Layout Using Flexbox (IE11+).
  * Remove this and uncomment Grid code below to use CSS Grid.
