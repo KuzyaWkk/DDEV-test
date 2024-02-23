@@ -1,13 +1,8 @@
 .main {
 
-  &-content {
-
-  }
-
   .view__taxonomy_term {
 
     .layout {
-
 
       &--twocol-section {
 
@@ -18,7 +13,6 @@
           width: 100%;
           padding-top: 35px;
           padding-bottom: 65px;
-
 
           @include desc {
             flex-direction: row;
@@ -77,10 +71,53 @@
                   font-size: 28px;
                   letter-spacing: 1px;
                 }
+              }
+            }
 
+            .block--sidebar__must-read {
+              margin-top: 1.7rem;
+
+              &__heading {
+                font-size: 28px;
+                font-family: $font-main;
+                font-weight: 800;
+                line-height: 31px;
+                margin-bottom: 16px;
+                margin-top: 0;
+
+                @include desc {
+                  font-size: 20px;
+                  letter-spacing: 0;
+                }
+
+                @include headerMargin {
+                  font-size: 23px;
+                }
+
+                @include descLarge {
+                  font-size: 28px;
+                  letter-spacing: 1px;
+                }
 
               }
             }
+
+            .view__category_page {
+              position: relative;
+            }
+
+            .view__category_page .views-row:not(:last-child) .card__news--teaser::before {
+              content: '';
+              bottom: -15px;
+              border-width: 0 0 1px 0;
+              border-style: solid;
+              border-color: #eaeaea;
+              left: 0;
+              height: 1px;
+              width: 100%;
+              position: absolute;
+            }
+
           }
         }
       }

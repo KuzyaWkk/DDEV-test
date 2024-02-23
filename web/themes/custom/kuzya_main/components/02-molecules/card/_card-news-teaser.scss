@@ -1,5 +1,7 @@
 .card__news--teaser {
 
+  position: relative;
+
   margin-bottom: 25px;
 
   @include desc {
@@ -20,7 +22,7 @@
     }
 
     &--image {
-
+      margin-bottom: 13px;
     }
 
     &--heading {
@@ -157,6 +159,7 @@
           line-height: 1.5;
         }
       }
+
 
     }
 
