@@ -292,17 +292,17 @@
           }
 
           @include headerMargin {
-            justify-content: start;
+            justify-content: center;
             @include imageSquareSize($count: 45px);
             align-items: center;
-            padding-left: 0.5rem;
+            margin-left: -0.5rem;
           }
 
           @include descLarge {
-            justify-content: start;
+            justify-content: center;
             @include imageSquareSize($count: 45px);
             align-items: center;
-            padding-left: 0.5rem;
+            margin-left: -0.5rem;
           }
 
           img {
