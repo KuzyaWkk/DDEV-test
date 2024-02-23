@@ -6,41 +6,42 @@ $sidebar-width: 33%;
 $gutter: $space;
 $main-width: calc(100% - (#{$sidebar-width} + #{$gutter}));
 
+//@todo "Old styles that i want to reuse in future for new components. Will be deleted after use"
 /*
  * Layout Using Flexbox (IE11+).
  * Remove this and uncomment Grid code below to use CSS Grid.
 */
 
-.main {
-  @include wrapper;
+//.main {
+//  @include wrapper;
+//
+//  margin-bottom: 4em;
+//
+//  @include large {
+//    display: flex;
+//  }
+//}
 
-  margin-bottom: 4em;
+//.main-sidebar {
+//  margin-bottom: $space-double;
+//
+//  @include large {
+//    order: 2;
+//    width: $sidebar-width;
+//    margin-bottom: 0;
+//  }
+//}
 
-  @include large {
-    display: flex;
-  }
-}
-
-.main-sidebar {
-  margin-bottom: $space-double;
-
-  @include large {
-    order: 2;
-    width: $sidebar-width;
-    margin-bottom: 0;
-  }
-}
-
-.main-content {
-  width: 100%;
-
-  @include large {
-    &--with-sidebar {
-      margin-right: $gutter;
-      width: $main-width;
-    }
-  }
-}
+//.main-content {
+//  width: 100%;
+//
+//  @include large {
+//    &--with-sidebar {
+//      margin-right: $gutter;
+//      width: $main-width;
+//    }
+//  }
+//}
 
 /*
  * Layout Using CSS Grid (NO IE11 support)
