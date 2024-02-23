@@ -1,0 +1,11 @@
+uuid: 21b99519-7be5-4e23-ad19-bd46af810f0f
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.preview_without_date
+label: 'Preview without date'
+description: ''
+targetEntityType: node
+cache: true
