@@ -37,13 +37,13 @@
       } %}
 
       {% include "@atoms/text/text/01-paragraph.twig" with {
-        paragraph_content: 'Related',
+        paragraph_content: 'Related'|t,
         paragraph_base_class: 'related',
       } %}
     </div>
 
     {% include "@atoms/text/text/01-paragraph.twig" with {
-      paragraph_content: 'Recommended to you',
+      paragraph_content: 'Recommended to you'|t,
       paragraph_base_class: 'recommended',
     } %}
   {% endif %}
