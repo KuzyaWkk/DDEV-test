@@ -4,7 +4,9 @@ html {
 
 body {
   background-color: clr(background);
-  color: clr(text);
+  color: $primary;
+  font-family: $font-main;
+  font-weight: 300;
 
   @include body-copy;
 }
@@ -14,12 +16,6 @@ body {
 *::before {
   box-sizing: inherit;
 }
-
-//.main {
-//  @include wrapper;
-//
-//  display: block; /* Fix for IE weirdness */
-//}
 
 .visually-hidden {
   position: absolute !important;
