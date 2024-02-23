@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.node.preview_without_date
     - field.storage.node.field_category
     - field.storage.node.field_description
     - field.storage.node.field_image_teaser
@@ -413,7 +414,10 @@ display:
       style:
         type: default
       row:
-        type: fields
+        type: 'entity:node'
+        options:
+          relationship: none
+          view_mode: preview_without_date
       query:
         type: views_query
         options:
