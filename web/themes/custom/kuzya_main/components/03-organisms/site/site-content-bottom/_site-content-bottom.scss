@@ -79,35 +79,40 @@
 
         .views-field-name {
 
-          font-size: 16px;
-          color: $primary;
-          line-height: 30px;
-          font-weight: 500;
-          list-style: none;
-          font-family: $font-main;
-          width: 100%;
-
           span {
             display: flex;
             width: 100%;
 
-            &:hover {
-              cursor: pointer;
-              color: $secondary;
+            a {
+              text-decoration: none;
+              font-size: 16px;
+              color: $primary;
+              line-height: 30px;
+              font-weight: 500;
+              list-style: none;
+              font-family: $font-main;
+              width: 100%;
+
+              &:hover {
+                cursor: pointer;
+                color: $secondary;
+              }
+
+              @include desc {
+                font-size: 12px;
+              }
+
+              @include headerMargin {
+                font-size: 14px;
+              }
+
+              @include descLarge {
+                font-size: 16px;
+              }
             }
           }
 
-          @include desc {
-            font-size: 12px;
-          }
 
-          @include headerMargin {
-            font-size: 14px;
-          }
-
-          @include descLarge {
-            font-size: 16px;
-          }
         }
 
         .views-field-category {
