@@ -15,11 +15,11 @@ body {
   box-sizing: inherit;
 }
 
-.main {
-  @include wrapper;
-
-  display: block; /* Fix for IE weirdness */
-}
+//.main {
+//  @include wrapper;
+//
+//  display: block; /* Fix for IE weirdness */
+//}
 
 .visually-hidden {
   position: absolute !important;

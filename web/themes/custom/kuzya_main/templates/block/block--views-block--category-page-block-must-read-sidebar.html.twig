@@ -1,0 +1,14 @@
+<div {{ bem('block', ['sidebar__must-read']) }}>
+
+  {% if label %}
+    {% include "@atoms/text/headings/_heading.twig" with {
+      heading__base_class: heading__base_class|default('block--sidebar__must-read__heading'),
+      heading: label,
+      heading_level: 4,
+    } %}
+  {% endif %}
+
+  {% block content %}
+    {{ content }}
+  {% endblock %}
+</div>

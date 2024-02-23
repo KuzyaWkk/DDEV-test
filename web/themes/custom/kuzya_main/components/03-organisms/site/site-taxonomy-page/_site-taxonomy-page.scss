@@ -1,0 +1,57 @@
+.main {
+
+  &-content {
+
+  }
+
+  .view__taxonomy_term {
+
+    .layout {
+
+
+      &--twocol-section {
+
+        &--67-33 {
+
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+          padding-top: 35px;
+          padding-bottom: 65px;
+
+
+          @include desc {
+            flex-direction: row;
+          }
+
+          .layout__region--first {
+
+          }
+
+          .layout__region--second {
+            display: block;
+            min-height: 1px;
+            float: none;
+            padding: 30px 20px;
+            width: 100%;
+            vertical-align: baseline;
+
+            .block--sidebar__latest-news {
+
+              &__heading {
+                font-size: 28px;
+                font-family: $font-main;
+                font-weight: 800;
+                line-height: 31px;
+                margin-bottom: 16px;
+                margin-top: 0;
+
+
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
