@@ -1,6 +1,23 @@
 .card__news--teaser {
 
+  margin-bottom: 25px;
+
+  @include desc {
+    margin-bottom: 30px;
+  }
+
+
+
+
+
   &__content {
+
+    &:hover {
+
+      .heading a span{
+        border-bottom: 1px solid $secondary;
+      }
+    }
 
     &--image {
 
@@ -30,6 +47,18 @@
            text-transform: uppercase;
            letter-spacing: 1px;
            display: inline-block;
+
+           @include desc {
+             font-size: 11px;
+             letter-spacing: 0;
+           }
+
+           @include descLarge {
+             font-size: 12px;
+             letter-spacing: 1px;
+             line-height: 1;
+
+           }
          }
       }
 
@@ -44,6 +73,23 @@
         display: flex;
         justify-content: center;
         align-items: center;
+
+        @include desc {
+          font-size: 11px;
+          letter-spacing: 0;
+        }
+
+        @include headerMargin {
+          font-size: 11px;
+          letter-spacing: 1px;
+        }
+
+        @include descLarge {
+          font-size: 12px;
+          letter-spacing: 1px;
+
+        }
+
       }
     }
 
@@ -55,23 +101,39 @@
         width: auto;
 
         padding: 0;
-        margin: 0 6px 0 0;
+        margin-right: 6px;
         font-size: 16px;
         font-weight: 800;
+        font-family: $font-paragraph;
         word-wrap: break-word;
         text-align: left;
+
+        @include desc {
+          font-size: 13px;
+          line-height: 1.4;
+        }
+
+        @include headerMargin {
+          font-size: 14px;
+          line-height: 1.4;
+        }
+
+        @include descLarge {
+          font-size: 16px;
+          line-height: 1.5;
+        }
 
         a {
           box-shadow: 0 0 0 0 $secondary;
           color: $primary;
           text-decoration: none;
+
+
         }
       }
 
       .card__news--teaser__body {
         display: inline;
-
-
         font-weight: 300;
         color: $primary;
         font-family: $font-paragraph;
@@ -79,7 +141,23 @@
         margin: 0;
         padding: 0;
         text-align: left;
+
+        @include desc {
+          font-size: 11px;
+          line-height: 1.4;
+        }
+
+        @include headerMargin {
+          font-size: 12px;
+          line-height: 1.4;
+        }
+
+        @include descLarge {
+          font-size: 14px;
+          line-height: 1.5;
+        }
       }
+
     }
 
   }

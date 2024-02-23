@@ -29,13 +29,30 @@
           }
 
           .layout__region--second {
-            display: block;
+            display: flex;
+            flex-direction: column;
             min-height: 1px;
             float: none;
             padding: 30px 20px;
             width: 100%;
             vertical-align: baseline;
             background-color: #f9f9f9;
+
+            @include desc {
+              padding: 10px 24px 0;
+              max-width: 248px;
+              float: right;
+              margin-left: auto;
+            }
+
+            @include descMedium {
+              max-width: 364px;
+              padding: 20px 32px 0;
+            }
+
+            @include xl {
+              margin-left: 0;
+            }
 
             .block--sidebar__latest-news {
 
@@ -46,6 +63,20 @@
                 line-height: 31px;
                 margin-bottom: 16px;
                 margin-top: 0;
+
+                @include desc {
+                  font-size: 20px;
+                  letter-spacing: 0;
+                }
+
+                @include headerMargin {
+                  font-size: 23px;
+                }
+
+                @include descLarge {
+                  font-size: 28px;
+                  letter-spacing: 1px;
+                }
 
 
               }
