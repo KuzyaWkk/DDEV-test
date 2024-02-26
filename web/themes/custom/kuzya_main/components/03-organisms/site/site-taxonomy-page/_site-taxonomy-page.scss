@@ -7,18 +7,31 @@
       &--twocol-section {
 
         &--67-33 {
-
           display: flex;
           flex-direction: column;
-          width: 100%;
-          padding-top: 35px;
-          padding-bottom: 65px;
+          max-width: 1240px;
+          width: auto;
+          margin: 0 auto;
+          padding: 35px 24px 65px;
 
           @include desc {
             flex-direction: row;
           }
 
           .layout__region--first {
+            display: flex;
+            width: 100%;
+            position: relative;
+            min-height: 1px;
+            float: left;
+
+            @include desc {
+              width: calc(100% - 248px);
+            }
+
+            @include descMedium {
+              width: calc(100% - 364px);
+            }
 
           }
 
