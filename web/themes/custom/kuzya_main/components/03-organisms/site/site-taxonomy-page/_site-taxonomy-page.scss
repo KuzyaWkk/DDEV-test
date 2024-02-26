@@ -7,18 +7,158 @@
       &--twocol-section {
 
         &--67-33 {
-
           display: flex;
           flex-direction: column;
-          width: 100%;
-          padding-top: 35px;
-          padding-bottom: 65px;
+          max-width: 1240px;
+          width: auto;
+          margin: 0 auto;
+          padding: 35px 24px 65px;
 
           @include desc {
             flex-direction: row;
           }
 
           .layout__region--first {
+            display: flex;
+            width: 100%;
+            position: relative;
+            min-height: 1px;
+            float: left;
+
+            @include desc {
+              width: calc(100% - 248px);
+            }
+
+            @include descMedium {
+              width: calc(100% - 364px);
+            }
+
+            .views-exposed-form {
+
+              label {
+                margin: 0 0 12px;
+                font-size: 22px;
+                line-height: 1.1;
+                font-weight: 600;
+
+                @include desc {
+                  font-size: 18px;
+                  margin: 0 0 6px;
+                }
+
+                @include headerMargin {
+                  font-size: 22px;
+                }
+
+                @include descLarge {
+                  font-size: 28px;
+                }
+              }
+
+              .form-select {
+
+                ul {
+                  padding-top: 5px;
+                  display: flex;
+                  flex-direction: column;
+                  justify-content: start;
+                  gap: 0.3rem;
+
+                  li {
+                    @include list-reset;
+                    display: inline-flex;
+                    flex-direction: column;
+                    justify-content: start;
+                    align-items: start;
+                    z-index: 5;
+                    padding: 5px 6px 3px;
+                    line-height: 1;
+                    font-weight: 400;
+                    text-transform: uppercase;
+                    letter-spacing: 1px;
+
+                    @include desc {
+                      padding: 4px 5px 4px;
+                      font-size: 9px;
+                      letter-spacing: 2px;
+                    }
+
+                    @include descMedium {
+                      font-size: 11px;
+                      padding: 5px 6px 3px;
+                      letter-spacing: 1px;
+                    }
+
+                    a {
+                      color: $primary;
+                      font-size: 11px;
+                      text-decoration: none;
+
+                      @include desc {
+                        font-size: 9px;
+                        letter-spacing: 2px;
+                      }
+
+                      @include descMedium {
+                        font-size: 11px;
+                        letter-spacing: 1px;
+                      }
+                    }
+                  }
+                }
+              }
+
+              .form-actions {
+                display: none;
+              }
+            }
+
+
+            .js-pager__items {
+              position: relative;
+              margin: 54px 0 0;
+              display: flex;
+              flex-direction: row;
+              width: auto;
+              font-family: $font-special;
+              font-size: 12px;
+              font-weight: 500;
+
+              .pager-item {
+                padding: 5px 11px;
+                border: 1px solid #fff;
+                display: inline-block;
+                margin: 0 8px 8px 0;
+                min-width: 33px;
+                text-align: center;
+                line-height: 21px;
+                float: left;
+                text-decoration: none;
+                color: $primary;
+
+                &:hover {
+                  border: 1px solid $primary;
+                }
+
+                &--current {
+                  border: 1px solid $primary;
+                }
+
+                &--icon {
+                  position: relative;
+
+                  span {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    display: inline-block;
+                    font-size: 23px;
+                    bottom: -35%;
+                  }
+                }
+              }
+            }
 
           }
 
@@ -98,7 +238,6 @@
                   font-size: 28px;
                   letter-spacing: 1px;
                 }
-
               }
             }
 
@@ -117,7 +256,6 @@
               width: 100%;
               position: absolute;
             }
-
           }
         }
       }
