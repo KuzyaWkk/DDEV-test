@@ -362,6 +362,31 @@
           }
         }
 
+        .view__you_might_also_like {
+
+          @include desc {
+            display: grid;
+            grid-template-columns: 1fr 2fr 1fr;
+          }
+
+          .views-row:nth-child(2) {
+
+            .card__news--preview__image a{
+               @include desc {
+                 padding-bottom: 66%;
+               }
+            }
+
+            .heading {
+              @include desc {
+                font-size: 20px;
+              }
+            }
+          }
+        }
+
+
+
       }
 
     }

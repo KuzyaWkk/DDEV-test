@@ -11,7 +11,6 @@ dependencies:
     - field.field.node.news.field_image
     - field.field.node.news.field_image_teaser
     - field.field.node.news.field_paragraphs
-    - image.style.media_library
     - node.type.news
   module:
     - layout_builder
@@ -47,7 +46,7 @@ content:
     label: hidden
     settings:
       image_link: content
-      image_style: media_library
+      image_style: ''
       image_loading:
         attribute: lazy
     third_party_settings: {  }

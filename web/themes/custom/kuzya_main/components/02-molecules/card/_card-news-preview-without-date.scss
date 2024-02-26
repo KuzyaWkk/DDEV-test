@@ -1,33 +1,18 @@
 .card__news--preview__none-date {
 
-  margin-bottom: 40px;
-
   @include desc {
     display: flex;
-    flex-direction: row;
-    gap: 20px;
-    margin-bottom: 36px;
+    flex-direction: column!important;
+    padding: 0 20px;
   }
 
-  @include descLarge {
-    margin-bottom: 46px;
-  }
-
-  &:hover {
-    .heading {
-      span {
-        border-bottom: 1px solid $secondary;
-      }
-    }
-
-  }
   .card__news--preview__image {
     display: block;
     position: relative;
 
     @include desc {
-      flex: 0 0 40%;
-      width: 40%;
+      width: 100%;
+      flex: 0 0 100%;
       display: block;
       order: 0;
       overflow: hidden;
@@ -36,13 +21,9 @@
     a {
       padding-bottom: 50%;
 
-      //@include desc {
-      //  padding-bottom: 80%;
-      //}
-      //
-      //@include descMedium {
-      //  padding-bottom: 70%;
-      //}
+      @include desc {
+        padding-bottom: 100%;
+      }
 
       img {
         min-width: 100%;
@@ -51,12 +32,6 @@
         object-position: center;
         height: 100%;
 
-        @include desc {
-
-          position: absolute;
-          object-fit: cover;
-          object-position: center;
-        }
       }
     }
   }
@@ -68,12 +43,31 @@
     align-items: center;
     justify-content: center;
 
+    @include desc {
+      padding: 13px 0 0;
+    }
+
     .category {
-      margin: -22px 0 8px 0;
+      margin: -22px 0 0 0;
+
+      @include desc {
+        margin: -44px 0 0 0;
+      }
     }
 
     .heading {
       display: flex;
+      font-size: 18px;
+      letter-spacing: 0;
+      margin: 10px 0 0;
+
+      @include desc {
+        font-size: 15px;
+      }
+
+      a {
+        text-align: center;
+      }
 
       span {
         text-align: center;
@@ -81,7 +75,12 @@
     }
 
     .card__news--preview__body {
+      text-align: center;
+      margin: 4px 0;
 
+      @include desc {
+        font-size: 11px;
+      }
     }
 
     .card__news--preview__content--info {
