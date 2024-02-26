@@ -33,6 +33,54 @@
               width: calc(100% - 364px);
             }
 
+            .js-pager__items {
+              position: relative;
+              margin: 54px 0 0;
+              display: flex;
+              flex-direction: row;
+              width: auto;
+              font-family: $font-special;
+              font-size: 12px;
+              font-weight: 500;
+
+              .pager-item {
+                padding: 5px 11px;
+                border: 1px solid #fff;
+                display: inline-block;
+                margin: 0 8px 8px 0;
+                min-width: 33px;
+                text-align: center;
+                line-height: 21px;
+                float: left;
+                text-decoration: none;
+                color: $primary;
+
+                &:hover {
+                  border: 1px solid $primary;
+                }
+
+                &--current {
+                  border: 1px solid $primary;
+                }
+
+                &--icon {
+                  position: relative;
+
+
+                  span {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    display: inline-block;
+                    font-size: 23px;
+                    bottom: -35%;
+                  }
+                }
+              }
+
+            }
+
           }
 
           .layout__region--second {
