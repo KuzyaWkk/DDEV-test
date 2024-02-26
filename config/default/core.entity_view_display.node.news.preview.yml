@@ -11,7 +11,7 @@ dependencies:
     - field.field.node.news.field_image
     - field.field.node.news.field_image_teaser
     - field.field.node.news.field_paragraphs
-    - image.style.media_library
+    - image.style.wide
     - node.type.news
   module:
     - datetime
@@ -57,7 +57,7 @@ content:
     label: hidden
     settings:
       image_link: content
-      image_style: media_library
+      image_style: wide
       image_loading:
         attribute: lazy
     third_party_settings: {  }

@@ -1,0 +1,112 @@
+.card__news--preview {
+  margin-bottom: 40px;
+  padding: 0 20px;
+
+  &__image {
+    display: block;
+    position: relative;
+
+     a {
+       width: 100%;
+       height: auto;
+
+       img {
+         width: 100%;
+         height: auto;
+       }
+     }
+  }
+
+  &__content {
+
+    display: flex;
+    padding: 0;
+    flex-direction: column;
+    justify-content: center;
+    border-color: #eaeaea;
+
+    .category {
+      display: inline-block;
+      width: max-content;
+      z-index: 5;
+      margin: -11px 0 8px 0;
+      padding: 5px 6px 3px;
+      border-width: 1px;
+      border-style: solid;
+      border-color: $primary;
+      background-color: $header-primary;
+
+
+      line-height: 1;
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+
+      a {
+        color: $primary;
+        font-size: 11px;
+        text-decoration: none;
+      }
+    }
+
+    .heading {
+      margin: 0 0 12px;
+      font-size: 22px;
+      line-height: 1.1;
+      font-weight: 600;
+
+      a {
+        color: $primary;
+        text-decoration: none;
+      }
+    }
+
+    .card__news--preview__body {
+      margin: 0 0 13px;
+      column-count: 1;
+      column-gap: 40px;
+      font-family: $font-paragraph;
+      color: $desc;
+      font-size: 14px;
+      line-height: 1.5;
+      overflow-wrap: anywhere;
+    }
+
+    &--info {
+      display: flex;
+      font-size: 12px;
+      line-height: 1;
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-family: $font-main;
+      gap: 0.4rem;
+
+      .link {
+        color: $primary;
+        padding: 0;
+        margin: 0;
+        font-size: 12px;
+        line-height: 1;
+        font-weight: 400;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-family: $font-main;
+      }
+
+      time {
+        color: $desc;
+        display: flex;
+        flex-direction: row;
+
+        &::before {
+          content: ' - ';
+          display: block;
+          position: relative;
+          margin-right: 5px;
+          color: $desc;
+        }
+      }
+    }
+  }
+}
