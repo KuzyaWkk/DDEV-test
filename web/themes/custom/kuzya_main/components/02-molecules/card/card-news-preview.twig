@@ -8,6 +8,12 @@
     {% endif %}
   </div>
 
+  <div {{ bem('image-main', card__content__modifiers, card__base_class) }}>
+    {% if card__image__main %}
+      {{ card__image__main }}
+    {% endif %}
+  </div>
+
   {# Content #}
   <div {{ bem('content', card__content__modifiers, card__base_class) }}>
 

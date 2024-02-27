@@ -29,23 +29,26 @@
 <div {{ bem('block', ['you-might']) }}>
 
   {% if label %}
-    <div {{ bem('block', ['you-might__container']) }}>
-      {% include "@atoms/text/headings/_heading.twig" with {
-        heading__base_class: heading__base_class|default('block--you-might_heading'),
-        heading: label,
-        heading_level: 4,
-      } %}
+    <div {{ bem('block--you-might__container') }}>
+      <div {{ bem('block', ['you-might__container--header']) }}>
+        {% include "@atoms/text/headings/_heading.twig" with {
+          heading__base_class: heading__base_class|default('block--you-might__container--header__heading'),
+          heading: label,
+          heading_level: 4,
+        } %}
+
+        {% include "@atoms/text/text/01-paragraph.twig" with {
+          paragraph_content: 'Related'|t,
+          paragraph_base_class: 'related',
+        } %}
+      </div>
 
       {% include "@atoms/text/text/01-paragraph.twig" with {
-        paragraph_content: 'Related'|t,
-        paragraph_base_class: 'related',
+        paragraph_content: 'Recommended to you'|t,
+        paragraph_base_class: 'recommended',
       } %}
     </div>
 
-    {% include "@atoms/text/text/01-paragraph.twig" with {
-      paragraph_content: 'Recommended to you'|t,
-      paragraph_base_class: 'recommended',
-    } %}
   {% endif %}
   {% block content %}
     {{ content }}

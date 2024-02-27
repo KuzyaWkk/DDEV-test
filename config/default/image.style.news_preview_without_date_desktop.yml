@@ -1,0 +1,15 @@
+uuid: ab8eed33-55a0-4db9-b820-6ee056cf7d60
+langcode: en
+status: true
+dependencies: {  }
+name: news_preview_without_date_desktop
+label: 'News Preview Without Date | Desktop (308 x 308)'
+effects:
+  676018fa-939d-4692-9b9c-4de59f7253a5:
+    uuid: 676018fa-939d-4692-9b9c-4de59f7253a5
+    id: image_scale
+    weight: 1
+    data:
+      width: 308
+      height: 308
+      upscale: false
