@@ -262,6 +262,19 @@
 
       .block--you-might {
 
+        max-width: 1440px;
+        width: auto;
+
+        @include headerMargin {
+          padding: 0 20px;
+          margin: 0 auto;
+        }
+
+        @include descLarge {
+          padding: 0 24px;
+          margin: 0 auto;
+        }
+
         &__container {
           display: flex;
           flex-direction: column;
@@ -278,11 +291,23 @@
             &__heading {
               font-size: 26px;
               letter-spacing: -1px;
-              padding: 0 2px 0 80px;
+              padding: 0 2px 0 70px;
               display: inline-block;
               line-height: 1;
               text-align: center;
               margin: 0;
+
+              @include desc {
+                font-size: 28px;
+              }
+
+              @include headerMargin {
+                font-size: 32px;
+              }
+
+              @include descLarge {
+                font-size: 54px;
+              }
             }
 
             .related {
@@ -298,6 +323,10 @@
               border-radius: 3px 3px 3px 0;
               top: -30px;
               text-transform: uppercase;
+
+              @include descLarge {
+                padding: 8px;
+              }
 
               &:before {
                 content: '';
@@ -318,7 +347,6 @@
           }
         }
 
-
         .recommended {
           display: table;
           text-align: center;
@@ -326,13 +354,26 @@
           font-size: 13px;
           line-height: 1;
           font-style: italic;
+          font-family: $font-special;
           font-weight: normal;
           letter-spacing: normal;
           position: relative;
-          margin: -15px auto 15px auto;
+          margin: -13px auto 20px auto;
           text-transform: none;
           max-width: 80%;
-          color: #f5b000;
+          color: $secondary;
+
+          @include desc {
+            font-size: 15px;
+          }
+
+          @include headerMargin {
+            margin: -5px auto 20px auto;
+          }
+
+          @include descLarge {
+            margin: 10px auto 37px auto;
+          }
 
           &::before {
             content: '';
@@ -341,10 +382,10 @@
             width: 40vw;
             top: 3px;
             bottom: 0;
-            background-color: #e3e3e3;
+            background-color: $gray-lightest;
             left: 100%;
             margin: auto 0 auto 10px;
-            color: #f5b000;
+            color: $secondary;
           }
 
           &::after {
@@ -354,10 +395,10 @@
             width: 40vw;
             top: 3px;
             bottom: 0;
-            background-color: #e3e3e3;
+            background-color: $gray-lightest;
             right: 100%;
-            margin: auto 0 auto 10px;
-            color: #f5b000;
+            margin: auto 10px auto 0;
+            color: $secondary;
 
           }
         }
@@ -384,11 +425,7 @@
             }
           }
         }
-
-
-
       }
-
     }
   }
 }
