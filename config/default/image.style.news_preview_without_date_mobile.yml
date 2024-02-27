@@ -1,0 +1,15 @@
+uuid: 9a820b98-ceac-4650-bb59-8484cd600c75
+langcode: en
+status: true
+dependencies: {  }
+name: news_preview_without_date_mobile
+label: 'News Preview Without Date | Mobile (800 x 400)'
+effects:
+  bf107113-8056-4f02-991e-d0ccd4f06a49:
+    uuid: bf107113-8056-4f02-991e-d0ccd4f06a49
+    id: image_scale
+    weight: 1
+    data:
+      width: 800
+      height: 400
+      upscale: false

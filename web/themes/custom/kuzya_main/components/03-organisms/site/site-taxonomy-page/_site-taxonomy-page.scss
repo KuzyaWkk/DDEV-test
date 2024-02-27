@@ -410,15 +410,25 @@
             grid-template-columns: 1fr 2fr 1fr;
           }
 
-          .views-row:nth-child(2) {
+          .views-row-2 {
 
-            .card__news--preview__image a{
-               @include desc {
-                 padding-bottom: 66%;
-               }
+            .card__news--preview__image {
+
+              @include desc {
+                display: none;
+              }
+
+            }
+
+            .card__news--preview__image-main {
+
+              @include desc {
+                display: flex;
+              }
             }
 
             .heading {
+
               @include desc {
                 font-size: 20px;
               }

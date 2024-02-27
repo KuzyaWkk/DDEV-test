@@ -1,0 +1,11 @@
+uuid: fa3bb96b-6fbd-4b53-8ceb-c5024b308cd3
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.preview_without_date
+label: 'Preview without date'
+description: ''
+targetEntityType: media
+cache: true

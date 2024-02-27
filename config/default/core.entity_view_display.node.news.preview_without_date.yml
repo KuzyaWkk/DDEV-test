@@ -11,6 +11,7 @@ dependencies:
     - field.field.node.news.field_image
     - field.field.node.news.field_image_teaser
     - field.field.node.news.field_paragraphs
+    - image.style.news_preview_without_date_desktop_main
     - node.type.news
   module:
     - layout_builder
@@ -31,7 +32,7 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 1
+    weight: 2
     region: content
   field_description:
     type: string
@@ -39,22 +40,30 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 2
+    weight: 3
     region: content
-  field_image_teaser:
+  field_image:
     type: media_thumbnail
     label: hidden
     settings:
       image_link: content
-      image_style: ''
+      image_style: news_preview_without_date_desktop_main
       image_loading:
         attribute: lazy
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_image_teaser:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: preview_without_date
+      link: false
     third_party_settings: {  }
     weight: 0
     region: content
 hidden:
   field_comments: true
   field_created: true
-  field_image: true
   field_paragraphs: true
   links: true

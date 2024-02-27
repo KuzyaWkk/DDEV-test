@@ -183,7 +183,7 @@
         font-size: 12px;
       }
 
-      .link {
+      a {
         color: $primary;
         padding: 0;
         margin: 0;
@@ -193,6 +193,7 @@
         text-transform: uppercase;
         letter-spacing: 1px;
         font-family: $font-main;
+        text-decoration: none;
 
         @include desc {
           font-size: 11px;
