@@ -311,7 +311,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: '<a href="https://ddev-drupal-10.ddev.site/newspaper_life_news/category/entertainment?category={{ tid }}" id="edit-category-{{ tid }}" name="category[{{ tid }}]" class="bef-link">{{ name }} </a>'
+            text: '<a href="/newspaper_life_news/category/entertainment?category={{ tid }}" id="edit-category-{{ tid }}" name="category[{{ tid }}]" class="bef-link">{{ name }} </a>'
             make_link: false
             path: 'newspaper_life_news/category/entertainment?category=6'
             absolute: false
