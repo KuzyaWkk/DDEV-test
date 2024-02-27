@@ -1029,7 +1029,7 @@ display:
             operator: field_category_target_id_op
             operator_limit_selection: false
             operator_list: {  }
-            identifier: field_category_target_id
+            identifier: category
             required: false
             remember: true
             multiple: false
@@ -1095,7 +1095,7 @@ display:
           admin_label: 'field_category: Taxonomy term'
           plugin_id: standard
           required: false
-      use_ajax: true
+      use_ajax: false
       display_description: ''
       display_extenders: {  }
     cache_metadata:

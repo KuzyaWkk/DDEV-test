@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.taxonomy_term.category.layout_builder__layout
     - taxonomy.vocabulary.category
+    - views.view.categories
     - views.view.category_page
     - views.view.you_might_also_like
   module:
@@ -17,6 +18,39 @@ third_party_settings:
     enabled: true
     allow_custom: true
     sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: 'Hero Section'
+          context_mapping: {  }
+        components:
+          9a84cf85-7f0f-42d5-bd2b-95647b02367e:
+            uuid: 9a84cf85-7f0f-42d5-bd2b-95647b02367e
+            region: content
+            configuration:
+              id: 'views_block:categories-block_hero_block_categories'
+              label: ''
+              label_display: '0'
+              provider: views
+              context_mapping: {  }
+              views_label: ''
+              items_per_page: none
+            weight: 1
+            additional: {  }
+          3596a4b9-7f08-4c69-866c-9b1c0349bf6b:
+            uuid: 3596a4b9-7f08-4c69-866c-9b1c0349bf6b
+            region: content
+            configuration:
+              id: 'views_block:categories-block_hero_category'
+              label: ''
+              label_display: '0'
+              provider: views
+              context_mapping: {  }
+              views_label: ''
+              items_per_page: none
+            weight: 0
+            additional: {  }
+        third_party_settings: {  }
       -
         layout_id: layout_twocol_section
         layout_settings:
