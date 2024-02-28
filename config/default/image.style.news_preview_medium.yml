@@ -1,0 +1,15 @@
+uuid: dfdbf3d9-d17d-433c-9595-a565c842250a
+langcode: en
+status: true
+dependencies: {  }
+name: news_preview_medium
+label: 'News Preview | Medium (288 х 200)'
+effects:
+  0309729d-4867-4efb-9f72-48331f3beacb:
+    uuid: 0309729d-4867-4efb-9f72-48331f3beacb
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 288
+      height: 200
+      anchor: center-center

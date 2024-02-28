@@ -1,19 +1,16 @@
 {% set card__base_class = 'card__news--preview' %}
 
 <div {{ bem(card__base_class, card__modifiers, card__blockname, card__extra_classes) }}>
-
-  <div {{ bem('image', card__content__modifiers, card__base_class) }}>
-     {% if card__image %}
+  {% if card__image %}
+    <div {{ bem('image', card__content__modifiers, card__base_class) }}>
        {{ card__image }}
-    {% endif %}
-  </div>
-
-  <div {{ bem('image-main', card__content__modifiers, card__base_class) }}>
-    {% if card__image__main %}
+    </div>
+  {% endif %}
+  {% if card__image__main %}
+    <div {{ bem('image-main', card__content__modifiers, card__base_class) }}>
       {{ card__image__main }}
-    {% endif %}
-  </div>
-
+    </div>
+  {% endif %}
   {# Content #}
   <div {{ bem('content', card__content__modifiers, card__base_class) }}>
 
@@ -64,11 +61,6 @@
       {% endif %}
     </div>
 
-
-    <div {{ bem('content--body', card__content__modifiers, card__base_class) }}>
-      {# Heading #}
-
-    </div>
   </div>
 
 </div>

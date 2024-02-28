@@ -1,12 +1,12 @@
-uuid: 314e7e1e-c442-4695-ab06-69c31ad450f9
+uuid: af984db0-87dc-40fa-af55-d0039f9571c5
 langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.media.preview
+    - core.entity_view_mode.media.news_teaser_with_image
     - field.field.media.image.field_media_image
     - media.type.image
-    - responsive_image.styles.news_preview
+    - responsive_image.styles.news_teaser_with_image
   module:
     - layout_builder
     - responsive_image
@@ -16,16 +16,16 @@ third_party_settings:
     allow_custom: false
 _core:
   default_config_hash: 73xaTNkI5J6sfFcBmNYeuk070X3mQS_iwwWaPYyfG2M
-id: media.image.preview
+id: media.image.news_teaser_with_image
 targetEntityType: media
 bundle: image
-mode: preview
+mode: news_teaser_with_image
 content:
   field_media_image:
     type: responsive_image
     label: visually_hidden
     settings:
-      responsive_image_style: news_preview
+      responsive_image_style: news_teaser_with_image
       image_link: content
       image_loading:
         attribute: lazy
