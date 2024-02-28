@@ -1,0 +1,43 @@
+.card__news--attachment {
+  flex-direction: column!important;
+
+  @include desc {
+    margin-bottom: 0!important;
+  }
+
+  .card__news--preview__content {
+    padding: 0 20px;
+
+    @include desc {
+      padding: 0;
+    }
+
+    .category {
+      @include desc {
+        margin: -20px 0 8px 0;
+      }
+    }
+
+    .heading {
+      display: flex;
+      margin: 0 0 4px;
+      font-size: 18px;
+
+      @include desc {
+        font-size: 15px;
+      }
+
+      @include descMedium {
+        font-size: 16px;
+      }
+
+      @include descLarge {
+        font-size: 20px;
+      }
+    }
+
+    .card__news--preview__body {
+      margin: 0 0 4px;
+    }
+  }
+}

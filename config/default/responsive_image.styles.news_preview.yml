@@ -1,0 +1,30 @@
+uuid: 464086d4-8175-4ef6-b781-9119b3b08d88
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.news_preview_desktop
+    - image.style.news_preview_medium
+    - image.style.news_preview_without_date_mobile
+  theme:
+    - kuzya_main
+id: news_preview
+label: 'News Preview'
+image_style_mappings:
+  -
+    image_mapping_type: image_style
+    image_mapping: news_preview_desktop
+    breakpoint_id: kuzya_main.large
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: news_preview_medium
+    breakpoint_id: kuzya_main.medium
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: news_preview_without_date_mobile
+    breakpoint_id: kuzya_main.small
+    multiplier: 1x
+breakpoint_group: kuzya_main
+fallback_image_style: news_preview_desktop

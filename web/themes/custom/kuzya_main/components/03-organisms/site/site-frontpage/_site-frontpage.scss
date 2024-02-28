@@ -76,6 +76,33 @@
 
           .layout__region--second {
 
+            .block--frontpage__main-content {
+
+              @include desc {
+                padding: 0 12px;
+              }
+
+              .view__front_page {
+
+                @include desc {
+                  display: grid;
+                  gap: 20px;
+                  grid-template-columns: 2.1fr 1fr;
+                }
+
+                @include descMedium {
+                  gap: 40px;
+                }
+
+                .views-element-container {
+                   .view__front_page {
+
+                     display: flex;
+                     flex-direction: column;
+                   }
+                }
+              }
+            }
           }
         }
       }

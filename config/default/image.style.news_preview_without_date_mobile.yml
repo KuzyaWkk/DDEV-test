@@ -5,11 +5,11 @@ dependencies: {  }
 name: news_preview_without_date_mobile
 label: 'News Preview Without Date | Mobile (800 x 400)'
 effects:
-  bf107113-8056-4f02-991e-d0ccd4f06a49:
-    uuid: bf107113-8056-4f02-991e-d0ccd4f06a49
-    id: image_scale
+  0cd96649-8ba6-497f-87fb-fa462f118c2d:
+    uuid: 0cd96649-8ba6-497f-87fb-fa462f118c2d
+    id: image_scale_and_crop
     weight: 1
     data:
-      width: 800
-      height: 400
-      upscale: true
+      width: 780
+      height: 390
+      anchor: center-center

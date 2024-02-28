@@ -9,31 +9,6 @@
   .card__news--preview__image {
     display: block;
     position: relative;
-
-    @include desc {
-      width: 100%;
-      flex: 0 0 100%;
-      display: block;
-      order: 0;
-      overflow: hidden;
-    }
-
-    a {
-      padding-bottom: 50%;
-
-      @include desc {
-        padding-bottom: 100%;
-      }
-
-      img {
-        min-width: 100%;
-        position: absolute;
-        object-fit: cover;
-        object-position: center;
-        height: 100%;
-
-      }
-    }
   }
 
   .card__news--preview__image-main {
@@ -52,12 +27,12 @@
     }
 
     .category {
-      margin: -22px 0 0 0;
+      margin: -15px 0 0 0;
       padding: 2px 6px 2px;
 
       @include desc {
         padding: 5px 6px 3px;
-        margin: -44px 0 0 0;
+        margin: -34px 0 0 0;
       }
     }
 
@@ -107,9 +82,9 @@
 
     .card__news--preview__content--info {
 
-        @include descLarge {
-          font-size: 12px;
-        }
+      @include descLarge {
+        font-size: 12px;
+      }
     }
   }
 }

@@ -1,0 +1,15 @@
+uuid: a1f565d7-e6e4-4d25-b562-7325b9d5a8b3
+langcode: en
+status: true
+dependencies: {  }
+name: news_preview_small
+label: 'News Preview | Small (280 x 225)'
+effects:
+  4cd235b2-df6c-4301-8490-c5637dd6175c:
+    uuid: 4cd235b2-df6c-4301-8490-c5637dd6175c
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 280
+      height: 225
+      anchor: center-center

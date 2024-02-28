@@ -1,0 +1,11 @@
+uuid: 9b3bd3cf-7a41-4452-92bd-b497fbb81796
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.news_teaser_with_image
+label: 'News Teaser With Image'
+description: ''
+targetEntityType: media
+cache: true

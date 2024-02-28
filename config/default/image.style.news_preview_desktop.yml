@@ -1,0 +1,15 @@
+uuid: b9526d7a-6965-4733-bf0a-43391ea3dc9d
+langcode: en
+status: true
+dependencies: {  }
+name: news_preview_desktop
+label: 'News Preview | Desktop (330 x 230)'
+effects:
+  26e8014a-8b4a-463c-9fb5-6388e76de592:
+    uuid: 26e8014a-8b4a-463c-9fb5-6388e76de592
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 330
+      height: 230
+      anchor: center-center
