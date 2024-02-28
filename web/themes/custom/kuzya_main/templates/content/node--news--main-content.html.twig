@@ -1,0 +1,25 @@
+{% set image = content.field_image_teaser.0 %}
+{% set category = content.field_category.0 %}
+{% set description = node.field_description.value %}
+
+{% set user_id = node.getOwnerId() %}
+
+{% embed "@molecules/card/card-news-preview.twig" with {
+  card__extra_classes: ["card__news--main-content"],
+  card__image: image,
+  card__category: category,
+  card__heading: label,
+  heading_level: 3,
+  card__link__url: url,
+  card__body: description,
+} %}
+
+  {% block card__author %}
+    {% include "@atoms/links/link/link.twig" with {
+      link_url: '/user/{{ user_id }}',
+      link_content: author_name
+    }%}
+
+  {% endblock %}
+
+{% endembed %}

@@ -1524,7 +1524,7 @@ display:
     display_plugin: block
     position: 2
     display_options:
-      title: 'Main content'
+      title: 'Main Content'
       fields:
         field_image_teaser:
           id: field_image_teaser

@@ -1,0 +1,14 @@
+{% set image = content.field_image_teaser.0 %}
+{% set category = content.field_category.0 %}
+{% set description = node.field_description.value %}
+
+{% include "@molecules/card/card-news-preview.twig" with {
+  card__extra_classes: ["card__news--attachment"],
+  card__image: image,
+  card__category: category,
+  card__heading: label,
+  heading_level: 3,
+  card__link__url: url,
+  card__body: description,
+} %}
+

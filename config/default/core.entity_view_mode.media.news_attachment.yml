@@ -1,0 +1,11 @@
+uuid: 197281fd-c771-47e0-b3a9-ebd1fcaa10ee
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.news_attachment
+label: 'News Attachment'
+description: ''
+targetEntityType: media
+cache: true

@@ -11,11 +11,9 @@ dependencies:
     - field.field.node.news.field_image
     - field.field.node.news.field_image_teaser
     - field.field.node.news.field_paragraphs
-    - image.style.media_library
     - node.type.news
   module:
     - layout_builder
-    - media
     - user
 third_party_settings:
   layout_builder:
@@ -43,13 +41,11 @@ content:
     weight: 2
     region: content
   field_image_teaser:
-    type: media_thumbnail
+    type: entity_reference_entity_view
     label: hidden
     settings:
-      image_link: content
-      image_style: media_library
-      image_loading:
-        attribute: lazy
+      view_mode: news_attachment
+      link: false
     third_party_settings: {  }
     weight: 0
     region: content

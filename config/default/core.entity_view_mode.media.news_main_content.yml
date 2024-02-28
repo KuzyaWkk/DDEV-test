@@ -1,0 +1,11 @@
+uuid: 87e9bf1f-c5d2-4ef0-8796-794c1fa4239a
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.news_main_content
+label: 'News Main Content'
+description: ''
+targetEntityType: media
+cache: true
