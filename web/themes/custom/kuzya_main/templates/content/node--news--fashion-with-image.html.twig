@@ -1,0 +1,17 @@
+{% set image = content.field_image_teaser.0 %}
+{% set image_main = content.field_image.0 %}
+{% set category = content.field_category.0 %}
+{% set created = content.field_created.0 %}
+
+{% set user_id = node.getOwnerId() %}
+
+{% include "@molecules/card/card-news-preview.twig" with {
+  card__extra_classes: ["card__news--fashion-with-image"],
+  card__image: image,
+  card__image__main: image_main,
+  card__category: category,
+  card__heading: label,
+  card__created: created,
+  heading_level: 3,
+  card__link__url: url,
+} %}

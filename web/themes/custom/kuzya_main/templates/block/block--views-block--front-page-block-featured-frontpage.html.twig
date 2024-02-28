@@ -1,0 +1,34 @@
+{% set subtitle = 'Most popular life news you must read today'|t %}
+{% set all_articles = 'view all articles'|t %}
+
+{% set subtitle_class = 'subtitle' %}
+{% set all_articles_class = 'all-articles' %}
+
+<div {{ bem('block', ['frontpage__featured']) }}>
+
+  <div {{ bem('block--frontpage__featured', ['heading']) }}>
+
+    {% if label %}
+      {% include "@atoms/text/headings/_heading.twig" with {
+        heading__base_class: heading__base_class|default('block--frontpage__featured--heading'),
+        heading: label,
+        heading_level: 4,
+      } %}
+    {% endif %}
+
+    {% include "@atoms/text/text/01-paragraph.twig" with {
+      paragraph_base_class: subtitle_class,
+      paragraph_content: subtitle,
+    } %}
+
+    {% include "@atoms/text/text/01-paragraph.twig" with {
+      paragraph_base_class: all_articles_class,
+      paragraph_content: all_articles,
+    } %}
+
+  </div>
+
+  {% block content %}
+    {{ content }}
+  {% endblock %}
+</div>

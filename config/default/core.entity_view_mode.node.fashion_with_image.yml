@@ -1,0 +1,11 @@
+uuid: c835d7d9-3c42-4779-88b7-54cadf6ceb36
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.fashion_with_image
+label: 'Fashion with image'
+description: ''
+targetEntityType: node
+cache: true
