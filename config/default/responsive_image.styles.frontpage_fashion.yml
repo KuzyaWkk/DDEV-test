@@ -1,0 +1,30 @@
+uuid: 172dbeba-08c2-4083-92ca-8f3c183fe563
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.frontpage_fashion_desktop
+    - image.style.frontpage_fashion_medium
+    - image.style.news_preview_without_date_mobile
+  theme:
+    - kuzya_main
+id: frontpage_fashion
+label: 'Frontpage Fashion'
+image_style_mappings:
+  -
+    image_mapping_type: image_style
+    image_mapping: frontpage_fashion_desktop
+    breakpoint_id: kuzya_main.large
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: frontpage_fashion_medium
+    breakpoint_id: kuzya_main.medium
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: news_preview_without_date_mobile
+    breakpoint_id: kuzya_main.small
+    multiplier: 1x
+breakpoint_group: kuzya_main
+fallback_image_style: frontpage_fashion_desktop

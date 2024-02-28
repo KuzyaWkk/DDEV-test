@@ -1,0 +1,15 @@
+uuid: 28dc849d-c768-4b98-893c-7ba6e37726c6
+langcode: en
+status: true
+dependencies: {  }
+name: frontpage_fashion_desktop
+label: 'Frontpage Fashion | Desktop (208 x 146)'
+effects:
+  c1a97c4b-6fa7-463c-884b-f2fae72dd11a:
+    uuid: c1a97c4b-6fa7-463c-884b-f2fae72dd11a
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 208
+      height: 146
+      anchor: center-center
