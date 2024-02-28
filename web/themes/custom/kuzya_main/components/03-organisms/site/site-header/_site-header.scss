@@ -1,13 +1,19 @@
 .header {
-  margin-bottom: 4em;
+  margin-bottom: 50px;
   background-color: $header-bg;
   display: flex;
   justify-content: center;
   align-items: center;
 
-  &__inner {
-    //@include wrapper;
+  @include desc {
+    margin-bottom: 30px;
+  }
 
+  @include descLarge {
+    margin-bottom: 4em;
+  }
+
+  &__inner {
     display: flex;
     flex-flow: column nowrap;
     width: 1440px;
@@ -20,7 +26,6 @@
       display: flex;
       flex-flow: row nowrap;
       padding: $space 0;
-
     }
   }
 
@@ -28,7 +33,6 @@
     display: flex;
     align-items: center;
     flex-grow: 1;
-
   }
 
   &__branding {
@@ -36,7 +40,6 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-
 
     @include descLarge {
       margin-right: 45px;
@@ -49,7 +52,6 @@
     }
 
     font-size: 11px;
-
     max-width: 190px;
     padding: 1rem 0;
 
@@ -65,8 +67,6 @@
       display: flex;
     }
 
-
-
   }
 
   &__social-bar {
@@ -77,8 +77,6 @@
     @include medium {
       display: flex;
     }
-
-
 
   }
 
@@ -111,7 +109,6 @@
   }
 
   &__search-menu {
-
     display: none;
 
     @include medium {
