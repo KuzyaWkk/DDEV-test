@@ -1,0 +1,15 @@
+uuid: 95397169-48fe-431b-8482-b3ab02a19d34
+langcode: en
+status: true
+dependencies: {  }
+name: news_attachment_desktop
+label: 'News Attachment| Desktop (268 x 134)'
+effects:
+  fa9359e8-cb0b-4050-8700-f4504ec2f849:
+    uuid: fa9359e8-cb0b-4050-8700-f4504ec2f849
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 268
+      height: 134
+      anchor: center-center

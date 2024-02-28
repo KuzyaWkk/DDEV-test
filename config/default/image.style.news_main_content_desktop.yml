@@ -1,0 +1,15 @@
+uuid: 6e6aea0a-6484-4b46-a121-43b2ff2ef9b6
+langcode: en
+status: true
+dependencies: {  }
+name: news_main_content_desktop
+label: 'News Main Content | Desktop (576 x 386)'
+effects:
+  57a333fa-971e-4155-b01d-044348e0bb41:
+    uuid: 57a333fa-971e-4155-b01d-044348e0bb41
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 576
+      height: 386
+      anchor: center-center

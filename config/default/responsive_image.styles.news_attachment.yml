@@ -1,0 +1,25 @@
+uuid: 3675cfc8-7f85-4b24-a551-712c11b93337
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.news_attachment_desktop
+    - image.style.news_preview_without_date_mobile
+    - image.style.wide
+  theme:
+    - kuzya_main
+id: news_attachment
+label: 'News Attachment'
+image_style_mappings:
+  -
+    image_mapping_type: image_style
+    image_mapping: news_attachment_desktop
+    breakpoint_id: kuzya_main.medium
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: news_preview_without_date_mobile
+    breakpoint_id: kuzya_main.small
+    multiplier: 1x
+breakpoint_group: kuzya_main
+fallback_image_style: wide
