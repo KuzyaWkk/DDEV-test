@@ -103,6 +103,130 @@
                 }
               }
             }
+
+            .block--frontpage__featured {
+
+              @include desc {
+                display: flex;
+                flex-direction: row;
+              }
+
+              &--heading {
+                padding: 0 20px;
+
+                @include desc {
+                  display: flex;
+                  flex: 0 0 25%;
+                  flex-direction: column;
+                }
+
+                .frontpage__featured--heading {
+                  margin: 0;
+                  padding: 0;
+                  font-size: 28px;
+                  font-weight: 800;
+                  letter-spacing: 1px;
+
+                  @include desc {
+                    font-size: 20px;
+                  }
+
+                  @include descMedium {
+                    font-size: 23px;
+                  }
+
+                  @include descLarge {
+                     font-size: 28px;
+                  }
+
+                }
+
+                .subtitle {
+                  margin: 0 0 7px 0;
+                  padding: 0;
+                  font-family: $font-paragraph;
+                  font-size: 14px;
+                  line-height: 1.5;
+                  color: $color-secondary-desc;
+
+                  @include desc {
+                    font-size: 11px;
+                  }
+
+                  @include descMedium {
+                    font-size: 12px;
+                  }
+
+                  @include descLarge {
+                    font-size: 14px;
+                  }
+                }
+
+                .all-articles {
+                  display: none;
+
+                  &:after {
+                    content: '>';
+                    margin-left: 5px;
+                    speak: none;
+                    font-style: normal;
+                    font-weight: bold;
+                    font-variant: normal;
+                    text-transform: none;
+                    font-size: 12px;
+                    color: $primary;
+                    letter-spacing: 0;
+                    line-height: 1;
+                    text-align: center;
+                    -webkit-font-smoothing: antialiased;
+                  }
+
+                  &:hover {
+                    color: $secondary;
+
+                    &:after {
+                      color: $secondary;
+                    }
+                  }
+
+                  @include desc {
+                    display: flex;
+                    color: $primary;
+                    text-decoration: none;
+                    margin-top: 7px;
+                    font-size: 11px;
+                    letter-spacing: 0;
+                    font-family: $font-main;
+                    line-height: initial;
+                    font-weight: 500;
+                    position: relative;
+                    text-transform: uppercase;
+                  }
+
+                  @include descLarge {
+                    font-size: 13px;
+                  }
+                }
+              }
+
+              .view__front_page {
+
+                @include desc {
+                  display: flex;
+                }
+              }
+
+              .views-row {
+                flex: 0 0 33.33%;
+                padding: 0 5px;
+              }
+
+              .js-pager__items {
+
+              }
+
+
+            }
           }
         }
       }

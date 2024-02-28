@@ -4,13 +4,16 @@
 {% set subtitle_class = 'subtitle' %}
 {% set all_articles_class = 'all-articles' %}
 
+{% set tid = content['#view'].result.0.taxonomy_term_field_data_node__field_category_tid %}
+{% set tid_url = ['/taxonomy/term/' ~ tid ~ '?category=' ~ tid] %}
+
 <div {{ bem('block', ['frontpage__featured']) }}>
 
   <div {{ bem('block--frontpage__featured', ['heading']) }}>
 
     {% if label %}
       {% include "@atoms/text/headings/_heading.twig" with {
-        heading__base_class: heading__base_class|default('block--frontpage__featured--heading'),
+        heading__base_class: heading__base_class|default('frontpage__featured--heading'),
         heading: label,
         heading_level: 4,
       } %}
@@ -21,11 +24,11 @@
       paragraph_content: subtitle,
     } %}
 
-    {% include "@atoms/text/text/01-paragraph.twig" with {
-      paragraph_base_class: all_articles_class,
-      paragraph_content: all_articles,
+    {% include "@atoms/links/link/link.twig" with {
+      link_url: tid_url[0],
+      link_content: all_articles,
+      link_base_class: all_articles_class
     } %}
-
   </div>
 
   {% block content %}
