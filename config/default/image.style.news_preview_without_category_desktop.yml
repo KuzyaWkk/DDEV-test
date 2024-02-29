@@ -1,0 +1,15 @@
+uuid: ce618084-1146-40d5-8f60-706c7b4534ca
+langcode: en
+status: true
+dependencies: {  }
+name: news_preview_without_category_desktop
+label: 'News Preview Without Category | Desktop (163 x 114)'
+effects:
+  d5c8b418-2d3c-481f-b598-3389e2d59d16:
+    uuid: d5c8b418-2d3c-481f-b598-3389e2d59d16
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 163
+      height: 114
+      anchor: center-center

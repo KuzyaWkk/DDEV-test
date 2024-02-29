@@ -35,27 +35,11 @@
 
       &--info {
         @include desc {
-          a {
-            display: none;
-          }
-
-          time::before {
-            content: none;
-          }
+          @include unsetCardAuthor();
         }
 
         @include descMedium {
-          a {
-            display: flex;
-          }
-
-          .link {
-            display: none;
-          }
-
-          time::before {
-            content: ' - ';
-          }
+          @include showCardAuthor();
         }
       }
     }
