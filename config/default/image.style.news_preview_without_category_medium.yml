@@ -1,0 +1,15 @@
+uuid: 9b1a7f5d-7441-40aa-88e9-866c571e7014
+langcode: en
+status: true
+dependencies: {  }
+name: news_preview_without_category_medium
+label: 'News Preview Without Category | Medium (154 x 117)'
+effects:
+  f92a5082-8659-4c56-ac61-ddc1aa2c594e:
+    uuid: f92a5082-8659-4c56-ac61-ddc1aa2c594e
+    id: image_scale_and_crop
+    weight: 2
+    data:
+      width: 154
+      height: 117
+      anchor: center-center

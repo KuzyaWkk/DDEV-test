@@ -93,3 +93,27 @@ $outer-container-break: $small;
   height: $count;
   width: $count;
 }
+
+@mixin unsetCardAuthor {
+  a {
+    display: none;
+  }
+
+  time::before {
+    content: unset;
+  }
+}
+
+@mixin showCardAuthor {
+  a {
+    display: flex;
+  }
+
+  .link {
+    display: none;
+  }
+
+  time::before {
+    content: ' - ';
+  }
+}

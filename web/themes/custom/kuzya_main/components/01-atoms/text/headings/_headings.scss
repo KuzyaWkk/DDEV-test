@@ -216,3 +216,25 @@ $color-heading: clr(accent);
     letter-spacing: 1px;
   }
 }
+
+@mixin headingFrontPageSecond {
+  padding: 0;
+  margin: 16px 0;
+
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  line-height: 31px;
+
+  @include desc {
+    font-size: 20px;
+  }
+
+  @include descMedium {
+    font-size: 23px;
+  }
+
+  @include descLarge {
+    font-size: 28px;
+  }
+}

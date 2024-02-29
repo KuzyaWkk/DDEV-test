@@ -18,13 +18,13 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 10
+    weight: 2
     region: content
     settings: {  }
     third_party_settings: {  }
   field_follow_button_text:
     type: string_textfield
-    weight: 125
+    weight: 11
     region: content
     settings:
       size: 60
@@ -32,7 +32,7 @@ content:
     third_party_settings: {  }
   field_follow_text:
     type: string_textfield
-    weight: 126
+    weight: 10
     region: content
     settings:
       size: 60
@@ -40,48 +40,48 @@ content:
     third_party_settings: {  }
   field_icon:
     type: media_library_widget
-    weight: 121
+    weight: 8
     region: content
     settings:
       media_types: {  }
     third_party_settings: {  }
   field_number_of_subscribers:
     type: number
-    weight: 124
+    weight: 9
     region: content
     settings:
       placeholder: ''
     third_party_settings: {  }
   path:
     type: path
-    weight: 30
+    weight: 5
     region: content
     settings: {  }
     third_party_settings: {  }
   promote:
     type: boolean_checkbox
-    weight: 15
+    weight: 3
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 120
+    weight: 7
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
-    weight: 16
+    weight: 4
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   title:
     type: string_textfield
-    weight: -5
+    weight: 0
     region: content
     settings:
       size: 60
@@ -89,7 +89,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 5
+    weight: 1
     region: content
     settings:
       match_operator: CONTAINS
@@ -98,7 +98,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
   url_redirects:
-    weight: 50
+    weight: 6
     region: content
     settings: {  }
     third_party_settings: {  }

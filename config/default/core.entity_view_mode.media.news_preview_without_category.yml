@@ -1,0 +1,11 @@
+uuid: f7f903cb-313e-43ad-abcc-24fa01ffdc36
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.news_preview_without_category
+label: 'News Preview Without Category'
+description: ''
+targetEntityType: media
+cache: true

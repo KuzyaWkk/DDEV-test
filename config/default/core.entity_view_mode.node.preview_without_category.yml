@@ -1,0 +1,11 @@
+uuid: 61f8ae70-c5e5-4d33-ab78-a9029e58628f
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.preview_without_category
+label: 'Preview without category'
+description: ''
+targetEntityType: node
+cache: true

@@ -1,0 +1,15 @@
+uuid: 21f00df8-0837-4d30-ab41-c0578dccadc7
+langcode: en
+status: true
+dependencies: {  }
+name: news_preview_without_category_mobile
+label: 'News Preview Without Category | Mobile (218 x 174)'
+effects:
+  4cf663de-db33-43e9-ba5a-809ff5f14eec:
+    uuid: 4cf663de-db33-43e9-ba5a-809ff5f14eec
+    id: image_scale_and_crop
+    weight: 2
+    data:
+      width: 218
+      height: 174
+      anchor: center-center

@@ -1,0 +1,68 @@
+.card__news--frontpage__technology {
+  display: flex!important;
+  flex-direction: row;
+  gap: 14px;
+  margin: 0!important;
+
+  @include desc {
+    gap: 16px;
+  }
+
+  .card__news--preview__image {
+    flex: 0 0 30%;
+  }
+
+  .card__news--preview__content {
+
+    justify-content: start;
+
+    .heading {
+
+      display: inline-flex;
+      margin: 0 0 6px;
+
+      @include desc {
+        margin: 0 0 16px;
+      }
+
+      @include descLarge {
+        margin: 0 0 6px;
+      }
+
+      a {
+        font-size: 16px;
+        line-height: 1.1;
+        font-weight: 600;
+
+        @include desc {
+          font-size: 15px;
+        }
+
+        @include descMedium {
+          font-size: 16px;
+        }
+
+        @include descLarge {
+          font-size: 20px;
+        }
+      }
+    }
+
+    .card__news--preview__body {
+      display: none;
+
+      @include descLarge {
+        display: flex;
+      }
+    }
+
+    &--info {
+      @include unsetCardAuthor();
+
+      @include desc {
+        @include showCardAuthor();
+      }
+    }
+  }
+
+}
