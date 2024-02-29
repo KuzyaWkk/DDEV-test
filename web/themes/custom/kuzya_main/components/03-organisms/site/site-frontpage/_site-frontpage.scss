@@ -179,6 +179,10 @@
                     line-height: 1;
                     text-align: center;
                     -webkit-font-smoothing: antialiased;
+
+                    @include descLarge {
+                      padding-top: 2px;
+                    }
                   }
 
                   &:hover {
@@ -206,6 +210,14 @@
                   @include descLarge {
                     font-size: 13px;
                   }
+
+                }
+              }
+
+              .card__news--fashion-with-image {
+
+                @include desc {
+                  margin-bottom: 0;
                 }
               }
 
@@ -213,19 +225,121 @@
 
                 @include desc {
                   display: flex;
+                  flex-flow: wrap;
                 }
               }
 
               .views-row {
                 flex: 0 0 33.33%;
-                padding: 0 5px;
+                margin: 0 5px;
               }
 
-              .js-pager__items {
+              nav {
+                width: 100%;
+                margin-left: 0.7rem;
 
+                .js-pager__items {
+                  @include list-reset;
+                  display: flex;
+                  gap: 2.5rem;
+                  margin: -35px 0 0 20px;
+
+                  @include desc {
+                    margin: 10px 0 0 0;
+                    gap: 1.8rem;
+                  }
+
+                  li {
+                    color: $primary;
+                    font-size: 24px;
+
+                    span {
+                      position: relative;
+                    }
+
+                    a {
+                      color: $primary;
+                      text-decoration: none;
+                    }
+
+                    a:hover {
+                      color: $secondary;
+                      cursor: pointer;
+
+                      span::after {
+                        background-color: $secondary;
+                      }
+
+                      span::before {
+                        background-color: $secondary;
+                      }
+
+                    }
+                  }
+
+                  .prev {
+
+                    span::after {
+                      content: "";
+                      position: absolute;
+                      top: 50%;
+                      right: -6px;
+                      width: 17px;
+                      height: 1px;
+                      background-color: $primary;
+                      transform: translateY(-50%);
+                    }
+
+                    &--current {
+                      color: $arrow-secondary;
+
+                      span::after {
+                        background-color: $arrow-secondary;
+                      }
+
+                      &:hover {
+                        color: $secondary;
+                        cursor: pointer;
+
+                        span::after {
+                          background-color: $secondary;
+                        }
+                      }
+                    }
+                  }
+
+                  .next {
+
+                    span::before {
+                      content: "";
+                      position: absolute;
+                      top: 50%;
+                      left: -6px;
+                      width: 17px;
+                      height: 1px;
+                      background-color: $primary;
+                      transform: translateY(-50%);
+                    }
+
+                    &--current {
+                      color: $arrow-secondary;
+
+                      span::before {
+                        background-color: $arrow-secondary;
+                      }
+
+                      &:hover {
+                        color: $secondary;
+                        cursor: pointer;
+
+                        span::before {
+                          background-color: $secondary;
+                        }
+                      }
+                    }
+                  }
+                }
               }
-
-
             }
           }
         }
