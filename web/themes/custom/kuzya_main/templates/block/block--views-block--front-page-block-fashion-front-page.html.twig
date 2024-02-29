@@ -1,0 +1,14 @@
+<div {{ bem('block', ['frontpage__fashion']) }}>
+
+  {% if label %}
+    {% include "@atoms/text/headings/_heading.twig" with {
+      heading__base_class: heading__base_class|default('block--frontpage__fashion--heading'),
+      heading: label,
+      heading_level: 4,
+    } %}
+  {% endif %}
+
+  {% block content %}
+    {{ content }}
+  {% endblock %}
+</div>

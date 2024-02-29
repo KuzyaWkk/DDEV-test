@@ -1,0 +1,20 @@
+{% set date = content.field_created.0 %}
+{% set user_id = node.getOwnerId() %}
+
+{% embed "@molecules/card/card-news-preview.twig" with {
+  card__extra_classes: ["card__news--fashion"],
+  card__heading: label,
+  heading_level: 3,
+  card__link__url: url,
+  card__created: date,
+} %}
+
+  {% block card__author %}
+    {% include "@atoms/links/link/link.twig" with {
+      link_url: '/user/{{ user_id }}',
+      link_content: author_name
+    }%}
+
+  {% endblock %}
+
+{% endembed %}

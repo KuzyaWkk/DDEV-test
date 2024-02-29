@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.attachment
     - core.entity_view_mode.node.fashion_with_image
+    - core.entity_view_mode.node.info
     - core.entity_view_mode.node.main_content
     - core.entity_view_mode.node.teaser
     - core.entity_view_mode.node.teaser_with_image
@@ -1121,12 +1122,10 @@ display:
           default_row_class: true
           uses_fields: false
       row:
-        type: fields
+        type: 'entity:node'
         options:
-          default_field_elements: true
-          inline: {  }
-          separator: ''
-          hide_empty: false
+          relationship: none
+          view_mode: info
       defaults:
         title: false
         pager: false
