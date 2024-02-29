@@ -2,339 +2,358 @@
 
   .node {
 
-    .layout {
+    .bartlett {
 
-      &--twocol-section {
+      @include descLarge {
+        padding: 0 24px;
+      }
 
-        &--25-75 {
+      max-width: 1240px;
+      width: auto;
+      display: flex;
+      flex-direction: column;
 
-          @include descLarge {
-            padding: 0 24px;
+      @include desc {
+        flex-wrap: wrap;
+        flex-direction: row;
+        margin: 0 auto;
+      }
+
+      .container-fluid > :first-child {
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+
+        @include desc {
+          flex-direction: row;
+        }
+      }
+
+      .radix-layouts-sidebar {
+        padding: 0 20px;
+
+        @include desc {
+          flex: 0 0 25%;
+        }
+
+        .block--frontpage__latest-news {
+
+          &__heading {
+            @include headingSidebarBlock;
           }
 
-          max-width: 1240px;
-          width: auto;
-          display: flex;
-          flex-direction: column;
+          .view__front_page {
+            position: relative;
 
-          @include desc {
-            flex-wrap: wrap;
-            flex-direction: row;
-            margin: 0 auto;
-          }
-
-          .layout__region--first {
-            padding: 0 20px;
-
-            @include desc {
-              flex: 0 1 25%;
-            }
-
-            .block--frontpage__latest-news {
-
-              &__heading {
-                @include headingSidebarBlock;
-              }
-
-              .view__front_page {
-                position: relative;
-
-                .card__news--teaser {
-                  margin-bottom: 15px;
-
-                  @include desc {
-                    margin-bottom: 10px;
-                  }
-                }
-              }
-
-              .view__front_page .views-row:not(:last-child) .card__news--teaser::before {
-                content: '';
-                bottom: -15px;
-                border-width: 0 0 1px 0;
-                border-style: solid;
-                border-color: $color-underline;
-                left: 0;
-                height: 1px;
-                width: 100%;
-                position: absolute;
-              }
-
-              .views-row {
-                padding-top: 15px;
-
-                @include desc {
-                  padding-top: 10px;
-                }
-              }
-
-              .views-row-1 {
-                padding-top: 0;
-              }
-            }
-          }
-
-          .layout__region--second {
-
-            .block--frontpage__main-content {
+            .card__news--teaser {
+              margin-bottom: 15px;
 
               @include desc {
-                padding: 0 12px;
+                margin-bottom: 10px;
+              }
+            }
+          }
+
+          .view__front_page .views-row:not(:last-child) .card__news--teaser::before {
+            content: '';
+            bottom: -15px;
+            border-width: 0 0 1px 0;
+            border-style: solid;
+            border-color: $color-underline;
+            left: 0;
+            height: 1px;
+            width: 100%;
+            position: absolute;
+          }
+
+          .views-row {
+            padding-top: 15px;
+
+            @include desc {
+              padding-top: 10px;
+            }
+          }
+
+          .views-row-1 {
+            padding-top: 0;
+          }
+        }
+      }
+
+      .col-lg-8.panel-panel {
+        padding: 0;
+        width: 100%;
+
+        .row {
+          margin: 0;
+          padding: 0;
+        }
+
+        .radix-layouts-contentheader {
+           padding: 0;
+
+          .block--frontpage__main-content {
+
+            @include desc {
+              padding: 0 12px;
+            }
+
+            .view__front_page {
+
+              @include desc {
+                display: grid;
+                gap: 20px;
+                grid-template-columns: 2.1fr 1fr;
               }
 
-              .view__front_page {
+              @include descMedium {
+                gap: 40px;
+              }
 
-                @include desc {
-                  display: grid;
-                  gap: 20px;
-                  grid-template-columns: 2.1fr 1fr;
-                }
+              .views-element-container {
 
-                @include descMedium {
-                  gap: 40px;
-                }
-
-                .views-element-container {
-                   .view__front_page {
-
-                     display: flex;
-                     flex-direction: column;
-                   }
+                .view__front_page {
+                  display: flex;
+                  flex-direction: column;
                 }
               }
             }
+          }
 
-            .block--frontpage__featured {
+          .block--frontpage__featured {
+
+            @include desc {
+              display: flex;
+              flex-direction: row;
+            }
+
+            &--heading {
+              padding: 0 20px;
 
               @include desc {
                 display: flex;
-                flex-direction: row;
+                flex: 0 0 25%;
+                flex-direction: column;
               }
 
-              &--heading {
-                padding: 0 20px;
+              .frontpage__featured--heading {
+                margin: 0;
+                padding: 0;
+                font-size: 28px;
+                font-weight: 800;
+                letter-spacing: 1px;
 
                 @include desc {
-                  display: flex;
-                  flex: 0 0 25%;
-                  flex-direction: column;
+                  font-size: 20px;
                 }
 
-                .frontpage__featured--heading {
-                  margin: 0;
-                  padding: 0;
+                @include descMedium {
+                  font-size: 23px;
+                }
+
+                @include descLarge {
                   font-size: 28px;
-                  font-weight: 800;
-                  letter-spacing: 1px;
-
-                  @include desc {
-                    font-size: 20px;
-                  }
-
-                  @include descMedium {
-                    font-size: 23px;
-                  }
-
-                  @include descLarge {
-                     font-size: 28px;
-                  }
-
                 }
 
-                .subtitle {
-                  margin: 0 0 7px 0;
-                  padding: 0;
-                  font-family: $font-paragraph;
+              }
+
+              .subtitle {
+                margin: 0 0 7px 0;
+                padding: 0;
+                font-family: $font-paragraph;
+                font-size: 14px;
+                line-height: 1.5;
+                color: $color-secondary-desc;
+
+                @include desc {
+                  font-size: 11px;
+                }
+
+                @include descMedium {
+                  font-size: 12px;
+                }
+
+                @include descLarge {
                   font-size: 14px;
-                  line-height: 1.5;
-                  color: $color-secondary-desc;
+                }
+              }
 
-                  @include desc {
-                    font-size: 11px;
-                  }
+              .all-articles {
+                display: none;
 
-                  @include descMedium {
-                    font-size: 12px;
-                  }
+                &:after {
+                  content: '>';
+                  margin-left: 5px;
+                  speak: none;
+                  font-style: normal;
+                  font-weight: bold;
+                  font-variant: normal;
+                  text-transform: none;
+                  font-size: 12px;
+                  color: $primary;
+                  letter-spacing: 0;
+                  line-height: 1;
+                  text-align: center;
+                  -webkit-font-smoothing: antialiased;
 
                   @include descLarge {
-                    font-size: 14px;
+                    padding-top: 2px;
                   }
                 }
 
-                .all-articles {
-                  display: none;
+                &:hover {
+                  color: $secondary;
 
                   &:after {
-                    content: '>';
-                    margin-left: 5px;
-                    speak: none;
-                    font-style: normal;
-                    font-weight: bold;
-                    font-variant: normal;
-                    text-transform: none;
-                    font-size: 12px;
-                    color: $primary;
-                    letter-spacing: 0;
-                    line-height: 1;
-                    text-align: center;
-                    -webkit-font-smoothing: antialiased;
-
-                    @include descLarge {
-                      padding-top: 2px;
-                    }
-                  }
-
-                  &:hover {
                     color: $secondary;
-
-                    &:after {
-                      color: $secondary;
-                    }
                   }
-
-                  @include desc {
-                    display: flex;
-                    color: $primary;
-                    text-decoration: none;
-                    margin-top: 7px;
-                    font-size: 11px;
-                    letter-spacing: 0;
-                    font-family: $font-main;
-                    line-height: initial;
-                    font-weight: 500;
-                    position: relative;
-                    text-transform: uppercase;
-                  }
-
-                  @include descLarge {
-                    font-size: 13px;
-                  }
-
                 }
-              }
-
-              .card__news--fashion-with-image {
-
-                @include desc {
-                  margin-bottom: 0;
-                }
-              }
-
-              .view__front_page {
 
                 @include desc {
                   display: flex;
-                  flex-flow: wrap;
+                  color: $primary;
+                  text-decoration: none;
+                  margin-top: 7px;
+                  font-size: 11px;
+                  letter-spacing: 0;
+                  font-family: $font-main;
+                  line-height: initial;
+                  font-weight: 500;
+                  position: relative;
+                  text-transform: uppercase;
                 }
-              }
 
-              .views-row {
-                flex: 0 0 33.33%;
+                @include descLarge {
+                  font-size: 13px;
+                }
+
+              }
+            }
+
+            .card__news--fashion-with-image {
+
+              @include desc {
+                margin-bottom: 0;
+              }
+            }
+
+            .view__front_page {
+
+              @include desc {
+                display: flex;
+                flex-flow: wrap;
+              }
+            }
+
+            .views-row {
+              flex: 0 0 33.33%;
+
+
+              @include desc {
                 margin: 0 5px;
               }
+            }
 
-              nav {
-                width: 100%;
-                margin-left: 0.7rem;
+            nav {
+              width: 100%;
+              margin-left: 0.7rem;
 
-                .js-pager__items {
-                  @include list-reset;
-                  display: flex;
-                  gap: 2.5rem;
-                  margin: -35px 0 0 20px;
+              .js-pager__items {
+                @include list-reset;
+                display: flex;
+                gap: 2.5rem;
+                margin: -35px 0 0 20px;
 
-                  @include desc {
-                    margin: 10px 0 0 0;
-                    gap: 1.8rem;
+                @include desc {
+                  margin: 10px 0 0 0;
+                  gap: 1.8rem;
+                }
+
+                li {
+                  color: $primary;
+                  font-size: 24px;
+
+                  span {
+                    position: relative;
                   }
 
-                  li {
+                  a {
                     color: $primary;
-                    font-size: 24px;
+                    text-decoration: none;
+                  }
 
-                    span {
-                      position: relative;
+                  a:hover {
+                    color: $secondary;
+                    cursor: pointer;
+
+                    span::after {
+                      background-color: $secondary;
                     }
 
-                    a {
-                      color: $primary;
-                      text-decoration: none;
+                    span::before {
+                      background-color: $secondary;
                     }
 
-                    a:hover {
+                  }
+                }
+
+                .prev {
+
+                  span::after {
+                    content: "";
+                    position: absolute;
+                    top: 50%;
+                    right: -6px;
+                    width: 17px;
+                    height: 1px;
+                    background-color: $primary;
+                    transform: translateY(-50%);
+                  }
+
+                  &--current {
+                    color: $arrow-secondary;
+
+                    span::after {
+                      background-color: $arrow-secondary;
+                    }
+
+                    &:hover {
                       color: $secondary;
                       cursor: pointer;
 
                       span::after {
                         background-color: $secondary;
                       }
+                    }
+                  }
+                }
+
+                .next {
+
+                  span::before {
+                    content: "";
+                    position: absolute;
+                    top: 50%;
+                    left: -6px;
+                    width: 17px;
+                    height: 1px;
+                    background-color: $primary;
+                    transform: translateY(-50%);
+                  }
+
+                  &--current {
+                    color: $arrow-secondary;
+
+                    span::before {
+                      background-color: $arrow-secondary;
+                    }
+
+                    &:hover {
+                      color: $secondary;
+                      cursor: pointer;
 
                       span::before {
                         background-color: $secondary;
-                      }
-
-                    }
-                  }
-
-                  .prev {
-
-                    span::after {
-                      content: "";
-                      position: absolute;
-                      top: 50%;
-                      right: -6px;
-                      width: 17px;
-                      height: 1px;
-                      background-color: $primary;
-                      transform: translateY(-50%);
-                    }
-
-                    &--current {
-                      color: $arrow-secondary;
-
-                      span::after {
-                        background-color: $arrow-secondary;
-                      }
-
-                      &:hover {
-                        color: $secondary;
-                        cursor: pointer;
-
-                        span::after {
-                          background-color: $secondary;
-                        }
-                      }
-                    }
-                  }
-
-                  .next {
-
-                    span::before {
-                      content: "";
-                      position: absolute;
-                      top: 50%;
-                      left: -6px;
-                      width: 17px;
-                      height: 1px;
-                      background-color: $primary;
-                      transform: translateY(-50%);
-                    }
-
-                    &--current {
-                      color: $arrow-secondary;
-
-                      span::before {
-                        background-color: $arrow-secondary;
-                      }
-
-                      &:hover {
-                        color: $secondary;
-                        cursor: pointer;
-
-                        span::before {
-                          background-color: $secondary;
-                        }
                       }
                     }
                   }
@@ -344,6 +363,21 @@
           }
         }
       }
+
+      .radix-layouts-contentcolumn1 {
+
+         @include desc {
+           width: 60%;
+         }
+      }
+
+      .radix-layouts-contentcolumn2 {
+
+        @include desc {
+          width: 40%;
+        }
+      }
+
     }
   }
 }
