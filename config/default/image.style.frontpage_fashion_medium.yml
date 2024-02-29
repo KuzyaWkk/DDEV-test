@@ -1,0 +1,15 @@
+uuid: 328f4a5b-d7b3-4506-ba0f-ba77f127f96a
+langcode: en
+status: true
+dependencies: {  }
+name: frontpage_fashion_medium
+label: 'Frontpage Fashion | Medium (174 x 122)'
+effects:
+  0472269e-a93c-4ede-9a47-1577c43e6f94:
+    uuid: 0472269e-a93c-4ede-9a47-1577c43e6f94
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 174
+      height: 122
+      anchor: center-center

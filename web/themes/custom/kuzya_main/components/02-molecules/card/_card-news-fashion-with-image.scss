@@ -1,0 +1,61 @@
+.card__news--fashion-with-image {
+
+  @include desc {
+    display: flex;
+    flex-direction: column!important;
+  }
+
+  .card__news--preview__content {
+    padding: 0 20px;
+
+    @include desc {
+      padding: 0;
+    }
+
+    .category {
+
+      @include desc {
+        margin: -20px 0 8px 0;
+      }
+
+    }
+
+    .heading {
+      font-size: 18px;
+      margin: 0 0 3px;
+
+      @include desc {
+        font-size: 12px;
+      }
+
+      @include descMedium {
+        font-size: 14px;
+      }
+
+      @include descLarge {
+        font-size: 16px;
+      }
+
+    }
+
+    &--info {
+
+      time {
+
+        &:before {
+          content: unset;
+        }
+
+        @include desc {
+          margin-top: 3px;
+          font-size: 11px;
+        }
+
+        @include descLarge {
+          font-size: 12px;
+        }
+
+      }
+    }
+  }
+}

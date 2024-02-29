@@ -1,0 +1,11 @@
+uuid: 0e0263c9-a070-4fa1-b43d-87a9efa5304a
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.frontpage_fashion
+label: 'Frontpage Fashion'
+description: ''
+targetEntityType: media
+cache: true

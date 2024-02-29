@@ -103,6 +103,244 @@
                 }
               }
             }
+
+            .block--frontpage__featured {
+
+              @include desc {
+                display: flex;
+                flex-direction: row;
+              }
+
+              &--heading {
+                padding: 0 20px;
+
+                @include desc {
+                  display: flex;
+                  flex: 0 0 25%;
+                  flex-direction: column;
+                }
+
+                .frontpage__featured--heading {
+                  margin: 0;
+                  padding: 0;
+                  font-size: 28px;
+                  font-weight: 800;
+                  letter-spacing: 1px;
+
+                  @include desc {
+                    font-size: 20px;
+                  }
+
+                  @include descMedium {
+                    font-size: 23px;
+                  }
+
+                  @include descLarge {
+                     font-size: 28px;
+                  }
+
+                }
+
+                .subtitle {
+                  margin: 0 0 7px 0;
+                  padding: 0;
+                  font-family: $font-paragraph;
+                  font-size: 14px;
+                  line-height: 1.5;
+                  color: $color-secondary-desc;
+
+                  @include desc {
+                    font-size: 11px;
+                  }
+
+                  @include descMedium {
+                    font-size: 12px;
+                  }
+
+                  @include descLarge {
+                    font-size: 14px;
+                  }
+                }
+
+                .all-articles {
+                  display: none;
+
+                  &:after {
+                    content: '>';
+                    margin-left: 5px;
+                    speak: none;
+                    font-style: normal;
+                    font-weight: bold;
+                    font-variant: normal;
+                    text-transform: none;
+                    font-size: 12px;
+                    color: $primary;
+                    letter-spacing: 0;
+                    line-height: 1;
+                    text-align: center;
+                    -webkit-font-smoothing: antialiased;
+
+                    @include descLarge {
+                      padding-top: 2px;
+                    }
+                  }
+
+                  &:hover {
+                    color: $secondary;
+
+                    &:after {
+                      color: $secondary;
+                    }
+                  }
+
+                  @include desc {
+                    display: flex;
+                    color: $primary;
+                    text-decoration: none;
+                    margin-top: 7px;
+                    font-size: 11px;
+                    letter-spacing: 0;
+                    font-family: $font-main;
+                    line-height: initial;
+                    font-weight: 500;
+                    position: relative;
+                    text-transform: uppercase;
+                  }
+
+                  @include descLarge {
+                    font-size: 13px;
+                  }
+
+                }
+              }
+
+              .card__news--fashion-with-image {
+
+                @include desc {
+                  margin-bottom: 0;
+                }
+              }
+
+              .view__front_page {
+
+                @include desc {
+                  display: flex;
+                  flex-flow: wrap;
+                }
+              }
+
+              .views-row {
+                flex: 0 0 33.33%;
+                margin: 0 5px;
+              }
+
+              nav {
+                width: 100%;
+                margin-left: 0.7rem;
+
+                .js-pager__items {
+                  @include list-reset;
+                  display: flex;
+                  gap: 2.5rem;
+                  margin: -35px 0 0 20px;
+
+                  @include desc {
+                    margin: 10px 0 0 0;
+                    gap: 1.8rem;
+                  }
+
+                  li {
+                    color: $primary;
+                    font-size: 24px;
+
+                    span {
+                      position: relative;
+                    }
+
+                    a {
+                      color: $primary;
+                      text-decoration: none;
+                    }
+
+                    a:hover {
+                      color: $secondary;
+                      cursor: pointer;
+
+                      span::after {
+                        background-color: $secondary;
+                      }
+
+                      span::before {
+                        background-color: $secondary;
+                      }
+
+                    }
+                  }
+
+                  .prev {
+
+                    span::after {
+                      content: "";
+                      position: absolute;
+                      top: 50%;
+                      right: -6px;
+                      width: 17px;
+                      height: 1px;
+                      background-color: $primary;
+                      transform: translateY(-50%);
+                    }
+
+                    &--current {
+                      color: $arrow-secondary;
+
+                      span::after {
+                        background-color: $arrow-secondary;
+                      }
+
+                      &:hover {
+                        color: $secondary;
+                        cursor: pointer;
+
+                        span::after {
+                          background-color: $secondary;
+                        }
+                      }
+                    }
+                  }
+
+                  .next {
+
+                    span::before {
+                      content: "";
+                      position: absolute;
+                      top: 50%;
+                      left: -6px;
+                      width: 17px;
+                      height: 1px;
+                      background-color: $primary;
+                      transform: translateY(-50%);
+                    }
+
+                    &--current {
+                      color: $arrow-secondary;
+
+                      span::before {
+                        background-color: $arrow-secondary;
+                      }
+
+                      &:hover {
+                        color: $secondary;
+                        cursor: pointer;
+
+                        span::before {
+                          background-color: $secondary;
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
           }
         }
       }
