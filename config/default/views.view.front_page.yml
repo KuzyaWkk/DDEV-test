@@ -2052,7 +2052,7 @@ display:
           entity_field: status
           plugin_id: boolean
           operator: '='
-          value: '0'
+          value: '1'
           group: 1
           exposed: false
           expose:
@@ -2127,12 +2127,28 @@ display:
         operator: AND
         groups:
           1: AND
+      style:
+        type: default
+        options:
+          grouping: {  }
+          row_class: ''
+          default_row_class: true
+          uses_fields: false
+      row:
+        type: 'entity:node'
+        options:
+          relationship: none
+          view_mode: teaser
       defaults:
         title: false
         pager: false
+        style: false
+        row: false
         filters: false
         filter_groups: false
+        header: false
       display_description: ''
+      header: {  }
       display_extenders: {  }
       block_description: 'Social Media Stats'
     cache_metadata:

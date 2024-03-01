@@ -8,7 +8,7 @@ dependencies:
     - field.field.node.social_media.field_follow_text
     - field.field.node.social_media.field_icon
     - field.field.node.social_media.field_number_of_subscribers
-    - image.style.thumbnail
+    - image.style.icon
     - node.type.social_media
   module:
     - media
@@ -39,7 +39,7 @@ content:
     label: hidden
     settings:
       image_link: ''
-      image_style: thumbnail
+      image_style: icon
       image_loading:
         attribute: lazy
     third_party_settings: {  }
@@ -49,7 +49,7 @@ content:
     type: number_integer
     label: hidden
     settings:
-      thousand_separator: ''
+      thousand_separator: ','
       prefix_suffix: true
     third_party_settings: {  }
     weight: 1

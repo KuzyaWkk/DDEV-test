@@ -1,0 +1,34 @@
+.card__social-media--teaser {
+  display: flex;
+
+  .field--base {
+    display: flex;
+    align-items: center;
+    font-family: $font-special;
+    font-size: 11px;
+    font-weight: bold;
+    position: relative;
+    padding: 0 0 0 9px;
+    margin: 0;
+
+    .paragraph {
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  .field--button-text {
+    margin-left: auto;
+    text-transform: uppercase;
+    line-height: 15px;
+
+    @include desc {
+      display: none;
+    }
+
+    @include descMedium {
+      display: flex;
+    }
+  }
+
+}

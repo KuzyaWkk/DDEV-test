@@ -1,0 +1,33 @@
+{% set card__base__class = 'card__social-media--teaser'%}
+
+<article {{ bem(card__base_class, card__modifiers, card__blockname, card__extra_classes) }}>
+
+  {% if card__image %}
+    <div {{ bem('field', ['icon']) }}>
+      {{ card__image }}
+    </div>
+  {% endif %}
+
+  {% if card__number_of_subscribers %}
+    <div {{ bem('field', ['base', 'num-sub']) }}>
+      {{ card__number_of_subscribers }}
+    </div>
+  {% endif %}
+
+  {% if card__follow_text %}
+    <div {{ bem('field', ['base', 'follow-text']) }}>
+      {% include "@atoms/text/text/01-paragraph.twig" with {
+        paragraph_content: card__follow_text,
+      } %}
+    </div>
+  {% endif %}
+
+  {% if card__button_text %}
+    <div {{ bem('field', ['base', 'button-text']) }}>
+      {% include "@atoms/text/text/01-paragraph.twig" with {
+        paragraph_content: card__button_text,
+      } %}
+    </div>
+  {% endif %}
+
+</article>
