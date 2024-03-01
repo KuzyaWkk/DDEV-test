@@ -1,0 +1,15 @@
+uuid: 5302ff55-b7bf-48b9-ae8e-d609a3427483
+langcode: en
+status: true
+dependencies: {  }
+name: frontpage_sidebar_small_desktop
+label: 'Frontpage Sidebar Small | Desktop (90 x 90)'
+effects:
+  80d06a85-f617-4ed9-8371-af2f24cc2673:
+    uuid: 80d06a85-f617-4ed9-8371-af2f24cc2673
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 90
+      height: 60
+      anchor: center-center

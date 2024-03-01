@@ -1,0 +1,15 @@
+uuid: 484aca1c-448e-455e-90c5-adc9fb68632d
+langcode: en
+status: true
+dependencies: {  }
+name: frontpage_sidebar_small_mobile
+label: 'Frontpage Sidebar Small | Mobile (218 x 168)'
+effects:
+  9dd01de1-7505-442c-82b1-99b4c49089a4:
+    uuid: 9dd01de1-7505-442c-82b1-99b4c49089a4
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 218
+      height: 168
+      anchor: center-center
