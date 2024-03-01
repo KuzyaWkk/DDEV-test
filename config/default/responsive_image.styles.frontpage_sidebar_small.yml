@@ -1,0 +1,31 @@
+uuid: a080f304-4a33-431e-addb-b9899248151a
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.frontpage_sidebar_small_desktop
+    - image.style.frontpage_sidebar_small_medium
+    - image.style.frontpage_sidebar_small_mobile
+    - image.style.wide
+  theme:
+    - kuzya_main
+id: frontpage_sidebar_small
+label: 'Frontpage Sidebar Small'
+image_style_mappings:
+  -
+    image_mapping_type: image_style
+    image_mapping: frontpage_sidebar_small_desktop
+    breakpoint_id: kuzya_main.large
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: frontpage_sidebar_small_medium
+    breakpoint_id: kuzya_main.medium
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: frontpage_sidebar_small_mobile
+    breakpoint_id: kuzya_main.small
+    multiplier: 1x
+breakpoint_group: kuzya_main
+fallback_image_style: wide

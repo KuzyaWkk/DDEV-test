@@ -1,0 +1,15 @@
+uuid: 2b550b36-a6e2-411e-93c4-b7b85aabf0ef
+langcode: en
+status: true
+dependencies: {  }
+name: frontpage_sidebar_small_medium
+label: 'Frontpage Sidebar Small | Medium (60 x 60)'
+effects:
+  a66c64e3-be78-4e4a-8c5b-cb0d716ad654:
+    uuid: a66c64e3-be78-4e4a-8c5b-cb0d716ad654
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 60
+      height: 60
+      anchor: center-center

@@ -5,9 +5,11 @@ dependencies:
   config:
     - core.entity_view_mode.node.attachment
     - core.entity_view_mode.node.fashion_with_image
+    - core.entity_view_mode.node.frontpage_sidebar_small
     - core.entity_view_mode.node.info
     - core.entity_view_mode.node.main_content
     - core.entity_view_mode.node.preview_without_category
+    - core.entity_view_mode.node.preview_without_date
     - core.entity_view_mode.node.teaser
     - core.entity_view_mode.node.teaser_with_image
     - field.storage.node.field_category
@@ -1453,9 +1455,23 @@ display:
         operator: AND
         groups:
           1: AND
+      style:
+        type: default
+        options:
+          grouping: {  }
+          row_class: ''
+          default_row_class: true
+          uses_fields: false
+      row:
+        type: 'entity:node'
+        options:
+          relationship: none
+          view_mode: frontpage_sidebar_small
       defaults:
         title: false
         pager: false
+        style: false
+        row: false
         relationships: false
         filters: false
         filter_groups: false
@@ -1995,7 +2011,7 @@ display:
         type: 'entity:node'
         options:
           relationship: none
-          view_mode: main_content
+          view_mode: preview_without_date
       defaults:
         title: false
         pager: false
@@ -2005,20 +2021,7 @@ display:
         filter_groups: false
         header: false
       display_description: ''
-      header:
-        area:
-          id: area
-          table: views
-          field: area
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: text
-          empty: true
-          content:
-            value: 'Find Your Perfect Music Festival'
-            format: basic_html
-          tokenize: false
+      header: {  }
       display_extenders: {  }
       block_description: 'Music Festivals - Front Page'
     cache_metadata:
@@ -2623,7 +2626,7 @@ display:
     display_plugin: block
     position: 6
     display_options:
-      title: 'TV Frontpage'
+      title: TV
       pager:
         type: some
         options:
@@ -2744,7 +2747,7 @@ display:
         type: 'entity:node'
         options:
           relationship: none
-          view_mode: teaser_with_image
+          view_mode: frontpage_sidebar_small
       defaults:
         title: false
         pager: false

@@ -1,0 +1,11 @@
+uuid: d87e444b-4897-4069-ba45-950e9e0ddb11
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.frontpage_sidebar_small
+label: 'Frontpage Sidebar Small'
+description: ''
+targetEntityType: media
+cache: true
