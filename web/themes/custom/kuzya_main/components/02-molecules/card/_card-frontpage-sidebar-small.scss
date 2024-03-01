@@ -1,0 +1,90 @@
+.card__frontpage-sidebar-small{
+  margin-bottom: 25px;
+  display: flex;
+  flex-direction: row;
+  gap: 14px;
+
+  @include desc {
+    margin-bottom: 20px;
+  }
+
+  @include descLarge {
+    margin-bottom: 25px;
+  }
+
+  &:hover {
+    .heading {
+      span {
+        border-bottom: 1px solid $secondary;
+      }
+    }
+  }
+
+  &__image {
+    position: relative;
+    flex: 0 0 33.33%;
+
+    @include desc {
+      flex: 0 0 60px;
+    }
+
+    @include descLarge {
+      flex: 0 0 90px;
+    }
+  }
+
+  &__content {
+    display: flex;
+    padding: 0;
+    flex-direction: column;
+    justify-content: start;
+    border-color: $color-underline;
+
+    .heading {
+      margin: 0 0 6px;
+      font-size: 16px;
+      line-height: 1.1;
+      font-weight: 600;
+
+      @include desc {
+        font-size: 12px;
+        justify-content: center;
+      }
+
+      @include descMedium {
+        font-size: 14px;
+      }
+
+      @include descLarge {
+        font-size: 16px;
+      }
+
+      a {
+        color: $primary;
+        text-decoration: none;
+      }
+    }
+
+    time {
+      color: $desc;
+      display: flex;
+      flex-direction: row;
+      font-size: 12px;
+      line-height: 1;
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-family: $font-main;
+      gap: 0.4rem;
+
+      @include desc {
+        font-size: 11px;
+      }
+
+      @include descLarge {
+        font-size: 12px;
+      }
+
+    }
+  }
+}
