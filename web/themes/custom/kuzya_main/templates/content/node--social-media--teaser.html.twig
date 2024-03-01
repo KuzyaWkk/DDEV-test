@@ -1,0 +1,12 @@
+{% set number_of_subscribers = content.field_number_of_subscribers.0 %}
+{% set follow_text = node.field_follow_text.value %}
+{% set button_text = node.field_follow_button_text.value %}
+{% set image = content.field_icon.0 %}
+
+{% include "@molecules/card/card-social-media-teaser.twig" with {
+  card__extra_classes: ["card__social-media--teaser"],
+  card__image: image,
+  card__number_of_subscribers: number_of_subscribers,
+  card__follow_text: follow_text,
+  card__button_text: button_text
+} %}

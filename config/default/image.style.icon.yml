@@ -1,0 +1,14 @@
+uuid: 8990686e-9a90-4573-9e12-ccb89a58caa2
+langcode: en
+status: true
+dependencies: {  }
+name: icon
+label: 'Icon 40 x 40'
+effects:
+  b2b1233d-6a26-44e1-a69d-0a4c5e8bbaaa:
+    uuid: b2b1233d-6a26-44e1-a69d-0a4c5e8bbaaa
+    id: image_resize
+    weight: 1
+    data:
+      width: 40
+      height: 40

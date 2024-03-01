@@ -87,6 +87,11 @@
         .row {
           margin: 0;
           padding: 0;
+
+          @include desc {
+            display: flex;
+            flex-wrap: wrap;
+          };
         }
 
         .radix-layouts-contentheader {
@@ -368,18 +373,18 @@
         padding: 0;
 
         @include desc {
-          width: 60%;
+          width: 70%;
         }
 
         @include descMedium {
-          width: 70%;
+          width: 60%;
         }
 
         .block--frontpage__fashion {
           padding: 0 20px;
 
           &--heading {
-            @include headingFrontpageSecond();
+            @include headingFrontPageSecond();
           }
 
           .view__front_page {
@@ -406,7 +411,7 @@
           padding: 0 20px;
 
           &--heading {
-            @include headingFrontpageSecond();
+            @include headingFrontPageSecond();
           }
 
           .view__front_page {
@@ -423,20 +428,38 @@
             }
           }
         }
-
       }
 
       .radix-layouts-contentcolumn2 {
+        margin: 0;
+        padding: 0;
 
         @include desc {
-          width: 40%;
+          width: 30%;
         }
 
         @include descMedium {
-          width: 30%;
+          width: 40%;
+        }
+
+        .block--frontpage__stay-connected {
+          padding: 0 20px;
+
+          @include desc {
+            padding: 0 12px;
+          }
+
+          &__heading {
+            @include headingFrontPageSecond();
+          }
+
+          .view__front_page {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+          }
         }
       }
-
     }
   }
 }
