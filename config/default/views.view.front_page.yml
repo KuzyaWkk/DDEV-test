@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.attachment
     - core.entity_view_mode.node.fashion_with_image
+    - core.entity_view_mode.node.frontpage_sidebar_small
     - core.entity_view_mode.node.info
     - core.entity_view_mode.node.main_content
     - core.entity_view_mode.node.preview_without_category
@@ -1453,9 +1454,23 @@ display:
         operator: AND
         groups:
           1: AND
+      style:
+        type: default
+        options:
+          grouping: {  }
+          row_class: ''
+          default_row_class: true
+          uses_fields: false
+      row:
+        type: 'entity:node'
+        options:
+          relationship: none
+          view_mode: frontpage_sidebar_small
       defaults:
         title: false
         pager: false
+        style: false
+        row: false
         relationships: false
         filters: false
         filter_groups: false
@@ -2623,7 +2638,7 @@ display:
     display_plugin: block
     position: 6
     display_options:
-      title: 'TV Frontpage'
+      title: TV
       pager:
         type: some
         options:
@@ -2744,7 +2759,7 @@ display:
         type: 'entity:node'
         options:
           relationship: none
-          view_mode: teaser_with_image
+          view_mode: frontpage_sidebar_small
       defaults:
         title: false
         pager: false

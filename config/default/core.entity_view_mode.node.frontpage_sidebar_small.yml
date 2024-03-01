@@ -1,0 +1,11 @@
+uuid: b8b722aa-84f6-475d-90f0-5dedefaf5c44
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.frontpage_sidebar_small
+label: 'Frontpage Sidebar Small'
+description: ''
+targetEntityType: node
+cache: true
