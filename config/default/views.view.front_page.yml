@@ -9,6 +9,7 @@ dependencies:
     - core.entity_view_mode.node.info
     - core.entity_view_mode.node.main_content
     - core.entity_view_mode.node.preview_without_category
+    - core.entity_view_mode.node.preview_without_date
     - core.entity_view_mode.node.teaser
     - core.entity_view_mode.node.teaser_with_image
     - field.storage.node.field_category
@@ -2010,7 +2011,7 @@ display:
         type: 'entity:node'
         options:
           relationship: none
-          view_mode: main_content
+          view_mode: preview_without_date
       defaults:
         title: false
         pager: false
@@ -2020,20 +2021,7 @@ display:
         filter_groups: false
         header: false
       display_description: ''
-      header:
-        area:
-          id: area
-          table: views
-          field: area
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: text
-          empty: true
-          content:
-            value: 'Find Your Perfect Music Festival'
-            format: basic_html
-          tokenize: false
+      header: {  }
       display_extenders: {  }
       block_description: 'Music Festivals - Front Page'
     cache_metadata:

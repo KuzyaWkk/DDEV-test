@@ -1,0 +1,28 @@
+<div {{ bem('block', ['frontpage__music-festival']) }}>
+
+  {% if label %}
+    <div {{ bem('block--frontpage__music-festival__container') }}>
+      <div {{ bem('block', ['frontpage__music-festival__container--header']) }}>
+        {% include "@atoms/text/headings/_heading.twig" with {
+          heading__base_class: heading__base_class|default('header__heading'),
+          heading: label,
+          heading_level: 4,
+        } %}
+
+        {% include "@atoms/text/text/01-paragraph.twig" with {
+          paragraph_content: 'Popular'|t,
+          paragraph_base_class: 'popular',
+        } %}
+      </div>
+
+      {% include "@atoms/text/text/01-paragraph.twig" with {
+        paragraph_content: 'Find Your Perfect Music Festival'|t,
+        paragraph_base_class: 'find',
+      } %}
+    </div>
+
+  {% endif %}
+  {% block content %}
+    {{ content }}
+  {% endblock %}
+</div>

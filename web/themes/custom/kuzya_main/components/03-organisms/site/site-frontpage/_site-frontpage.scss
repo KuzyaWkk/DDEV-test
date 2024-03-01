@@ -506,7 +506,117 @@
             gap: 15px;
           }
         }
+      }
+    }
 
+    .block--frontpage__music-festival {
+      max-width: 1440px;
+      width: auto;
+      margin: 40px auto 0 auto;
+
+      @include descMedium {
+        padding: 0 20px;
+      }
+
+      @include descLarge {
+        padding: 0 24px;
+      }
+
+      &__container {
+        display: flex;
+        flex-direction: column;
+        margin: 0 15px;
+        position: relative;
+
+        &--header {
+          display: flex;
+          position: relative;
+          justify-content: center;
+          flex-direction: row;
+          margin: 0;
+
+          .header__heading {
+            font-size: 32px;
+            font-weight: bold;
+            letter-spacing: -1px;
+            padding: 0 2px 0 70px;
+            display: inline-block;
+            line-height: 1;
+            text-align: center;
+            margin: 0;
+
+            @include desc {
+              font-size: 40px;
+            }
+
+            @include descMedium {
+              font-size: 46px;
+            }
+
+            @include descLarge {
+              font-size: 54px;
+            }
+          }
+
+          .popular {
+
+            @include flagToTitle();
+          }
+        }
+      }
+
+      .find {
+
+        @include subtitleLine();
+      }
+
+      .view__front_page {
+
+        @include desc {
+          display: grid;
+          grid-template-columns: 1fr 2fr 1fr;
+        }
+
+        .views-row-2 {
+
+          .card__news--preview__image {
+
+            @include desc {
+              display: none;
+            }
+          }
+
+          .card__news--preview__image-main {
+
+            @include desc {
+              display: flex;
+            }
+          }
+
+          .category {
+
+            a {
+              @include descLarge {
+                font-size: 15px;
+              }
+            }
+          }
+
+          .heading {
+
+            @include desc {
+              font-size: 20px;
+            }
+
+            @include descMedium {
+              font-size: 24px;
+            }
+
+            @include descLarge {
+              font-size: 32px;
+            }
+          }
+        }
 
         .block--frontpage__tv, .block--frontpage__food-drink {
           padding: 0 20px;

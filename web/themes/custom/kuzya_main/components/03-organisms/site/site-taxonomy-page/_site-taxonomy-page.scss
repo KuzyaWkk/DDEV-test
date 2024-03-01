@@ -272,95 +272,15 @@
             }
 
             .related {
-              font-size: 12px;
-              font-weight: 600;
-              line-height: 1;
-              letter-spacing: -0.6px;
-              padding: 4px 8px;
-              background-color: $primary;
-              color: $header-primary;
-              -webkit-text-fill-color: $header-primary;
-              position: relative;
-              border-radius: 3px 3px 3px 0;
-              top: -30px;
-              text-transform: uppercase;
 
-              @include descLarge {
-                padding: 8px;
-              }
-
-              &:before {
-                content: '';
-                position: absolute;
-                top: 100%;
-                left: 0;
-                width: 0;
-                height: 0;
-                border-style: solid;
-                font-size: 12px;
-                font-weight: 600;
-                line-height: 1;
-                letter-spacing: -0.6px;
-                border-width: 6px 6px 0 0;
-                border-color: $primary transparent transparent transparent;
-              }
+              @include flagToTitle();
             }
           }
         }
 
         .recommended {
-          display: table;
-          text-align: center;
-          padding: 0;
-          font-size: 13px;
-          line-height: 1;
-          font-style: italic;
-          font-family: $font-special;
-          font-weight: normal;
-          letter-spacing: normal;
-          position: relative;
-          margin: -13px auto 20px auto;
-          text-transform: none;
-          max-width: 80%;
-          color: $secondary;
 
-          @include desc {
-            font-size: 15px;
-          }
-
-          @include headerMargin {
-            margin: -5px auto 20px auto;
-          }
-
-          @include descLarge {
-            margin: 10px auto 37px auto;
-          }
-
-          &::before {
-            content: '';
-            position: absolute;
-            height: 1px;
-            width: 40vw;
-            top: 3px;
-            bottom: 0;
-            background-color: $gray-lightest;
-            left: 100%;
-            margin: auto 0 auto 10px;
-            color: $secondary;
-          }
-
-          &::after {
-            content: '';
-            position: absolute;
-            height: 1px;
-            width: 40vw;
-            top: 3px;
-            bottom: 0;
-            background-color: $gray-lightest;
-            right: 100%;
-            margin: auto 10px auto 0;
-            color: $secondary;
-          }
+          @include subtitleLine();
         }
 
         .view__you_might_also_like {
@@ -386,10 +306,27 @@
               }
             }
 
+            .category {
+
+              a {
+                @include descLarge {
+                  font-size: 15px;
+                }
+              }
+            }
+
             .heading {
 
               @include desc {
                 font-size: 20px;
+              }
+
+              @include descMedium {
+                font-size: 24px;
+              }
+
+              @include descLarge {
+                font-size: 32px;
               }
             }
           }
