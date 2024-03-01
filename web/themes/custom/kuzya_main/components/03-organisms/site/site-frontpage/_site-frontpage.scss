@@ -428,6 +428,54 @@
             }
           }
         }
+
+        .block--frontpage__celebrities {
+          margin-top: 40px;
+
+          @include desc {
+            padding: 0 20px;
+          }
+
+          &__heading {
+            @include headingFrontPageSecond();
+            padding: 0 20px;
+
+            @include desc {
+              padding: 0;
+            }
+          }
+
+          .views-element-container {
+
+            .view__front_page {
+
+              @include desc {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 12px;
+              }
+
+              @include descMedium {
+                gap: 16px;
+              }
+
+              @include descLarge {
+                gap: 30px;
+              }
+
+              .card__news--preview__body {
+
+                @include descMedium {
+                  display: none;
+                }
+
+                @include descLarge {
+                  display: unset;
+                }
+              }
+            }
+          }
+        }
       }
 
       .radix-layouts-contentcolumn2 {
@@ -459,6 +507,7 @@
             gap: 15px;
           }
         }
+
       }
     }
   }
