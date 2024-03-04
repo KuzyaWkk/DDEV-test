@@ -1,0 +1,15 @@
+uuid: c5ffa49e-b807-4e3d-8a8a-a86d9247e3e8
+langcode: en
+status: true
+dependencies: {  }
+name: user_image_icon
+label: 'User Image Icon | 26x26'
+effects:
+  50cb1533-e483-46f3-ad1d-5f73faafd1e4:
+    uuid: 50cb1533-e483-46f3-ad1d-5f73faafd1e4
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 30
+      height: 30
+      anchor: center-center

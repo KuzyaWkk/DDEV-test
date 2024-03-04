@@ -1,0 +1,11 @@
+uuid: 1b389bfb-38e9-4cbf-81e3-30a46d70b419
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.news_full_hero_image
+label: 'News Full Hero Image'
+description: ''
+targetEntityType: media
+cache: true

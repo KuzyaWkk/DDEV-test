@@ -1,0 +1,15 @@
+uuid: e8389c5b-7556-445a-9949-4e50e68e5a46
+langcode: en
+status: true
+dependencies: {  }
+name: news_full_desktop
+label: 'News Full | Desktop (height 700)'
+effects:
+  e5dc39d8-35b3-4f33-a8e8-f1f20b5a7c2a:
+    uuid: e5dc39d8-35b3-4f33-a8e8-f1f20b5a7c2a
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 1141
+      height: 700
+      anchor: center-center

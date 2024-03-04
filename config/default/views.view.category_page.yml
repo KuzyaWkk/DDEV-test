@@ -12,18 +12,6 @@ dependencies:
     - field.storage.node.field_image_teaser
     - image.style.media_library
     - node.type.news
-    - taxonomy.vocabulary.category
-  content:
-    - 'taxonomy_term:category:202ea89f-5498-49f0-8b3c-50ca9535626b'
-    - 'taxonomy_term:category:2b709781-7bf4-416b-8ea0-1584a94440eb'
-    - 'taxonomy_term:category:409d044f-5ea4-4a3c-8501-30c475e73ed7'
-    - 'taxonomy_term:category:4abcf1d2-837d-4f2e-bee3-54c4f494a284'
-    - 'taxonomy_term:category:4ea9a18f-46c7-44e9-9f48-d51a123b1cc1'
-    - 'taxonomy_term:category:8268dcdb-5e0d-40b0-96f8-433e589fac54'
-    - 'taxonomy_term:category:83b2f655-d4e5-4ea2-8a0b-c768fe9fb21f'
-    - 'taxonomy_term:category:b38bd04a-d11a-4346-8139-24846a3b03de'
-    - 'taxonomy_term:category:e3c0e14c-7029-40cd-b99e-a73ec4314077'
-    - 'taxonomy_term:category:f373ebc2-ab74-4d7b-8988-a0bc6b54f557'
   module:
     - better_exposed_filters
     - datetime
@@ -919,16 +907,20 @@ display:
           group_type: group
           admin_label: ''
           plugin_id: numeric
-          default_action: ignore
+          default_action: default
           exception:
             value: all
             title_enable: false
             title: All
           title_enable: false
           title: ''
-          default_argument_type: fixed
+          default_argument_type: taxonomy_tid
           default_argument_options:
-            argument: ''
+            term_page: '1'
+            node: false
+            limit: false
+            vids: {  }
+            anyall: ','
           summary_options:
             base_path: ''
             count: true
@@ -999,64 +991,6 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-        field_category_target_id:
-          id: field_category_target_id
-          table: node__field_category
-          field: field_category_target_id
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: taxonomy_index_tid
-          operator: or
-          value:
-            3: 3
-            8: 8
-            12: 12
-            9: 9
-            11: 11
-            10: 10
-            6: 6
-            4: 4
-            7: 7
-            5: 5
-          group: 1
-          exposed: true
-          expose:
-            operator_id: field_category_target_id_op
-            label: Category
-            description: ''
-            use_operator: false
-            operator: field_category_target_id_op
-            operator_limit_selection: false
-            operator_list: {  }
-            identifier: category
-            required: false
-            remember: true
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-              anonymous: '0'
-              content_editor: '0'
-              administrator: '0'
-            reduce: false
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          reduce_duplicates: false
-          vid: category
-          type: select
-          hierarchy: true
-          limit: true
-          error_message: true
       filter_groups:
         operator: AND
         groups:

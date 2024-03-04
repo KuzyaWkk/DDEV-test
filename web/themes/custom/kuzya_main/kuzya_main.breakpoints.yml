@@ -4,9 +4,9 @@ kuzya_main.small:
 kuzya_main.small-med:
   label: small-med
   mediaQuery: 'all and (min-width: 26em)'
-kuzya_main.small-large:
-  label: small-large
-  mediaQuery: 'all and (min-width: 41em)'
+kuzya_main.extra-large:
+  label: Desktop-large
+  mediaQuery: 'all and (min-width: 1140px)'
 kuzya_main.medium:
   label: Medium
   mediaQuery: 'all and (min-width: 790px)'

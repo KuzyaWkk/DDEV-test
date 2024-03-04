@@ -1,0 +1,29 @@
+{% set category = content.field_category.0 %}
+
+<div {{ bem('block', ['hero-container']) }}>
+
+  <div {{ bem('block', ['hero-breadcrumb']) }}>
+
+    <div {{ bem('category') }}>
+      {{ category }}
+    </div>
+
+    <div {{ bem('title') }}>
+      {{ label }}
+    </div>
+
+  </div>
+
+  <div {{ bem('block', ['hero-main-info']) }}>
+
+    <div {{ bem('category') }}>
+      {{ category }}
+    </div>
+
+    <div {{ bem('title') }}>
+      {{ label }}
+    </div>
+
+  </div>
+
+</div>
