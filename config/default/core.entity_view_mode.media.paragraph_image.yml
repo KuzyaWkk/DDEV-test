@@ -1,0 +1,11 @@
+uuid: d746f54c-3921-4f3d-b04e-f34416baefde
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.paragraph_image
+label: 'Paragraph Image'
+description: ''
+targetEntityType: media
+cache: true

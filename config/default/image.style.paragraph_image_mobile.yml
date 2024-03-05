@@ -1,0 +1,15 @@
+uuid: 44708bbd-f9be-4409-ade5-054eb8b34676
+langcode: en
+status: true
+dependencies: {  }
+name: paragraph_image_mobile
+label: 'Paragraph Image | Mobile (800 x 523)'
+effects:
+  c94c945f-630c-4b5f-869f-135ac168d928:
+    uuid: c94c945f-630c-4b5f-869f-135ac168d928
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 800
+      height: 523
+      anchor: center-center

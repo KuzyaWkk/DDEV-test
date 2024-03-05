@@ -1,0 +1,15 @@
+uuid: 1b1ed5e7-9871-465d-8be5-1453cdb603bf
+langcode: en
+status: true
+dependencies: {  }
+name: paragraph_image_large
+label: 'Paragraph Image | Large (737 x 481)'
+effects:
+  1d71e2da-e0ef-41a4-99db-0e5690ce9b11:
+    uuid: 1d71e2da-e0ef-41a4-99db-0e5690ce9b11
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 737
+      height: 481
+      anchor: center-center

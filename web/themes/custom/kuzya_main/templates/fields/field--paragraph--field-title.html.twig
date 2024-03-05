@@ -1,0 +1,6 @@
+{% set paragraph = element['#object'] %}
+{% set title_wrapper = paragraph.getBehaviorSetting('kenny_paragraphs_title_behavior', 'title_wrapper', 'h2') %}
+
+<{{ title_wrapper }} {{ attributes.addClass('paragraph-title') }}>
+  {{ items[0].content }}
+</{{ title_wrapper }}>
