@@ -1,0 +1,7 @@
+name: 'Kenny - Paragraphs'
+type: module
+description: 'Custom code for paragraphs enhancement'
+package: Kenny
+core_version_requirement: ^10
+dependencies:
+  - paragraphs:paragraphs

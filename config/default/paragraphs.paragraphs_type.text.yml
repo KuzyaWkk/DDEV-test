@@ -1,10 +1,14 @@
 uuid: 2feb776b-6c45-4a49-bbb5-156e9b8e52ca
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - kenny_paragraphs
 id: text
 label: Text
 icon_uuid: null
 icon_default: null
 description: ''
-behavior_plugins: {  }
+behavior_plugins:
+  kenny_paragraphs_title_behavior:
+    enabled: true

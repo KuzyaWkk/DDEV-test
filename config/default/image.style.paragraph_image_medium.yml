@@ -1,0 +1,15 @@
+uuid: d31027cd-1020-4b23-86af-d8a21e0f2a99
+langcode: en
+status: true
+dependencies: {  }
+name: paragraph_image_medium
+label: 'Paragraph Image | Medium (747 x 488)'
+effects:
+  d5818639-34bb-4214-8fe5-62a1e9337772:
+    uuid: d5818639-34bb-4214-8fe5-62a1e9337772
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 747
+      height: 488
+      anchor: center-center

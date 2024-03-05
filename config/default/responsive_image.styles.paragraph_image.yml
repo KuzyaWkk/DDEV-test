@@ -1,0 +1,37 @@
+uuid: 01b4468b-a28e-49de-960c-c1ea131659b5
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.paragraph_image_desktop
+    - image.style.paragraph_image_large
+    - image.style.paragraph_image_medium
+    - image.style.paragraph_image_mobile
+    - image.style.wide
+  theme:
+    - kuzya_main
+id: paragraph_image
+label: 'Paragraph Image'
+image_style_mappings:
+  -
+    image_mapping_type: image_style
+    image_mapping: paragraph_image_large
+    breakpoint_id: kuzya_main.large
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: paragraph_image_medium
+    breakpoint_id: kuzya_main.medium
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: paragraph_image_desktop
+    breakpoint_id: kuzya_main.extra-large
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: paragraph_image_mobile
+    breakpoint_id: kuzya_main.small
+    multiplier: 1x
+breakpoint_group: kuzya_main
+fallback_image_style: wide

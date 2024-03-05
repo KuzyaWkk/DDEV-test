@@ -6,8 +6,6 @@
       position: relative;
     }
 
-
-
     .field--image {
       position: absolute;
       z-index: 1;
@@ -331,6 +329,33 @@
             position: relative;
             margin: 0 15px;
           }
+        }
+      }
+    }
+
+    .layout--twocol-section--67-33 {
+
+      .layout__region--first {
+        flex: 0 0 100%;
+
+        @include desc {
+          flex: 0 0 75%;
+        }
+
+        @include descMedium {
+          flex: 0 0 67%;
+        }
+      }
+
+      .layout__region--second {
+        flex: 0 0 100%;
+
+        @include desc {
+          flex: 0 0 25%;
+        }
+
+        @include descMedium {
+          flex: 0 0 33%;
         }
       }
     }

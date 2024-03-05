@@ -1,0 +1,15 @@
+uuid: 2a0cc6b1-152d-400b-9f3d-a2469f742e8d
+langcode: en
+status: true
+dependencies: {  }
+name: paragraph_image_desktop
+label: 'Paragraph Image | Desktop (844 x 551)'
+effects:
+  da232258-b2a7-4286-a706-2a0ed9e9f3f7:
+    uuid: da232258-b2a7-4286-a706-2a0ed9e9f3f7
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 844
+      height: 551
+      anchor: center-center
