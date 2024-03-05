@@ -1,0 +1,14 @@
+.block--sidebar__latest-news {
+
+  &__heading {
+    @include headingSidebarBlock;
+  }
+}
+
+.block--sidebar__must-read {
+  margin-top: 1.7rem;
+
+  &__heading {
+    @include headingSidebarBlock;
+  }
+}
