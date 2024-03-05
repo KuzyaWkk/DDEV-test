@@ -96,13 +96,13 @@ third_party_settings:
           label: 'Social bar'
           context_mapping: {  }
         components:
-          71297720-cafd-464a-92b9-b99da56c72f9:
-            uuid: 71297720-cafd-464a-92b9-b99da56c72f9
+          7a341d51-db7c-4bb2-8871-0a5b7e40b2d6:
+            uuid: 7a341d51-db7c-4bb2-8871-0a5b7e40b2d6
             region: content
             configuration:
-              id: menu_social_media_black_bar
-              label: 'Menu Social Media Black Bar'
-              label_display: visible
+              id: menu_social_share_this
+              label: 'Menu Social Share This'
+              label_display: '0'
               provider: kenny_core
               context_mapping: {  }
             weight: 0
@@ -141,17 +141,6 @@ third_party_settings:
               items_per_page: none
             weight: 1
             additional: {  }
-          3041c03b-1c4e-4315-a1ee-8c906df4ea00:
-            uuid: 3041c03b-1c4e-4315-a1ee-8c906df4ea00
-            region: first
-            configuration:
-              id: menu_social_media_black_bar
-              label: 'Menu Social Media Black Bar'
-              label_display: visible
-              provider: kenny_core
-              context_mapping: {  }
-            weight: 4
-            additional: {  }
           d320f3b3-2660-48ad-997d-7e5157d1ffc5:
             uuid: d320f3b3-2660-48ad-997d-7e5157d1ffc5
             region: first
@@ -170,7 +159,7 @@ third_party_settings:
                   view_mode: default
                   pager_id: 0
                 third_party_settings: {  }
-            weight: 7
+            weight: 8
             additional: {  }
           e28ec4e0-5b93-428a-9eef-26dae5c66d61:
             uuid: e28ec4e0-5b93-428a-9eef-26dae5c66d61
@@ -183,7 +172,7 @@ third_party_settings:
               context_mapping: {  }
               views_label: ''
               items_per_page: none
-            weight: 5
+            weight: 6
             additional: {  }
           ebdafd72-05e2-4251-bf1f-7502474a3346:
             uuid: ebdafd72-05e2-4251-bf1f-7502474a3346
@@ -196,7 +185,7 @@ third_party_settings:
               context_mapping: {  }
               views_label: ''
               items_per_page: none
-            weight: 6
+            weight: 7
             additional: {  }
           5fdd9e23-5d3f-4cb4-8123-cd15d580a1f4:
             uuid: 5fdd9e23-5d3f-4cb4-8123-cd15d580a1f4
@@ -216,6 +205,17 @@ third_party_settings:
                   view_mode: default
                 third_party_settings: {  }
             weight: 3
+            additional: {  }
+          b04514e8-1ad7-4e25-879f-61830b0b90cc:
+            uuid: b04514e8-1ad7-4e25-879f-61830b0b90cc
+            region: first
+            configuration:
+              id: menu_social_share_this
+              label: 'Menu Social Share This'
+              label_display: '0'
+              provider: kenny_core
+              context_mapping: {  }
+            weight: 5
             additional: {  }
         third_party_settings: {  }
       -

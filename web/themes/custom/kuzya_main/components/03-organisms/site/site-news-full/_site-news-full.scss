@@ -313,7 +313,6 @@
             text-transform: uppercase;
             letter-spacing: 1px;
           }
-
         }
 
         .views-field-comment-count {
@@ -355,6 +354,11 @@
 
         @include descMedium {
           flex: 0 1 66%;
+        }
+
+        .social-share-this {
+          justify-content: end;
+          margin: 10px 0;
         }
       }
 
