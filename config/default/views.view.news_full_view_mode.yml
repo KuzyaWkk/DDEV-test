@@ -10,6 +10,7 @@ dependencies:
     - field.storage.user.field_description
     - field.storage.user.user_picture
     - image.style.media_library
+    - image.style.user_image_icon
     - node.type.news
   module:
     - datetime
@@ -544,7 +545,7 @@ display:
           type: image
           settings:
             image_link: ''
-            image_style: media_library
+            image_style: user_image_icon
             image_loading:
               attribute: lazy
           group_column: ''

@@ -1,0 +1,15 @@
+uuid: 29627b99-11fc-44fc-98d1-51b10c6b1d6f
+langcode: en
+status: true
+dependencies: {  }
+name: news_full_mobile
+label: 'News Full | Mobile (height 500)'
+effects:
+  9a8cee00-5824-454c-83ce-850c49a22e09:
+    uuid: 9a8cee00-5824-454c-83ce-850c49a22e09
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 789
+      height: 500
+      anchor: center-center

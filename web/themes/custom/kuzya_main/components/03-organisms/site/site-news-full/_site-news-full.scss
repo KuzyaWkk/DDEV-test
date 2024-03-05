@@ -1,0 +1,338 @@
+.node--full {
+
+  &__container {
+
+    .layout--onecol > .layout__region {
+      position: relative;
+    }
+
+
+
+    .field--image {
+      position: absolute;
+      z-index: 1;
+      bottom: unset;
+      margin-top: -50px;
+
+      @include desc {
+        margin-bottom: -30px;
+      }
+
+      @include descMedium {
+        margin-bottom: -50px;
+      }
+
+      @include descLarge {
+        margin-top: -4em;
+      }
+
+      picture::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.3);
+      }
+
+      img {
+        height: 500px;
+        object-fit: cover;
+        width: 100vw;
+
+        @include descLarge {
+          height: 700px;
+        }
+
+      }
+    }
+
+    .block--hero-container {
+      position: relative;
+      padding-top: 250px;
+      max-width: 90%;
+      margin: 0 auto;
+      height: 350px;
+
+      @include descMedium {
+        max-width: 80%;
+      }
+
+      @include descLarge {
+        padding-top: 400px;
+        height: 500px;
+      }
+
+      .block--hero-breadcrumb {
+        display: flex;
+        z-index: 5;
+        position: relative;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 10px;
+
+        .category {
+          display: inline-flex;
+          align-items: center;
+          margin-right: 5px;
+
+          a {
+            font-size: 12px;
+            line-height: 1.2;
+            font-family: $font-paragraph;
+            color: $header-primary;
+            text-decoration: none;
+            flex-grow: 0.5;
+
+            @include desc {
+              font-size: 11px;
+            }
+
+            @include descLarge {
+              font-size: 12px;
+            }
+
+            &:hover {
+              color: $secondary;
+            }
+          }
+        }
+
+        .title {
+          display: inline-flex;
+          align-items: center;
+          margin-right: 5px;
+
+          span {
+            display: flex;
+            align-items: center;
+            font-size: 12px;
+            line-height: 1.2;
+            font-family: $font-paragraph;
+            color: $header-primary;
+            flex-grow: 0.5;
+
+            @include desc {
+              font-size: 11px;
+            }
+
+            @include descLarge {
+              font-size: 12px;
+            }
+
+            &::before {
+              content: ' - ';
+              display: block;
+              position: relative;
+              margin-right: 5px;
+              color: $desc;
+            }
+          }
+        }
+
+      }
+
+      .block--hero-main-info {
+        display: flex;
+        z-index: 5;
+        position: relative;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        .category {
+
+          a {
+            font-size: 11px;
+            font-family: $font-main;
+            color: $header-primary;
+            text-decoration: none;
+
+            display: inline-block;
+            width: max-content;
+            z-index: 5;
+            margin: 0 5px 5px 0;
+            padding: 5px 6px 3px;
+            border-width: 1px;
+            border-style: solid;
+            border-color: $color-secondary-desc;
+            line-height: 1;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+
+            @include descLarge {
+              font-size: 12px;
+            }
+
+            &:hover {
+              border-color: $header-primary;
+            }
+          }
+        }
+
+        .title {
+          margin-top: 10px;
+
+          span {
+            font-size: 26px;
+            color: $header-primary;
+            line-height: 1.2;
+            font-weight: 600;
+            display: inline-block;
+            position: relative;
+            text-align: center;
+
+            @include desc {
+              font-size: 32px;
+            }
+
+            @include descLarge {
+              font-size: 40px;
+            }
+          }
+        }
+      }
+    }
+
+    .block--hero-news-full__about-author {
+      display: flex;
+      justify-content: center;
+      width: max-content;
+      position: relative;
+      align-items: center;
+      margin: 10px auto 0 auto;
+      z-index: 5;
+      height: 100px;
+
+      .views-row {
+        display: flex;
+        flex-direction: row;
+        color: $header-primary;
+
+        .views-field-user-picture {
+
+          margin-right: 6px;
+
+          img {
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+          }
+        }
+
+        .views-field-name {
+
+          a {
+            display: inline-flex;
+            color: $header-primary;
+            font-family: $font-main;
+            font-size: 12px;
+            line-height: 30px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-decoration: none;
+
+            @include desc {
+              font-size: 11px;
+            }
+
+            @include descLarge {
+              font-size: 12px;
+            }
+
+            &::before {
+              content: ' By ';
+              display: block;
+              position: relative;
+              margin-right: 5px;
+              color: $header-primary;
+              font-weight: 300;
+              line-height: 30px;
+              font-size: 12px;
+            }
+
+            &:hover {
+              color: $secondary;
+            }
+          }
+        }
+
+        .views-field-field-created {
+
+          display: inline-flex;
+
+          .field-content {
+            display: inherit;
+          }
+
+          time {
+            color: $header-primary;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            font-size: 12px;
+            line-height: 30px;
+            font-weight: 300;
+            letter-spacing: 1px;
+
+            @include desc {
+              font-size: 11px;
+            }
+
+            @include descLarge {
+              font-size: 12px;
+            }
+
+            &::before {
+              content: ' - ';
+              display: block;
+              position: relative;
+              margin: 0 5px;
+              color: $header-primary;
+            }
+          }
+        }
+
+        .views-field-counter {
+
+          .field-content {
+            display: inline-flex;
+            color: $header-primary;
+            font-family: $font-main;
+            font-size: 12px;
+            line-height: 30px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+          }
+
+        }
+
+        .views-field-comment-count {
+
+          .field-content {
+            display: inline-flex;
+            color: $header-primary;
+            font-family: $font-main;
+            font-size: 12px;
+            line-height: 30px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+          }
+        }
+
+        .views-field-counter {
+          .field-content {
+            display: flex;
+            position: relative;
+            margin: 0 15px;
+          }
+        }
+      }
+    }
+  }
+}

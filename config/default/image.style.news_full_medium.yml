@@ -1,0 +1,15 @@
+uuid: 21697b04-a0e1-4792-8f83-6267cbe3a3e1
+langcode: en
+status: true
+dependencies: {  }
+name: news_full_medium
+label: 'News Full | Medium (height 500)'
+effects:
+  761b605b-a3a6-422b-914c-93b22056dcc1:
+    uuid: 761b605b-a3a6-422b-914c-93b22056dcc1
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 1139
+      height: 500
+      anchor: center-center

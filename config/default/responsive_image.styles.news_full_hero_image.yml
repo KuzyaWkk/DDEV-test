@@ -1,0 +1,31 @@
+uuid: d9606901-305a-4fd5-8203-18f46a710ded
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.news_full_desktop
+    - image.style.news_full_medium
+    - image.style.news_full_mobile
+    - image.style.wide
+  theme:
+    - kuzya_main
+id: news_full_hero_image
+label: 'News Full Hero Image'
+image_style_mappings:
+  -
+    image_mapping_type: image_style
+    image_mapping: news_full_medium
+    breakpoint_id: kuzya_main.medium
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: news_full_desktop
+    breakpoint_id: kuzya_main.extra-large
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: news_full_mobile
+    breakpoint_id: kuzya_main.small
+    multiplier: 1x
+breakpoint_group: kuzya_main
+fallback_image_style: wide
