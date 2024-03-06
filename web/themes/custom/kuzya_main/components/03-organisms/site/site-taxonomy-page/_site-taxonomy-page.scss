@@ -114,7 +114,6 @@
               }
             }
 
-
             .js-pager__items {
               position: relative;
               margin: 54px 0 0;
@@ -186,21 +185,6 @@
 
             @include xl {
               margin-left: 0;
-            }
-
-            .block--sidebar__latest-news {
-
-              &__heading {
-                @include headingSidebarBlock;
-              }
-            }
-
-            .block--sidebar__must-read {
-              margin-top: 1.7rem;
-
-              &__heading {
-                @include headingSidebarBlock;
-              }
             }
 
             .view__category_page {

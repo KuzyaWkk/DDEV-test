@@ -1,0 +1,11 @@
+uuid: 605b4e4a-e18f-4df0-abba-1ac2335e49e6
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.news_preview_without_date_news_full
+label: 'News Preview Without Date News Full'
+description: ''
+targetEntityType: media
+cache: true

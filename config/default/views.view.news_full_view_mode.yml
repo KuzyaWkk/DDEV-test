@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.node.preview_without_date_news_full
     - field.storage.node.field_category
     - field.storage.node.field_created
     - field.storage.node.field_description
@@ -816,7 +817,7 @@ display:
     display_plugin: block
     position: 2
     display_options:
-      title: 'You Might Also Like News'
+      title: 'You might also like'
       fields:
         field_image_teaser:
           id: field_image_teaser
@@ -1148,8 +1149,8 @@ display:
           total_pages: null
           id: 0
           tags:
-            next: ››
-            previous: ‹‹
+            next: '>'
+            previous: '<'
           expose:
             items_per_page: false
             items_per_page_label: 'Items per page'
@@ -1184,10 +1185,20 @@ display:
         operator: AND
         groups:
           1: AND
+      style:
+        type: default
+        options: {  }
+      row:
+        type: 'entity:node'
+        options:
+          relationship: none
+          view_mode: preview_without_date_news_full
       defaults:
         title: false
         use_ajax: false
         pager: false
+        style: false
+        row: false
         relationships: false
         fields: false
         arguments: false

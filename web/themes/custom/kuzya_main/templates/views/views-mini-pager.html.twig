@@ -28,17 +28,19 @@
         </li>
       {% endif %}
 
-      {% if items.previous and items.current %}
+      {% if items.previous and not items.next %}
         <li {{ bem('prev') }}>
           <a href="{{ items.previous.href }}" title="{{ 'Go to previous page'|t }}" rel="prev"{{ items.previous.attributes|without('href', 'title', 'rel') }}>
             <span aria-hidden="true">{{ items.previous.text|default('<') }}</span>
           </a>
         </li>
+
         <li {{ bem('next', ['current']) }}>
           <span aria-hidden="true">{{ items.next.text|default('>') }}</span>
         </li>
       {% endif %}
-      {% if items.next and items.current %}
+
+      {% if items.next and not items.previous %}
         <li {{ bem('prev', ['current']) }}>
           <span aria-hidden="true">{{ items.previous.text|default('<') }}</span>
         </li>
