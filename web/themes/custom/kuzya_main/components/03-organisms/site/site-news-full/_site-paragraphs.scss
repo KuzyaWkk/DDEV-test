@@ -3,7 +3,7 @@
 
   @include desc {
     padding: 0 14px;
-    margin: 0 0 0 auto;
+    margin: 23px 0 0 auto;
   }
 
   @include descMedium {
@@ -16,7 +16,6 @@
   }
 
   .text {
-
     padding: 0 10px;
 
     @include desc {
@@ -87,8 +86,6 @@
       }
     }
   }
-
-
 
   .image {
     margin-left: -7px;

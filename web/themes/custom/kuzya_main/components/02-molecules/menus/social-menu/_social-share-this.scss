@@ -1,19 +1,9 @@
 .social-share-this {
-  padding: 0 20px;
   display: flex;
   flex-direction: row;
   justify-content: center;
   height: 47px;
   gap: 40px;
-  margin-top: 20px;
-
-  @include desc {
-    margin: 30px 0 10px 0;
-  }
-
-  @include descLarge {
-    margin: 40px 0 20px 0;
-  }
 
   &--item {
     line-height: 40px;
@@ -23,7 +13,7 @@
     border-bottom-right-radius: 2px;
     width: 40px;
     z-index: 1;
-    color: #444;
+    color: $color-item-desc;
     display: inline-flex;
     justify-content: center;
     align-items: center;

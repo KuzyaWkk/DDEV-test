@@ -1,0 +1,48 @@
+{% set card__base__class = 'card__user'%}
+
+<article {{ bem(card__base_class, card__modifiers, card__blockname, card__extra_classes) }}>
+
+  <div {{ bem('container', ['image']) }}>
+    {% if card__image %}
+      <div {{ bem('field', ['icon']) }}>
+        {{ card__image }}
+      </div>
+    {% endif %}
+  </div>
+
+  <div {{ bem('container', ['body']) }}>
+    {% if card__title %}
+      {% include "@atoms/text/headings/_heading.twig" with {
+        heading_base_class: card__heading__base_class|default('user-heading'),
+        heading_modifiers: card__heading__modifiers,
+        heading_blockname: card__base_class,
+        heading_level: 3,
+        heading: card__title,
+        heading_url: card__heading__link|default(card__link__url),
+        heading_link_base_class: card__heading__link_base_class|default('heading-user-link'),
+        heading_link_blockname: card__base_class,
+      } %}
+    {% endif %}
+
+    {% if card__website %}
+      <div {{ bem('field', ['body', 'website']) }}>
+        {{ card__website }}
+      </div>
+    {% endif %}
+
+    {% if card__desc %}
+      <div {{ bem('field', ['body', 'desc']) }}>
+        {% include "@atoms/text/text/01-paragraph.twig" with {
+          paragraph_content: card__desc,
+        } %}
+      </div>
+    {% endif %}
+
+    {% if card__social %}
+      <div {{ bem('field', ['body', 'social']) }}>
+        {{ card__social }}
+      </div>
+    {% endif %}
+  </div>
+
+</article>
