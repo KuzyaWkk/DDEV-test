@@ -1,0 +1,184 @@
+.card__user-preview {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @include desc {
+    flex-direction: row;
+    margin: 40px 80px 40px 60px;
+  }
+
+  @include descMedium {
+    margin: 60px 120px 50px 70px;
+    width: auto;
+  }
+
+  @include descLarge {
+    margin: 60px 120px 50px 110px;
+  }
+
+  .container--image {
+    align-self: start;
+
+    @include descMedium {
+      margin-left: 70px;
+    }
+
+    @include descLarge {
+      margin-left: 100px;
+    }
+
+    img {
+      min-width: 150px;
+      max-width: 151px;
+      border-radius: 50%;
+
+      @include desc {
+        max-width: 121px;
+        min-width: 120px;
+      }
+    }
+  }
+
+  .container--body {
+
+    display: flex;
+    flex-direction: column;
+    padding: 0 15px;
+
+    @include desc {
+      padding: 0 0 0 21px;
+    }
+
+    @include descMedium {
+      width: 75%;
+    }
+
+    .field {
+      align-self: center;
+    }
+
+    .heading {
+      align-self: center;
+      padding: 0;
+      margin: 0;
+      font-size: 34px;
+      font-family: $font-main;
+      font-weight: 800;
+      line-height: 21px;
+      color: $paragraph;
+      display: block;
+      text-decoration: none;
+
+      @include desc {
+        margin: 7px 0 8px;
+        font-size: 30px;
+        align-self: start;
+      }
+
+      @include descMedium {
+        font-size: 34px;
+      }
+
+      @include descLarge {
+        font-size: 28px;
+      }
+    }
+
+    .field--website {
+      align-self: center;
+
+      @include desc {
+        align-self: start;
+      }
+
+      a {
+        text-decoration: none;
+        font-size: 12px;
+        font-family: $font-main;
+        font-style: italic;
+        font-weight: 400;
+        line-height: 21px;
+        margin-bottom: 6px;
+        color: $paragraph;
+        display: block;
+
+        &:hover {
+          color: $secondary;
+        }
+      }
+    }
+
+    .field--desc {
+
+      p {
+        font-size: 14px;
+        font-family: $font-paragraph;
+        line-height: 1.5;
+        font-weight: 300;
+        display: block;
+        padding: 0;
+        margin: 0;
+        text-align: center;
+
+        @include desc {
+          text-align: start;
+        }
+
+        @include descMedium {
+          font-size: 12px;
+        }
+
+        @include descLarge {
+          font-size: 14px;
+        }
+      }
+    }
+
+    .field--social {
+      margin-top: 4px;
+      align-self: start;
+
+      ul {
+
+        li {
+          padding: 0;
+          margin: 0;
+
+          a {
+            min-width: 15px;
+            height: 15px;
+            margin: 10px 20px 10px 0;
+            position: relative;
+            display: inline-flex;
+            text-align: center;
+            text-decoration: none;
+
+            span {
+              font-size: 15px;
+              vertical-align: middle;
+              line-height: 15px;
+              color: $header-bg;
+              text-align: center;
+              transition: all 2s;
+              -webkit-transition: all 0.2s;
+
+              &:before {
+                color: $header-bg;
+                -webkit-font-smoothing: antialiased;
+                transition: all 0.2s;
+              }
+
+              &:hover {
+
+                &::before {
+                  color: $secondary;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

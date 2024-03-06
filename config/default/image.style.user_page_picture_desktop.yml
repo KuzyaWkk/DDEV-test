@@ -1,0 +1,15 @@
+uuid: aa38dcb8-84fd-4daa-ad7b-14effc07c8f2
+langcode: en
+status: true
+dependencies: {  }
+name: user_page_picture_desktop
+label: 'User Page Picture | Desktop (120 x 120)'
+effects:
+  194a3baf-0794-4848-b7db-744eaa15efff:
+    uuid: 194a3baf-0794-4848-b7db-744eaa15efff
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 120
+      height: 120
+      anchor: center-center
