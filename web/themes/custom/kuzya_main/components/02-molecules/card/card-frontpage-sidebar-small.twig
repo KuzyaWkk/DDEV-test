@@ -1,6 +1,6 @@
 {% set card__base_class = 'card__frontpage-sidebar-small' %}
 
-<div {{ bem(card__base_class, card__modifiers, card__blockname, card__extra_classes) }}>
+<article {{ bem(card__base_class, card__modifiers, card__blockname, card__extra_classes) }}>
   {% if card__image %}
     <div {{ bem('image', card__content__modifiers, card__base_class) }}>
       {{ card__image }}
@@ -30,4 +30,4 @@
 
   </div>
 
-</div>
+</article>

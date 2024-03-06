@@ -1,0 +1,164 @@
+.card__user-compact {
+
+  display: flex;
+  flex-direction: row;
+
+  .container--image {
+    min-width: 120px;
+    max-width: 121px;
+
+    @include desc {
+      min-width: 96px;
+      max-width: 100px;
+    }
+
+    @include descMedium {
+      width: 120px;
+    }
+
+    img {
+      border-radius: 50%;
+    }
+
+  }
+
+  .container--body {
+    display: flex;
+    flex-direction: column;
+    padding-left: 21px;
+
+    .heading {
+
+      padding: 0;
+      margin: 0;
+
+      a {
+        font-size: 22px;
+        font-family: $font-main;
+        font-weight: 800;
+        margin: 7px 0 8px;
+        line-height: 21px;
+        color: $paragraph;
+        display: block;
+        text-decoration: none;
+
+        &:hover {
+          color: $secondary;
+        }
+
+        @include desc {
+          font-size: 20px;
+        }
+
+        @include descMedium {
+          font-size: 23px;
+        }
+
+        @include descLarge {
+          font-size: 28px;
+        }
+      }
+    }
+
+    .field--website {
+
+      a {
+        text-decoration: none;
+        font-size: 12px;
+        font-family: $font-main;
+        font-style: italic;
+        font-weight: 400;
+        line-height: 21px;
+        margin-bottom: 6px;
+        color: $paragraph;
+        display: block;
+
+        &:hover {
+          color: $secondary;
+        }
+
+        @include desc {
+          font-size: 11px;
+        }
+
+        @include descLarge {
+          font-size: 12px;
+        }
+      }
+
+    }
+
+    .field--desc {
+
+      p {
+        font-size: 12px;
+        font-family: $font-paragraph;
+        line-height: 1.5;
+        font-weight: 300;
+        display: block;
+        padding: 0;
+        margin: 0;
+
+        @include desc {
+          font-size: 11px;
+        }
+
+        @include descMedium {
+          font-size: 12px;
+        }
+
+        @include descLarge {
+          font-size: 14px;
+        }
+      }
+
+    }
+
+    .field--social {
+      margin-top: 4px;
+
+      ul {
+
+        li {
+          padding: 0;
+          margin: 0;
+
+          a {
+            min-width: 15px;
+            height: 15px;
+            margin: 10px 20px 10px 0;
+            position: relative;
+            display: inline-flex;
+            text-align: center;
+            text-decoration: none;
+
+            span {
+
+              font-size: 15px;
+              vertical-align: middle;
+              line-height: 15px;
+              color: $header-bg;
+              text-align: center;
+              transition: all 2s;
+              -webkit-transition: all 0.2s;
+
+              &:before {
+                color: $header-bg;
+                -webkit-font-smoothing: antialiased;
+                transition: all 0.2s;
+              }
+
+              &:hover {
+
+                &::before {
+                  color: $secondary;
+                }
+              }
+            }
+          }
+        }
+      }
+
+    }
+  }
+}

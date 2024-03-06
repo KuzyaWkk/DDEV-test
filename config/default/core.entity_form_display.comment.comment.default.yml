@@ -18,12 +18,9 @@ targetEntityType: comment
 bundle: comment
 mode: default
 content:
-  author:
-    weight: -2
-    region: content
   comment_body:
     type: text_textarea
-    weight: 11
+    weight: 0
     region: content
     settings:
       rows: 5
@@ -31,7 +28,7 @@ content:
     third_party_settings: {  }
   field_comment_email:
     type: string_textfield
-    weight: 13
+    weight: 2
     region: content
     settings:
       size: 60
@@ -39,7 +36,7 @@ content:
     third_party_settings: {  }
   field_comment_name:
     type: string_textfield
-    weight: 12
+    weight: 1
     region: content
     settings:
       size: 60
@@ -47,25 +44,19 @@ content:
     third_party_settings: {  }
   field_comment_saved:
     type: boolean_checkbox
-    weight: 15
+    weight: 4
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   field_comment_website:
     type: string_textfield
-    weight: 14
+    weight: 3
     region: content
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  subject:
-    type: string_textfield
-    weight: 10
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-hidden: {  }
+hidden:
+  author: true
+  subject: true

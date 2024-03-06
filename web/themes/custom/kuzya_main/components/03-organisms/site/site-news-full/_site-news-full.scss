@@ -4,6 +4,15 @@
 
     .layout--onecol > .layout__region {
       position: relative;
+
+      .block--news-full__social-share {
+        margin: 30px auto 0 auto;
+        max-width: 892px;
+
+        @include desc {
+          margin: 43px auto 0 auto;
+        }
+      }
     }
 
     .field--image {
@@ -347,6 +356,7 @@
 
       .layout__region--first {
         flex: 0 0 100%;
+        max-width: 100%;
 
         @include desc {
           flex: 0 1 75%;
@@ -356,9 +366,27 @@
           flex: 0 1 66%;
         }
 
-        .social-share-this {
-          justify-content: end;
-          margin: 10px 0;
+        .block--news-full__social-share {
+          padding: 0 20px;
+          max-width: 892px;
+          margin: 20px 0 0 auto;
+
+          @include desc {
+            padding: 0 14px;
+            margin: 30px 0 0 auto;
+          }
+
+          @include descMedium {
+            padding: 0 20px;
+          }
+
+          @include descLarge {
+            padding: 0 24px;
+          }
+
+          .social-share-this {
+            justify-content: end;
+          }
         }
       }
 
@@ -366,6 +394,7 @@
         flex: 0 0 100%;
         background-color: $hero-bg;
         max-width: max-content;
+        height: max-content;
 
         @include desc {
           flex: 0 0 25%;
@@ -593,6 +622,33 @@
             }
           }
         }
+      }
+    }
+
+    .entity-pager-list {
+      margin: 30px 0 0 auto;
+
+      @include desc {
+        margin: 40px 0 0 auto;
+      }
+    }
+
+    .block--news-full__info-author {
+      padding: 0 20px;
+      max-width: 892px;
+      margin: 30px 0 0 auto;
+
+      @include desc {
+        padding: 0 14px;
+        margin: 43px 0 0 auto;
+      }
+
+      @include descMedium {
+        padding: 0 20px;
+      }
+
+      @include descLarge {
+        padding: 0 24px;
       }
     }
   }

@@ -31,14 +31,16 @@
   <ul class="entity-pager-list">
     {% for key, link in links %}
       {% if link %}
-        <li class="entity-pager-item entity-pager-item-{{ key }}">
-          <span {{ bem('entity-pager-item--title') }}>
-              {{ link['#title'] }}
-          </span>
-          <a {{ bem('entity-pager-item--link')}} href="{{ link['#url'] }}">
-            {{ link['#node_title'] }}
-          </a>
-        </li>
+        {% if link['#url'] %}
+          <li class="entity-pager-item entity-pager-item-{{ key }}">
+            <span {{ bem('entity-pager-item--title') }}>
+                {{ link['#title'] }}
+            </span>
+            <a {{ bem('entity-pager-item--link')}} href="{{ link['#url'] }}">
+              {{ link['#node_title'] }}
+            </a>
+          </li>
+          {% endif %}
       {% endif %}
     {% endfor %}
   </ul>

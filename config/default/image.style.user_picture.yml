@@ -1,0 +1,15 @@
+uuid: 61b2d717-8b4a-4b65-a570-db49ba35f785
+langcode: en
+status: true
+dependencies: {  }
+name: user_picture
+label: 'User Picture | (96 x 96)'
+effects:
+  63fc2475-d8b0-40cb-9015-c2ee03ae952a:
+    uuid: 63fc2475-d8b0-40cb-9015-c2ee03ae952a
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 96
+      height: 96
+      anchor: center-center

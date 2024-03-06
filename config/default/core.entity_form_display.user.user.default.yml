@@ -5,10 +5,12 @@ dependencies:
   config:
     - field.field.user.user.field_description
     - field.field.user.user.field_social_media
+    - field.field.user.user.field_website
     - field.field.user.user.user_picture
     - image.style.thumbnail
   module:
     - image
+    - link
     - path
     - social_media_links_field
     - user
@@ -38,6 +40,14 @@ content:
     weight: 32
     region: content
     settings: {  }
+    third_party_settings: {  }
+  field_website:
+    type: link_default
+    weight: 33
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
     third_party_settings: {  }
   language:
     weight: 0
