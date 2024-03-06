@@ -1,0 +1,43 @@
+{% set class = 'social-share-this' %}
+
+<div {{ bem(class) }}">
+
+  <ul class="{{ class }}--menu-left">
+
+   <li class="{{ class }}--item">
+     <img src="/themes/custom/kuzya_main/assets/icons/share.svg" width="40" height="40" alt="">
+   </li>
+
+    <li class="{{ class }}--item hiden-text">
+      <span>
+        {% trans %}
+          Share
+        {% endtrans %}
+      </span>
+    </li>
+
+  </ul>
+
+  <ul class="{{ class }}--menu-right">
+
+    <li class="{{ class }}--item">
+      <a href="#" target="_blank">
+        <img src="/themes/custom/kuzya_main/assets/icons/facebook-black.svg" width="40" height="40" alt="">
+      </a>
+    </li>
+
+    <li class="{{ class }}--item">
+      <a href="#" target="_blank">
+        <img src="/themes/custom/kuzya_main/assets/icons/instagram-test.svg" width="40" height="40" alt="">
+      </a>
+    </li>
+
+    <li class="{{ class }}--item">
+      <a href="#" target="_blank">
+        <img src="/themes/custom/kuzya_main/assets/icons/x-black.svg" width="40" height="40" alt="">
+      </a>
+    </li>
+
+  </ul>
+
+</div>
