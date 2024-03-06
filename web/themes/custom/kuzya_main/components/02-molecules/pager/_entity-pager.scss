@@ -1,0 +1,102 @@
+.entity-pager {
+
+  max-width: 892px;
+  margin: 0 0 0 auto;
+
+  @include desc {
+    padding: 0 14px;
+  }
+
+  @include descMedium {
+    padding: 0 20px;
+  }
+
+  @include descLarge {
+    padding: 0 24px;
+  }
+
+
+
+  &-list {
+    display: flex;
+    gap: 4%;
+  }
+
+  &-item {
+    padding: 10px;
+    background-color: $hero-bg;
+    text-align: left;
+    margin: 0!important;
+    width: 48%;
+    line-height: 1;
+    font-family: $font-roboto;
+    display: block;
+    -webkit-transform: translateZ(0);
+    float: left;
+
+    &:hover {
+      .entity-pager-item--link {
+        border-color: $secondary;
+      }
+    }
+
+    &--title {
+      font-size: 10px;
+      padding: 0;
+      color: $color-pager-title;
+      line-height: 1;
+      font-weight: 300;
+      margin-bottom: 7px;
+      display: block;
+      text-align: left;
+      font-family: $font-main;
+
+      @include desc {
+        font-size: 11px;
+      }
+
+      @include descLarge {
+        font-size: 12px;
+      }
+    }
+
+    &--link {
+      font-size: 12px;
+      line-height: 1.1;
+      font-family: $font-paragraph;
+      font-weight: 800;
+      color: $paragraph;
+      text-decoration: none;
+      display: flex;
+      border-bottom: 2px solid transparent;
+      transition: border-color, color 0.3s ease;
+
+      @include desc {
+        font-size: 13px;
+        line-height: 1.4;
+      }
+
+      @include descMedium {
+        font-size: 14px;
+      }
+
+      @include descLarge {
+        font-size: 16px;
+        line-height: 1.5;
+      }
+
+      &:hover {
+        color: #4db2ec;
+      }
+    }
+
+  }
+
+  &-item-prev {
+     margin: 0 auto 0 0!important;
+  }
+
+  &-item-next {
+    margin: 0 0 0 auto!important;
+  }
+}

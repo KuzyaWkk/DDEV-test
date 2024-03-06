@@ -95,7 +95,7 @@
         }
 
         .radix-layouts-contentheader {
-           padding: 0;
+          padding: 0;
 
           .block--frontpage__main-content {
 
@@ -130,6 +130,7 @@
             @include desc {
               display: flex;
               flex-direction: row;
+              margin-top: 30px;
             }
 
             &--heading {
@@ -506,6 +507,19 @@
             gap: 15px;
           }
         }
+
+        .block--frontpage__tv, .block--frontpage__food-drink   {
+          padding: 0 20px;
+          margin-top: 40px;
+
+          @include desc {
+            padding: 0 12px;
+          }
+
+          &--heading {
+            @include headingFrontPageSecond();
+          }
+        }
       }
     }
 
@@ -615,19 +629,6 @@
             @include descLarge {
               font-size: 32px;
             }
-          }
-        }
-
-        .block--frontpage__tv, .block--frontpage__food-drink {
-          padding: 0 20px;
-          margin-top: 40px;
-
-          @include desc {
-            padding: 0 12px;
-          }
-
-          &--heading {
-            @include headingFrontPageSecond();
           }
         }
       }

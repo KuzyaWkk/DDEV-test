@@ -1,6 +1,6 @@
 {% set card__base_class = 'card__news--teaser' %}
 
-<div {{ bem(card__base_class, card__modifiers, card__blockname, card__extra_classes) }}>
+<article {{ bem(card__base_class, card__modifiers, card__blockname, card__extra_classes) }}>
   {% block card__title %}
 
   {# Content #}
@@ -57,4 +57,4 @@
   </div>
 
   {% endblock %}
-</div>
+</article>
