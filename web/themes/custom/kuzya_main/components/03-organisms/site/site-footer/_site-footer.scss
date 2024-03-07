@@ -58,7 +58,6 @@
       transition: background-color 0.3s;
       z-index: 3;
     }
-
   }
 }
 
@@ -67,10 +66,16 @@
   flex-direction: column;
   width: 100%;
   padding: 0 20px;
+  max-width: 1240px;
+  margin: 0 auto;
 
   @include desc {
     flex-direction: row;
     justify-content: space-between;
+  }
+
+  @include descLarge {
+    padding: 0 24px;
   }
 
   &--copyright {
@@ -104,7 +109,6 @@
   }
 
   .footer__menu {
-
     display: inline-flex;
     margin-top: -20px;
     justify-content: center;
@@ -114,6 +118,5 @@
       margin-top: 0;
       justify-content: end;
     }
-
   }
 }

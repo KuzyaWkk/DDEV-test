@@ -1,0 +1,73 @@
+uuid: e08c8fd2-561b-4130-aaec-04d05beb8dd6
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.user.preview
+    - field.field.user.user.field_description
+    - field.field.user.user.field_social_media
+    - field.field.user.user.field_website
+    - field.field.user.user.user_picture
+    - responsive_image.styles.user_page_picture
+  module:
+    - layout_builder
+    - link
+    - responsive_image
+    - social_media_links_field
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+_core:
+  default_config_hash: mZLyuWM9CQx2ZJVqFGSbzgFnHzudVbHBYmdU256A5Wk
+id: user.user.preview
+targetEntityType: user
+bundle: user
+mode: preview
+content:
+  field_description:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_social_media:
+    type: social_media_links_field_default
+    label: hidden
+    settings:
+      appearance:
+        orientation: h
+        show_name: 0
+      link_attributes:
+        target: '<none>'
+        rel: '<none>'
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_website:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  user_picture:
+    type: responsive_image
+    label: hidden
+    settings:
+      responsive_image_style: user_page_picture
+      image_link: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  member_for: true

@@ -1,0 +1,11 @@
+uuid: 1dac334e-c03b-45da-8323-82e94b5d207e
+langcode: en
+status: true
+dependencies:
+  module:
+    - user
+id: user.preview
+label: Preview
+description: ''
+targetEntityType: user
+cache: true

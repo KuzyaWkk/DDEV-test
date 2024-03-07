@@ -1,32 +1,101 @@
-{#
-/**
- * @file
- * Theme override to display a pager.
- *
- * Available variables:
- * - items: List of pager items.
- *   The list is keyed by the following elements:
- *   - first: Item for the first page; not present on the first page of results.
- *   - previous: Item for the previous page; not present on the first page
- *     of results.
- *   - next: Item for the next page; not present on the last page of results.
- *   - last: Item for the last page; not present on the last page of results.
- *   - pages: List of pages, keyed by page number.
- *   Sub-sub elements:
- *   items.first, items.previous, items.next, items.last, and each item inside
- *   items.pages contain the following elements:
- *   - href: URL with appropriate query parameters for the item.
- *   - attributes: A keyed list of HTML attributes for the item.
- *   - text: The visible text used for the item link, such as "‹ Previous"
- *     or "Next ›".
- * - current: The page number of the current page.
- * - ellipses: If there are more pages than the quantity allows, then an
- *   ellipsis before or after the listed pages may be present.
- *   - previous: Present if the currently visible list of pages does not start
- *     at the first page.
- *   - next: Present if the visible list of pages ends before the last page.
- *
- * @see template_preprocess_pager()
- */
-#}
-{% include "@molecules/pager/pager.twig" %}
+{% if items %}
+
+  {% if items.last %}
+    {% set last_href = items.last.href %}
+    {% set second_to_last_key = last_href|slice(6) %}
+    {% set last_key = second_to_last_key + 1 %}
+  {% endif %}
+
+  {% if not items.last %}
+    {% set last_key = current %}
+  {% endif %}
+
+  <nav class="full-pager" role="navigation" aria-labelledby="{{ heading_id }}">
+    <h4 id="{{ heading_id }}" class="visually-hidden">{{ 'Pagination'|t }}</h4>
+    <ul class="pager__items js-pager__items">
+
+      {# Add ellipsis before pages if there are further previous pages. #}
+      {% if current > 1 %}
+
+        {% set previous_count = current - 1 %}
+
+        <li {{ bem('pager__item', ['ellipsis']) }}>
+          <a href="{{ items.previous.href }}" title="{{ 'Go to next page'|t }}"{{ items.pages.previous_count.attributes|without('href', 'title') }}>
+            <
+          </a>
+        </li>
+      {% endif %}
+
+      {# Print first item if we are not on the first or second page. #}
+      {% if items.first and current != 2 %}
+        <li {{ bem('pager__item', ['first']) }}>
+          <a href="{{ items.first.href }}" title="{{ 'Go to first page'|t }}"{{ items.first.attributes|without('href', 'title') }}>
+            {{ 1 }}
+          </a>
+        </li>
+      {% endif %}
+
+      {# Three dots for previous material after second page #}
+      {% if items.previous and current > 3 %}
+        <li {{ bem('pager__item', ['dots']) }}>
+          <span> ... </span>
+        </li>
+      {% endif %}
+
+      {# Print previous item if we are on the current page #}
+      {% if items.previous %}
+        <li {{ bem('pager__item', ['previous']) }}>
+          <a href="{{ items.previous.href }}" title="{{ 'Go to page @key'|t({'@key': key}) }}"{{ item.attributes|without('href', 'title') }}>
+            {{ current - 1 }}
+          </a>
+        </li>
+      {% endif %}
+
+      {# Print current page item #}
+      <li class="pager__item is-active">
+        <a href="">
+          {{- current -}}
+        </a>
+      </li>
+
+      {# Print next item if we are on the current page and not second to last page #}
+      {% if items.next and current != second_to_last_key %}
+        <li {{ bem('pager__item', ['next']) }}>
+          <a href="{{ items.next.href }}" title="{{ 'Go to page @key'|t({'@key': key}) }}"{{ next.attributes|without('href', 'title') }}>
+            {{ current + 1 }}
+          </a>
+        </li>
+      {% endif %}
+
+      {# Three dots for next material #}
+      {% if items.next and current < second_to_last_key %}
+        <li {{ bem('pager__item', ['dots']) }}>
+          <span> ... </span>
+        </li>
+      {% endif %}
+
+      {# Print last item if we are not on the last page. #}
+      {% if items.last %}
+        <li {{ bem('pager__item', ['last']) }}>
+          <a href="{{ items.last.href }}" title="{{ 'Go to last page'|t }}"{{ items.last.attributes|without('href', 'title') }}>
+            {{ last_key }}
+          </a>
+        </li>
+      {% endif %}
+
+      {# Add ellipsis after pages if there are further next pages. #}
+      {% if current < last_key %}
+        <li {{ bem('pager__item', ['ellipsis']) }} role="presentation">
+          <a href="{{ items.next.href }}" title="{{ 'Go to next page'|t }}"{{ items.pages.current.attributes|without('href', 'title') }}>
+            >
+          </a>
+        </li>
+      {% endif %}
+
+      <div class="count-of-page">
+        {{ 'Page '|t }} {{ current }} {{ 'of '|t }} {{ last_key }}
+      </div>
+
+    </ul>
+  </nav>
+{% endif %}

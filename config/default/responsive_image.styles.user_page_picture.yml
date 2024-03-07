@@ -1,0 +1,25 @@
+uuid: bd22bbed-cecd-49b3-be05-88c37b67400d
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.user_page_picture_desktop
+    - image.style.user_page_picture_mobile
+    - image.style.wide
+  theme:
+    - kuzya_main
+id: user_page_picture
+label: 'User Page Picture'
+image_style_mappings:
+  -
+    image_mapping_type: image_style
+    image_mapping: user_page_picture_desktop
+    breakpoint_id: kuzya_main.medium
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: user_page_picture_mobile
+    breakpoint_id: kuzya_main.small
+    multiplier: 1x
+breakpoint_group: kuzya_main
+fallback_image_style: wide

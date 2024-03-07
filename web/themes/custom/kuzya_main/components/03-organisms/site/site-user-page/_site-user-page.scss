@@ -1,0 +1,134 @@
+.user--full-page {
+
+  .layout--twocol-section {
+    justify-content: center;
+    max-width: 1240px;
+    padding: 0 24px;
+    margin: 0 auto;
+  }
+
+  .layout__region--first {
+
+    @include descLarge {
+      max-width: 892px;
+    }
+  }
+
+  .layout__region--second {
+    background-color: $hero-bg;
+    height: max-content;
+  }
+
+  .block--user-page__info {
+    padding: 0 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include desc {
+      margin-top: 40px;
+    }
+    .heading-block {
+      font-family: $font-paragraph;
+      font-size: 14px;
+      font-weight: 600;
+      margin: 0 0 30px 0;
+      line-height: 1px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+
+      @include desc {
+        margin: 0;
+      }
+    }
+  }
+
+  .block--user-page__news {
+    padding: 0 24px;
+    margin: 35px 0 65px;
+  }
+
+  .block--sidebar__must-read {
+    padding: 0 24px;
+    margin: 35px 0 65px;
+  }
+
+  .full-pager {
+
+    ul {
+      display: flex;
+
+      .pager__item {
+        margin: 0!important;
+
+        a {
+          padding: 5px 11px;
+          border: 1px solid $header-primary;
+          display: inline-block;
+          margin: 0 8px 8px 0;
+          min-width: 33px;
+          text-align: center;
+          line-height: 21px;
+          float: left;
+          text-decoration: none;
+          color: $primary;
+          font-size: 12px;
+          font-weight: 400;
+
+          &:hover {
+            border: 1px solid $primary;
+          }
+        }
+      }
+
+      .pager__item--dots {
+        display: none;
+
+        @include desc {
+          display: unset;
+        }
+
+        span {
+          padding: 5px 11px;
+          border: 1px solid $header-primary;
+          display: inline-block;
+          margin: 0 8px 8px 0;
+          min-width: 33px;
+          text-align: center;
+          line-height: 21px;
+          float: left;
+          text-decoration: none;
+          color: $primary;
+        }
+      }
+
+      .is-active {
+        a {
+          border: 1px solid $primary;
+        }
+      }
+
+      .pager__item--ellipsis {
+        a {
+          font-size: 18px;
+        }
+      }
+
+      .count-of-page {
+        display: none;
+        margin: 8px 0 0 auto;
+        font-family: $font-main;
+        padding: 6px 0 6px 6px;
+        min-width: 33px;
+        text-align: center;
+        line-height: 21px;
+        color: $color-secondary-desc;
+        font-size: 12px;
+
+        @include desc {
+          display: unset;
+        }
+      }
+    }
+  }
+}

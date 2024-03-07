@@ -1,0 +1,15 @@
+uuid: 2820a0e0-edac-4da4-8b8a-99505bb03241
+langcode: en
+status: true
+dependencies: {  }
+name: user_page_picture_mobile
+label: 'User Page Picture | Mobile (150 x 150)'
+effects:
+  a7adf5bc-b36c-4578-9a64-8683f89da243:
+    uuid: a7adf5bc-b36c-4578-9a64-8683f89da243
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 150
+      height: 150
+      anchor: center-center
