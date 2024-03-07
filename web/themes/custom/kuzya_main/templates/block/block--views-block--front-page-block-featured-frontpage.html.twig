@@ -6,7 +6,7 @@
 
 {# @todo I'm passing the url like this for now, I plan to change it in the future #}
 {% set tid = content['#view'].result.0.taxonomy_term_field_data_node__field_category_tid %}
-{% set tid_url = ['/taxonomy/term/' ~ tid ~ '?category=' ~ tid] %}
+{% set tid_url = ['/taxonomy/term/' ~ tid] %}
 
 <div {{ bem('block', ['frontpage__featured']) }}>
 

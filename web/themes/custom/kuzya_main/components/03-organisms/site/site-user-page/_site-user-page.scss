@@ -3,8 +3,13 @@
   .layout--twocol-section {
     justify-content: center;
     max-width: 1240px;
-    padding: 0 24px;
     margin: 0 auto;
+
+    flex-direction: column;
+
+    @include desc {
+      flex-direction: row;
+    }
   }
 
   .layout__region--first {
