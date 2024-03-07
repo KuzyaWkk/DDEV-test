@@ -27,19 +27,19 @@ third_party_settings:
       -
         layout_id: layout_onecol
         layout_settings:
-          label: 'First Column'
+          label: ''
           context_mapping: {  }
         components:
-          3e22fc85-b4c8-436b-bfa1-ead3a31bce4a:
-            uuid: 3e22fc85-b4c8-436b-bfa1-ead3a31bce4a
+          a75b5645-26be-4d82-a725-71621dbdbcac:
+            uuid: a75b5645-26be-4d82-a725-71621dbdbcac
             region: content
             configuration:
               id: 'views_block:user_info-block_user_page_info'
-              label: 'Post Recent Articles By'
+              label: 'Post Recent Articles By:'
               label_display: visible
               provider: views
               context_mapping: {  }
-              views_label: 'Post Recent Articles By'
+              views_label: 'Post Recent Articles By:'
               items_per_page: none
             weight: 0
             additional: {  }
@@ -63,7 +63,23 @@ third_party_settings:
               views_label: ''
               items_per_page: none
             weight: 0
-            additional: {  }
+            additional:
+              component_attributes:
+                block_attributes:
+                  id: ''
+                  class: ''
+                  style: ''
+                  data: ''
+                block_title_attributes:
+                  id: ''
+                  class: ''
+                  style: ''
+                  data: ''
+                block_content_attributes:
+                  id: ''
+                  class: block--user-page__info
+                  style: ''
+                  data: ''
           6b3409b5-7c1b-4f3a-ba3e-14623b52a0d2:
             uuid: 6b3409b5-7c1b-4f3a-ba3e-14623b52a0d2
             region: second
