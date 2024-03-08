@@ -94,7 +94,7 @@
   }
 
   &__social-bar-mobile {
-    display: flex;
+    display: none;
     height: 72px;
 
     .social-block {
@@ -126,6 +126,25 @@
   display: flex;
 }
 
-.header__mobile {
-  background: unset!important;
+.scroll-none {
+
+  .header__branding {
+    display: none;
+  }
+
+  .header__social-bar {
+    display: none;
+  }
+
+  .header__social-bar-mobile {
+    display: flex;
+  }
+
+  .toggle-expand__open {
+    display: none;
+  }
+
+  .toggle-expand__close {
+    display: flex;
+  }
 }

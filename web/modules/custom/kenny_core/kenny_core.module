@@ -58,9 +58,18 @@ function kenny_core_theme_suggestions_views_view_alter(array &$suggestions, arra
  * Implements hook_theme_suggestions_HOOK_alter().
  */
 function kenny_core_theme_suggestions_views_mini_pager_alter(array &$suggestions, array &$variables) {
-  if (!empty($variables['parameters'])) {
-    $suggestions[] = 'views_mini_pager__category';
+  $route_name = \Drupal::routeMatch()->getRouteName();
+
+  $type = 'default';
+  if ($route_name == 'entity.node.canonical') {
+    $type = 'node';
   }
+
+  if ($route_name == 'entity.taxonomy_term.canonical') {
+    $type = 'category';
+  }
+
+  $suggestions[] = 'views_mini_pager__' . $type;
 }
 
 /**

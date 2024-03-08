@@ -1,6 +1,6 @@
 .main {
 
-  .view__taxonomy_term {
+  .section--taxonomy-term {
 
     .layout {
 
@@ -126,7 +126,7 @@
 
               .pager-item {
                 padding: 5px 11px;
-                border: 1px solid #fff;
+                border: 1px solid $header-primary;
                 display: inline-block;
                 margin: 0 8px 8px 0;
                 min-width: 33px;
