@@ -26,7 +26,6 @@
         "drupal/emulsify_twig": "^4.0",
         "drupal/entity_pager": "^1.0",
         "drupal/layout_builder_component_attributes": "^2.1",
-        "drupal/layout_custom_section_classes": "^1.0",
         "drupal/layout_library": "^1.0@beta",
         "drupal/paragraphs": "^1.17",
         "drupal/pathauto": "^1.12",
