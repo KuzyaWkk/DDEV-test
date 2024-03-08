@@ -13,15 +13,6 @@
 
 <div {{ bem('layout-container', layout_modifiers) }}>
 
-  <button class="button__back-to-the-top">
-    {% include "@atoms/images/image/responsive-image.twig" with {
-      output_image_tag: true,
-      image_src: directory ? '/' ~ directory ~ '/assets/images/arrow-top.svg' : 'arrow-top.svg',
-      image_alt: 'Top',
-      responsive_image_blockname: 'Arrow top',
-    } %}
-  </button>
-
   {% block page_header %}
     {% include "@organisms/site/site-header/site-header.twig" %}
   {% endblock %}

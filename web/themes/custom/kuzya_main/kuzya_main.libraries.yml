@@ -29,3 +29,11 @@ back-to-the-top-button:
   dependencies:
     - core/drupal
     - core/once
+
+button-script:
+  js:
+    components/01-atoms/buttons/button-script.js: {}
+  dependencies:
+    - core/drupal
+    - core/once
+

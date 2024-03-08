@@ -3,9 +3,15 @@
     attach(context) {
       once(
         'kuzyaMainButtonBackToTheTopBehavior',
-        '.button__back-to-the-top',
+        '.layout-container',
         context,
-      ).forEach(function (button) {
+      ).forEach(function (container) {
+        const button = document.createElement('button');
+        const image = document.createElement('img');
+        image.src = '/themes/custom/kuzya_main/assets/images/arrow-top.svg';
+        button.appendChild(image);
+        button.classList.add('button__back-to-the-top');
+        container.appendChild(button);
         const viewportHeight = window.innerHeight;
         window.addEventListener('scroll', function () {
           if (window.scrollY > viewportHeight * 0.8) {
