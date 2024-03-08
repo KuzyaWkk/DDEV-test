@@ -6,69 +6,38 @@ $sidebar-width: 33%;
 $gutter: $space;
 $main-width: calc(100% - (#{$sidebar-width} + #{$gutter}));
 
-//@todo "Old styles that i want to reuse in future for new components. Will be deleted after use"
-/*
- * Layout Using Flexbox (IE11+).
- * Remove this and uncomment Grid code below to use CSS Grid.
-*/
+.button__back-to-the-top {
+  cursor: pointer;
+  height: 40px;
+  width: 40px;
+  position: fixed;
+  z-index: 500;
+  right: 5px;
+  bottom: -24px;
+  background-color: $color-button-bg;
+  border: none;
+  padding: 0;
+  display: none;
+  opacity: 0;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+  transition: all .4s cubic-bezier(.55,0,.1,1) 0s;
 
-//.main {
-//  @include wrapper;
-//
-//  margin-bottom: 4em;
-//
-//  @include large {
-//    display: flex;
-//  }
-//}
+  @include desc {
+    display: flex;
+  }
 
-//.main-sidebar {
-//  margin-bottom: $space-double;
-//
-//  @include large {
-//    order: 2;
-//    width: $sidebar-width;
-//    margin-bottom: 0;
-//  }
-//}
-
-//.main-content {
-//  width: 100%;
-//
-//  @include large {
-//    &--with-sidebar {
-//      margin-right: $gutter;
-//      width: $main-width;
-//    }
-//  }
-//}
-
-/*
- * Layout Using CSS Grid (NO IE11 support)
- * Remove Flexbox code above and uncomment this section to use CSS Grid.
-*/
-
-/* .main {
-  @include wrapper;
-
-  margin-bottom: 4em;
-
-  &--with-sidebar {
-    @include large {
-      display: grid;
-      grid-gap: $gutter;
-      grid-template-areas: "content sidebar";
-      grid-template-columns: $main-width #{$sidebar-width};
-    }
+  img {
+    width: 20px;
+    height: 20px;
   }
 }
 
-.main-sidebar {
-  grid-area: sidebar;
-  margin-bottom: $space-double;
+.button__back-to-the-top.active-btn {
+  bottom: 4px;
+  pointer-events: auto;
+  opacity: 1;
 }
 
-.main-content {
-  grid-area: content;
-  width: 100%;
-} */
+
