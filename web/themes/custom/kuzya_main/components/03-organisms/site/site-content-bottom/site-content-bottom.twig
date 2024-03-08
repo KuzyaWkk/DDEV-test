@@ -4,7 +4,18 @@
 
 
 <div {{ bem(content_bottom__base_class) }}>
+
+  <div class="content-bottom-bg">
+    <svg class="tdm-svg" fill="#f9f9f9" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2000 400" preserveAspectRatio="none">
+      <path class="tdm-svg1" d="M0,520V196l215-83L601,264l279-51,576,175,544-228V520H0Z"></path>
+      <path class="tdm-svg2" d="M0,520V276L492,157,949,388l727-160,324,162V520H0Z"></path>
+      <path class="tdm-svg3" d="M0,520V150L305,63,641,344l489-171,326,265L2000,90V520H0Z"></path>
+    </svg>
+
+  </div>
+
   <div {{ bem('inner', [], content_bottom__base_class) }}>
+
     <div {{ bem('primary', [], content_bottom__base_class) }}>
       {% block content_bottom %}
 

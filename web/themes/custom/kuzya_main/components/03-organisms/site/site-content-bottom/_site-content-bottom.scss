@@ -1,34 +1,47 @@
 .content-bottom {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  justify-content: center;
-  background-color: $hero-bg;
 
-  @include desc {
-    padding: 4rem 0;
+  &-bg {
+    margin-bottom: -10px;
+
+    svg {
+      transform-origin: 50% 50% 0;
+      width: 100%;
+      min-width: 1000px;
+      left: 50%;
+      transform: translateX(-50%);
+      position: relative;
+      height: 100px;
+      overflow: hidden;
+    }
   }
 
   &__inner {
     display: flex;
-    flex-flow: column nowrap;
-    padding: 0 20px;
-    max-width: 1240px;
     align-items: center;
+    width: 100%;
+    justify-content: center;
+    background-color: $hero-bg;
 
-    @include descLarge {
-      padding: 0 24px;
-      margin: 0 auto;
+    @include desc {
+      padding: 4rem 0;
     }
   }
 
   &__primary {
     display: flex;
-    flex-direction: column;
+    flex-flow: column nowrap;
+    align-items: center;
+    max-width: 1240px;
+    padding: 0 20px;
     @include desc {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
       gap: 1rem;
+    }
+
+    @include descLarge {
+      padding: 0 24px;
+      margin: 0 auto;
     }
   }
 
