@@ -1,10 +1,8 @@
 (function (Drupal, once) {
   Drupal.behaviors.kuzyaMainMenuBehavior = {
     attach(context) {
-      const headerRegion = '.header';
-      const name = 'kuzyaMainMenuBehavior';
-      const elements = once(name, headerRegion, context);
-      elements.forEach(function (element) {
+      const elements = once('kuzyaMainMenuBehavior', '.header', context).forEach(function (element) {
+        const body = document.body;
         const expandMenu = element.querySelectorAll('.expand-sub');
         const toggleExpand = element.querySelector('.toggle-expand');
         const menu = element.querySelector('.main-nav');
@@ -14,29 +12,19 @@
           '.header__social-bar-mobile',
         );
         const search = element.querySelector('.header__search-menu');
-        const main = document.querySelector('.main');
-        const contentBottom = document.querySelector('.content-bottom');
-        const aboutUs = document.querySelector('.about-us');
-        const footer = document.querySelector('.footer');
         const open = element.querySelector('.toggle-expand__open');
         const close = element.querySelector('.toggle-expand__close');
-        const header = element;
-
         toggleExpand.addEventListener('click', function (e) {
-          e.preventDefault();
           toggleExpand.classList.toggle('toggle-expand--open');
           menu.classList.toggle('main-nav--open');
           social.classList.toggle('hide');
           socialMobile.classList.toggle('hide');
           branding.classList.toggle('hide');
           search.classList.toggle('hide');
-          main.classList.toggle('hide');
-          contentBottom.classList.toggle('hide');
-          aboutUs.classList.toggle('hide');
-          footer.classList.toggle('hide');
+          body.classList.toggle('scroll-none');
           open.classList.toggle('hide');
           close.classList.toggle('show');
-          header.classList.toggle('header__mobile');
+          element.classList.toggle('header__mobile');
         });
         expandMenu.forEach((item) => {
           item.addEventListener('click', (e) => {
