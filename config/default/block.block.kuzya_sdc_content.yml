@@ -1,0 +1,22 @@
+uuid: 8c0c01b4-df28-438b-becc-b5ff8d0245ed
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - kuzya_sdc
+_core:
+  default_config_hash: erQSEZF2XUjNmgTl0uNRBzmg18ZGXwUcw2FhApoeuHk
+id: kuzya_sdc_content
+theme: kuzya_sdc
+region: content
+weight: -6
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  label_display: '0'
+  provider: system
+visibility: {  }

@@ -1,0 +1,24 @@
+uuid: eaab8896-de13-47d1-895b-8c43ec209f9b
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.gallery_footer
+  module:
+    - views
+  theme:
+    - kuzya_sdc
+id: kuzya_sdc_views_block__gallery_footer_block_gallery_footer
+theme: kuzya_sdc
+region: footer
+weight: -10
+provider: null
+plugin: 'views_block:gallery_footer-block_gallery_footer'
+settings:
+  id: 'views_block:gallery_footer-block_gallery_footer'
+  label: ''
+  label_display: visible
+  provider: views
+  views_label: ''
+  items_per_page: none
+visibility: {  }

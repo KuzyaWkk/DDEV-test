@@ -54,7 +54,9 @@ module:
   redirect: 0
   redirect_404: 0
   responsive_image: 0
+  sdc: 0
   search: 0
+  serialization: 0
   shortcut: 0
   social_media_links: 0
   social_media_links_field: 0
@@ -77,4 +79,5 @@ theme:
   adminimal_theme: 0
   stable9: 0
   kuzya_main: 0
+  kuzya_sdc: 0
 profile: standard

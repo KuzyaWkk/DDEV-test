@@ -1,0 +1,35 @@
+name: Heading
+description: Heading or label
+props:
+  type: object
+  properties:
+    heading_class:
+      type: string
+      title: Heading Class
+      description: The class for heading
+      examples:
+        - heading-node-preview
+        - heading-teaser
+    heading_level:
+      type: integer
+      title: Heading level
+      description: The level of heading
+      examples:
+        - 1
+        - 2
+        - 3
+        - 4
+    url:
+      type:
+        - string
+        - 'null'
+      title: URL
+      format: uri
+    heading_text:
+      type: string
+      title: Label
+      description: Text of heading
+      examples:
+        - Awkoder - Lovely Eyes
+        - Hottest News
+        - Must Read

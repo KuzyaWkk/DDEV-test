@@ -1,0 +1,23 @@
+uuid: 78077266-340c-4d93-8cbe-816952861309
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - kuzya_sdc
+id: kuzya_sdc_sitebranding
+theme: kuzya_sdc
+region: about_us
+weight: -8
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  label_display: '0'
+  provider: system
+  use_site_logo: true
+  use_site_name: true
+  use_site_slogan: true
+visibility: {  }

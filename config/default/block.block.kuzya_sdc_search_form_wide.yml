@@ -1,0 +1,23 @@
+uuid: fe401c4f-879e-408d-8238-fa610d022eb5
+langcode: en
+status: false
+dependencies:
+  module:
+    - search
+  theme:
+    - kuzya_sdc
+_core:
+  default_config_hash: imMyHD6LYci0gtXq56qr9ZKGHzbEG9uFydrN5EhKtSU
+id: kuzya_sdc_search_form_wide
+theme: kuzya_sdc
+region: header
+weight: -4
+provider: null
+plugin: search_form_block
+settings:
+  id: search_form_block
+  label: 'Search form (wide)'
+  label_display: '0'
+  provider: search
+  page_id: ''
+visibility: {  }

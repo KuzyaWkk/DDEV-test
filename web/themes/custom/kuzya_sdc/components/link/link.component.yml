@@ -1,0 +1,25 @@
+name: Link
+description: Call to action Link
+props:
+  type: object
+  properties:
+    text:
+      type: string
+      title: Title
+      description: The title for the cta
+      examples:
+        - Press
+        - Submit now
+    href:
+      type:
+        - string
+        - 'null'
+      title: URL
+      format: uri
+    target:
+      type: string
+      title: Target
+      enum:
+        - ''
+        - _blank
+

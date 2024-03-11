@@ -1,0 +1,25 @@
+uuid: 58a89e21-3fe5-4785-8c37-e78ef6efdcc9
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - kuzya_sdc
+_core:
+  default_config_hash: n_nlgjggHVfQt2H__zvLOKB2YtjPDbQ5tHijF9LE1aM
+id: kuzya_sdc_site_branding
+theme: kuzya_sdc
+region: header
+weight: -9
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  label_display: '0'
+  provider: system
+  use_site_logo: true
+  use_site_name: true
+  use_site_slogan: true
+visibility: {  }

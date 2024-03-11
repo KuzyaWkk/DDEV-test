@@ -1,0 +1,25 @@
+uuid: caef1faf-09c7-49f0-b3b5-1c04cab95e69
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:63dbcb3f-c4f9-4a88-9a5a-6c8ee4ffcac5'
+  module:
+    - block_content
+  theme:
+    - kuzya_sdc
+id: kuzya_sdc_aboutus
+theme: kuzya_sdc
+region: about_us
+weight: -7
+provider: null
+plugin: 'block_content:63dbcb3f-c4f9-4a88-9a5a-6c8ee4ffcac5'
+settings:
+  id: 'block_content:63dbcb3f-c4f9-4a88-9a5a-6c8ee4ffcac5'
+  label: 'About Us'
+  label_display: visible
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

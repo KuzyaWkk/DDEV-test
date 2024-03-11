@@ -1,0 +1,24 @@
+uuid: a8b173ad-76f4-4d59-bb97-95b0adcf2c81
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.top_footer
+  module:
+    - views
+  theme:
+    - kuzya_sdc
+id: kuzya_sdc_views_block__top_footer_block_must_read_footer
+theme: kuzya_sdc
+region: content_bottom
+weight: -9
+provider: null
+plugin: 'views_block:top_footer-block_must_read_footer'
+settings:
+  id: 'views_block:top_footer-block_must_read_footer'
+  label: ''
+  label_display: visible
+  provider: views
+  views_label: ''
+  items_per_page: none
+visibility: {  }

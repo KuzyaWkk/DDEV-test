@@ -1,0 +1,22 @@
+uuid: ddff5f58-c58d-4a04-984d-43cfb9a24d59
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - kuzya_sdc
+_core:
+  default_config_hash: BZ5tpW7H8X4PVGRm3MImTIHd2tN0eF7zOtp4SpRYUA0
+id: kuzya_sdc_messages
+theme: kuzya_sdc
+region: content
+weight: -7
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  label_display: '0'
+  provider: system
+visibility: {  }
