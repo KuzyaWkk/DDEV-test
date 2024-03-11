@@ -9,7 +9,7 @@ dependencies:
 id: kuzya_main_menu_social_media_bar_mobile
 theme: kuzya_main
 region: header
-weight: -10
+weight: -11
 provider: null
 plugin: menu_social_media_bar_mobile
 settings:

@@ -20,6 +20,13 @@ function kenny_core_theme($existing, $type, $theme, $path) {
     'kenny_social_share_this' => [
       'variables' => []
     ],
+    'kenny_weather_block' => [
+      'variables' => [
+        'temp' => null,
+        'weather_text' => null,
+        'feels_like' => null,
+      ]
+    ]
   ];
 }
 
