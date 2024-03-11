@@ -4,20 +4,21 @@ namespace Drupal\kenny_core\Plugin\Block;
 
 use Drupal;
 use Drupal\Component\Serialization\Json;
-use Drupal\Core\Annotation\Translation;
+use Drupal\Core\Block\Attribute\Block;
 use Drupal\Core\Block\BlockBase;
+use Drupal\Core\StringTranslation\TranslatableMarkup;
 use GuzzleHttp\Exception\GuzzleException;
 
 /**
  * Class Weather Block.
  *
  * @package Drupal\kenny_core\Plugin\Block
- * @Block(
- *   id = "kenny_weather_block",
- *   admin_label = @Translation("Custom Weather block"),
- *   category = "KennyCore"
- * )
  */
+#[Block(
+  id: "kenny_weather_block",
+  admin_label: new TranslatableMarkup("Custom Weather block"),
+  category: new TranslatableMarkup("KennyCore")
+)]
 class WeatherBlock extends BlockBase {
 
   /**
