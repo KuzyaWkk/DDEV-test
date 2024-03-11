@@ -19,6 +19,7 @@
         "drupal/admin_toolbar": "^3.4",
         "drupal/adminimal_theme": "^1.7",
         "drupal/better_exposed_filters": "^6.0",
+        "drupal/coder": "^8.3",
         "drupal/components": "^3.0@beta",
         "drupal/core-composer-scaffold": "^10.2",
         "drupal/core-project-message": "^10.2",

@@ -1,4 +1,4 @@
-uuid: 38c034fc-2395-4a26-87f2-b35a3b642459
+uuid: ec8276e1-8008-41f8-9d72-8af85670dc37
 langcode: en
 status: true
 dependencies:
@@ -6,15 +6,15 @@ dependencies:
     - kenny_core
   theme:
     - kuzya_main
-id: kuzya_main_menusocialmediabar
+id: kuzya_main_customweatherblock
 theme: kuzya_main
 region: header
-weight: -8
+weight: -7
 provider: null
-plugin: menu_social_media_bar
+plugin: kenny_weather_block
 settings:
-  id: menu_social_media_bar
-  label: 'Menu Social Media Bar'
+  id: kenny_weather_block
+  label: 'Custom Weather block'
   label_display: '0'
   provider: kenny_core
 visibility: {  }

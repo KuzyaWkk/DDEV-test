@@ -5,7 +5,7 @@
     display: none;
   }
   position: absolute;
-  z-index: 51;
+  z-index: 1000;
   top: 1rem;
   display: inline-block;
   margin-left: -1rem;
@@ -14,17 +14,13 @@
   width: 100vw;
   text-decoration: none;
 
-  /* See main-menu.js */
   &--open {
     background-color: clr(accent);
   }
-
-
 }
 
 .toggle-expand__text {
   display: none;
-
   font-size: 0.9rem;
   font-weight: bold;
 
