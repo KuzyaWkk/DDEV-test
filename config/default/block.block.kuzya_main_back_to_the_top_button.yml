@@ -1,0 +1,25 @@
+uuid: dab5ad7d-e33d-4f1b-8828-c77041a8d785
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:e9996b6e-7a27-4452-8e9f-bcb29cd76f09'
+  module:
+    - block_content
+  theme:
+    - kuzya_main
+id: kuzya_main_back_to_the_top_button
+theme: kuzya_main
+region: content_bottom
+weight: -11
+provider: null
+plugin: 'block_content:e9996b6e-7a27-4452-8e9f-bcb29cd76f09'
+settings:
+  id: 'block_content:e9996b6e-7a27-4452-8e9f-bcb29cd76f09'
+  label: 'Back to the top button'
+  label_display: visible
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

@@ -84,4 +84,3 @@ function kuzya_main_eform_application_after_build ($form) {
   unset($form['comment_body']['widget'][0]['format']);
   return $form;
 }
-

@@ -1,5 +1,4 @@
 .entity-pager {
-
   max-width: 892px;
   margin: 0 0 0 auto;
 
@@ -14,8 +13,6 @@
   @include descLarge {
     padding: 0 24px;
   }
-
-
 
   &-list {
     display: flex;
@@ -86,10 +83,9 @@
       }
 
       &:hover {
-        color: #4db2ec;
+        color: $color-button-bg;
       }
     }
-
   }
 
   &-item-prev {
