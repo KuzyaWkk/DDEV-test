@@ -1,41 +1,45 @@
 {% set base__class = 'weather-container '%}
+{% set fahrenheit = temp ~ '℉' %}
+{% set celsius = temp ~ '°C' %}
+{% set kelvin = temp ~ 'K' %}
 
 <div {{ bem('block', [base__class]) }}>
 
   <div {{ bem('weather-image') }}>
-    {% if weather_text == 'Clouds' %}
-      {% include "@atoms/images/image/responsive-image.twig" with {
-        image_src: directory ? '/' ~ directory ~ '/assets/images/cloudy.svg',
-        image_alt: 'cloudy'|t,
-      } %}
-    {% endif %}
-
-    {% if weather_text == 'Sunny' %}
-      {% include "@atoms/images/image/responsive-image.twig" with {
-        image_src: directory ? '/' ~ directory ~ '/assets/images/sunny.svg',
-        image_alt: 'sunny'|t,
-      } %}
-    {% endif %}
+    {% include "@atoms/images/image/responsive-image.twig" with {
+      image_src: directory ? '/' ~ directory ~ '/assets/images/' ~ weather_text|lower ~ '.svg',
+      image_alt: weather_text|lower,
+    } %}
   </div>
 
   <div {{ bem('weather-body') }}>
     {% include "@atoms/text/text/01-paragraph.twig" with {
       paragraph_base_class: 'weather_text',
-      paragraph_content: weather_text
+      paragraph_content: city
     } %}
 
     <div {{ bem('weather-body__temp') }}>
-      {% include "@atoms/text/text/01-paragraph.twig" with {
-        paragraph_base_class: 'weather_temp',
-        paragraph_content: temp
-      } %}
+      {% if units == 'metric' %}
+        {% include "@atoms/text/text/01-paragraph.twig" with {
+          paragraph_base_class: 'weather_temp',
+          paragraph_content: celsius
+        } %}
+      {% endif %}
 
-      {% include "@atoms/text/text/01-paragraph.twig" with {
-        paragraph_base_class: 'weather_feels',
-        paragraph_content: feels_like
-      } %}
+      {% if units == 'standart' %}
+        {% include "@atoms/text/text/01-paragraph.twig" with {
+          paragraph_base_class: 'weather_temp',
+          paragraph_content: kelvin
+        } %}
+      {% endif %}
+
+      {% if units == 'imperial' %}
+        {% include "@atoms/text/text/01-paragraph.twig" with {
+          paragraph_base_class: 'weather_temp',
+          paragraph_content: fahrenheit
+        } %}
+      {% endif %}
     </div>
-
   </div>
 
 </div>

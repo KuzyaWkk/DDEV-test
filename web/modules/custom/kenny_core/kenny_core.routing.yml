@@ -1,0 +1,7 @@
+kenny_core.weather_config:
+  path: '/admin/config/system/weather'
+  defaults:
+    _title: 'Weather config'
+    _form: 'Drupal\kenny_core\Form\WeatherConfigForm'
+  requirements:
+    _permission: 'administer site configuration'
