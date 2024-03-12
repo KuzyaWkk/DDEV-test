@@ -1,6 +1,6 @@
 uuid: ec8276e1-8008-41f8-9d72-8af85670dc37
 langcode: en
-status: true
+status: false
 dependencies:
   module:
     - kenny_core

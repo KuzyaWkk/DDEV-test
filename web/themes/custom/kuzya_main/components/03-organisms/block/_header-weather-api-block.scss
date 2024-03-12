@@ -1,0 +1,11 @@
+.header__weather-api {
+  display: none;
+
+  @include descMedium {
+    display: flex;
+    align-items: center;
+  }
+
+}
+
+

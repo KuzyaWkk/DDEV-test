@@ -1,0 +1,23 @@
+uuid: 726d007d-95c1-4c3c-bfa0-e149dadcede4
+langcode: en
+status: true
+dependencies:
+  module:
+    - weather_api
+  theme:
+    - kuzya_main
+id: kuzya_main_custom_weather_ap_iblock
+theme: kuzya_main
+region: header
+weight: 0
+provider: null
+plugin: weather_api_block
+settings:
+  id: weather_api_block
+  label: 'Custom Weather API block'
+  label_display: '0'
+  provider: weather_api
+  city: Lutsk
+  units: standart
+  appid: 23033cae7426d33b990b8c0c4dffe352
+visibility: {  }
