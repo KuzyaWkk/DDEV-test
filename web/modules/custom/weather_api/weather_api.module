@@ -1,0 +1,22 @@
+<?php
+
+/**
+ * @file
+ * Main file to provides methods for weather_api module.
+ */
+
+/**
+ * Implements hook_theme().
+ */
+function weather_api_theme($existing, $type, $theme, $path):array {
+  return [
+    'weather_api_block' => [
+      'variables' => [
+        'temp' => NULL,
+        'weather_text' => NULL,
+        'city' => NULL,
+        'units' => NULL,
+      ]
+    ]
+  ];
+}

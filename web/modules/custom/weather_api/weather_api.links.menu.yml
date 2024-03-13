@@ -1,0 +1,5 @@
+weather_api.weather_api_key:
+  title: Weather API key config
+  parent: system.admin_config_system
+  route_name: weather_api.weather_api_key
+  weight: 10

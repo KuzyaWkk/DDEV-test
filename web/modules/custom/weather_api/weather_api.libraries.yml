@@ -1,0 +1,5 @@
+weather_api-css:
+  version: 1.0
+  css:
+    theme:
+      assets/css/weather-api-block.css: {}

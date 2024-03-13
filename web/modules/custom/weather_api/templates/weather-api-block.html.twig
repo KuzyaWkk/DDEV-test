@@ -1,0 +1,31 @@
+{{ attach_library('weather_api/weather_api-css') }}
+
+{% set base__class = 'weather-api-container '%}
+{% set fahrenheit = temp ~ '℉' %}
+{% set celsius = temp ~ '°C' %}
+{% set kelvin = temp ~ 'K' %}
+{% set src_image = '/modules/custom/weather_api/assets/images/' ~ weather_text|lower ~ '.svg'%}
+
+<div class="block--weather-api-container">
+
+  <div class="weather-image">
+    <img src="{{ src_image }}" alt="{{ weather_text|lower }}">
+  </div>
+
+  <div class="weather-body">
+    {{ city }}
+
+    {% if units == 'metric' %}
+      {{ celsius }}
+    {% endif %}
+
+    {% if units == 'standart' %}
+      {{ kelvin }}
+    {% endif %}
+
+    {% if units == 'imperial' %}
+      {{ fahrenheit }}
+    {% endif %}
+  </div>
+
+</div>

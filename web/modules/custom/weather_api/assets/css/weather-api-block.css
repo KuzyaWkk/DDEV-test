@@ -1,0 +1,13 @@
+.block--weather-api-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.weather-body {
+  display: flex;
+  flex-direction: row;
+  font-size: 14px;
+  align-items: center;
+  font-weight: 400;
+  color: #fff;
+}
