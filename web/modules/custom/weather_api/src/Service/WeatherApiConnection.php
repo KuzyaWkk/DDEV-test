@@ -3,33 +3,20 @@
 namespace Drupal\weather_api\Service;
 
 use Drupal\Core\Config\ConfigFactoryInterface;
-use Drupal\Core\DependencyInjection\ContainerInjectionInterface;
 use Drupal\Core\Http\ClientFactory;
 use Drupal\Core\Logger\LoggerChannelFactoryInterface;
 use GuzzleHttp\Exception\GuzzleException;
-use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Class to connection weather API.
  */
-class WeatherApiConnection implements WeatherApiConnectionInterface, ContainerInjectionInterface {
+class WeatherApiConnection implements WeatherApiConnectionInterface {
 
   /**
    * Constructor for WeatherApiConnection class.
    */
   public function __construct(protected ClientFactory $httpClient, protected ConfigFactoryInterface $configFactory, protected LoggerChannelFactoryInterface $logger) {
 
-  }
-
-  /**
-   * {@inheritDoc}
-   */
-  public static function create(ContainerInterface $container):static {
-    return new static(
-      $container->get('http_client_factory'),
-      $container->get('config.factory'),
-      $container->get('logger.factory'),
-    );
   }
 
   /**
