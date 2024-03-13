@@ -17,7 +17,7 @@ settings:
   label: 'Custom Weather API block'
   label_display: '0'
   provider: weather_api
-  city: Lutsk
+  city: Lviv
   units: standart
   appid: 23033cae7426d33b990b8c0c4dffe352
 visibility: {  }

@@ -1,6 +1,11 @@
 <?php
 
 /**
+ * @file
+ * Main files to provide methods.
+ */
+
+/**
  * Implements hook_theme().
  */
 function kenny_core_theme($existing, $type, $theme, $path):array {
@@ -17,14 +22,6 @@ function kenny_core_theme($existing, $type, $theme, $path):array {
     'kenny_social_share_this' => [
       'variables' => []
     ],
-    'kenny_weather_block' => [
-      'variables' => [
-        'temp' => null,
-        'weather_text' => '',
-        'city' => '',
-        'units' => '',
-      ]
-    ]
   ];
 }
 

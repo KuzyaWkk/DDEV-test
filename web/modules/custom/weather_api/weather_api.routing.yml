@@ -1,0 +1,7 @@
+weather_api.weather_api_key:
+  path: '/admin/config/system/weather-api'
+  defaults:
+    _title: 'Weather config to set Api key'
+    _form: 'Drupal\weather_api\Form\WeatherKeyConfigForm'
+  requirements:
+    _permission: 'administer site configuration'

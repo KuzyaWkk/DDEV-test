@@ -1,5 +1,0 @@
-kenny_core.weather_config:
-  title: Weather config
-  parent: system.admin_config_system
-  route_name: kenny_core.weather_config
-  weight: 10
