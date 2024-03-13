@@ -4,6 +4,7 @@ namespace Drupal\weather_api\Plugin\Block;
 
 use Drupal\Core\Block\Attribute\Block;
 use Drupal\Core\Block\BlockBase;
+use Drupal\Core\Cache\Cache;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\Core\StringTranslation\TranslatableMarkup;
@@ -48,7 +49,6 @@ class WeatherApiBlock extends BlockBase implements ContainerFactoryPluginInterfa
     $config = $this->configuration;
     $city = $config['city'];
     $units = $config['units'];
-
     $weatherData = $this->weatherApi->getWeatherApi($city, $units);
 
     if (empty($weatherData)) {
@@ -108,6 +108,27 @@ class WeatherApiBlock extends BlockBase implements ContainerFactoryPluginInterfa
   public function blockSubmit($form, FormStateInterface $form_state):void {
     $this->configuration['city'] = $form_state->getValue('city');
     $this->configuration['units'] = $form_state->getValue('units');
+  }
+
+  /**
+   * {@inheritDoc}
+   */
+  public function getCacheMaxAge():int {
+    return 1800;
+  }
+
+  /**
+   * {@inheritDoc}
+   */
+  public function getCacheContexts(): array {
+    return Cache::mergeContexts(parent::getCacheContexts(), ['weather_context']);
+  }
+
+  /**
+   * {@inheritDoc}
+   */
+  public function getCacheTags(): array {
+    return Cache::mergeTags(parent::getCacheTags(), ['node:1', 'weather_tags']);
   }
 
 }

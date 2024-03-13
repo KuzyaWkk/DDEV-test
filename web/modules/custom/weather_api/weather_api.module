@@ -5,6 +5,9 @@
  * Main file to provides methods for weather_api module.
  */
 
+use Drupal\Core\Cache\Cache;
+use Drupal\Core\Entity\EntityInterface;
+
 /**
  * Implements hook_theme().
  */
@@ -16,7 +19,16 @@ function weather_api_theme($existing, $type, $theme, $path):array {
         'weather_text' => NULL,
         'city' => NULL,
         'units' => NULL,
-      ]
+      ],
     ]
   ];
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_update() for weather_api_block.
+ */
+function weather_api_block_update(EntityInterface $entity):void {
+  if ($entity->getTypedData()->get('plugin')->getValue() == 'weather_api_block') {
+     Cache::invalidateTags(['weather_tags']);
+  }
 }
