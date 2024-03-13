@@ -128,7 +128,7 @@ class WeatherApiBlock extends BlockBase implements ContainerFactoryPluginInterfa
    * {@inheritDoc}
    */
   public function getCacheTags(): array {
-    return Cache::mergeTags(parent::getCacheTags(), ['node:1', 'weather_tags']);
+    return Cache::mergeTags(parent::getCacheTags(), ['weather_tags']);
   }
 
 }
