@@ -15,9 +15,9 @@ interface WeatherApiConnectionInterface {
    * @param string $units
    *   The selected units.
    *
-   * @return mixed
+   * @return array|false
    *   Return object with data or exception or false.
    */
-  public function getWeatherApi($city, $units):mixed;
+  public function getWeatherApi(string $city, string $units):array|FALSE;
 
 }

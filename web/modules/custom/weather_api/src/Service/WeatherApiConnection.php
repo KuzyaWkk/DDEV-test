@@ -35,7 +35,7 @@ class WeatherApiConnection implements WeatherApiConnectionInterface, ContainerIn
   /**
    * {@inheritDoc}
    */
-  public function getWeatherApi($city, $units):mixed {
+  public function getWeatherApi(string $city, string $units):array|FALSE {
 
     $appid = $this->configFactory->get('weather_api.weather_key_settings')
       ->get('appid');
