@@ -6,6 +6,7 @@
 {% set kelvin = temp ~ 'K' %}
 {% set src_image = '/modules/custom/weather_api/assets/images/' ~ weather_text|lower ~ '.svg'%}
 
+
 <div class="block--weather-api-container">
 
   <div class="weather-image">
@@ -29,3 +30,7 @@
   </div>
 
 </div>
+
+<a {{ bem('weather-btn')}} href="{{ path('weather_api.weather_user_config') }}">
+  {{ 'Click to change city'|t }}
+</a>

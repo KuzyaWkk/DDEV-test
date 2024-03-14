@@ -1,0 +1,8 @@
+uuid: 40a71c4b-32f6-4623-af19-18e5084ffc6e
+langcode: en
+status: true
+dependencies: {  }
+name: Cities
+vid: cities
+description: 'List of cities to weather API'
+weight: 0
