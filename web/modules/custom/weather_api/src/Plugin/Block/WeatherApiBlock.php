@@ -4,7 +4,6 @@ namespace Drupal\weather_api\Plugin\Block;
 
 use Drupal\Core\Block\Attribute\Block;
 use Drupal\Core\Block\BlockBase;
-use Drupal\Core\Cache\Cache;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\Core\StringTranslation\TranslatableMarkup;
@@ -115,20 +114,6 @@ class WeatherApiBlock extends BlockBase implements ContainerFactoryPluginInterfa
    */
   public function getCacheMaxAge():int {
     return 1800;
-  }
-
-  /**
-   * {@inheritDoc}
-   */
-  public function getCacheContexts(): array {
-    return Cache::mergeContexts(parent::getCacheContexts(), ['weather_context']);
-  }
-
-  /**
-   * {@inheritDoc}
-   */
-  public function getCacheTags(): array {
-    return Cache::mergeTags(parent::getCacheTags(), ['weather_tags']);
   }
 
 }

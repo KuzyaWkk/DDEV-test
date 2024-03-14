@@ -2,8 +2,3 @@ services:
   weather_api.weather_connection:
     class: Drupal\weather_api\Service\WeatherApiConnection
     arguments: ['@http_client_factory', '@config.factory', '@logger.factory']
-
-  cache_context.weather_context:
-    class: Drupal\weather_api\Cache\WeatherContext
-    tags:
-      - { name: cache.context }
