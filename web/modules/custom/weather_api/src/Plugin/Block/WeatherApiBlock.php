@@ -4,10 +4,13 @@ namespace Drupal\weather_api\Plugin\Block;
 
 use Drupal\Core\Block\Attribute\Block;
 use Drupal\Core\Block\BlockBase;
-use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
+use Drupal\Core\Session\AccountProxyInterface;
 use Drupal\Core\StringTranslation\TranslatableMarkup;
+use Drupal\weather_api\Enum\UnitsEnum;
 use Drupal\weather_api\Service\WeatherApiConnectionInterface;
+use Drupal\weather_api\Service\WeatherDatabase\WeatherDatabaseConnectionInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
@@ -25,7 +28,7 @@ class WeatherApiBlock extends BlockBase implements ContainerFactoryPluginInterfa
   /**
    * Constructs a WeatherBlock objects.
    */
-  public function __construct(array $configuration, $plugin_id, $plugin_definition, protected WeatherApiConnectionInterface $weatherApi) {
+  public function __construct(array $configuration, $plugin_id, $plugin_definition, protected WeatherApiConnectionInterface $weatherApi, protected EntityTypeManagerInterface $entityTypeManager, protected WeatherDatabaseConnectionInterface $weatherDatabase, protected AccountProxyInterface $currentUser) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
   }
 
@@ -38,6 +41,9 @@ class WeatherApiBlock extends BlockBase implements ContainerFactoryPluginInterfa
       $plugin_id,
       $plugin_definition,
       $container->get('weather_api.weather_connection'),
+      $container->get('entity_type.manager'),
+      $container->get('weather_api.weather_database'),
+      $container->get('current_user')
     );
   }
 
@@ -45,9 +51,20 @@ class WeatherApiBlock extends BlockBase implements ContainerFactoryPluginInterfa
    * {@inheritDoc}
    */
   public function build():array {
-    $config = $this->configuration;
-    $city = $config['city'];
-    $units = $config['units'];
+    $uid = $this->currentUser->id();
+    $is_empty = $this->weatherDatabase->isEmptyRow($uid);
+    if (!$is_empty) {
+      $config_service = $this->weatherDatabase->getWeatherData($uid);
+      $units = $config_service['units'];
+      $cid = $config_service['cid'];
+      $term = $this->entityTypeManager
+        ->getStorage('taxonomy_term')->load($cid);
+      $city = $term->getName();
+    }
+    else {
+      $city = 'Lutsk';
+      $units = UnitsEnum::DegreesCelsius->value;
+    }
     $weatherData = $this->weatherApi->getWeatherApi($city, $units);
 
     if (empty($weatherData)) {
@@ -64,49 +81,6 @@ class WeatherApiBlock extends BlockBase implements ContainerFactoryPluginInterfa
       '#weather_text' => $weather_text,
       '#units' => $units,
     ];
-  }
-
-  /**
-   * {@inheritDoc}
-   */
-  public function blockForm($form, FormStateInterface $form_state):array {
-    $list_of_city = [
-      'Lutsk' => $this->t('Lutsk'),
-      'Lviv' => $this->t('Lviv'),
-      'London' => $this->t('London'),
-    ];
-
-    $list_of_units = [
-      'standart' => $this->t('Degrees Kelvin'),
-      'metric' => $this->t('Degrees Celsius'),
-      'imperial' => $this->t('Degrees Fahrenheit'),
-    ];
-
-    $selected_city = $this->configuration['city'];
-    $selected_units = $this->configuration['units'];
-
-    $form['city'] = [
-      '#type' => 'select',
-      '#title' => $this->t('Select city'),
-      '#options' => $list_of_city,
-      '#default_value' => $selected_city,
-    ];
-    $form['units'] = [
-      '#type' => 'select',
-      '#title' => $this->t('Select units'),
-      '#options' => $list_of_units,
-      '#default_value' => $selected_units,
-    ];
-
-    return $form;
-  }
-
-  /**
-   * {@inheritdoc}
-   */
-  public function blockSubmit($form, FormStateInterface $form_state):void {
-    $this->configuration['city'] = $form_state->getValue('city');
-    $this->configuration['units'] = $form_state->getValue('units');
   }
 
   /**
