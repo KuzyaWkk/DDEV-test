@@ -16,7 +16,7 @@ function weather_api_theme($existing, $type, $theme, $path):array {
         'weather_text' => NULL,
         'city' => NULL,
         'units' => NULL,
-      ]
+      ],
     ]
   ];
 }
