@@ -78,8 +78,7 @@ class WeatherApiBlock extends BlockBase implements ContainerFactoryPluginInterfa
         return [];
       }
 
-      $this->cacheBackend
-        ->set($cache_id, $api_data, time() + 1800);
+      $this->cacheBackend->set($cache_id, $api_data, time() + 1800);
     }
     else {
       $api_data = $cache->data;
