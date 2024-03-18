@@ -96,4 +96,11 @@ class WeatherApiBlock extends BlockBase implements ContainerFactoryPluginInterfa
     ];
   }
 
+  /**
+   * {@inheritDoc}
+   */
+  public function getCacheMaxAge():int {
+    return 60 * 30;
+  }
+
 }
