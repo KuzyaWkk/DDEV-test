@@ -48,3 +48,16 @@ function weather_api_schema():array {
 
   return $schema;
 }
+
+/**
+ * Implements hook_update_N() for creating table if it does not exist.
+ */
+function weather_api_update_10001(&$sandbox):void {
+  $connection = Drupal::database();
+
+  if (!$connection->schema()->tableExists('weather_api')) {
+     $schema = weather_api_schema();
+     $table = $schema['weather_api'];
+     $connection->schema()->createTable('weather_api', $table);
+  }
+}
