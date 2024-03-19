@@ -3,6 +3,7 @@
 namespace Drupal\weather_api\Service\WeatherDatabase;
 
 use Drupal\Core\Database\Connection;
+use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Logger\LoggerChannelFactoryInterface;
 
 /**
@@ -10,41 +11,21 @@ use Drupal\Core\Logger\LoggerChannelFactoryInterface;
  */
 class WeatherDatabaseConnection implements WeatherDatabaseConnectionInterface {
 
-  public function __construct(protected Connection $database, protected LoggerChannelFactoryInterface $logger) {
-
-  }
-
-  /**
-   * {@inheritDoc}
-   */
-  public function isEmptyRow(int $uid):bool {
-    if ($uid == 0) {
-      return TRUE;
-    }
-    $count = $this->database->select('weather_api', 'wa')
-      ->condition('uid', $uid)
-      ->countQuery()
-      ->execute()
-      ->fetchField();
-
-    if ($count == 0) {
-      return TRUE;
-    }
-    return FALSE;
-  }
+  public function __construct(
+    protected Connection $database,
+    protected LoggerChannelFactoryInterface $logger,
+    protected EntityTypeManagerInterface $entityTypeManager,
+  ) {}
 
   /**
    * {@inheritDoc}
    */
   public function setWeatherData(int $uid, int $cid, string $units):void {
     try {
-      $this->database->insert('weather_api')
-        ->fields([
-          'uid' => $uid,
-          'cid' => $cid,
-          'units' => $units,
-        ])
-        ->execute();
+      $additional_information = $this->getAdditionalInfoAboutUser($uid);
+      $additional_information->set('field_cities', $cid);
+      $additional_information->set('field_units', $units);
+      $additional_information->save();
     }
     catch (\Exception $e) {
       $this->logger->get('weather_api')
@@ -57,39 +38,15 @@ class WeatherDatabaseConnection implements WeatherDatabaseConnectionInterface {
   /**
    * {@inheritDoc}
    */
-  public function updateWeatherData(int $uid, int $cid, string $units):void {
+  public function getWeatherData($uid):array {
     try {
-      $this->database->update('weather_api')
-        ->fields([
-          'cid' => $cid,
-          'units' => $units,
-        ])
-        ->condition('uid', $uid)
-        ->execute();
-    }
-    catch (\Exception $e) {
-      $this->logger->get('weather_api')
-        ->error('Has a problem with database connection:@error', [
-          '@error' => $e->getMessage(),
-        ]);
-    }
-  }
-
-  /**
-   * {@inheritDoc}
-   */
-  public function getWeatherData(int $uid):array {
-    try {
-      $query = $this->database->select('weather_api', 'wa')
-        ->fields('wa', ['cid', 'units'])
-        ->condition('uid', $uid)
-        ->execute();
-
-      $result = $query->fetchAssoc();
-      if ($result) {
+      $additional_information = $this->getAdditionalInfoAboutUser($uid);
+      if (!empty($additional_information)) {
+        $city = $additional_information->get('field_cities')->target_id;
+        $units = $additional_information->get('field_units')->value;
         return [
-          'cid' => $result['cid'],
-          'units' => $result['units'],
+          'cid' => $city,
+          'units' => $units,
         ];
       }
       return [];
@@ -102,6 +59,29 @@ class WeatherDatabaseConnection implements WeatherDatabaseConnectionInterface {
       return [];
     }
 
+  }
+
+  /**
+   * Get additional info from user id.
+   *
+   * @param int $uid
+   *   The user id.
+   *
+   * @return mixed
+   *   Return array of Login Reg object.
+   */
+  protected function getAdditionalInfoAboutUser(int $uid):mixed {
+    $user_storage = $this->entityTypeManager->getStorage('user');
+    $user = $user_storage->load($uid);
+    $additional_information = $user
+      ->get('field_additional_information')
+      ->referencedEntities();
+
+    if ($additional_information) {
+      return $additional_information[0];
+    }
+
+    return [];
   }
 
 }

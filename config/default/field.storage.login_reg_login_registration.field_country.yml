@@ -1,0 +1,20 @@
+uuid: dcd0e1ff-427b-4c9f-91a5-76c928e77ef5
+langcode: en
+status: true
+dependencies:
+  module:
+    - country
+    - login_reg
+id: login_reg_login_registration.field_country
+field_name: field_country
+entity_type: login_reg_login_registration
+type: country
+settings:
+  selectable_countries: {  }
+module: country
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

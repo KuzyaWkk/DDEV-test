@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - login_reg
+id: login_reg_login_registration_delete_action
+label: 'Delete login registrations'
+type: login_reg_login_registration
+plugin: entity:delete_action:login_reg_login_registration
+configuration: {  }

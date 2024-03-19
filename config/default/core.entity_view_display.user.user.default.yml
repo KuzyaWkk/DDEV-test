@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.user.user.field_additional_information
     - field.field.user.user.field_description
     - field.field.user.user.field_social_media
     - field.field.user.user.field_website
@@ -42,6 +43,22 @@ third_party_settings:
               views_label: 'Post Recent Articles By:'
               items_per_page: none
             weight: 0
+            additional: {  }
+          4fc59f96-0a18-4254-b8ae-44c8d6797e3f:
+            uuid: 4fc59f96-0a18-4254-b8ae-44c8d6797e3f
+            region: content
+            configuration:
+              id: 'field_block:user:user:field_additional_information'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_label
+                label: above
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: 2
             additional: {  }
         third_party_settings: {  }
       -
@@ -101,6 +118,14 @@ targetEntityType: user
 bundle: user
 mode: default
 content:
+  field_additional_information:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 10
+    region: content
   field_description:
     type: basic_string
     label: above

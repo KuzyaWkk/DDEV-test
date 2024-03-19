@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.user.preview
+    - field.field.user.user.field_additional_information
     - field.field.user.user.field_description
     - field.field.user.user.field_social_media
     - field.field.user.user.field_website
@@ -70,4 +71,5 @@ content:
     weight: 0
     region: content
 hidden:
+  field_additional_information: true
   member_for: true

@@ -29,14 +29,28 @@ class WeatherApiBlock extends BlockBase implements ContainerFactoryPluginInterfa
   /**
    * Constructs a WeatherBlock objects.
    */
-  public function __construct(array $configuration, $plugin_id, $plugin_definition, protected WeatherApiConnectionInterface $weatherApi, protected EntityTypeManagerInterface $entityTypeManager, protected WeatherDatabaseConnectionInterface $weatherDatabase, protected AccountProxyInterface $currentUser, protected CacheBackendInterface $cacheBackend) {
+  public function __construct(
+    array $configuration,
+    $plugin_id,
+    $plugin_definition,
+    protected WeatherApiConnectionInterface $weatherApi,
+    protected EntityTypeManagerInterface $entityTypeManager,
+    protected WeatherDatabaseConnectionInterface $weatherDatabase,
+    protected AccountProxyInterface $currentUser,
+    protected CacheBackendInterface $cacheBackend,
+  ) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
   }
 
   /**
    * {@inheritDoc}
    */
-  public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition):static {
+  public static function create(
+    ContainerInterface $container,
+    array $configuration,
+    $plugin_id,
+    $plugin_definition,
+  ):static {
     return new static(
       $configuration,
       $plugin_id,
@@ -45,7 +59,7 @@ class WeatherApiBlock extends BlockBase implements ContainerFactoryPluginInterfa
       $container->get('entity_type.manager'),
       $container->get('weather_api.weather_database'),
       $container->get('current_user'),
-      $container->get('cache.default')
+      $container->get('cache.default'),
     );
   }
 
@@ -55,14 +69,13 @@ class WeatherApiBlock extends BlockBase implements ContainerFactoryPluginInterfa
   public function build():array {
 
     $uid = $this->currentUser->id();
-    $is_empty = $this->weatherDatabase->isEmptyRow($uid);
-    if (!$is_empty) {
-      $config_service = $this->weatherDatabase->getWeatherData($uid);
-      $units = $config_service['units'];
-      $cid = $config_service['cid'];
+    $weather_data = $this->weatherDatabase->getWeatherData($uid);
+    if ($weather_data) {
+      $cid = $weather_data['cid'];
       $term = $this->entityTypeManager
         ->getStorage('taxonomy_term')->load($cid);
       $city = $term->getName();
+      $units = $weather_data['units'];
     }
     else {
       $city = 'Lutsk';
@@ -101,6 +114,13 @@ class WeatherApiBlock extends BlockBase implements ContainerFactoryPluginInterfa
    */
   public function getCacheMaxAge():int {
     return 60 * 30;
+  }
+
+  /**
+   * {@inheritDoc}
+   */
+  public function getCacheContexts():array {
+    return ['user'];
   }
 
 }

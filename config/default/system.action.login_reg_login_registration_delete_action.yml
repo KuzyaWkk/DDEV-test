@@ -1,0 +1,13 @@
+uuid: f6a82589-ef71-4405-90e8-13bf117faa1b
+langcode: en
+status: true
+dependencies:
+  module:
+    - login_reg
+_core:
+  default_config_hash: F-mKtEQVGcvUech-ifOGsUqGpvRlKtB40gQLGCXoV28
+id: login_reg_login_registration_delete_action
+label: 'Delete login registrations'
+type: login_reg_login_registration
+plugin: 'entity:delete_action:login_reg_login_registration'
+configuration: {  }

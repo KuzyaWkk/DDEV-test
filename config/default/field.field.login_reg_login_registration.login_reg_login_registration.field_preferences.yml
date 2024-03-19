@@ -1,0 +1,30 @@
+uuid: 5562eed5-d1bf-4152-8879-5936c7d52973
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.login_reg_login_registration.field_preferences
+    - taxonomy.vocabulary.category
+  module:
+    - login_reg
+id: login_reg_login_registration.login_reg_login_registration.field_preferences
+field_name: field_preferences
+entity_type: login_reg_login_registration
+bundle: login_reg_login_registration
+label: Preferences
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      category: category
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

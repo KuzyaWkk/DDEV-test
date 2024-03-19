@@ -1,0 +1,21 @@
+uuid: 479a40a6-3b00-48c6-82df-d4f852c19631
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.login_reg_login_registration.field_gender
+  module:
+    - login_reg
+    - options
+id: login_reg_login_registration.login_reg_login_registration.field_gender
+field_name: field_gender
+entity_type: login_reg_login_registration
+bundle: login_reg_login_registration
+label: Gender
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

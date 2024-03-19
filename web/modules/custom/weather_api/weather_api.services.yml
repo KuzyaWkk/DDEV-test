@@ -5,4 +5,4 @@ services:
 
   weather_api.weather_database:
     class: Drupal\weather_api\Service\WeatherDatabase\WeatherDatabaseConnection
-    arguments: [ '@database' , '@logger.factory']
+    arguments: [ '@database' , '@logger.factory', '@entity_type.manager']

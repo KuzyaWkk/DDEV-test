@@ -1,0 +1,33 @@
+uuid: 9319537b-68db-4916-bdfc-9c2b4edf5717
+langcode: en
+status: true
+dependencies:
+  module:
+    - login_reg
+    - options
+id: login_reg_login_registration.field_gender
+field_name: field_gender
+entity_type: login_reg_login_registration
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: male
+      label: Male
+    -
+      value: female
+      label: Female
+    -
+      value: drupal_developer
+      label: 'Drupal Developer'
+    -
+      value: other
+      label: Other
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

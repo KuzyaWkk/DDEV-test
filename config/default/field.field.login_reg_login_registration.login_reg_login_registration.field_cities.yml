@@ -1,0 +1,30 @@
+uuid: c89ef264-8616-4758-9b20-c751c4dad6cc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.login_reg_login_registration.field_cities
+    - taxonomy.vocabulary.cities
+  module:
+    - login_reg
+id: login_reg_login_registration.login_reg_login_registration.field_cities
+field_name: field_cities
+entity_type: login_reg_login_registration
+bundle: login_reg_login_registration
+label: Cities
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      cities: cities
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

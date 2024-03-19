@@ -7,6 +7,7 @@ use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Session\AccountProxyInterface;
+use Drupal\Core\Url;
 use Drupal\weather_api\Enum\UnitsEnum;
 use Drupal\weather_api\Service\WeatherDatabase\WeatherDatabaseConnectionInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
@@ -19,9 +20,12 @@ final class WeatherConfigForm extends FormBase {
   /**
    * Constructs a WeatherConfigForm objects.
    */
-  public function __construct(protected EntityTypeManagerInterface $entityTypeManager, protected AccountProxyInterface $currentUser, protected Connection $database, protected WeatherDatabaseConnectionInterface $weatherDatabase) {
-
-  }
+  public function __construct(
+    protected EntityTypeManagerInterface $entityTypeManager,
+    protected AccountProxyInterface $currentUser,
+    protected Connection $database,
+    protected WeatherDatabaseConnectionInterface $weatherDatabase,
+  ) {}
 
   /**
    * {@inheritDoc}
@@ -46,7 +50,6 @@ final class WeatherConfigForm extends FormBase {
    * {@inheritdoc}
    */
   public function buildForm(array $form, FormStateInterface $form_state):array {
-
     $list_of_city = [];
     $term_cities = $this->entityTypeManager
       ->getStorage('taxonomy_term')
@@ -56,11 +59,12 @@ final class WeatherConfigForm extends FormBase {
       $list_of_city[$term->tid] = $term->name;
     }
 
-    $list_of_units = [
-      UnitsEnum::DegreesKelvin->value => $this->t('Degrees Kelvin'),
-      UnitsEnum::DegreesCelsius->value => $this->t('Degrees Celsius'),
-      UnitsEnum::DegreesFahrenheit->value => $this->t('Degrees Fahrenheit'),
-    ];
+    $cases = UnitsEnum::cases();
+    $list_of_units = [];
+    foreach ($cases as $case) {
+      $list_of_units[$case->value] = $this
+        ->t(preg_replace('/([A-Z])/', ' $1', $case->name));
+    }
 
     $selected = $this->weatherDatabase->getWeatherData($this->currentUser->id());
     if ($selected) {
@@ -97,15 +101,8 @@ final class WeatherConfigForm extends FormBase {
     $cid = $form_state->getValue('city');
     $units = $form_state->getValue('units');
     $uid = $this->currentUser->id();
-
-    $is_empty = $this->weatherDatabase->isEmptyRow($uid);
-    if ($is_empty) {
-      $this->weatherDatabase->setWeatherData($uid, $cid, $units);
-    }
-    else {
-      $this->weatherDatabase->updateWeatherData($uid, $cid, $units);
-    }
-
+    $this->weatherDatabase->setWeatherData($uid, $cid, $units);
+    $form_state->setRedirectUrl(Url::fromUserInput('/'));
   }
 
 }

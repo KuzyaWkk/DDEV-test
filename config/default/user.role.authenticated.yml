@@ -9,6 +9,7 @@ dependencies:
     - contact
     - file
     - filter
+    - login_reg
     - media
     - search
     - shortcut
@@ -24,6 +25,7 @@ permissions:
   - 'access content'
   - 'access shortcuts'
   - 'access site-wide contact form'
+  - 'create login_reg_login_registration'
   - 'delete own files'
   - 'post comments'
   - 'search content'

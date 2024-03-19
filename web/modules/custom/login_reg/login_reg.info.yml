@@ -1,0 +1,5 @@
+name: 'Specify Login Registration'
+type: module
+description: 'Module for specify login registration'
+package: Kenny
+core_version_requirement: ^10

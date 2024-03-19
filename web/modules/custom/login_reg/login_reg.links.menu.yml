@@ -1,0 +1,11 @@
+entity.login_reg_login_registration.settings:
+  title: 'Login Registration'
+  description: 'Configure a Login Registration entity type.'
+  route_name:  entity.login_reg_login_registration.settings
+  parent: system.admin_structure
+
+entity.login_reg_login_registration.collection:
+  title: 'Login Registrations'
+  description: 'List of login registrations.'
+  route_name: entity.login_reg_login_registration.collection
+  parent: system.admin_content

@@ -1,4 +1,4 @@
-uuid: 5a9c65fc-1646-4703-9a19-fef8e209e218
+uuid: fd117b31-5265-4966-ae34-5856c9bc4c02
 langcode: en
 status: true
 dependencies:
@@ -17,6 +17,4 @@ settings:
   label: 'Custom Weather API block'
   label_display: '0'
   provider: weather_api
-  city: Lutsk
-  units: metric
 visibility: {  }
