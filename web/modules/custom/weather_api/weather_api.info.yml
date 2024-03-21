@@ -3,5 +3,5 @@ type: module
 description: 'Module for weather API'
 package: Kenny
 core_version_requirement: ^10
-#dependencies:
-#  - login_reg:login_reg
+dependencies:
+  - login_reg:login_reg
