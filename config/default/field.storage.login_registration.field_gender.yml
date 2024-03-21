@@ -1,13 +1,13 @@
-uuid: 9319537b-68db-4916-bdfc-9c2b4edf5717
+uuid: 4d9f2d2e-5e23-4ebf-9cea-5d4651b29fec
 langcode: en
 status: true
 dependencies:
   module:
     - login_reg
     - options
-id: login_reg_login_registration.field_gender
+id: login_registration.field_gender
 field_name: field_gender
-entity_type: login_reg_login_registration
+entity_type: login_registration
 type: list_string
 settings:
   allowed_values:
@@ -21,8 +21,8 @@ settings:
       value: drupal_developer
       label: 'Drupal Developer'
     -
-      value: other
-      label: Other
+      value: another
+      label: Another
   allowed_values_function: ''
 module: options
 locked: false

@@ -1,11 +1,7 @@
-administer login_reg_login_registration:
+administer login_registration:
   title: 'Administer login registrations'
   restrict access: true
-view login_reg_login_registration:
-  title: 'View login registration'
-edit login_reg_login_registration:
-  title: 'Edit login registration'
-delete login_reg_login_registration:
-  title: 'Delete login registration'
-create login_reg_login_registration:
+view edit own login_registration:
+  title: 'View and edit own login registration'
+create login_registration:
   title: 'Create login registration'

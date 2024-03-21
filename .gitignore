@@ -31,6 +31,7 @@ package-lock.json
 /web/profiles/README.txt
 /web/sites/development.services.yml
 /web/sites/example.settings.local.php
+/web/sites/default/settings.local.php
 /web/sites/example.sites.php
 /web/sites/README.txt
 /web/themes/README.txt

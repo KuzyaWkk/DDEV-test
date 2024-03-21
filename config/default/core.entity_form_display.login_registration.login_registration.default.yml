@@ -1,0 +1,72 @@
+uuid: fb9a627c-7aae-440c-b2d5-a9b97b1b6b1d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.login_registration.login_registration.field_city
+    - field.field.login_registration.login_registration.field_country
+    - field.field.login_registration.login_registration.field_gender
+    - field.field.login_registration.login_registration.field_preferences
+    - field.field.login_registration.login_registration.field_units
+  module:
+    - country
+    - login_reg
+id: login_registration.login_registration.default
+targetEntityType: login_registration
+bundle: login_registration
+mode: default
+content:
+  field_city:
+    type: options_select
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings:
+      login_reg:
+        rename_title: ''
+        remove_title: '1'
+        rename_empty_option: '- Select your city -'
+        remove_first_dash: 0
+  field_country:
+    type: country_default
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings:
+      login_reg:
+        rename_title: ''
+        remove_title: '1'
+        rename_empty_option: '- Select your country -'
+  field_gender:
+    type: options_select
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings:
+      login_reg:
+        rename_title: ''
+        remove_title: '1'
+        rename_empty_option: '- Select your gender -'
+  field_preferences:
+    type: options_buttons
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings:
+      login_reg:
+        rename_title: 'Select your preferences'
+        remove_first_dash: '1'
+        rename_empty_option: ''
+        remove_title: 0
+  field_units:
+    type: options_select
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings:
+      login_reg:
+        rename_title: ''
+        remove_title: '1'
+        rename_empty_option: '- Select prefer Degree -'
+hidden:
+  created: true

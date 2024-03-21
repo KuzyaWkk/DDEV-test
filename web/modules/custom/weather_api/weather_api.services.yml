@@ -3,6 +3,6 @@ services:
     class: Drupal\weather_api\Service\WeatherApiConnection
     arguments: ['@http_client_factory', '@config.factory', '@logger.factory']
 
-  weather_api.weather_database:
-    class: Drupal\weather_api\Service\WeatherDatabase\WeatherDatabaseConnection
+  weather_api.weather_data_storage:
+    class: Drupal\weather_api\Service\WeatherDatabase\WeatherDataStorage
     arguments: [ '@database' , '@logger.factory', '@entity_type.manager']

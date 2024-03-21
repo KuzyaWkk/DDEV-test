@@ -1,19 +1,19 @@
-uuid: de3b7cb5-6772-4dd5-9e46-4aba55bba52f
+uuid: 5132af13-5a4d-4b6e-b36b-fe33aca06747
 langcode: en
 status: true
 dependencies:
   module:
     - login_reg
     - taxonomy
-id: login_reg_login_registration.field_cities
-field_name: field_cities
-entity_type: login_reg_login_registration
+id: login_registration.field_preferences
+field_name: field_preferences
+entity_type: login_registration
 type: entity_reference
 settings:
   target_type: taxonomy_term
 module: core
 locked: false
-cardinality: 1
+cardinality: -1
 translatable: true
 indexes: {  }
 persist_with_no_fields: false

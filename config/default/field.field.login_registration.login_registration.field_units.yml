@@ -1,0 +1,21 @@
+uuid: 85b2ca64-d017-4a6e-ba76-ed61c98490e2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.login_registration.field_units
+  module:
+    - login_reg
+    - options
+id: login_registration.login_registration.field_units
+field_name: field_units
+entity_type: login_registration
+bundle: login_registration
+label: Units
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

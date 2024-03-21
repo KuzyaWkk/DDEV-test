@@ -11,7 +11,7 @@ use Drupal\Core\Session\AccountProxyInterface;
 use Drupal\Core\StringTranslation\TranslatableMarkup;
 use Drupal\weather_api\Enum\UnitsEnum;
 use Drupal\weather_api\Service\WeatherApiConnectionInterface;
-use Drupal\weather_api\Service\WeatherDatabase\WeatherDatabaseConnectionInterface;
+use Drupal\weather_api\Service\WeatherDatabase\WeatherDataStorageInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
@@ -35,7 +35,7 @@ class WeatherApiBlock extends BlockBase implements ContainerFactoryPluginInterfa
     $plugin_definition,
     protected WeatherApiConnectionInterface $weatherApi,
     protected EntityTypeManagerInterface $entityTypeManager,
-    protected WeatherDatabaseConnectionInterface $weatherDatabase,
+    protected WeatherDataStorageInterface $weatherDataStorage,
     protected AccountProxyInterface $currentUser,
     protected CacheBackendInterface $cacheBackend,
   ) {
@@ -50,14 +50,14 @@ class WeatherApiBlock extends BlockBase implements ContainerFactoryPluginInterfa
     array $configuration,
     $plugin_id,
     $plugin_definition,
-  ):static {
+  ): static {
     return new static(
       $configuration,
       $plugin_id,
       $plugin_definition,
       $container->get('weather_api.weather_connection'),
       $container->get('entity_type.manager'),
-      $container->get('weather_api.weather_database'),
+      $container->get('weather_api.weather_data_storage'),
       $container->get('current_user'),
       $container->get('cache.default'),
     );
@@ -69,7 +69,7 @@ class WeatherApiBlock extends BlockBase implements ContainerFactoryPluginInterfa
   public function build():array {
 
     $uid = $this->currentUser->id();
-    $weather_data = $this->weatherDatabase->getWeatherData($uid);
+    $weather_data = $this->weatherDataStorage->getWeatherData($uid);
     if ($weather_data) {
       $cid = $weather_data['cid'];
       $term = $this->entityTypeManager

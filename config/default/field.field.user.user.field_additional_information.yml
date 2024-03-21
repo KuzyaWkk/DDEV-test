@@ -1,4 +1,4 @@
-uuid: 4a2c9b4d-bfef-4ec8-885f-9c6ba40b5fd3
+uuid: 51663b8a-a60c-43a9-afb1-8bbc1b8abb5e
 langcode: en
 status: true
 dependencies:
@@ -17,7 +17,7 @@ translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
-  handler: 'default:login_reg_login_registration'
+  handler: 'default:login_registration'
   handler_settings:
     target_bundles: null
     sort:

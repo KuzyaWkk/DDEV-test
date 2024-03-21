@@ -1,0 +1,20 @@
+uuid: 48a7f064-f140-4d51-99a3-a7af8322bd95
+langcode: en
+status: true
+dependencies:
+  module:
+    - login_reg
+  theme:
+    - kuzya_main
+id: kuzya_main_custom_register_button_block
+theme: kuzya_main
+region: header
+weight: 0
+provider: null
+plugin: register_button_block
+settings:
+  id: register_button_block
+  label: 'Custom Register Button block'
+  label_display: '0'
+  provider: login_reg
+visibility: {  }

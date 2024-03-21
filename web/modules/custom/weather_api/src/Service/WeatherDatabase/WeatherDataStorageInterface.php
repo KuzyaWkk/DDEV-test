@@ -5,7 +5,7 @@ namespace Drupal\weather_api\Service\WeatherDatabase;
 /**
  * Interface for Weather Database Connection.
  */
-interface WeatherDatabaseConnectionInterface {
+interface WeatherDataStorageInterface {
 
   /**
    * Set data in database.

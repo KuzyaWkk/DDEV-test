@@ -14,14 +14,13 @@ final class LoginRegistrationSettingsForm extends FormBase {
    * {@inheritdoc}
    */
   public function getFormId(): string {
-    return 'login_reg_login_registration_settings';
+    return 'login_registration_settings';
   }
 
   /**
    * {@inheritdoc}
    */
   public function buildForm(array $form, FormStateInterface $form_state): array {
-
     $form['settings'] = [
       '#markup' => $this->t('Settings form for a login registration entity type.'),
     ];

@@ -9,7 +9,7 @@ use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Session\AccountProxyInterface;
 use Drupal\Core\Url;
 use Drupal\weather_api\Enum\UnitsEnum;
-use Drupal\weather_api\Service\WeatherDatabase\WeatherDatabaseConnectionInterface;
+use Drupal\weather_api\Service\WeatherDatabase\WeatherDataStorageInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
@@ -24,7 +24,7 @@ final class WeatherConfigForm extends FormBase {
     protected EntityTypeManagerInterface $entityTypeManager,
     protected AccountProxyInterface $currentUser,
     protected Connection $database,
-    protected WeatherDatabaseConnectionInterface $weatherDatabase,
+    protected WeatherDataStorageInterface $weatherDataStorage,
   ) {}
 
   /**
@@ -35,7 +35,7 @@ final class WeatherConfigForm extends FormBase {
       $container->get('entity_type.manager'),
       $container->get('current_user'),
       $container->get('database'),
-      $container->get('weather_api.weather_database'),
+      $container->get('weather_api.weather_data_storage'),
     );
   }
 
@@ -59,14 +59,14 @@ final class WeatherConfigForm extends FormBase {
       $list_of_city[$term->tid] = $term->name;
     }
 
-    $cases = UnitsEnum::cases();
+    // @todo If you plan to change the list, don't forget to change it in
+    // \Drupal\weather_api\Enum\UnitsEnum as well.
     $list_of_units = [];
-    foreach ($cases as $case) {
-      $list_of_units[$case->value] = $this
-        ->t(preg_replace('/([A-Z])/', ' $1', $case->name));
-    }
+    $list_of_units[UnitsEnum::DegreesCelsius->name] = $this->t('Degrees Celcius');
+    $list_of_units[UnitsEnum::DegreesKelvin->name] = $this->t('Degrees Kelvin');
+    $list_of_units[UnitsEnum::DegreesFahrenheit->name] = $this->t('Degrees Fahrenheit');
 
-    $selected = $this->weatherDatabase->getWeatherData($this->currentUser->id());
+    $selected = $this->weatherDataStorage->getWeatherData($this->currentUser->id());
     if ($selected) {
       $selected_units = $selected['units'];
       $selected_city = $selected['cid'];
@@ -101,7 +101,7 @@ final class WeatherConfigForm extends FormBase {
     $cid = $form_state->getValue('city');
     $units = $form_state->getValue('units');
     $uid = $this->currentUser->id();
-    $this->weatherDatabase->setWeatherData($uid, $cid, $units);
+    $this->weatherDataStorage->setWeatherData($uid, $cid, $units);
     $form_state->setRedirectUrl(Url::fromUserInput('/'));
   }
 

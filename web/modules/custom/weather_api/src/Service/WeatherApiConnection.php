@@ -15,16 +15,19 @@ class WeatherApiConnection implements WeatherApiConnectionInterface {
   /**
    * Constructor for WeatherApiConnection class.
    */
-  public function __construct(protected ClientFactory $httpClient, protected ConfigFactoryInterface $configFactory, protected LoggerChannelFactoryInterface $logger) {
-
-  }
+  public function __construct(
+    protected ClientFactory $httpClient,
+    protected ConfigFactoryInterface $configFactory,
+    protected LoggerChannelFactoryInterface $logger,
+  ) {}
 
   /**
    * {@inheritDoc}
    */
   public function getWeatherApi(string $city, string $units):array|FALSE {
 
-    $appid = $this->configFactory->get('weather_api.weather_key_settings')
+    $appid = $this->configFactory
+      ->get('weather_api.weather_key_settings')
       ->get('appid');
     $client = $this->httpClient->fromOptions();
     if (!empty($appid)) {

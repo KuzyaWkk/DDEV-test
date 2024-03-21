@@ -1,4 +1,4 @@
-uuid: de46c40c-86ca-435d-b5ed-0252053ec836
+uuid: 4260110b-6dbc-4c01-88aa-9b8629fe3ec0
 langcode: en
 status: true
 dependencies:
@@ -10,7 +10,7 @@ field_name: field_additional_information
 entity_type: user
 type: entity_reference
 settings:
-  target_type: login_reg_login_registration
+  target_type: login_registration
 module: core
 locked: false
 cardinality: 1

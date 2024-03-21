@@ -25,7 +25,7 @@ content:
     third_party_settings: {  }
   field_additional_information:
     type: inline_entity_form_simple
-    weight: 2
+    weight: 1
     region: content
     settings:
       form_mode: default

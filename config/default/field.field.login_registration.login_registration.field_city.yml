@@ -1,17 +1,17 @@
-uuid: c89ef264-8616-4758-9b20-c751c4dad6cc
+uuid: d3821139-95f2-4d63-bcb5-5a4b8ddc44ae
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.login_reg_login_registration.field_cities
+    - field.storage.login_registration.field_city
     - taxonomy.vocabulary.cities
   module:
     - login_reg
-id: login_reg_login_registration.login_reg_login_registration.field_cities
-field_name: field_cities
-entity_type: login_reg_login_registration
-bundle: login_reg_login_registration
-label: Cities
+id: login_registration.login_registration.field_city
+field_name: field_city
+entity_type: login_registration
+bundle: login_registration
+label: City
 description: ''
 required: true
 translatable: false

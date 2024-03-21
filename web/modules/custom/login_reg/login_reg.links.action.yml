@@ -1,5 +1,0 @@
-login_reg_login_registration.add_form:
-  title: 'Add login registration'
-  route_name: entity.login_reg_login_registration.add_form
-  appears_on:
-    - entity.login_reg_login_registration.collection

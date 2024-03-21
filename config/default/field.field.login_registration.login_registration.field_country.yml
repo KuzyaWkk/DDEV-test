@@ -1,16 +1,16 @@
-uuid: 64ce1df5-1cf0-404a-98e9-ed2ef0027526
+uuid: 91b0e383-bdf8-4dce-9c55-671d18ed9579
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.login_reg_login_registration.field_country
+    - field.storage.login_registration.field_country
   module:
     - country
     - login_reg
-id: login_reg_login_registration.login_reg_login_registration.field_country
+id: login_registration.login_registration.field_country
 field_name: field_country
-entity_type: login_reg_login_registration
-bundle: login_reg_login_registration
+entity_type: login_registration
+bundle: login_registration
 label: Country
 description: ''
 required: true

@@ -1,22 +1,4 @@
-entity.login_reg_login_registration.settings:
+entity.login_registration.settings:
   title: 'Settings'
-  route_name: entity.login_reg_login_registration.settings
-  base_route: entity.login_reg_login_registration.settings
-entity.login_reg_login_registration.view:
-  title: 'View'
-  route_name: entity.login_reg_login_registration.canonical
-  base_route: entity.login_reg_login_registration.canonical
-entity.login_reg_login_registration.edit_form:
-  title: 'Edit'
-  route_name: entity.login_reg_login_registration.edit_form
-  base_route: entity.login_reg_login_registration.canonical
-entity.login_reg_login_registration.delete_form:
-  title: 'Delete'
-  route_name: entity.login_reg_login_registration.delete_form
-  base_route: entity.login_reg_login_registration.canonical
-  weight: 10
-entity.login_reg_login_registration.collection:
-  title: 'Login Registrations'
-  route_name: entity.login_reg_login_registration.collection
-  base_route: system.admin_content
-  weight: 10
+  route_name: entity.login_registration.settings
+  base_route: entity.login_registration.settings

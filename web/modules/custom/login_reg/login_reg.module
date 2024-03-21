@@ -10,7 +10,7 @@ use Drupal\weather_api\Enum\UnitsEnum;
 /**
  * Implements hook_entity_type_build().
  */
-function login_reg_entity_type_build(array &$entity_types):void {
+function login_reg_entity_type_build(array &$entity_types): void {
   $entity_types['user']->setFormClass(
     'login_reg_register', 'Drupal\login_reg\Form\AdvancedRegisterForm'
   );
@@ -25,7 +25,7 @@ function login_reg_field_widget_third_party_settings_form(
   $form_mode,
   array $form,
   FormStateInterface $form_state,
-):array {
+): array {
   $element = [];
   $plugin_id = $plugin->getPluginId();
 
@@ -75,7 +75,7 @@ function login_reg_field_widget_single_element_form_alter(
   array &$element,
   FormStateInterface $form_state,
   array $context,
-):void {
+): void {
   $widget = $context['widget'];
 
   if ($title = $widget->getThirdPartySetting('login_reg', 'rename_title')) {
@@ -111,30 +111,18 @@ function login_reg_field_widget_single_element_form_alter(
 }
 
 /**
- * Get options for units from Enum.
- */
-function login_reg_units_option():array {
-    $options = [];
-    $cases = UnitsEnum::cases();
-    foreach ($cases as $case) {
-      $options[$case->value] = t($case->name);
-    }
-    return $options;
-}
-
-/**
  * Implements hook_theme().
  */
 function login_reg_theme(): array {
   return [
-    'login_reg_login_registration' => ['render element' => 'elements'],
+    'login_registration' => ['render element' => 'elements'],
   ];
 }
 
 /**
  * Prepares variables for login registration templates.
  *
- * Default template: login-reg-login-registration.html.twig.
+ * Default template: login-registration.html.twig.
  *
  * @param array $variables
  *   An associative array containing:
@@ -142,67 +130,10 @@ function login_reg_theme(): array {
  *     fields attached to the entity.
  *   - attributes: HTML attributes for the containing element.
  */
-function template_preprocess_login_reg_login_registration(array &$variables): void {
+function template_preprocess_login_registration(array &$variables): void {
   $variables['view_mode'] = $variables['elements']['#view_mode'];
   foreach (Element::children($variables['elements']) as $key) {
     $variables['content'][$key] = $variables['elements'][$key];
   }
 }
-
-/**
- * Implements hook_user_cancel().
- */
-function login_reg_user_cancel($edit, UserInterface $account, $method): void {
-  switch ($method) {
-    case 'user_cancel_block_unpublish':
-      // Unpublish login registrations.
-      $storage = Drupal::entityTypeManager()->getStorage('login_reg_login_registration');
-      $login_reg_login_registration_ids = $storage->getQuery()
-        ->condition('uid', $account->id())
-        ->condition('status', 1)
-        ->accessCheck(FALSE)
-        ->execute();
-      foreach ($storage->loadMultiple($login_reg_login_registration_ids) as $login_reg_login_registration) {
-        $login_reg_login_registration->set('status', FALSE)->save();
-      }
-      break;
-
-    case 'user_cancel_reassign':
-      // Anonymize login registrations.
-      $storage = Drupal::entityTypeManager()->getStorage('login_reg_login_registration');
-      $login_reg_login_registration_ids = $storage->getQuery()
-        ->condition('uid', $account->id())
-        ->accessCheck(FALSE)
-        ->execute();
-      foreach ($storage->loadMultiple($login_reg_login_registration_ids) as $login_reg_login_registration) {
-        $login_reg_login_registration->setOwnerId(0)->save();
-      }
-      break;
-  }
-}
-
-/**
- * Implements hook_ENTITY_TYPE_predelete() for user entities.
- */
-function login_reg_user_predelete(UserInterface $account): void {
-  // Delete login registrations that belong to this account.
-  $storage = Drupal::entityTypeManager()->getStorage('login_reg_login_registration');
-  $login_reg_login_registration_ids = $storage->getQuery()
-    ->condition('uid', $account->id())
-    ->accessCheck(FALSE)
-    ->execute();
-  $storage->delete(
-    $storage->loadMultiple($login_reg_login_registration_ids)
-  );
-  // Delete old revisions.
-  $login_reg_login_registration_ids = $storage->getQuery()
-    ->allRevisions()
-    ->condition('uid', $account->id())
-    ->accessCheck(FALSE)
-    ->execute();
-  foreach (array_keys($login_reg_login_registration_ids) as $revision_id) {
-    $storage->deleteRevision($revision_id);
-  }
-}
-
 

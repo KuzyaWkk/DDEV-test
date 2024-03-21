@@ -27,7 +27,7 @@ permissions:
   - 'access user contact forms'
   - 'access user profiles'
   - 'administer filters'
-  - 'create login_reg_login_registration'
+  - 'create login_registration'
   - 'edit own comments'
   - 'post comments'
   - 'search content'

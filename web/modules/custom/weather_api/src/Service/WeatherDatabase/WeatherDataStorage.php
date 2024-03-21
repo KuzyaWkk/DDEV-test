@@ -9,8 +9,11 @@ use Drupal\Core\Logger\LoggerChannelFactoryInterface;
 /**
  * Class for basic methods for working with the table "weather_api".
  */
-class WeatherDatabaseConnection implements WeatherDatabaseConnectionInterface {
+class WeatherDataStorage implements WeatherDataStorageInterface {
 
+  /**
+   * Constructor for WeatherDataStorage class.
+   */
   public function __construct(
     protected Connection $database,
     protected LoggerChannelFactoryInterface $logger,
@@ -23,7 +26,7 @@ class WeatherDatabaseConnection implements WeatherDatabaseConnectionInterface {
   public function setWeatherData(int $uid, int $cid, string $units):void {
     try {
       $additional_information = $this->getAdditionalInfoAboutUser($uid);
-      $additional_information->set('field_cities', $cid);
+      $additional_information->set('field_city', $cid);
       $additional_information->set('field_units', $units);
       $additional_information->save();
     }
@@ -42,7 +45,7 @@ class WeatherDatabaseConnection implements WeatherDatabaseConnectionInterface {
     try {
       $additional_information = $this->getAdditionalInfoAboutUser($uid);
       if (!empty($additional_information)) {
-        $city = $additional_information->get('field_cities')->target_id;
+        $city = $additional_information->get('field_city')->target_id;
         $units = $additional_information->get('field_units')->value;
         return [
           'cid' => $city,
@@ -78,7 +81,7 @@ class WeatherDatabaseConnection implements WeatherDatabaseConnectionInterface {
       ->referencedEntities();
 
     if ($additional_information) {
-      return $additional_information[0];
+      return reset($additional_information);
     }
 
     return [];
