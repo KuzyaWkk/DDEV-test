@@ -15,10 +15,6 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Defines the access control handler for the login registration entity type.
- *
- * phpcs:disable Drupal.Arrays.Array.LongLineDeclaration
- *
- * @see https://www.drupal.org/project/coder/issues/3185082
  */
 final class LoginRegistrationAccessControlHandler extends EntityAccessControlHandler implements EntityHandlerInterface {
 

@@ -52,7 +52,7 @@ class RegisterButton extends BlockBase {
    * {@inheritDoc}
    */
   protected function blockAccess(AccountInterface $account): AccessResult {
-    if ($account->id() == 0) {
+    if ($account->isAnonymous()) {
       return AccessResult::allowed();
     }
     return AccessResult::forbidden();

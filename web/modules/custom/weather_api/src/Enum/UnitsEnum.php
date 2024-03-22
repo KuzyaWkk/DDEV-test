@@ -7,8 +7,6 @@ namespace Drupal\weather_api\Enum;
  */
 enum UnitsEnum: string {
 
-  // @todo If you plan to change the list, don't forget to change it in
-  // \Drupal\weather_api\Form\WeatherConfigForm as well.
   case DegreesCelsius = 'metric';
   case DegreesKelvin = 'standart';
   case DegreesFahrenheit = 'imperial';

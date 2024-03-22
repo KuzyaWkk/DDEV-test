@@ -5,6 +5,8 @@ namespace Drupal\weather_api\Service\WeatherDatabase;
 use Drupal\Core\Database\Connection;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Logger\LoggerChannelFactoryInterface;
+use Drupal\login_reg\LoginRegistrationInterface;
+use Drupal\user\UserInterface;
 
 /**
  * Class for basic methods for working with the table "weather_api".
@@ -25,7 +27,7 @@ class WeatherDataStorage implements WeatherDataStorageInterface {
    */
   public function setWeatherData(int $uid, int $cid, string $units):void {
     try {
-      $additional_information = $this->getAdditionalInfoAboutUser($uid);
+      $additional_information = $this->getLoginRegistrationEntity($uid);
       $additional_information->set('field_city', $cid);
       $additional_information->set('field_units', $units);
       $additional_information->save();
@@ -43,7 +45,7 @@ class WeatherDataStorage implements WeatherDataStorageInterface {
    */
   public function getWeatherData($uid):array {
     try {
-      $additional_information = $this->getAdditionalInfoAboutUser($uid);
+      $additional_information = $this->getLoginRegistrationEntity($uid);
       if (!empty($additional_information)) {
         $city = $additional_information->get('field_city')->target_id;
         $units = $additional_information->get('field_units')->value;
@@ -65,15 +67,15 @@ class WeatherDataStorage implements WeatherDataStorageInterface {
   }
 
   /**
-   * Get additional info from user id.
+   * Get Login Registration Entity.
    *
    * @param int $uid
    *   The user id.
    *
-   * @return mixed
-   *   Return array of Login Reg object.
+   * @return null|LoginRegistrationInterface
+   *   Return array or object of Login Registration.
    */
-  protected function getAdditionalInfoAboutUser(int $uid):mixed {
+  protected function getLoginRegistrationEntity(int $uid):?LoginRegistrationInterface {
     $user_storage = $this->entityTypeManager->getStorage('user');
     $user = $user_storage->load($uid);
     $additional_information = $user
@@ -84,7 +86,7 @@ class WeatherDataStorage implements WeatherDataStorageInterface {
       return reset($additional_information);
     }
 
-    return [];
+    return NULL;
   }
 
 }

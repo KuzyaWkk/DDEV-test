@@ -4,7 +4,6 @@ namespace Drupal\weather_api\Plugin\Block;
 
 use Drupal\Core\Block\Attribute\Block;
 use Drupal\Core\Block\BlockBase;
-use Drupal\Core\Cache\CacheBackendInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\Core\Session\AccountProxyInterface;
@@ -37,7 +36,6 @@ class WeatherApiBlock extends BlockBase implements ContainerFactoryPluginInterfa
     protected EntityTypeManagerInterface $entityTypeManager,
     protected WeatherDataStorageInterface $weatherDataStorage,
     protected AccountProxyInterface $currentUser,
-    protected CacheBackendInterface $cacheBackend,
   ) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
   }
@@ -59,7 +57,6 @@ class WeatherApiBlock extends BlockBase implements ContainerFactoryPluginInterfa
       $container->get('entity_type.manager'),
       $container->get('weather_api.weather_data_storage'),
       $container->get('current_user'),
-      $container->get('cache.default'),
     );
   }
 
@@ -82,19 +79,9 @@ class WeatherApiBlock extends BlockBase implements ContainerFactoryPluginInterfa
       $units = UnitsEnum::DegreesCelsius->value;
     }
 
-    $cache_id = 'weather_api_' . $city . '_' . $units;
-
-    if (!$cache = $this->cacheBackend->get($cache_id)) {
-      $api_data = $this->weatherApi->getWeatherApi($city, $units);
-
-      if (empty($api_data)) {
-        return [];
-      }
-
-      $this->cacheBackend->set($cache_id, $api_data, time() + 1800);
-    }
-    else {
-      $api_data = $cache->data;
+    $api_data = $this->weatherApi->getWeatherApi($city, $units);
+    if (empty($api_data)) {
+      return [];
     }
 
     $temp = round($api_data['main']['temp']);
@@ -106,21 +93,13 @@ class WeatherApiBlock extends BlockBase implements ContainerFactoryPluginInterfa
       '#temp' => $temp,
       '#weather_text' => $weather_text,
       '#units' => $units,
+      '#cache' => [
+        'max-age' => 60 * 30,
+        'contexts' => [
+          'city_units_context',
+        ],
+      ],
     ];
-  }
-
-  /**
-   * {@inheritDoc}
-   */
-  public function getCacheMaxAge():int {
-    return 60 * 30;
-  }
-
-  /**
-   * {@inheritDoc}
-   */
-  public function getCacheContexts():array {
-    return ['user'];
   }
 
 }
