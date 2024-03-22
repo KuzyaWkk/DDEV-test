@@ -5,11 +5,3 @@ weather_api.weather_api_key:
     _form: 'Drupal\weather_api\Form\WeatherKeyConfigForm'
   requirements:
     _permission: 'administer site configuration'
-
-weather_api.weather_user_config:
-  path: '/user/weather'
-  defaults:
-    _title: 'Weather config to set value'
-    _form: 'Drupal\weather_api\Form\WeatherConfigForm'
-  requirements:
-    _permission: 'access content'

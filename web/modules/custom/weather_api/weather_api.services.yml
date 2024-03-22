@@ -1,8 +1,14 @@
 services:
   weather_api.weather_connection:
     class: Drupal\weather_api\Service\WeatherApiConnection
-    arguments: ['@http_client_factory', '@config.factory', '@logger.factory']
+    arguments: ['@http_client_factory', '@config.factory', '@logger.factory', '@cache.default']
 
-  weather_api.weather_database:
-    class: Drupal\weather_api\Service\WeatherDatabase\WeatherDatabaseConnection
-    arguments: [ '@database' , '@logger.factory']
+  weather_api.weather_data_storage:
+    class: Drupal\weather_api\Service\WeatherDatabase\WeatherDataStorage
+    arguments: [ '@database' , '@logger.factory', '@entity_type.manager']
+
+  cache_context.city_units_context:
+    class: Drupal\weather_api\Cache\CityUnitsContext
+    arguments: ['@request_stack', '@weather_api.weather_data_storage', '@current_user']
+    tags:
+      - { name: cache.context }

@@ -1,0 +1,22 @@
+uuid: 91b0e383-bdf8-4dce-9c55-671d18ed9579
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.login_registration.field_country
+  module:
+    - country
+    - login_reg
+id: login_registration.login_registration.field_country
+field_name: field_country
+entity_type: login_registration
+bundle: login_registration
+label: Country
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  selectable_countries: {  }
+field_type: country

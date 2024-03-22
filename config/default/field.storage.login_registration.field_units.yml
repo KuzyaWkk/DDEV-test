@@ -1,0 +1,21 @@
+uuid: e7dd22d1-b6ae-4dd6-923f-02423ac286d9
+langcode: en
+status: true
+dependencies:
+  module:
+    - login_reg
+    - options
+id: login_registration.field_units
+field_name: field_units
+entity_type: login_registration
+type: list_string
+settings:
+  allowed_values: {  }
+  allowed_values_function: 'Drupal\weather_api\Enum\UnitsEnum::getUnitsOption'
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

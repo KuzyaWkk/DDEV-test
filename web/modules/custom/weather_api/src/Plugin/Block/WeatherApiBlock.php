@@ -4,14 +4,13 @@ namespace Drupal\weather_api\Plugin\Block;
 
 use Drupal\Core\Block\Attribute\Block;
 use Drupal\Core\Block\BlockBase;
-use Drupal\Core\Cache\CacheBackendInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\Core\Session\AccountProxyInterface;
 use Drupal\Core\StringTranslation\TranslatableMarkup;
 use Drupal\weather_api\Enum\UnitsEnum;
 use Drupal\weather_api\Service\WeatherApiConnectionInterface;
-use Drupal\weather_api\Service\WeatherDatabase\WeatherDatabaseConnectionInterface;
+use Drupal\weather_api\Service\WeatherDatabase\WeatherDataStorageInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
@@ -29,23 +28,35 @@ class WeatherApiBlock extends BlockBase implements ContainerFactoryPluginInterfa
   /**
    * Constructs a WeatherBlock objects.
    */
-  public function __construct(array $configuration, $plugin_id, $plugin_definition, protected WeatherApiConnectionInterface $weatherApi, protected EntityTypeManagerInterface $entityTypeManager, protected WeatherDatabaseConnectionInterface $weatherDatabase, protected AccountProxyInterface $currentUser, protected CacheBackendInterface $cacheBackend) {
+  public function __construct(
+    array $configuration,
+    $plugin_id,
+    $plugin_definition,
+    protected WeatherApiConnectionInterface $weatherApi,
+    protected EntityTypeManagerInterface $entityTypeManager,
+    protected WeatherDataStorageInterface $weatherDataStorage,
+    protected AccountProxyInterface $currentUser,
+  ) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
   }
 
   /**
    * {@inheritDoc}
    */
-  public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition):static {
+  public static function create(
+    ContainerInterface $container,
+    array $configuration,
+    $plugin_id,
+    $plugin_definition,
+  ): static {
     return new static(
       $configuration,
       $plugin_id,
       $plugin_definition,
       $container->get('weather_api.weather_connection'),
       $container->get('entity_type.manager'),
-      $container->get('weather_api.weather_database'),
+      $container->get('weather_api.weather_data_storage'),
       $container->get('current_user'),
-      $container->get('cache.default')
     );
   }
 
@@ -55,33 +66,22 @@ class WeatherApiBlock extends BlockBase implements ContainerFactoryPluginInterfa
   public function build():array {
 
     $uid = $this->currentUser->id();
-    $is_empty = $this->weatherDatabase->isEmptyRow($uid);
-    if (!$is_empty) {
-      $config_service = $this->weatherDatabase->getWeatherData($uid);
-      $units = $config_service['units'];
-      $cid = $config_service['cid'];
+    $weather_data = $this->weatherDataStorage->getWeatherData($uid);
+    if ($weather_data) {
+      $cid = $weather_data['cid'];
       $term = $this->entityTypeManager
         ->getStorage('taxonomy_term')->load($cid);
       $city = $term->getName();
+      $units = $weather_data['units'];
     }
     else {
       $city = 'Lutsk';
       $units = UnitsEnum::DegreesCelsius->value;
     }
 
-    $cache_id = 'weather_api_' . $city . '_' . $units;
-
-    if (!$cache = $this->cacheBackend->get($cache_id)) {
-      $api_data = $this->weatherApi->getWeatherApi($city, $units);
-
-      if (empty($api_data)) {
-        return [];
-      }
-
-      $this->cacheBackend->set($cache_id, $api_data, time() + 1800);
-    }
-    else {
-      $api_data = $cache->data;
+    $api_data = $this->weatherApi->getWeatherApi($city, $units);
+    if (empty($api_data)) {
+      return [];
     }
 
     $temp = round($api_data['main']['temp']);
@@ -93,14 +93,13 @@ class WeatherApiBlock extends BlockBase implements ContainerFactoryPluginInterfa
       '#temp' => $temp,
       '#weather_text' => $weather_text,
       '#units' => $units,
+      '#cache' => [
+        'max-age' => 60 * 30,
+        'contexts' => [
+          'city_units_context',
+        ],
+      ],
     ];
-  }
-
-  /**
-   * {@inheritDoc}
-   */
-  public function getCacheMaxAge():int {
-    return 60 * 30;
   }
 
 }

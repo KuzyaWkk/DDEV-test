@@ -1,0 +1,4 @@
+entity.login_registration.settings:
+  title: 'Settings'
+  route_name: entity.login_registration.settings
+  base_route: entity.login_registration.settings

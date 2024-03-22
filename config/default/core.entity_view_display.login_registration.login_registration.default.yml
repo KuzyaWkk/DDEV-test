@@ -1,0 +1,76 @@
+uuid: 35a4c047-7b52-44df-9d8c-92afefd2ae21
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.login_registration.login_registration.field_city
+    - field.field.login_registration.login_registration.field_country
+    - field.field.login_registration.login_registration.field_gender
+    - field.field.login_registration.login_registration.field_preferences
+    - field.field.login_registration.login_registration.field_units
+  module:
+    - country
+    - login_reg
+    - options
+id: login_registration.login_registration.default
+targetEntityType: login_registration
+bundle: login_registration
+mode: default
+content:
+  created:
+    type: timestamp
+    label: above
+    settings:
+      date_format: medium
+      custom_date_format: ''
+      timezone: ''
+      tooltip:
+        date_format: long
+        custom_date_format: ''
+      time_diff:
+        enabled: false
+        future_format: '@interval hence'
+        past_format: '@interval ago'
+        granularity: 2
+        refresh: 60
+    third_party_settings: {  }
+    weight: 20
+    region: content
+  field_city:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 22
+    region: content
+  field_country:
+    type: country_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 23
+    region: content
+  field_gender:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 21
+    region: content
+  field_preferences:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 24
+    region: content
+  field_units:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 25
+    region: content
+hidden: {  }

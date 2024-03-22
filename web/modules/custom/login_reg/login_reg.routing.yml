@@ -1,0 +1,15 @@
+login_reg.register:
+  path: '/user/specify/register'
+  defaults:
+    _entity_form: 'user.login_reg_register'
+    _title: 'Create a new account'
+  requirements:
+    _access_user_register: 'TRUE'
+
+entity.login_registration.settings:
+  path: 'admin/structure/login-registration'
+  defaults:
+    _form: '\Drupal\login_reg\Form\LoginRegistrationSettingsForm'
+    _title: 'Login Registration'
+  requirements:
+    _permission: 'administer login_registration'

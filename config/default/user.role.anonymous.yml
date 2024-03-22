@@ -3,11 +3,14 @@ langcode: en
 status: true
 dependencies:
   config:
+    - filter.format.basic_html
+    - filter.format.full_html
     - filter.format.restricted_html
   module:
     - comment
     - contact
     - filter
+    - login_reg
     - media
     - search
     - system
@@ -21,9 +24,14 @@ permissions:
   - 'access comments'
   - 'access content'
   - 'access site-wide contact form'
+  - 'access user contact forms'
   - 'access user profiles'
+  - 'administer filters'
+  - 'create login_registration'
   - 'edit own comments'
   - 'post comments'
   - 'search content'
+  - 'use text format basic_html'
+  - 'use text format full_html'
   - 'use text format restricted_html'
   - 'view media'

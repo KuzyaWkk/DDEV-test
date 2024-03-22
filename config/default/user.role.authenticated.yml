@@ -9,6 +9,7 @@ dependencies:
     - contact
     - file
     - filter
+    - login_reg
     - media
     - search
     - shortcut
@@ -29,4 +30,5 @@ permissions:
   - 'search content'
   - 'skip comment approval'
   - 'use text format basic_html'
+  - 'view edit own login_registration'
   - 'view media'

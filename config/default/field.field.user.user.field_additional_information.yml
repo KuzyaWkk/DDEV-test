@@ -1,0 +1,27 @@
+uuid: 51663b8a-a60c-43a9-afb1-8bbc1b8abb5e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_additional_information
+  module:
+    - user
+id: user.user.field_additional_information
+field_name: field_additional_information
+entity_type: user
+bundle: user
+label: 'Additional Information'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:login_registration'
+  handler_settings:
+    target_bundles: null
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+field_type: entity_reference
