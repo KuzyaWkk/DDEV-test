@@ -1,0 +1,5 @@
+name: 'Batch API'
+type: module
+description: 'Module for testing and implementation Batch API'
+package: Kenny
+core_version_requirement: ^10

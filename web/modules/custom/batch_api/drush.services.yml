@@ -1,0 +1,8 @@
+services:
+  batch_api.commands:
+    class: Drupal\batch_api\Commands\BatchApiCommands
+    arguments:
+      - '@entity_type.manager'
+      - '@messenger'
+    tags:
+      - { name: drush.command }
