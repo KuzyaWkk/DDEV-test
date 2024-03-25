@@ -41,6 +41,7 @@ hidden:
   field_description: true
   field_social_media: true
   field_website: true
+  langcode: true
   language: true
   path: true
   timezone: true
