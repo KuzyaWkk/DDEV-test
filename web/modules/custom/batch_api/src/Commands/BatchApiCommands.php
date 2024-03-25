@@ -83,7 +83,11 @@ class BatchApiCommands extends DrushCommands {
         array_splice($context['sandbox']['items'], 0, $limit);
       }
 
-      foreach ($context['sandbox']['items'] as $item) {
+      $load_items = $this->entityTypeManager
+        ->getStorage('paragraph')
+        ->loadMultiple($context['sandbox']['items']);
+
+      foreach ($load_items as $item) {
         if ($counter != $limit) {
           $this->changeTextFormat($item, $format);
 
@@ -113,10 +117,7 @@ class BatchApiCommands extends DrushCommands {
   /**
    * Change the text formatter of the paragraph.
    */
-  protected function changeTextFormat($pid, $format):void {
-    $paragraph = $this->entityTypeManager
-      ->getStorage('paragraph')
-      ->load($pid);
+  protected function changeTextFormat($paragraph, $format):void {
     $paragraph->get('field_body')->format = $format;
     $paragraph->save();
   }

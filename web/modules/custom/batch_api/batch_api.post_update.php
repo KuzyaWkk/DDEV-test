@@ -15,7 +15,7 @@ function batch_api_post_update_bulk_edit_paragraphs_field_formatter(&$sandbox):v
     ->exists('field_body');
   $paragraphs = $query->execute();
   $limit = 20;
-  $format = 'limited_html';
+  $format = 'basic_html';
 
   if (!isset($sandbox['total'])) {
     $sandbox['current'] = 0;
@@ -37,7 +37,11 @@ function batch_api_post_update_bulk_edit_paragraphs_field_formatter(&$sandbox):v
       array_splice($sandbox['items'], 0, $limit);
     }
 
-    foreach ($sandbox['items'] as $item) {
+    $load_items = \Drupal::entityTypeManager()
+      ->getStorage('paragraph')
+      ->loadMultiple($sandbox['items']);
+
+    foreach ($load_items as $item) {
       if ($counter != $limit) {
         change_text_format($item, $format);
 
@@ -57,10 +61,7 @@ function batch_api_post_update_bulk_edit_paragraphs_field_formatter(&$sandbox):v
 /**
  * Change the text formatter of the paragraph.
  */
-function change_text_format($pid, $format):void {
-  $paragraph = \Drupal::entityTypeManager()
-    ->getStorage('paragraph')
-    ->load($pid);
+function change_text_format($paragraph, $format):void {
   $paragraph->get('field_body')->format = $format;
   $paragraph->save();
 }
