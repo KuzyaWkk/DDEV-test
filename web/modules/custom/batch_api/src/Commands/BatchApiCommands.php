@@ -5,6 +5,7 @@ namespace Drupal\batch_api\Commands;
 use Drupal\Core\DependencyInjection\DependencySerializationTrait;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Messenger\MessengerInterface;
+use Drupal\Core\StringTranslation\StringTranslationTrait;
 use Drush\Commands\DrushCommands;
 
 /**
@@ -13,6 +14,7 @@ use Drush\Commands\DrushCommands;
 class BatchApiCommands extends DrushCommands {
 
   use DependencySerializationTrait;
+  use StringTranslationTrait;
 
   /**
    * Constructs a new object of BatchApiCommands.
@@ -40,7 +42,7 @@ class BatchApiCommands extends DrushCommands {
     $format = 'limited_html';
 
     $batch = [
-      'title' => t('Bulk updating text format'),
+      'title' => $this->t('Bulk updating text format'),
       'operations' => [
         [[$this, 'batchProcess'], [$paragraphs, $format]],
       ],
@@ -101,7 +103,7 @@ class BatchApiCommands extends DrushCommands {
    * Batch finished callback.
    */
   public function batchFinished($success, $results, $operations):void {
-    $message = t('Number of paragraphs affected by batch: @count', [
+    $message = $this->t('Number of paragraphs affected by batch: @count', [
       '@count' => $results['processed'],
     ]);
 
