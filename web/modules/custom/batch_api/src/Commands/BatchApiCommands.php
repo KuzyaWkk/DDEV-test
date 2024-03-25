@@ -39,7 +39,7 @@ class BatchApiCommands extends DrushCommands {
       ->accessCheck(FALSE)
       ->exists('field_body');
     $paragraphs = $query->execute();
-    $format = 'limited_html';
+    $format = 'basic_html';
 
     $batch = [
       'title' => $this->t('Bulk updating text format'),
