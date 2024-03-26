@@ -10,52 +10,29 @@
  */
 function batch_api_post_update_bulk_edit_paragraphs_field_formatter(&$sandbox):void {
 
-  $query = \Drupal::entityQuery('paragraph');
-  $query->accessCheck(FALSE)
-    ->exists('field_body');
-  $paragraphs = $query->execute();
   $limit = 20;
   $format = 'basic_html';
 
-  if (!isset($sandbox['total'])) {
-    $sandbox['current'] = 0;
-    $sandbox['total'] = count($paragraphs);
-  }
+  $query = \Drupal::entityQuery('paragraph')
+    ->accessCheck(FALSE)
+    ->condition('field_body.format', $format, '<>')
+    ->range(0, $limit);
+  $paragraphs = $query->execute();
 
-  if (empty($sandbox['total'])) {
+  if (empty($paragraphs)) {
     $sandbox['#finished'] = 1;
+    return;
   }
 
-  if (empty($sandbox['items'])) {
-    $sandbox['items'] = $paragraphs;
+  $load_items = \Drupal::entityTypeManager()
+    ->getStorage('paragraph')
+    ->loadMultiple($sandbox['items']);
+
+  foreach ($load_items as $item) {
+    change_text_format($item, $format);
   }
 
-  $counter = 0;
-  if (!empty($sandbox['items'])) {
-
-    if ($sandbox['current'] != 0) {
-      array_splice($sandbox['items'], 0, $limit);
-    }
-
-    $load_items = \Drupal::entityTypeManager()
-      ->getStorage('paragraph')
-      ->loadMultiple($sandbox['items']);
-
-    foreach ($load_items as $item) {
-      if ($counter != $limit) {
-        change_text_format($item, $format);
-
-        $counter++;
-        $sandbox['current']++;
-        $sandbox['processed'] = $sandbox['current'];
-      }
-    }
-  }
-
-  if ($sandbox['current'] != $sandbox['total']) {
-    $sandbox['#finished'] = $sandbox['current'] / $sandbox['total'];
-  }
-
+  $sandbox['#finished'] = 0;
 }
 
 /**

@@ -32,19 +32,10 @@ class BatchApiCommands extends DrushCommands {
    */
   public function executeEditParagraphsTextFormat():void {
 
-    $paragraph_storage = $this->entityTypeManager
-      ->getStorage('paragraph');
-    $query = $paragraph_storage
-      ->getQuery()
-      ->accessCheck(FALSE)
-      ->exists('field_body');
-    $paragraphs = $query->execute();
-    $format = 'basic_html';
-
     $batch = [
       'title' => $this->t('Bulk updating text format'),
       'operations' => [
-        [[$this, 'batchProcess'], [$paragraphs, $format]],
+        [[$this, 'batchProcess'], []],
       ],
       'finished' => [$this, 'batchFinished'],
       'progress_message' => t('Processes @current out of @total'),
@@ -59,48 +50,34 @@ class BatchApiCommands extends DrushCommands {
    *
    * Required to load our include the proper batch file.
    */
-  public function batchProcess($paragraphs, $format, &$context):void {
+  public function batchProcess(&$context):void {
 
     $limit = 20;
+    $format = 'limited_html';
 
-    if (!isset($context['sandbox']['total'])) {
-      $context['sandbox']['current'] = 0;
-      $context['sandbox']['total'] = count($paragraphs);
-    }
+    $paragraph_storage = $this->entityTypeManager
+      ->getStorage('paragraph');
+    $query = $paragraph_storage
+      ->getQuery()
+      ->accessCheck(FALSE)
+      ->condition('field_body.format', $format, '<>')
+      ->range(0, $limit);
+    $paragraphs = $query->execute();
 
-    if (empty($context['sandbox']['total'])) {
+    if (empty($paragraphs)) {
       $context['finished'] = 1;
+      return;
     }
 
-    if (empty($context['sandbox']['items'])) {
-      $context['sandbox']['items'] = $paragraphs;
+    $load_items = $this->entityTypeManager
+      ->getStorage('paragraph')
+      ->loadMultiple($paragraphs);
+
+    foreach ($load_items as $item) {
+      $this->changeTextFormat($item, $format);
     }
 
-    $counter = 0;
-    if (!empty($context['sandbox']['items'])) {
-
-      if ($context['sandbox']['current'] != 0) {
-        array_splice($context['sandbox']['items'], 0, $limit);
-      }
-
-      $load_items = $this->entityTypeManager
-        ->getStorage('paragraph')
-        ->loadMultiple($context['sandbox']['items']);
-
-      foreach ($load_items as $item) {
-        if ($counter != $limit) {
-          $this->changeTextFormat($item, $format);
-
-          $counter++;
-          $context['sandbox']['current']++;
-          $context['results']['processed'] = $context['sandbox']['current'];
-        }
-      }
-    }
-
-    if ($context['sandbox']['current'] != $context['sandbox']['total']) {
-      $context['finished'] = $context['sandbox']['current'] / $context['sandbox']['total'];
-    }
+    $context['finished'] = 0;
   }
 
   /**
