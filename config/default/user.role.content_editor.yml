@@ -3,11 +3,13 @@ langcode: en
 status: true
 dependencies:
   config:
+    - filter.format.limited_html
     - node.type.page
   module:
     - comment
     - contextual
     - file
+    - filter
     - node
     - path
     - system
@@ -33,6 +35,7 @@ permissions:
   - 'edit own comments'
   - 'edit own page content'
   - 'revert all revisions'
+  - 'use text format limited_html'
   - 'view all revisions'
   - 'view own unpublished content'
   - 'view the administration theme'

@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - filter.format.basic_html
+    - filter.format.limited_html
   module:
     - comment
     - contact
@@ -28,5 +29,6 @@ permissions:
   - 'post comments'
   - 'skip comment approval'
   - 'use text format basic_html'
+  - 'use text format limited_html'
   - 'view edit own login_registration'
   - 'view media'
