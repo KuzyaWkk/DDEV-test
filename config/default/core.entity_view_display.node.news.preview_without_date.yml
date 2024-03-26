@@ -66,4 +66,6 @@ hidden:
   field_comments: true
   field_created: true
   field_paragraphs: true
+  langcode: true
   links: true
+  search_api_excerpt: true

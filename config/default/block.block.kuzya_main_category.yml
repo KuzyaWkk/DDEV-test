@@ -1,0 +1,29 @@
+uuid: c350227c-40cc-494e-abab-14b17e918b32
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.category
+  module:
+    - facets
+    - system
+  theme:
+    - kuzya_main
+id: kuzya_main_category
+theme: kuzya_main
+region: content
+weight: -7
+provider: null
+plugin: 'facet_block:category'
+settings:
+  id: 'facet_block:category'
+  label: Category
+  label_display: visible
+  provider: facets
+  context_mapping: {  }
+  block_id: kuzya_main_category
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /solr-index-view

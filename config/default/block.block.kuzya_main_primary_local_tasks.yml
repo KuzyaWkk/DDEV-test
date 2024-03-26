@@ -9,7 +9,7 @@ _core:
 id: kuzya_main_primary_local_tasks
 theme: kuzya_main
 region: content
-weight: -10
+weight: -11
 provider: null
 plugin: local_tasks_block
 settings:
