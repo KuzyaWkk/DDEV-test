@@ -1,11 +1,6 @@
-/*.ck .button-configure-contents.ck-editor__nested-editable.ck-editor__nested-editable_focused, .ck .ucb-link-button-contents.ck-editor__nested-editable:focus {*/
-/*  color: var(--ck-color-text);*/
-/*}*/
-
 .ck .ck.button-configure-form {
   display: flex;
   flex-flow: row wrap;
-  /*padding: var(--ck-spacing-large);*/
 }
 
 .button-configure-form .ck-labeled-field-view {

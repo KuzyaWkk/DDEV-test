@@ -1,4 +1,7 @@
-button.admin: { css: { theme: { css/button.admin.css: {} } } }
+button.admin:
+  css:
+    theme: 
+      css/button.admin.css: {}
 button.editor:
   js:
     js/build/button.js: { preprocess: false, minified: true }
@@ -7,9 +10,4 @@ button.editor:
   css:
     theme:
       css/button.editor.css: {}
-      css/button.css: {}
-
-button_css:
-  css:
-    theme:
       css/button.css: {}

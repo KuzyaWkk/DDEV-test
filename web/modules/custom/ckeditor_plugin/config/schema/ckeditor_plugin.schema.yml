@@ -5,13 +5,13 @@ ckeditor5.plugin.ckeditor_plugin_button:
     enabled_colors:
       type: sequence
       orderby: value
-      label: 'Enabled Button Test'
+      label: 'Enabled Colors'
       constraints:
         NotBlank:
-          message: "Enable at least one button test, otherwise disable the Configurable button."
+          message: "Enable at least one color, otherwise disable the button."
       sequence:
         type: string
-        label: 'Button test type'
+        label: 'Color types'
         constraints:
           Choice:
             - blue
@@ -22,13 +22,13 @@ ckeditor5.plugin.ckeditor_plugin_button:
     enabled_background_colors:
       type: sequence
       orderby: value
-      label: 'Enabled Button Test'
+      label: 'Enabled Background Colors'
       constraints:
         NotBlank:
-          message: "Enable at least one button test, otherwise disable the Configurable button."
+          message: "Enable at least one background color, otherwise disable the button."
       sequence:
         type: string
-        label: 'Button test type'
+        label: 'Background color types'
         constraints:
           Choice:
             - blue
