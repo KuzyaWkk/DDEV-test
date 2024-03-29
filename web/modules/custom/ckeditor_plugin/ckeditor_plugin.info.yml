@@ -1,0 +1,7 @@
+name: Ckeditor Plugin
+type: module
+description: "Module to create CKEditor 5 plugins"
+package: Kenny
+core_version_requirement: ^9 || ^10
+dependencies:
+  - drupal:ckeditor5

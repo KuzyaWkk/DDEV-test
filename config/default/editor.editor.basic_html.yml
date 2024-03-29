@@ -28,6 +28,7 @@ settings:
       - code
       - '|'
       - sourceEditing
+      - button
   plugins:
     ckeditor5_heading:
       enabled_headings:
@@ -58,6 +59,19 @@ settings:
         - '<h4 id>'
         - '<h5 id>'
         - '<h6 id>'
+    ckeditor_plugin_button:
+      enabled_colors:
+        - black
+        - blue
+        - gray
+        - white
+      enabled_background_colors:
+        - black
+        - blue
+        - gray
+        - white
+      default_color: black
+      default_background_color: white
 image_upload:
   status: true
   scheme: public

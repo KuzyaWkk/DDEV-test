@@ -1,0 +1,50 @@
+ckeditor_plugin_button:
+  ckeditor5:
+    plugins:
+      - button.Button
+    config:
+      button:
+        colors:
+          options:
+            blue:
+                label: Blue
+                className: color-button-blue
+            black:
+                label: Black
+                className: color-button-black
+            gray:
+                label: Gray
+                className: color-button-gray
+            white:
+                label: White
+                className: color-button-white
+            gold:
+                label: Gold
+                className: color-button-gold
+        background_colors:
+          options:
+            blue:
+                label: Blue
+                className: bg-color-blue
+            black:
+                label: Black
+                className: bg-color-black
+            gray:
+                label: Gray
+                className: bg-color-gray
+            white:
+                label: White
+                className: bg-color-white
+            gold:
+                label: Gold
+                className: bg-color-gold
+  drupal:
+    label: Button
+    library: ckeditor_plugin/button.editor
+    admin_library: ckeditor_plugin/button.admin
+    class: Drupal\ckeditor_plugin\Plugin\CKEditor5Plugin\ConfigurableButton
+    toolbar_items:
+      button:
+        label: Button
+    elements:
+      - <a class="bg-color-blue bg-color-black bg-color-gray bg-color-white bg-color-gold color-button-blue color-button-black color-button-gray color-button-white color-button-gold">
