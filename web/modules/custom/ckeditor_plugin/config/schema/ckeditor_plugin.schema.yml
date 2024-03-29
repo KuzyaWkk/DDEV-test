@@ -1,0 +1,59 @@
+ckeditor5.plugin.ckeditor_plugin_button:
+  type: mapping
+  label: Background color
+  mapping:
+    enabled_colors:
+      type: sequence
+      orderby: value
+      label: 'Enabled Button Test'
+      constraints:
+        NotBlank:
+          message: "Enable at least one button test, otherwise disable the Configurable button."
+      sequence:
+        type: string
+        label: 'Button test type'
+        constraints:
+          Choice:
+            - blue
+            - black
+            - gray
+            - white
+            - gold
+    enabled_background_colors:
+      type: sequence
+      orderby: value
+      label: 'Enabled Button Test'
+      constraints:
+        NotBlank:
+          message: "Enable at least one button test, otherwise disable the Configurable button."
+      sequence:
+        type: string
+        label: 'Button test type'
+        constraints:
+          Choice:
+            - blue
+            - black
+            - gray
+            - white
+            - gold
+    default_color:
+      type: string
+      label: 'Default color'
+      constraints:
+        Choice:
+          - blue
+          - black
+          - gray
+          - white
+          - gold
+    default_background_color:
+      type: string
+      label: 'Default background color'
+      constraints:
+        Choice:
+          - blue
+          - black
+          - gray
+          - white
+          - gold
+

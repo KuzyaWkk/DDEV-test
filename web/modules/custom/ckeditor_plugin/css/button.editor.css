@@ -1,0 +1,27 @@
+/*.ck .button-configure-contents.ck-editor__nested-editable.ck-editor__nested-editable_focused, .ck .ucb-link-button-contents.ck-editor__nested-editable:focus {*/
+/*  color: var(--ck-color-text);*/
+/*}*/
+
+.ck .ck.button-configure-form {
+  display: flex;
+  flex-flow: row wrap;
+  /*padding: var(--ck-spacing-large);*/
+}
+
+.button-configure-form .ck-labeled-field-view {
+  width: 100%;
+}
+
+.button-configure-form.ck-dropdown {
+  grid-row: 1;
+}
+
+.button-configure-form .ck-dropdown:nth-of-type(1) > .ck-dropdown__button{
+  display: flex;
+  justify-content: space-between;
+}
+
+.button-configure-form .ck-button {
+  grid-row: 2;
+  grid-column: auto;
+}

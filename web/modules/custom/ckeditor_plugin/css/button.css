@@ -1,0 +1,83 @@
+.bg-color-blue {
+  background-color: blue !important;
+}
+
+.bg-color-black {
+  background-color: black !important;
+}
+
+
+.bg-color-gray {
+  background-color: gray !important;
+}
+
+.bg-color-white {
+  background-color: white !important;
+}
+
+.bg-color-gold {
+  background-color: gold !important;
+}
+
+.button-configure {
+  transition: box-shadow 0.5s ease, background-color 0.5s ease, color 0.5s ease;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  background-clip: padding-box;
+  border-radius: 3px;
+  text-decoration: none !important;
+  display: inline-block;
+  padding: 5px 10px;
+  font-weight: bold;
+  line-height: 1.5em;
+}
+
+.container > .ucb-button-group{
+  display: flex;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.container > .ucb-button-group > .button-configure {
+  flex-grow: 1;
+  background-clip: padding-box;
+  text-align: center;
+  vertical-align: middle;
+  border-style: solid;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  margin-bottom: 0;
+  border-radius: 0px !important;
+}
+
+/* Button in Editor - slightly expands a button's clickable area in CK editor to make toggling button UI easier via button element click */
+.ck-content .ucb-link-button.ucb-link-button-small,.ck-content .ucb-link-button.ucb-link-button-regular,.ck-content .ucb-link-button.ucb-link-button-large{
+  padding: 5px 15px;
+}
+
+
+/* Colors */
+.color-button-blue {
+  color: blue !important;
+}
+
+.color-button-black {
+  color: black !important;
+}
+
+.color-button-gray {
+  color: grey !important;
+}
+
+.color-button-white {
+  color: white !important;
+}
+
+.color-button-gold {
+  color: gold !important;
+}
+
+/* Hover + Focus */
+.button-configure:hover{
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3)
+
+}

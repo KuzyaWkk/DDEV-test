@@ -60,3 +60,51 @@
     }
   }
 }
+
+.bg-color-blue {
+  background-color: blue !important;
+}
+
+.bg-color-black {
+  background-color: black !important;
+}
+
+.bg-color-gray {
+  background-color: gray !important;
+}
+
+.bg-color-white {
+  background-color: white !important;
+}
+
+.bg-color-gold {
+  background-color: gold !important;
+}
+
+/* Colors */
+.color-button-blue {
+  color: blue !important;
+}
+
+.color-button-black {
+  color: black !important;
+}
+
+.color-button-gray {
+  color: grey !important;
+}
+
+.color-button-white {
+  color: white !important;
+}
+
+.color-button-gold {
+  color: gold !important;
+}
+
+/* Hover + Focus */
+.button-configure:hover{
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3)
+
+}
+
