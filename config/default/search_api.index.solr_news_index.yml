@@ -6,10 +6,13 @@ dependencies:
     - field.storage.node.field_category
     - field.storage.node.field_created
     - field.storage.node.field_paragraphs
+    - field.storage.paragraph.field_body
+    - field.storage.paragraph.field_title
     - search_api.server.apachesolr_api
   module:
     - search_api_solr
     - node
+    - paragraphs
     - search_api
 third_party_settings:
   search_api_solr:
@@ -66,25 +69,26 @@ field_settings:
   aggregated_field:
     label: 'Aggregated field'
     property_path: aggregated_field
-    type: text
+    type: 'solr_text_custom:ngram'
     configuration:
       type: union
       separator: |+
 
 
-
       fields:
         - 'entity:node/field_category'
-        - 'entity:node/field_paragraphs'
         - 'entity:node/title'
-  created:
-    label: 'Authored on'
+  field_body:
+    label: 'Paragraphs » Paragraph » body'
     datasource_id: 'entity:node'
-    property_path: created
-    type: date
+    property_path: 'field_paragraphs:entity:field_body'
+    type: 'solr_text_custom:ngram'
     dependencies:
+      config:
+        - field.storage.node.field_paragraphs
+        - field.storage.paragraph.field_body
       module:
-        - node
+        - paragraphs
   field_category:
     label: Category
     datasource_id: 'entity:node'
@@ -101,14 +105,17 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_created
-  field_paragraphs:
-    label: Paragraphs
+  field_title:
+    label: 'Paragraphs » Paragraph » title'
     datasource_id: 'entity:node'
-    property_path: field_paragraphs
-    type: string
+    property_path: 'field_paragraphs:entity:field_title'
+    type: 'solr_text_custom:ngram'
     dependencies:
       config:
         - field.storage.node.field_paragraphs
+        - field.storage.paragraph.field_title
+      module:
+        - paragraphs
   nid:
     label: ID
     datasource_id: 'entity:node'
@@ -133,14 +140,6 @@ field_settings:
     dependencies:
       module:
         - node
-  uid:
-    label: 'Authored by'
-    datasource_id: 'entity:node'
-    property_path: uid
-    type: integer
-    dependencies:
-      module:
-        - node
 datasource_settings:
   'entity:node':
     bundles:
@@ -156,9 +155,22 @@ processor_settings:
   auto_aggregated_fulltext_field: {  }
   custom_value: {  }
   entity_type: {  }
+  highlight:
+    weights:
+      postprocess_query: 0
+    prefix: '<strong>'
+    suffix: '</strong>'
+    excerpt: true
+    excerpt_always: false
+    excerpt_length: 256
+    exclude_fields: {  }
+    highlight: always
+    highlight_partial: true
   language_with_fallback: {  }
   rendered_item: {  }
-  solr_date_range: {  }
+  solr_date_range:
+    weights:
+      preprocess_index: 0
 tracker_settings:
   default:
     indexing_order: fifo
