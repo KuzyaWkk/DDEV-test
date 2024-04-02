@@ -1,5 +1,5 @@
-name: 'Custom geo type plugin'
+name: 'Custom location'
 type: module
-description: 'Module for testing and implementation location'
+description: 'Module for expending the location functionality'
 package: Kenny
 core_version_requirement: ^10

@@ -5,7 +5,7 @@ namespace Drupal\geotype_plugin\Plugin\search_api\data_type;
 use Drupal\search_api\DataType\DataTypePluginBase;
 
 /**
- * Provides a custom full text data type.
+ * Provides a custom location rpt data type.
  *
  * @SearchApiDataType(
  *   id = "location_rpt",
