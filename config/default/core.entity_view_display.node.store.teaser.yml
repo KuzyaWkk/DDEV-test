@@ -1,0 +1,24 @@
+uuid: 016baef4-91cf-4378-bfe0-d3a71b6a24b0
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.store.field_location
+    - node.type.store
+  module:
+    - user
+id: node.store.teaser
+targetEntityType: node
+bundle: store
+mode: teaser
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_location: true
+  langcode: true
+  search_api_excerpt: true

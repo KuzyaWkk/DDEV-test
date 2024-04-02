@@ -1,0 +1,32 @@
+uuid: 8e575ad8-3c69-4a72-a9ee-5d1f833c066e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.store.field_location
+    - node.type.store
+  module:
+    - geofield
+    - user
+id: node.store.default
+targetEntityType: node
+bundle: store
+mode: default
+content:
+  field_location:
+    type: geofield_default
+    label: above
+    settings:
+      output_format: wkt
+      output_escape: true
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true
