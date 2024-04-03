@@ -1,0 +1,11 @@
+stores_leaflet:
+  version: 1.9.4
+  css:
+    theme:
+      node_modules/leaflet/dist/leaflet.css: {}
+  js:
+    node_modules/leaflet/dist/leaflet.js: {}
+    js/map.js: {}
+  dependencies:
+    - core/drupal
+    - core/once

@@ -112,5 +112,10 @@
                 "      composer remove drupal/core-project-message"
             ]
         }
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "npm install leaflet"
+        ]
     }
 }
