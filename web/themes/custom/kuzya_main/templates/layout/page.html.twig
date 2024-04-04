@@ -80,7 +80,11 @@
     {{ page.about_us }}
   {% endblock %}
 
-
+  {% block page_footer_gallery %}
+    {% if page.footer_gallery %}
+      {{ page.footer_gallery }}
+    {% endif %}
+  {% endblock %}
 
   {% block page_footer %}
     {% if page.footer %}

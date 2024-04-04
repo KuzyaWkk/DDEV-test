@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - filter.format.limited_html
+    - filter.format.plain_text_with_token
     - node.type.page
   module:
     - comment
@@ -36,6 +37,7 @@ permissions:
   - 'edit own page content'
   - 'revert all revisions'
   - 'use text format limited_html'
+  - 'use text format plain_text_with_token'
   - 'view all revisions'
   - 'view own unpublished content'
   - 'view the administration theme'

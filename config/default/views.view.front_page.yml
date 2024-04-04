@@ -2193,12 +2193,12 @@ display:
         header: false
       display_description: ''
       header: {  }
+      rendering_language: '***LANGUAGE_language_interface***'
       display_extenders: {  }
       block_description: 'Latest News - FrontPage'
     cache_metadata:
       max-age: -1
       contexts:
-        - 'languages:language_content'
         - 'languages:language_interface'
         - 'user.node_grants:view'
         - user.permissions

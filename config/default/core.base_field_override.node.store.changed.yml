@@ -1,0 +1,18 @@
+uuid: 74727071-392d-497e-857f-e9d8c48ecfcd
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.store
+id: node.store.changed
+field_name: changed
+entity_type: node
+bundle: store
+label: Changed
+description: 'The time that the node was last edited.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

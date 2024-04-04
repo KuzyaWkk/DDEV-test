@@ -11,7 +11,7 @@ dependencies:
 id: kuzya_main_footer
 theme: kuzya_main
 region: footer
-weight: -9
+weight: -10
 provider: null
 plugin: 'system_menu_block:footer'
 settings:
