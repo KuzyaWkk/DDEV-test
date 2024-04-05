@@ -1,10 +1,11 @@
 (function (Drupal, once, drupalSettings) {
   Drupal.behaviors.storesMapBehavior = {
     attach(context) {
-      once('storesMapBehavior', '#map', context).forEach(
+      once('storesMapBehavior', '.leaflet__map', context).forEach(
         function (element) {
-          const mapstores = drupalSettings.mapstores;
-          const coordinates = drupalSettings.coordinates;
+          const displayId = element.getAttribute('data-display-id');
+          const mapstores = drupalSettings.mapstores[displayId];
+          const coordinates = drupalSettings.coordinates[displayId];
           const color = mapstores.color;
           const size = mapstores.size;
           const zoom = mapstores.zoom;

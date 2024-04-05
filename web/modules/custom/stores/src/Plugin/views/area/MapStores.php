@@ -78,23 +78,24 @@ class MapStores extends AreaPluginBase {
   public function render($empty = FALSE):array {
     $build['#attached']['library'][] = 'stores/stores_leaflet';
     $stores = $this->view->result;
+    $display_id = $this->view->current_display;
 
     foreach ($stores as $store) {
       $entity = $store->_entity;
       $location = $entity->get('field_location')->getValue();
       $title = $entity->get('title')->value;
-      $build['#attached']['drupalSettings']['coordinates'][] = [
+      $build['#attached']['drupalSettings']['coordinates'][$display_id][] = [
         'title' => $title,
         'location' => $location,
       ];
     }
 
-    $build['#attached']['drupalSettings']['mapstores'] = [
+    $build['#attached']['drupalSettings']['mapstores'][$display_id] = [
       'color' => $this->options['color'],
       'size' => $this->options['size'],
       'zoom' => $this->options['zoom'],
     ];
-    $build['#markup'] = "<div class='leaflet__map' id='map'></div>";
+    $build['#markup'] = "<div class='leaflet__map' data-display-id='$display_id'></div>";
     return $build;
   }
 
