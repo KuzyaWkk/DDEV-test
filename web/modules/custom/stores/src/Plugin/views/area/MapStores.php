@@ -81,17 +81,11 @@ class MapStores extends AreaPluginBase {
 
     foreach ($stores as $store) {
       $entity = $store->_entity;
-      $location = $entity->get('field_location')->value;
+      $location = $entity->get('field_location')->getValue();
       $title = $entity->get('title')->value;
-      $point = str_replace("POINT (", "", $location);
-      $point = str_replace(")", "", $point);
-      $coordinates = explode(" ", $point);
-      $latitude = (float) $coordinates[0];
-      $longitude = (float) $coordinates[1];
       $build['#attached']['drupalSettings']['coordinates'][] = [
         'title' => $title,
-        'latitude' => $latitude,
-        'longitude' => $longitude,
+        'location' => $location,
       ];
     }
 
@@ -100,7 +94,7 @@ class MapStores extends AreaPluginBase {
       'size' => $this->options['size'],
       'zoom' => $this->options['zoom'],
     ];
-    $build['#markup'] = "<div class='test_map' id='map'></div>";
+    $build['#markup'] = "<div class='leaflet__map' id='map'></div>";
     return $build;
   }
 

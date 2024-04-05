@@ -7,7 +7,7 @@
 
 .idea/
 package-lock.json
-
+node_modules/
 ## Ignore configuration files that may contain sensitive information
 #/web/sites/*/*settings*.php
 #/web/sites/*/*services*.yml
@@ -56,7 +56,6 @@ package-lock.json
 /web/sites/default/files
 /web/modules/contrib
 /web/themes/contrib
-/web/modules/custom/*/node_modules/
 # Ignore vendor dependencies and scripts
 /vendor
 /composer.phar

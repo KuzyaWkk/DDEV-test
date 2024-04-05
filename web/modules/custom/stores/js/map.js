@@ -2,13 +2,13 @@
   Drupal.behaviors.storesMapBehavior = {
     attach(context) {
       once('storesMapBehavior', '#map', context).forEach(
-        function () {
+        function (element) {
           const mapstores = drupalSettings.mapstores;
           const coordinates = drupalSettings.coordinates;
           const color = mapstores.color;
           const size = mapstores.size;
           const zoom = mapstores.zoom;
-          const map = L.map('map').setView([48.01552, 37.888863], zoom);
+          const map = L.map(element).setView([48.01552, 37.888863], zoom);
           L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
             maxZoom: 19,
             attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
@@ -23,10 +23,12 @@
           marker.bindPopup('Макіївський роднічок');
 
           coordinates.forEach(function (coord) {
-             let circle = L.circleMarker([coord.latitude, coord.longitude], {
-               radius: size,
-               color: color,
-             }).addTo(map);
+            const latitude = coord.location[0].lat;
+            const longitude = coord.location[0].lon;
+            let circle = L.circleMarker([latitude, longitude], {
+              radius: size,
+              color: color,
+            }).addTo(map);
 
             circle.bindPopup(coord.title);
           })
