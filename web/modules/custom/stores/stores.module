@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * Implements hook_views_data().
+ */
+function stores_views_data():array {
+   $data['views']['stores'] = [
+     'title' => t('Map with stores'),
+     'help' => t('Displays a map with stores. Include configure the map size, point size and point color.'),
+     'area' => [
+       'id' => 'map_stores',
+     ],
+   ];
+   return $data;
+}

@@ -1,0 +1,5 @@
+name: Stores
+description: 'Module for expending the stores functionality'
+package: Kenny
+type: module
+core_version_requirement: ^10
