@@ -34,11 +34,6 @@
 #}
 {% set heading_id = attributes.id ~ 'footer-menu'|clean_id %}
 <div {{ bem('footer__container') }}>
-  <p {{ bem('footer__container--copyright') }}>© {{ 'Copyright'|t }}  -
-    <a href="https://themeforest.net/item/newspaper/5489609" rel="noopener" target="_blank">{{ 'Newspaper theme'|t }}</a>
-    {{ 'by tagDiv'|t }}
-  </p>
-
   <nav class="footer__menu" role="navigation" aria-labelledby="{{ heading_id }}"{{ attributes|without('role', 'aria-labelledby') }}>
     {# Label. If not displayed, we still provide it for screen readers. #}
     {% if not configuration.label_display %}
@@ -48,10 +43,6 @@
     <h2{{ title_attributes.setAttribute('id', heading_id) }}>{{ configuration.label }}</h2>
     {{ title_suffix }}
 
-
-
-
-    {# Menu. #}
     {% block content %}
       {{ content }}
     {% endblock %}

@@ -1,7 +1,9 @@
 uuid: 80e24bce-c18e-4497-9266-ddf0a59e5af0
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - token_filter
 name: 'Limited HTML'
 format: limited_html
 weight: 0
@@ -28,3 +30,10 @@ filters:
     weight: 0
     settings:
       filter_url_length: 72
+  token_filter:
+    id: token_filter
+    provider: token_filter
+    status: true
+    weight: 0
+    settings:
+      replace_empty: '0'

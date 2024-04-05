@@ -1,0 +1,18 @@
+uuid: 713a55c8-adb2-43fc-8a1f-ab8360d01b15
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.gallery
+id: node.gallery.created
+field_name: created
+entity_type: node
+bundle: gallery
+label: 'Authored on'
+description: 'The date and time that the content was created.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created

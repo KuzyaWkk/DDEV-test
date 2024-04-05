@@ -10,8 +10,8 @@ dependencies:
     - kuzya_main
 id: kuzya_main_views_block__gallery_footer_block_gallery_footer
 theme: kuzya_main
-region: footer
-weight: -10
+region: footer_gallery
+weight: -12
 provider: null
 plugin: 'views_block:gallery_footer-block_gallery_footer'
 settings:

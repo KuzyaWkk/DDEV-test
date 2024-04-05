@@ -1,0 +1,17 @@
+uuid: b376d0b2-969f-4ca8-bdb7-f8f79d4dc6c9
+langcode: en
+status: true
+dependencies:
+  module:
+    - token_filter
+name: 'Plain text with token'
+format: plain_text_with_token
+weight: 0
+filters:
+  token_filter:
+    id: token_filter
+    provider: token_filter
+    status: true
+    weight: 0
+    settings:
+      replace_empty: '0'

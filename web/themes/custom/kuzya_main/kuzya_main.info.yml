@@ -15,6 +15,7 @@ regions:
   content: Content
   content_bottom: Content bottom
   about_us: About us
+  footer_gallery: Footer Gallery
   footer: Footer
 logo: assets/images/logo.svg
 components:

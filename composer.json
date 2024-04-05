@@ -25,6 +25,7 @@
         "drupal/better_exposed_filters": "^6.0",
         "drupal/coder": "^8.3",
         "drupal/components": "^3.0@beta",
+        "drupal/config_pages": "^2.15",
         "drupal/core-composer-scaffold": "^10.2",
         "drupal/core-project-message": "^10.2",
         "drupal/core-recommended": "^10.2",
@@ -45,6 +46,7 @@
         "drush/drush": "^12.5",
         "npm-asset/leaflet": "^1.9",
         "oomphinc/composer-installers-extender": "^2.0"
+        "drupal/token_filter": "^2.1"
     },
     "conflict": {
         "drupal/drupal": "*"

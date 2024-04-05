@@ -26,11 +26,14 @@
  */
 #}
 <div id="social-black" {{ bem('block', ['social-bar-black']) }}>
-  {% if label %}
+
+  {% set config = config_pages_field('global_configurations', 'field_social_links_title', 'full') %}
+
+  {% if config %}
     {% include "@atoms/text/headings/_heading.twig" with {
       heading_base_class: heading__base_class|default('heading'),
       heading_level: 4,
-      heading: label
+      heading: config[0],
     } %}
   {% endif %}
 

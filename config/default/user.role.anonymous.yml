@@ -6,6 +6,7 @@ dependencies:
     - filter.format.basic_html
     - filter.format.full_html
     - filter.format.limited_html
+    - filter.format.plain_text_with_token
     - filter.format.restricted_html
   module:
     - comment
@@ -33,5 +34,6 @@ permissions:
   - 'use text format basic_html'
   - 'use text format full_html'
   - 'use text format limited_html'
+  - 'use text format plain_text_with_token'
   - 'use text format restricted_html'
   - 'view media'

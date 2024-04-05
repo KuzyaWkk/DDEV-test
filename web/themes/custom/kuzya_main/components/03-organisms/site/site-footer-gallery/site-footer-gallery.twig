@@ -1,0 +1,20 @@
+{% set footer__base_class = 'footer-gallery' %}
+
+<footer {{ bem(footer__base_class) }}>
+  <div {{ bem('inner', [], footer__base_class) }}>
+    {% block region__footer_gallery %}
+
+      <div {{ bem('social', [], footer__base_class) }}>
+        {% block footer__social %}
+          {% include "@molecules/menus/social-menu/social-menu.twig" %}
+        {% endblock %}
+      </div>
+      <div {{ bem('menu', [], footer__base_class) }}>
+        {% block footer__menu %}
+          {% include "@molecules/menus/inline/inline-menu.twig" %}
+        {% endblock %}
+      </div>
+    {% endblock %}
+
+  </div>
+</footer>
