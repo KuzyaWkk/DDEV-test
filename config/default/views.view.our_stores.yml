@@ -173,8 +173,8 @@ display:
           plugin_id: map_stores
           empty: true
           color: '#e70466'
-          size: '10'
-          zoom: '1'
+          size: '12'
+          zoom: '17'
           store: large
           height: '82'
           width: '50'
