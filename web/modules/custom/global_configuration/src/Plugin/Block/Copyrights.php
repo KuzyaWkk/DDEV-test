@@ -12,7 +12,7 @@ use Drupal\Core\Url;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
- * Class Register Button.
+ * Class Copyrights.
  *
  * @package Drupal\global_configuration\Plugin\Block
  */
@@ -24,7 +24,7 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 class Copyrights extends BlockBase implements ContainerFactoryPluginInterface {
 
   /**
-   * Constructs a new Copyrights instance.
+   * Constructs a new object of Copyrights.
    */
   public function __construct(
     array $configuration,
