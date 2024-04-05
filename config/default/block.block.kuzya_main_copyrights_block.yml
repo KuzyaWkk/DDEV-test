@@ -1,0 +1,20 @@
+uuid: 9fd7ffae-47c2-42c0-80e7-8b686695764e
+langcode: en
+status: true
+dependencies:
+  module:
+    - global_configuration
+  theme:
+    - kuzya_main
+id: kuzya_main_copyrights_block
+theme: kuzya_main
+region: footer
+weight: -11
+provider: null
+plugin: copyrights_block
+settings:
+  id: copyrights_block
+  label: 'Custom Copyrights block'
+  label_display: '0'
+  provider: global_configuration
+visibility: {  }

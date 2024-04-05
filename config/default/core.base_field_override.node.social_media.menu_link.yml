@@ -1,0 +1,20 @@
+uuid: 09ae4f11-2829-4709-91ee-4f089cece5a6
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.social_media
+id: node.social_media.menu_link
+field_name: menu_link
+entity_type: node
+bundle: social_media
+label: 'Menu link'
+description: 'Computed menu link for the node (only available during node saving).'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: default
+  handler_settings: {  }
+field_type: entity_reference

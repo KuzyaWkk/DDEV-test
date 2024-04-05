@@ -1,0 +1,24 @@
+uuid: 916d4bfd-d77a-42b3-99ed-5931c2901f56
+langcode: en
+status: true
+dependencies:
+  config:
+    - config_pages.type.global_configurations
+    - field.storage.config_pages.field_social_links_title
+    - filter.format.plain_text_with_token
+  module:
+    - text
+id: config_pages.global_configurations.field_social_links_title
+field_name: field_social_links_title
+entity_type: config_pages
+bundle: global_configurations
+label: 'Social Links Title'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - plain_text_with_token
+field_type: text

@@ -1,0 +1,38 @@
+.block--copyrights {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  color: $header-primary;
+  font-size: 11px;
+  font-family: $font-main;
+  line-height: 41px;
+  font-weight: 300;
+  margin: 0;
+  padding-left: 20px;
+
+  @include desc {
+    padding-left: unset;
+  }
+
+  @include descMedium {
+    font-size: 13px;
+  }
+
+  .links {
+    @include list-reset;
+  }
+
+  a {
+    color: $secondary;
+    font-size: 11px;
+    text-decoration: none;
+    line-height: 41px;
+    font-weight: 300;
+    text-align: left;
+    padding: 0 0.2rem;
+
+    @include descMedium {
+      font-size: 13px;
+    }
+  }
+}
