@@ -15,7 +15,7 @@ bundle: global_configurations
 label: Copyrights
 description: ''
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:
