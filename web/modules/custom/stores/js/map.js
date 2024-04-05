@@ -3,9 +3,9 @@
     attach(context) {
       once('storesMapBehavior', '.leaflet__map', context).forEach(
         function (element) {
-          const displayId = element.getAttribute('data-display-id');
-          const mapstores = drupalSettings.mapstores[displayId];
-          const coordinates = drupalSettings.coordinates[displayId];
+          const configId = element.getAttribute('data-config-id');
+          const mapstores = drupalSettings.mapstores[configId];
+          const coordinates = drupalSettings.coordinates[configId];
           const color = mapstores.color;
           const size = mapstores.size;
           const zoom = mapstores.zoom;
