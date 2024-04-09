@@ -1,0 +1,5 @@
+type: module
+name: Custom Destination Plugin
+description: 'Module to create a custom destination plugin for migration'
+package: Kenny
+core_version_requirement: ^10
