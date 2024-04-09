@@ -1,0 +1,7 @@
+type: module
+name: Custom Migrate Source CSV
+description: 'Custom migration from a csv file'
+package: Kenny
+core_version_requirement: ^10
+dependencies:
+  - drupal:migrate

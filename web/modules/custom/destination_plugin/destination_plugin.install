@@ -1,0 +1,36 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions fot the destination_plugin module.
+ */
+
+function destination_plugin_schema() {
+   $schema['destination_database'] = [
+     'description' => 'Id, user id, city, country for destination plugin',
+     'fields' => [
+       'uid' => [
+         'description' => 'The user id',
+         'type' => 'int',
+         'not null' => TRUE,
+         'default' => 0,
+       ],
+       'city' => [
+         'description' => 'User\`s city',
+         'type' => 'varchar',
+         'length' => 64,
+         'not null' => TRUE,
+         'default' => 0,
+       ],
+       'country' => [
+         'description' => 'User\`s country',
+         'type' => 'varchar',
+         'length' => 64,
+         'not null' => TRUE,
+         'default' => 0,
+       ],
+     ],
+   ];
+
+   return $schema;
+}

@@ -1,0 +1,35 @@
+id: migrated_data_csv
+label: Migrate data from CSV file
+migration_group: data_csv
+migration_tags:
+  - data
+
+source:
+  plugin: 'csv'
+  path: modules/custom/destination_plugin/assets/data.csv
+  delimiter: ","
+  enclosure: '"'
+  header_offset: 0
+  ids:
+    - uid
+  fields:
+    0:
+      name: uid
+      label: 'User id'
+    1:
+      name: city
+      label: 'User city'
+    2:
+      name: country
+      label: 'User country'
+
+process:
+  city: city
+  uid: uid
+  country: country
+
+destination:
+  plugin: custom_destination
+
+
+

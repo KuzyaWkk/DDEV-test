@@ -1,0 +1,5 @@
+id,city,country,gender,preferences,units
+1,19,UA,female,3,standart
+2,20,UK,female,6,imperial
+3,19,US,female,7,standart
+4,21,UA,female,10,metric
