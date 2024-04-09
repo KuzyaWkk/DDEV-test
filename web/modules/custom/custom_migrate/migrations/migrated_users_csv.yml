@@ -1,0 +1,49 @@
+id: migrated_users_csv
+label: Migrate user from CSV file
+migration_group: user_csv
+migration_tags:
+  - users
+
+source:
+  plugin: 'csv'
+  path: modules/custom/custom_migrate/assets/users.csv
+  delimiter: ","
+  enclosure: '"'
+  header_offset: 0
+  ids:
+    - uid
+  fields:
+    0:
+      name: uid
+      label: 'User id'
+    1:
+      name: name
+      label: 'User name'
+    2:
+      name: email
+      label: 'User email'
+    3:
+      name: lid
+      label: 'Id of the login registration entity'
+  constants:
+    status: 1
+    roles: authenticated
+
+process:
+  mail: email
+  init: email
+  name: name
+  field_additional_information/target_id:
+    plugin: migration_lookup
+    migration: migrated_login_registrations_csv
+    source: lid
+  status: 'constants/status'
+  roles: 'constants/roles'
+
+destination:
+  plugin: entity:user
+
+migration_dependencies:
+  required:
+    - migrated_login_registrations_csv
+

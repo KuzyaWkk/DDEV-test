@@ -1,0 +1,45 @@
+id: migrated_login_registrations_csv
+label: Migrate Login Registration entity from CSV file
+migration_group: user_csv
+migration_tags:
+  - users
+  - login_registration
+
+source:
+  plugin: 'csv'
+  path: modules/custom/custom_migrate/assets/login_registration.csv
+  delimiter: ","
+  enclosure: '"'
+  header_offset: 0
+  ids:
+    - id
+  fields:
+    0:
+      name: id
+      label: 'Unique id'
+    1:
+      name: city
+      label: 'Taxonomy id of the selected city'
+    2:
+      name: country
+      label: 'Selected country'
+    3:
+      name: gender
+      label: 'Selected gender'
+    4:
+      name: preferences
+      label: 'Taxonomy id of the selected preferences'
+    5:
+      name: units
+      label: 'Selected units'
+
+process:
+  'field_city/target_id': city
+  'field_country/value': country
+  field_gender: gender
+  'field_preferences/target_id': preferences
+  field_units: units
+
+destination:
+  plugin: entity:login_registration
+
