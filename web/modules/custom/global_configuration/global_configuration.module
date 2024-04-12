@@ -21,8 +21,14 @@ function global_configuration_theme($existing, $type, $theme, $path):array {
 function global_configuration_preprocess_block(&$variables) {
 
   if ($variables['plugin_id'] == 'menu_social_media_black_bar') {
+    $global_configurations = Drupal::service('entity_type.manager')
+      ->getStorage('config_pages')
+      ->load('global_configurations');
+
+    $cache_tags = $global_configurations->getCacheTags();
+
     $variables['content']['#cache'] = [
-      'tags' => ['config_pages:1'],
+      'tags' => $cache_tags,
     ];
   }
 
