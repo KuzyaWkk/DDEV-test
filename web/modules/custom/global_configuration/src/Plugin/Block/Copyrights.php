@@ -61,7 +61,12 @@ class Copyrights extends BlockBase implements ContainerFactoryPluginInterface {
       ->load('global_configurations');
 
     if (!$global_configuration_storage) {
-      return [];
+      return [
+        '#theme' => 'copyrights_block',
+        '#cache' => [
+          'max-age' => 0,
+        ],
+      ];
     }
 
     $field_copyrights_value = $global_configuration_storage
