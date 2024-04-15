@@ -1,5 +1,5 @@
 <div class="block--copyrights">
   {% if text %}
-    {{ text[0] }}
+    {{ text|without('#title') }}
   {% endif %}
 </div>
