@@ -60,13 +60,17 @@ class Copyrights extends BlockBase implements ContainerFactoryPluginInterface {
       ->getStorage('config_pages')
       ->load('global_configurations');
 
-    $field_copyrights_value = $global_configuration_storage
-      ->get('field_copyrights')
-      ->view();
+    if ($global_configuration_storage) {
+      $field_copyrights_value = $global_configuration_storage
+        ->get('field_copyrights')
+        ->view();
+    }
 
+    // Global configurations it`s a custom tag, that is invalidated
+    // when field_copyrights is changed in Global Configurations entity.
     return [
       '#theme' => 'copyrights_block',
-      '#text' => $field_copyrights_value,
+      '#text' => $field_copyrights_value ? $field_copyrights_value : [],
       '#cache' => [
         'tags' => ['global_configurations'],
       ],
