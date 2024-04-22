@@ -62,6 +62,7 @@ module:
   migrate_drupal: 0
   migrate_drupal_ui: 0
   migrate_source_csv: 0
+  multistep_form: 0
   mysql: 0
   node: 0
   options: 0
