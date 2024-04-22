@@ -1,0 +1,13 @@
+multistep_form_ui:
+  css:
+    theme:
+      css/multistep-form-ui.css: {}
+  js:
+    js/multistep_form_ui.js: {}
+  dependencies:
+    - core/drupal
+    - core/once
+    - core/drupalSettings
+    - core/jquery
+    - core/drupal.ajax
+    - core/drupal.dialog
