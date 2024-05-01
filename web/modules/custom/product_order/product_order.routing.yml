@@ -1,0 +1,24 @@
+product_order.product_order_multistep_form:
+  path: 'multistep/form'
+  defaults:
+    _form: '\Drupal\product_order\Form\ProductOrderMultistepForm'
+    _title: 'Product Order MultiStep Form'
+  requirements:
+    _permission: 'access content'
+    _product_order_multistep_form_access_check: 'TRUE'
+
+product_order.product_order_multistep_form_settings:
+  path: '/admin/config/system/multistep'
+  defaults:
+    _form: '\Drupal\product_order\Form\ProductOrderMultistepFormSettings'
+    _title: 'Product Order MultiStep Form Settings'
+  requirements:
+    _permission: 'administer site configuration'
+
+product_order.product_order_multistep_form_settings_js:
+  path: '/admin/config/system/multistepjs'
+  defaults:
+    _form: '\Drupal\product_order\Form\ProductOrderMultistepFormSettingsJs'
+    _title: 'Product Order MultiStep Form Settings Js'
+  requirements:
+    _permission: 'administer site configuration'

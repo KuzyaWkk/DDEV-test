@@ -1,0 +1,30 @@
+.custom-multistep-form {
+  padding: 0 40px;
+}
+
+.status-message {
+  display: flex;
+  flex-direction: column;
+}
+
+.status-empty td {
+  font-style: italic;
+  padding: 10px 12px;
+  text-align: left;
+  color: #999;
+}
+
+.status-title td{
+  font-weight: bold;
+  padding: 10px 12px;
+  vertical-align: middle;
+  font-size: 13px;
+}
+
+.status-populated {
+  display: none;
+}
+
+.status-empty {
+  display: block!important;
+}

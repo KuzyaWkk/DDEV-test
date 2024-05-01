@@ -1,0 +1,11 @@
+product_order_multistep_form_ui:
+  css:
+    theme:
+      css/product-order-ui.css: {}
+  js:
+    js/product_order_ui.js: {}
+  dependencies:
+    - core/drupal
+    - core/once
+    - core/drupalSettings
+    - core/jquery

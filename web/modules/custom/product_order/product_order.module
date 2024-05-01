@@ -1,0 +1,37 @@
+<?php
+
+/**
+ * Implements hook_theme().
+ */
+function product_order_theme($existing, $type, $theme, $path): array {
+
+  return [
+    'multistep_ui_table' => [
+      'variables' => [
+        'header' => NULL,
+        'rows' => NULL,
+        'footer' => NULL,
+        'attributes' => [],
+        'caption' => NULL,
+        'colgroups' => [],
+        'sticky' => FALSE,
+        'responsive' => TRUE,
+        'empty' => '',
+      ],
+    ],
+    'form_element__new_storage_type' => [
+      'base hook' => 'form_element',
+      'render element' => 'element',
+    ],
+  ];
+
+
+}
+
+/**
+ * Preprocess for multistep ui table.
+ */
+function template_preprocess_multistep_ui_table(&$variables): void {
+  template_preprocess_table($variables);
+}
+

@@ -76,6 +76,8 @@ field_settings:
 
 
 
+
+
       fields:
         - 'entity:node/field_category'
         - 'entity:node/title'

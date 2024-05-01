@@ -1,0 +1,16 @@
+table_steps:
+  product:
+    id: product
+    weight: '-10'
+    status: enabled
+    label: Product
+  payment:
+    id: payment
+    weight: '-9'
+    status: enabled
+    label: Payment
+  delivery:
+    id: delivery
+    weight: '-8'
+    status: hidden
+    label: Delivery
