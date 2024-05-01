@@ -1,0 +1,6 @@
+services:
+  product_order.product_order_multistep_form_access_handler:
+    class: Drupal\product_order\Access\ProductOrderMultistepFormAccessHandler
+    arguments: ['@config.factory']
+    tags:
+      - { name: access_check, applies_to: _product_order_multistep_form_access_check }

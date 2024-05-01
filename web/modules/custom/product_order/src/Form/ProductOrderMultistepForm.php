@@ -1,7 +1,8 @@
 <?php
 
-namespace Drupal\multistep_form\Form;
+namespace Drupal\product_order\Form;
 
+use Drupal\Core\Access\AccessResult;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Url;
@@ -9,12 +10,12 @@ use Drupal\Core\Url;
 /**
  * Multistep form from product, delivery, and payment pages.
  */
-class MultistepForm extends FormBase {
+class ProductOrderMultistepForm extends FormBase {
 
   /**
    * {@inheritDoc}
    */
-  public function getFormId() {
+  public function getFormId(): string {
     return 'custom_multistep_form';
   }
 
@@ -24,9 +25,9 @@ class MultistepForm extends FormBase {
   public function buildForm(
     array $form,
     FormStateInterface $form_state,
-  ): array {
+  ): array|AccessResult {
     $config = $this
-      ->config('multistep_form.multistep_form_settings_js')
+      ->config('product_order.product_order_multistep_form_settings_js')
       ->get('table_steps');
     $enabled_config = [];
     foreach ($config as $value) {
@@ -36,18 +37,16 @@ class MultistepForm extends FormBase {
     }
     $max_step = count($enabled_config);
 
-    $form['link'] = [
-      '#type' => 'link',
-      '#title' => $this->t('Configure your form here'),
-      '#url' => Url::fromRoute('multistep_form.multistep_form_settings_js'),
-      '#attributes' => ['class' => ['button__configure-form']],
-    ];
+    if ($this->currentUser()->hasPermission('administer')) {
+      $form['link'] = [
+        '#type' => 'link',
+        '#title' => $this->t('Configure your form here'),
+        '#url' => Url::fromRoute('product_order.product_order_multistep_form_settings_js'),
+        '#attributes' => ['class' => ['button__configure-form']],
+      ];
+    }
 
     if ($max_step == 0) {
-      $form['text'] = [
-        '#markup' => $this->t('There is no pages is available.'),
-      ];
-
       return $form;
     }
 
@@ -101,22 +100,27 @@ class MultistepForm extends FormBase {
     }
 
     if ($step != 1) {
-      $form['product_container']['actions']['previous_step'] = $this->getPreviousButton($form, $form_state);
+      $form['product_container']['actions']['previous_step'] = $this
+        ->getPreviousButton($form, $form_state);
     }
     if ($step != $max_step) {
-      $form['product_container']['actions']['next_step'] = $this->getNextButton($form, $form_state);
+      $form['product_container']['actions']['next_step'] = $this
+        ->getNextButton($form, $form_state);
     }
     if ($step == $max_step) {
-      $form['product_container']['actions']['save'] = $this->getSaveButton($form, $form_state);
+      $form['product_container']['actions']['save'] = $this
+        ->getSaveButton($form, $form_state);
     }
     $form['product_container']['progress'] = [
-      '#plain_text' => 'Progress bar ' . $step . ' / ' . $max_step,
+      '#plain_text' => $this->t('Progress bar @step / @max_step', [
+        '@step' => $step,
+        '@max_step' => $max_step,
+      ]),
     ];
 
-    $form['#attached']['library'][] = 'multistep_form/multistep_form_ui';
+    $form['#attached']['library'][] = 'product_order/product_order_multistep_form_ui';
 
     return $form;
-
   }
 
   /**
@@ -155,7 +159,7 @@ class MultistepForm extends FormBase {
   public function deliveryPage(
     array &$form,
     FormStateInterface $form_state,
-  ): array {
+  ): void {
     $form['product_container']['city'] = [
       '#type' => 'textfield',
       '#title' => $this->t('Enter your city'),
@@ -163,7 +167,6 @@ class MultistepForm extends FormBase {
       '#default_value' => $form_state->get('data')['city'] ?? '',
     ];
 
-    return $form;
   }
 
   /**

@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\multistep_form\Form;
+namespace Drupal\product_order\Form;
 
 use Drupal\Core\Form\ConfigFormBase;
 use Drupal\Core\Form\FormStateInterface;
@@ -8,20 +8,20 @@ use Drupal\Core\Form\FormStateInterface;
 /**
  * Configuration form for setting up the multistep form.
  */
-final class MultistepFormSettings extends ConfigFormBase {
+final class ProductOrderMultistepFormSettings extends ConfigFormBase {
 
   /**
    * {@inheritDoc}
    */
-  public function getFormId():string {
-    return 'multistep_form_settings';
+  public function getFormId(): string {
+    return 'product_order_multistep_form_settings';
   }
 
   /**
    * {@inheritdoc}
    */
   protected function getEditableConfigNames(): array {
-    return ['multistep_form.multistep_form_settings'];
+    return ['product_order.product_order_multistep_form_settings'];
   }
 
   /**
@@ -80,13 +80,15 @@ final class MultistepFormSettings extends ConfigFormBase {
    * The list of available steps options.
    */
   protected function getStepsOptions(): array {
-    $config = $this->config('multistep_form.multistep_form_settings');
+    $config = $this->config('product_order.product_order_multistep_form_settings');
     $table_steps = $config->get('table_steps');
     $table_region = $config->get('table_region');
-    $data_array = array_merge($table_steps, $table_region);
-    uasort($data_array, ['Drupal\Component\Utility\SortArray', 'sortByWeightElement']);
+    if ($table_steps || $table_region) {
+      $data_array = array_merge($table_steps, $table_region);
+      uasort($data_array, ['Drupal\Component\Utility\SortArray', 'sortByWeightElement']);
+    }
 
-    if ($data_array) {
+    if (isset($data_array)) {
       return $data_array;
     }
 
@@ -130,7 +132,7 @@ final class MultistepFormSettings extends ConfigFormBase {
     FormStateInterface $form_state,
   ): void {
     $config_data = $this->refactoringConfigData($form, $form_state);
-    $config = $this->config('multistep_form.multistep_form_settings');
+    $config = $this->config('product_order.product_order_multistep_form_settings');
     $config->set('table_steps', $config_data['data']);
     $config->set('table_region', $config_data['region']);
     $config->save();

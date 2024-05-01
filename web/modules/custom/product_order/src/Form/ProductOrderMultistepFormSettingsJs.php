@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\multistep_form\Form;
+namespace Drupal\product_order\Form;
 
 use Drupal\Core\Form\ConfigFormBase;
 use Drupal\Core\Form\FormStateInterface;
@@ -8,20 +8,20 @@ use Drupal\Core\Form\FormStateInterface;
 /**
  * Configuration form for setting up the multistep form.
  */
-final class MultistepFormSettingsJs extends ConfigFormBase {
+final class ProductOrderMultistepFormSettingsJs extends ConfigFormBase {
 
   /**
    * {@inheritDoc}
    */
-  public function getFormId():string {
-    return 'multistep_form_settings_js';
+  public function getFormId(): string {
+    return 'product_order_multistep_form_settings_js';
   }
 
   /**
    * {@inheritdoc}
    */
   protected function getEditableConfigNames(): array {
-    return ['multistep_form.multistep_form_settings_js'];
+    return ['product_order.product_order_multistep_form_settings_js'];
   }
 
   /**
@@ -82,7 +82,7 @@ final class MultistepFormSettingsJs extends ConfigFormBase {
 
     $form['fields'] = $table;
 
-    $form['#attached']['library'][] = 'multistep_form/multistep_form_ui';
+    $form['#attached']['library'][] = 'product_order/product_order_multistep_form_ui';
 
     return parent::buildForm($form, $form_state);
   }
@@ -147,7 +147,7 @@ final class MultistepFormSettingsJs extends ConfigFormBase {
    */
   protected function getStepsOptions(): array {
     $config =
-      $this->config('multistep_form.multistep_form_settings_js');
+      $this->config('product_order.product_order_multistep_form_settings_js');
     $table_steps = $config->get('table_steps');
 
     if ($table_steps) {
@@ -221,7 +221,7 @@ final class MultistepFormSettingsJs extends ConfigFormBase {
         'label' => $data['parent_wrapper']['hidden_name'],
       ];
     }
-    $config = $this->config('multistep_form.multistep_form_settings_js');
+    $config = $this->config('product_order.product_order_multistep_form_settings_js');
     $config->set('table_steps', $config_values);
     $config->save();
     $this->messenger()

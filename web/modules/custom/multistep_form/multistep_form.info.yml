@@ -1,5 +1,0 @@
-name: Multistep From
-description: 'Module for creating a configurable multistep form'
-package: Kenny
-type: module
-core_version_requirement: ^10

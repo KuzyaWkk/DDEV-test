@@ -1,0 +1,5 @@
+name: Product order
+description: 'Module for creating a configurable multistep form for product order'
+package: Kenny
+type: module
+core_version_requirement: ^10
