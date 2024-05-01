@@ -4,13 +4,13 @@ table_steps:
     weight: '-10'
     status: enabled
     label: Product
-  delivery:
-    id: delivery
-    weight: '-9'
-    status: enabled
-    label: Delivery
   payment:
     id: payment
+    weight: '-9'
+    status: enabled
+    label: Payment
+  delivery:
+    id: delivery
     weight: '-8'
     status: hidden
-    label: Payment
+    label: Delivery

@@ -62,7 +62,6 @@ module:
   migrate_drupal: 0
   migrate_drupal_ui: 0
   migrate_source_csv: 0
-  multistep_form: 0
   mysql: 0
   node: 0
   options: 0
@@ -70,6 +69,7 @@ module:
   path: 0
   path_alias: 0
   phpass: 0
+  product_order: 0
   radix_layouts: 0
   redirect: 0
   redirect_404: 0
